@@ -10,11 +10,22 @@ using System.Windows.Forms;
 
 namespace prgNegocioDeZapatos
 {
-    public partial class Form1 : Form
+    public partial class frmAcceso : Form
     {
-        public Form1()
+        public frmAcceso()
         {
             InitializeComponent();
+        }
+
+        private void frmAcceso_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            DialogResult respuesta = MessageBox.Show("Saliendo del sistema, Esta seguro que desea salir", "Salir", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            Application.Exit();
         }
     }
 }
