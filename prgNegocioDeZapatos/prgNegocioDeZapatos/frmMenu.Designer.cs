@@ -71,6 +71,7 @@
             // 
             resources.ApplyResources(this.usuariosToolStripMenuItem, "usuariosToolStripMenuItem");
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // rolesToolStripMenuItem1
             // 
@@ -84,11 +85,13 @@
             // 
             resources.ApplyResources(this.asignarRolToolStripMenuItem, "asignarRolToolStripMenuItem");
             this.asignarRolToolStripMenuItem.Name = "asignarRolToolStripMenuItem";
+            this.asignarRolToolStripMenuItem.Click += new System.EventHandler(this.asignarRolToolStripMenuItem_Click);
             // 
             // asignarRolToolStripMenuItem1
             // 
             resources.ApplyResources(this.asignarRolToolStripMenuItem1, "asignarRolToolStripMenuItem1");
             this.asignarRolToolStripMenuItem1.Name = "asignarRolToolStripMenuItem1";
+            this.asignarRolToolStripMenuItem1.Click += new System.EventHandler(this.asignarRolToolStripMenuItem1_Click);
             // 
             // ventasToolStripMenuItem1
             // 
@@ -104,6 +107,7 @@
             // 
             resources.ApplyResources(this.ventasToolStripMenuItem, "ventasToolStripMenuItem");
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // frmMenu
             // 

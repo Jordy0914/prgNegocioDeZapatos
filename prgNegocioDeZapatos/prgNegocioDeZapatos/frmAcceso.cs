@@ -24,8 +24,15 @@ namespace prgNegocioDeZapatos
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            DialogResult respuesta = MessageBox.Show("Saliendo del sistema, Esta seguro que desea salir", "Salir", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            MessageBox.Show("Saliendo del sistema");
             Application.Exit();
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            this.SetVisibleCore(false);
+            frmMenu Menu = new frmMenu();
+            Menu.Show();
         }
     }
 }

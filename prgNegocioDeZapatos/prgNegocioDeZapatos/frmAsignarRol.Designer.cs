@@ -121,6 +121,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Name = "frmAsignarRol";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Asignacion de Roles";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -17,6 +17,29 @@ namespace prgNegocioDeZapatos
             InitializeComponent();
         }
 
-      
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmAcceso Logeo = new frmAcceso();
+            Logeo.Show();
+        }
+
+        private void asignarRolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRol CreacionRoles = new frmRol();
+            CreacionRoles.Show();
+        }
+
+        private void asignarRolToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmAsignarRol AsignarRoles = new frmAsignarRol();
+            AsignarRoles.Show();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuario GestionUsuarios = new frmUsuario();
+            GestionUsuarios.Show();
+        }
     }
 }
