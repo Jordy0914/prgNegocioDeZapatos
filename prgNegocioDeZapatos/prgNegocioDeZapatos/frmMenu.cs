@@ -17,6 +17,11 @@ namespace prgNegocioDeZapatos
             InitializeComponent();
         }
 
-      
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmAcceso Logeo = new frmAcceso();
+            Logeo.Show();
+        }
     }
 }

@@ -104,6 +104,7 @@
             // 
             resources.ApplyResources(this.ventasToolStripMenuItem, "ventasToolStripMenuItem");
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
