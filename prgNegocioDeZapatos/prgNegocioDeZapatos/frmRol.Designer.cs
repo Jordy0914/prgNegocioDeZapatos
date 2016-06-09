@@ -39,14 +39,18 @@
             this.cbModificar = new System.Windows.Forms.CheckBox();
             this.cbConsultar = new System.Windows.Forms.CheckBox();
             this.cbInsertar = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 96);
+            this.label1.Location = new System.Drawing.Point(6, 99);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 15);
             this.label1.TabIndex = 0;
@@ -56,7 +60,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 43);
+            this.label2.Location = new System.Drawing.Point(6, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 15);
             this.label2.TabIndex = 1;
@@ -64,23 +68,23 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(123, 91);
+            this.textBox1.Location = new System.Drawing.Point(120, 94);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 20);
+            this.textBox1.Size = new System.Drawing.Size(153, 21);
             this.textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(123, 38);
+            this.textBox2.Location = new System.Drawing.Point(120, 41);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(100, 21);
             this.textBox2.TabIndex = 3;
             // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(12, 229);
+            this.btnAgregar.Location = new System.Drawing.Point(24, 46);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 32);
             this.btnAgregar.TabIndex = 4;
@@ -91,7 +95,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(153, 229);
+            this.btnSalir.Location = new System.Drawing.Point(198, 46);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 32);
             this.btnSalir.TabIndex = 5;
@@ -153,26 +157,49 @@
             this.cbInsertar.Text = "Insertar";
             this.cbInsertar.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(12, 28);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(282, 173);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Informacion del Rol";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnAgregar);
+            this.groupBox3.Controls.Add(this.btnSalir);
+            this.groupBox3.Location = new System.Drawing.Point(21, 229);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(524, 100);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Controles";
+            // 
             // frmRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(564, 295);
+            this.ClientSize = new System.Drawing.Size(564, 341);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "frmRol";
             this.Text = "Creacion de Roles";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -189,5 +216,7 @@
         private System.Windows.Forms.CheckBox cbModificar;
         private System.Windows.Forms.CheckBox cbConsultar;
         private System.Windows.Forms.CheckBox cbInsertar;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
