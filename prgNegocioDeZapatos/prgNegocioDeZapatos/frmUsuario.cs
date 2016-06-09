@@ -28,5 +28,7 @@ namespace prgNegocioDeZapatos
             DialogResult respuesta = MessageBox.Show("Saliendo del sistema de usuario", "Salir", MessageBoxButtons.OK, MessageBoxIcon.Question);
             Close();
         }
+
+       
     }
 }
