@@ -35,5 +35,11 @@ namespace prgNegocioDeZapatos
             frmAsignarRol AsignarRoles = new frmAsignarRol();
             AsignarRoles.Show();
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuario GestionUsuarios = new frmUsuario();
+            GestionUsuarios.Show();
+        }
     }
 }
