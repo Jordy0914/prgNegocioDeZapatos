@@ -23,5 +23,17 @@ namespace prgNegocioDeZapatos
             frmAcceso Logeo = new frmAcceso();
             Logeo.Show();
         }
+
+        private void asignarRolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRol CreacionRoles = new frmRol();
+            CreacionRoles.Show();
+        }
+
+        private void asignarRolToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmAsignarRol AsignarRoles = new frmAsignarRol();
+            AsignarRoles.Show();
+        }
     }
 }

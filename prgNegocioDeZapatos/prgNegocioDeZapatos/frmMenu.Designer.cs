@@ -84,11 +84,13 @@
             // 
             resources.ApplyResources(this.asignarRolToolStripMenuItem, "asignarRolToolStripMenuItem");
             this.asignarRolToolStripMenuItem.Name = "asignarRolToolStripMenuItem";
+            this.asignarRolToolStripMenuItem.Click += new System.EventHandler(this.asignarRolToolStripMenuItem_Click);
             // 
             // asignarRolToolStripMenuItem1
             // 
             resources.ApplyResources(this.asignarRolToolStripMenuItem1, "asignarRolToolStripMenuItem1");
             this.asignarRolToolStripMenuItem1.Name = "asignarRolToolStripMenuItem1";
+            this.asignarRolToolStripMenuItem1.Click += new System.EventHandler(this.asignarRolToolStripMenuItem1_Click);
             // 
             // ventasToolStripMenuItem1
             // 
