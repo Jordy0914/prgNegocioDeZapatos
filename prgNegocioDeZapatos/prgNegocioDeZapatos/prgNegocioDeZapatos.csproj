@@ -84,6 +84,9 @@
     <EmbeddedResource Include="frmAsignarRol.resx">
       <DependentUpon>frmAsignarRol.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.aa.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
