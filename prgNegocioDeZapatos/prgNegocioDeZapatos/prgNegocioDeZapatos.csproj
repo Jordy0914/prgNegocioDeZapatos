@@ -52,6 +52,24 @@
     <Compile Include="frmAcceso.Designer.cs">
       <DependentUpon>frmAcceso.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAsignarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignarRol.Designer.cs">
+      <DependentUpon>frmAsignarRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRol.Designer.cs">
+      <DependentUpon>frmRol.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +80,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAcceso.resx">
       <DependentUpon>frmAcceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsignarRol.resx">
+      <DependentUpon>frmAsignarRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRol.resx">
+      <DependentUpon>frmRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
