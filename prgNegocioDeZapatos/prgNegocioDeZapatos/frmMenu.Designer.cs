@@ -32,7 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.subMenuUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.rolesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarRolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarRolToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +56,7 @@
             resources.ApplyResources(this.reportesToolStripMenuItem, "reportesToolStripMenuItem");
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.proveedoresToolStripMenuItem1,
-            this.usuariosToolStripMenuItem,
+            this.subMenuUsuario,
             this.rolesToolStripMenuItem1,
             this.ventasToolStripMenuItem1,
             this.reportesToolStripMenuItem1});
@@ -67,11 +67,11 @@
             resources.ApplyResources(this.proveedoresToolStripMenuItem1, "proveedoresToolStripMenuItem1");
             this.proveedoresToolStripMenuItem1.Name = "proveedoresToolStripMenuItem1";
             // 
-            // usuariosToolStripMenuItem
+            // subMenuUsuario
             // 
-            resources.ApplyResources(this.usuariosToolStripMenuItem, "usuariosToolStripMenuItem");
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            resources.ApplyResources(this.subMenuUsuario, "subMenuUsuario");
+            this.subMenuUsuario.Name = "subMenuUsuario";
+            this.subMenuUsuario.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // rolesToolStripMenuItem1
             // 
@@ -131,7 +131,7 @@
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem subMenuUsuario;
         private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem asignarRolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignarRolToolStripMenuItem1;

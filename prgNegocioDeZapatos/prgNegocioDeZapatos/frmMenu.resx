@@ -190,8 +190,8 @@
   <data name="&gt;&gt;ventasToolStripMenuItem.Name" xml:space="preserve">
     <value>ventasToolStripMenuItem</value>
   </data>
-  <data name="asignarRolToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="asignarRolToolStripMenuItem.Text" xml:space="preserve">
+    <value>Crear Rol</value>
   </data>
   <data name="&gt;&gt;ventasToolStripMenuItem1.Name" xml:space="preserve">
     <value>ventasToolStripMenuItem1</value>
@@ -202,8 +202,14 @@
   <data name="&gt;&gt;proveedoresToolStripMenuItem1.Name" xml:space="preserve">
     <value>proveedoresToolStripMenuItem1</value>
   </data>
+  <data name="&gt;&gt;subMenuUsuario.Name" xml:space="preserve">
+    <value>subMenuUsuario</value>
+  </data>
   <data name="proveedoresToolStripMenuItem1.Text" xml:space="preserve">
     <value>Proveedores</value>
+  </data>
+  <data name="&gt;&gt;usuariosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="menuStrip1.Text" xml:space="preserve">
     <value>menuStrip1</value>
@@ -239,8 +245,8 @@
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>394, 24</value>
   </data>
-  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
-    <value>menuStrip1</value>
+  <data name="subMenuUsuario.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
   </data>
   <data name="usuariosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
@@ -248,14 +254,17 @@
   <data name="&gt;&gt;asignarRolToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;usuariosToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="asignarRolToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
   </data>
   <data name="&gt;&gt;rolesToolStripMenuItem1.Name" xml:space="preserve">
     <value>rolesToolStripMenuItem1</value>
   </data>
-  <data name="asignarRolToolStripMenuItem.Text" xml:space="preserve">
-    <value>Crear Rol</value>
+  <data name="&gt;&gt;subMenuUsuario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Menu  Principal </value>
@@ -271,8 +280,5 @@
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>aa</value>
   </metadata>
 </root>
