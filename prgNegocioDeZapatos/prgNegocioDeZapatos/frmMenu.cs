@@ -42,5 +42,10 @@ namespace prgNegocioDeZapatos
             frmUsuario GestionUsuarios = new frmUsuario();
             GestionUsuarios.Show();
         }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

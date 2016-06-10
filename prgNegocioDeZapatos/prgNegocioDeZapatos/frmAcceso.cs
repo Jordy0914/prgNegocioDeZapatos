@@ -31,7 +31,7 @@ namespace prgNegocioDeZapatos
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             this.SetVisibleCore(false);
-            frmMenu Menu = new frmMenu();
+           frmMenu Menu = new frmMenu();
             Menu.Show();
         }
     }

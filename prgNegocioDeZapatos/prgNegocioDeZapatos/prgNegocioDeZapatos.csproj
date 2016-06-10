@@ -52,6 +52,12 @@
     <Compile Include="frmAcceso.Designer.cs">
       <DependentUpon>frmAcceso.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAgregarZapatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarZapatos.Designer.cs">
+      <DependentUpon>frmAgregarZapatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAsignarRol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,11 +87,11 @@
     <EmbeddedResource Include="frmAcceso.resx">
       <DependentUpon>frmAcceso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarZapatos.resx">
+      <DependentUpon>frmAgregarZapatos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAsignarRol.resx">
       <DependentUpon>frmAsignarRol.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMenu.aa.resx">
-      <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
