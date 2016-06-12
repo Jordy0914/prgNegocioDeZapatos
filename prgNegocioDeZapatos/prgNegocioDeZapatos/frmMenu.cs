@@ -16,6 +16,9 @@ namespace prgNegocioDeZapatos
         {
             InitializeComponent();
             this.subMenuUsuario.Visible = false;
+            this.subMenuProveedores.Visible = false;
+            this.subMenuReportes.Visible = false;
+            this.menuStrip.Refresh();
         }
 
         private void ventasToolStripMenuItem_Click(object sender, EventArgs e)

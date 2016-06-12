@@ -117,47 +117,47 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="proveedoresToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="subMenuProveedores.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
-  <data name="proveedoresToolStripMenuItem1.Text" xml:space="preserve">
+  <data name="subMenuProveedores.Text" xml:space="preserve">
     <value>Proveedores</value>
   </data>
   <data name="subMenuUsuario.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
   <data name="asignarRolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="asignarRolToolStripMenuItem.Text" xml:space="preserve">
     <value>Crear Rol</value>
   </data>
   <data name="asignarRolToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="asignarRolToolStripMenuItem1.Text" xml:space="preserve">
     <value>Asignar Rol</value>
   </data>
-  <data name="rolesToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="subMenuRoles.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
-  <data name="rolesToolStripMenuItem1.Text" xml:space="preserve">
+  <data name="subMenuRoles.Text" xml:space="preserve">
     <value>Roles</value>
   </data>
-  <data name="ventasToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="subMenuVentas.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
-  <data name="ventasToolStripMenuItem1.Text" xml:space="preserve">
+  <data name="subMenuVentas.Text" xml:space="preserve">
     <value>Ventas</value>
   </data>
-  <data name="reportesToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="subMenuReportes.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
-  <data name="reportesToolStripMenuItem1.Text" xml:space="preserve">
+  <data name="subMenuReportes.Text" xml:space="preserve">
     <value>Reportes</value>
   </data>
   <data name="reportesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -172,29 +172,29 @@
   <data name="ventasToolStripMenuItem.Text" xml:space="preserve">
     <value>Salir</value>
   </data>
-  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>394, 24</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="menuStrip1.Text" xml:space="preserve">
+  <data name="menuStrip.Text" xml:space="preserve">
     <value>menuStrip1</value>
   </data>
-  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
-    <value>menuStrip1</value>
+  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
+    <value>menuStrip</value>
   </data>
-  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -215,10 +215,10 @@
   <data name="&gt;&gt;reportesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;proveedoresToolStripMenuItem1.Name" xml:space="preserve">
-    <value>proveedoresToolStripMenuItem1</value>
+  <data name="&gt;&gt;subMenuProveedores.Name" xml:space="preserve">
+    <value>subMenuProveedores</value>
   </data>
-  <data name="&gt;&gt;proveedoresToolStripMenuItem1.Type" xml:space="preserve">
+  <data name="&gt;&gt;subMenuProveedores.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;subMenuUsuario.Name" xml:space="preserve">
@@ -227,10 +227,10 @@
   <data name="&gt;&gt;subMenuUsuario.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;rolesToolStripMenuItem1.Name" xml:space="preserve">
-    <value>rolesToolStripMenuItem1</value>
+  <data name="&gt;&gt;subMenuRoles.Name" xml:space="preserve">
+    <value>subMenuRoles</value>
   </data>
-  <data name="&gt;&gt;rolesToolStripMenuItem1.Type" xml:space="preserve">
+  <data name="&gt;&gt;subMenuRoles.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;asignarRolToolStripMenuItem.Name" xml:space="preserve">
@@ -245,16 +245,16 @@
   <data name="&gt;&gt;asignarRolToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ventasToolStripMenuItem1.Name" xml:space="preserve">
-    <value>ventasToolStripMenuItem1</value>
+  <data name="&gt;&gt;subMenuVentas.Name" xml:space="preserve">
+    <value>subMenuVentas</value>
   </data>
-  <data name="&gt;&gt;ventasToolStripMenuItem1.Type" xml:space="preserve">
+  <data name="&gt;&gt;subMenuVentas.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;reportesToolStripMenuItem1.Name" xml:space="preserve">
-    <value>reportesToolStripMenuItem1</value>
+  <data name="&gt;&gt;subMenuReportes.Name" xml:space="preserve">
+    <value>subMenuReportes</value>
   </data>
-  <data name="&gt;&gt;reportesToolStripMenuItem1.Type" xml:space="preserve">
+  <data name="&gt;&gt;subMenuReportes.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ventasToolStripMenuItem.Name" xml:space="preserve">

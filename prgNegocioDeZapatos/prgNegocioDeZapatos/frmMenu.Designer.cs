@@ -29,43 +29,43 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.proveedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.subMenuProveedores = new System.Windows.Forms.ToolStripMenuItem();
             this.subMenuUsuario = new System.Windows.Forms.ToolStripMenuItem();
-            this.rolesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.subMenuRoles = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarRolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarRolToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.subMenuVentas = new System.Windows.Forms.ToolStripMenuItem();
+            this.subMenuReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.BackColor = System.Drawing.SystemColors.Highlight;
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reportesToolStripMenuItem,
             this.ventasToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
-            this.menuStrip1.Name = "menuStrip1";
+            resources.ApplyResources(this.menuStrip, "menuStrip");
+            this.menuStrip.Name = "menuStrip";
             // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.proveedoresToolStripMenuItem1,
+            this.subMenuProveedores,
             this.subMenuUsuario,
-            this.rolesToolStripMenuItem1,
-            this.ventasToolStripMenuItem1,
-            this.reportesToolStripMenuItem1});
+            this.subMenuRoles,
+            this.subMenuVentas,
+            this.subMenuReportes});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             resources.ApplyResources(this.reportesToolStripMenuItem, "reportesToolStripMenuItem");
             // 
-            // proveedoresToolStripMenuItem1
+            // subMenuProveedores
             // 
-            this.proveedoresToolStripMenuItem1.Name = "proveedoresToolStripMenuItem1";
-            resources.ApplyResources(this.proveedoresToolStripMenuItem1, "proveedoresToolStripMenuItem1");
+            this.subMenuProveedores.Name = "subMenuProveedores";
+            resources.ApplyResources(this.subMenuProveedores, "subMenuProveedores");
             // 
             // subMenuUsuario
             // 
@@ -73,13 +73,13 @@
             resources.ApplyResources(this.subMenuUsuario, "subMenuUsuario");
             this.subMenuUsuario.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
-            // rolesToolStripMenuItem1
+            // subMenuRoles
             // 
-            this.rolesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.subMenuRoles.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.asignarRolToolStripMenuItem,
             this.asignarRolToolStripMenuItem1});
-            this.rolesToolStripMenuItem1.Name = "rolesToolStripMenuItem1";
-            resources.ApplyResources(this.rolesToolStripMenuItem1, "rolesToolStripMenuItem1");
+            this.subMenuRoles.Name = "subMenuRoles";
+            resources.ApplyResources(this.subMenuRoles, "subMenuRoles");
             // 
             // asignarRolToolStripMenuItem
             // 
@@ -93,15 +93,15 @@
             resources.ApplyResources(this.asignarRolToolStripMenuItem1, "asignarRolToolStripMenuItem1");
             this.asignarRolToolStripMenuItem1.Click += new System.EventHandler(this.asignarRolToolStripMenuItem1_Click);
             // 
-            // ventasToolStripMenuItem1
+            // subMenuVentas
             // 
-            this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
-            resources.ApplyResources(this.ventasToolStripMenuItem1, "ventasToolStripMenuItem1");
+            this.subMenuVentas.Name = "subMenuVentas";
+            resources.ApplyResources(this.subMenuVentas, "subMenuVentas");
             // 
-            // reportesToolStripMenuItem1
+            // subMenuReportes
             // 
-            this.reportesToolStripMenuItem1.Name = "reportesToolStripMenuItem1";
-            resources.ApplyResources(this.reportesToolStripMenuItem1, "reportesToolStripMenuItem1");
+            this.subMenuReportes.Name = "subMenuReportes";
+            resources.ApplyResources(this.subMenuReportes, "subMenuReportes");
             // 
             // ventasToolStripMenuItem
             // 
@@ -115,12 +115,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ControlBox = false;
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.menuStrip);
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "frmMenu";
             this.Load += new System.EventHandler(this.frmMenu_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,15 +128,15 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem subMenuProveedores;
         private System.Windows.Forms.ToolStripMenuItem subMenuUsuario;
-        private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem subMenuRoles;
         private System.Windows.Forms.ToolStripMenuItem asignarRolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignarRolToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem subMenuVentas;
+        private System.Windows.Forms.ToolStripMenuItem subMenuReportes;
     }
 }
