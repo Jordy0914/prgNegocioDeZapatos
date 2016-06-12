@@ -16,5 +16,19 @@ namespace prgNegocioDeZapatos
         {
             InitializeComponent();
         }
+
+        
+
+        private void frmAgregarZapatos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
+

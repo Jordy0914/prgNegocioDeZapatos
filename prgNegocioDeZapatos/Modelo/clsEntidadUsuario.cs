@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelo
+namespace Entidades
 {
     public class clsEntidadUsuario
     {
@@ -16,6 +16,8 @@ namespace Modelo
         private int cedula;
         private String direccion;
         private String fechaNacimiento;
+        private String telefono;
+        private String email;
 
         #endregion
 
@@ -29,6 +31,8 @@ namespace Modelo
             this.cedula = 0;
             this.direccion = "";
             this.fechaNacimiento = "";
+            this.telefono = "";
+            this.email = "";
 
         }//fin del constructor
 
@@ -93,6 +97,31 @@ namespace Modelo
         {
             return this.fechaNacimiento;
         }
+
+        public void setTelefono(String telefono)
+        {
+
+            this.telefono = telefono;
+        }
+
+        public String getTelefono()
+        {
+            return this.telefono;
+        }
+
+        public void setEmail(String email)
+        {
+
+            this.email = email;
+        }
+
+        public String getEmail()
+        {
+            return this.email;
+        }
+
+
+
 
         #endregion
 
