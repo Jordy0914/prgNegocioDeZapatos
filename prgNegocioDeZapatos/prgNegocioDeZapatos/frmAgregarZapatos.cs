@@ -25,7 +25,6 @@ namespace prgNegocioDeZapatos
             InitializeComponent();
         }
 
-        
 
         private void frmAgregarZapatos_Load(object sender, EventArgs e)
         {
@@ -38,7 +37,7 @@ namespace prgNegocioDeZapatos
             Close();
         }
 
-     
+   
     }
 }
 
