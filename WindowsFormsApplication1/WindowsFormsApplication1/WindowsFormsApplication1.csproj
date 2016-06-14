@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ED950C5C-87F6-46A4-844B-AC86CF82AD8D}</ProjectGuid>
+    <ProjectGuid>{A9E3DAF8-E10E-443A-B0AA-F2E8219A6727}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>prgNegocioDeZapatos</RootNamespace>
-    <AssemblyName>prgNegocioDeZapatos</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>WindowsFormsApplication1</RootNamespace>
+    <AssemblyName>WindowsFormsApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -50,61 +50,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAcceso.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAcceso.Designer.cs">
-      <DependentUpon>frmAcceso.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAgregarZapatos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAgregarZapatos.Designer.cs">
-      <DependentUpon>frmAgregarZapatos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAsignarRol.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAsignarRol.Designer.cs">
-      <DependentUpon>frmAsignarRol.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMenu.Designer.cs">
-      <DependentUpon>frmMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmRol.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRol.Designer.cs">
-      <DependentUpon>frmRol.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmUsuario.Designer.cs">
-      <DependentUpon>frmUsuario.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAcceso.resx">
-      <DependentUpon>frmAcceso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAgregarZapatos.resx">
-      <DependentUpon>frmAgregarZapatos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAsignarRol.resx">
-      <DependentUpon>frmAsignarRol.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMenu.resx">
-      <DependentUpon>frmMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRol.resx">
-      <DependentUpon>frmRol.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmUsuario.resx">
-      <DependentUpon>frmUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -128,12 +83,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Modelo\Entidades.csproj">
-      <Project>{34c834c6-4412-477e-b1d7-fbcb2e49733b}</Project>
-      <Name>Entidades</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

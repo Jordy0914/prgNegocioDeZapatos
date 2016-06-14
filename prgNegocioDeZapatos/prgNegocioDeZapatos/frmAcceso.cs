@@ -7,32 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MaterialSkin;
+using MaterialSkin.Controls;
 namespace prgNegocioDeZapatos
 {
-    public partial class frmAcceso : Form
+    public partial class frmAcceso : MaterialForm
     {
+        private readonly MaterialSkinManager materialSkinManager;
         public frmAcceso()
         {
+            materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
+            
             InitializeComponent();
-        }
-
-        private void frmAcceso_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Saliendo del sistema");
-            Application.Exit();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            this.SetVisibleCore(false);
-           frmMenu Menu = new frmMenu();
-            Menu.Show();
+           
         }
+
+        
     }
 }
+ 
