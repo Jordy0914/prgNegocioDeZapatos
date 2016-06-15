@@ -16,7 +16,7 @@ namespace prgNegocioDeZapatos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAgregarZapatos());
+            Application.Run(new frmAcceso());
         }
     }
 }
