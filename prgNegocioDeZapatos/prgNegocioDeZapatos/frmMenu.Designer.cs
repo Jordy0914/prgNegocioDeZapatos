@@ -28,99 +28,108 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.subMenuProveedores = new System.Windows.Forms.ToolStripMenuItem();
-            this.subMenuUsuario = new System.Windows.Forms.ToolStripMenuItem();
-            this.subMenuRoles = new System.Windows.Forms.ToolStripMenuItem();
-            this.asignarRolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.asignarRolToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.subMenuVentas = new System.Windows.Forms.ToolStripMenuItem();
-            this.subMenuReportes = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearRolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rolesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip.SuspendLayout();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip
+            // menuStrip1
             // 
-            this.menuStrip.BackColor = System.Drawing.SystemColors.Highlight;
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reportesToolStripMenuItem,
-            this.ventasToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip, "menuStrip");
-            this.menuStrip.Name = "menuStrip";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // reportesToolStripMenuItem
+            // archivoToolStripMenuItem
             // 
-            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.subMenuProveedores,
-            this.subMenuUsuario,
-            this.subMenuRoles,
-            this.subMenuVentas,
-            this.subMenuReportes});
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            resources.ApplyResources(this.reportesToolStripMenuItem, "reportesToolStripMenuItem");
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.proveedoresToolStripMenuItem,
+            this.rolesToolStripMenuItem,
+            this.ventasToolStripMenuItem,
+            this.reportesToolStripMenuItem});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Text = "Archivo";
             // 
-            // subMenuProveedores
+            // salirToolStripMenuItem
             // 
-            this.subMenuProveedores.Name = "subMenuProveedores";
-            resources.ApplyResources(this.subMenuProveedores, "subMenuProveedores");
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
             // 
-            // subMenuUsuario
+            // proveedoresToolStripMenuItem
             // 
-            this.subMenuUsuario.Name = "subMenuUsuario";
-            resources.ApplyResources(this.subMenuUsuario, "subMenuUsuario");
-            this.subMenuUsuario.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rolesToolStripMenuItem1});
+            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.proveedoresToolStripMenuItem.Text = "Seguridad";
+            this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
             // 
-            // subMenuRoles
+            // rolesToolStripMenuItem
             // 
-            this.subMenuRoles.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.asignarRolToolStripMenuItem,
-            this.asignarRolToolStripMenuItem1});
-            this.subMenuRoles.Name = "subMenuRoles";
-            resources.ApplyResources(this.subMenuRoles, "subMenuRoles");
+            this.rolesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.crearRolToolStripMenuItem,
+            this.asignarToolStripMenuItem});
+            this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
+            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.rolesToolStripMenuItem.Text = "Proveedores";
             // 
-            // asignarRolToolStripMenuItem
+            // crearRolToolStripMenuItem
             // 
-            this.asignarRolToolStripMenuItem.Name = "asignarRolToolStripMenuItem";
-            resources.ApplyResources(this.asignarRolToolStripMenuItem, "asignarRolToolStripMenuItem");
-            this.asignarRolToolStripMenuItem.Click += new System.EventHandler(this.asignarRolToolStripMenuItem_Click);
+            this.crearRolToolStripMenuItem.Name = "crearRolToolStripMenuItem";
+            this.crearRolToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.crearRolToolStripMenuItem.Text = "Crear rol";
+            this.crearRolToolStripMenuItem.Click += new System.EventHandler(this.crearRolToolStripMenuItem_Click);
             // 
-            // asignarRolToolStripMenuItem1
+            // asignarToolStripMenuItem
             // 
-            this.asignarRolToolStripMenuItem1.Name = "asignarRolToolStripMenuItem1";
-            resources.ApplyResources(this.asignarRolToolStripMenuItem1, "asignarRolToolStripMenuItem1");
-            this.asignarRolToolStripMenuItem1.Click += new System.EventHandler(this.asignarRolToolStripMenuItem1_Click);
+            this.asignarToolStripMenuItem.Name = "asignarToolStripMenuItem";
+            this.asignarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.asignarToolStripMenuItem.Text = "Asignar";
             // 
-            // subMenuVentas
+            // rolesToolStripMenuItem1
             // 
-            this.subMenuVentas.Name = "subMenuVentas";
-            resources.ApplyResources(this.subMenuVentas, "subMenuVentas");
-            // 
-            // subMenuReportes
-            // 
-            this.subMenuReportes.Name = "subMenuReportes";
-            resources.ApplyResources(this.subMenuReportes, "subMenuReportes");
+            this.rolesToolStripMenuItem1.Name = "rolesToolStripMenuItem1";
+            this.rolesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.rolesToolStripMenuItem1.Text = "Roles";
             // 
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            resources.ApplyResources(this.ventasToolStripMenuItem, "ventasToolStripMenuItem");
-            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ventasToolStripMenuItem.Text = "Ventas";
+            // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // frmMenu
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ControlBox = false;
-            this.Controls.Add(this.menuStrip);
-            this.MainMenuStrip = this.menuStrip;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";
+            this.Text = "frmMenu";
             this.Load += new System.EventHandler(this.frmMenu_Load);
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,15 +137,15 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem crearRolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem subMenuProveedores;
-        private System.Windows.Forms.ToolStripMenuItem subMenuUsuario;
-        private System.Windows.Forms.ToolStripMenuItem subMenuRoles;
-        private System.Windows.Forms.ToolStripMenuItem asignarRolToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem asignarRolToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem subMenuVentas;
-        private System.Windows.Forms.ToolStripMenuItem subMenuReportes;
     }
 }

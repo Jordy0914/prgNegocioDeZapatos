@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,43 +12,26 @@ using System.Windows.Forms;
 
 namespace prgNegocioDeZapatos
 {
-    public partial class frmMenu : Form
+    public partial class frmMenu : MaterialForm
+    {
+        private readonly MaterialSkinManager materialSkinManager;
     {
         public frmMenu()
         {
             InitializeComponent();
-            this.subMenuUsuario.Visible = false;
-            this.subMenuProveedores.Visible = false;
-            this.subMenuReportes.Visible = false;
-            this.menuStrip.Refresh();
-        }
-
-        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            frmAcceso Logeo = new frmAcceso();
-            Logeo.Show();
-        }
-
-        private void asignarRolToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmRol CreacionRoles = new frmRol();
-            CreacionRoles.Show();
-        }
-
-        private void asignarRolToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmAsignarRol AsignarRoles = new frmAsignarRol();
-            AsignarRoles.Show();
-        }
-
-        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmUsuario GestionUsuarios = new frmUsuario();
-            GestionUsuarios.Show();
         }
 
         private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void crearRolToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
