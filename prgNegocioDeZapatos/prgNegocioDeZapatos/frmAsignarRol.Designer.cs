@@ -28,24 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.btnAsignar = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.btnAsignar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario";
             // 
             // comboBox1
             // 
@@ -55,16 +44,6 @@
             this.comboBox1.Size = new System.Drawing.Size(166, 21);
             this.comboBox1.TabIndex = 1;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 139);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Roles";
-            // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
@@ -73,70 +52,85 @@
             this.comboBox2.Size = new System.Drawing.Size(166, 21);
             this.comboBox2.TabIndex = 3;
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(11, 74);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(61, 19);
+            this.materialLabel1.TabIndex = 23;
+            this.materialLabel1.Text = "Usuario";
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(12, 141);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(31, 19);
+            this.materialLabel2.TabIndex = 24;
+            this.materialLabel2.Text = "Rol";
+            // 
             // btnAsignar
             // 
-            this.btnAsignar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnAsignar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAsignar.Location = new System.Drawing.Point(58, 199);
+            this.btnAsignar.Depth = 0;
+            this.btnAsignar.Location = new System.Drawing.Point(47, 193);
+            this.btnAsignar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAsignar.Name = "btnAsignar";
-            this.btnAsignar.Size = new System.Drawing.Size(75, 30);
-            this.btnAsignar.TabIndex = 4;
+            this.btnAsignar.Primary = true;
+            this.btnAsignar.Size = new System.Drawing.Size(75, 32);
+            this.btnAsignar.TabIndex = 25;
             this.btnAsignar.Text = "Asignar";
-            this.btnAsignar.UseVisualStyleBackColor = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label7.Location = new System.Drawing.Point(69, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(148, 29);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Asignar Rol";
+            this.btnAsignar.UseVisualStyleBackColor = true;
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(174, 199);
+            this.btnSalir.Depth = 0;
+            this.btnSalir.Location = new System.Drawing.Point(187, 193);
+            this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 30);
-            this.btnSalir.TabIndex = 22;
+            this.btnSalir.Primary = true;
+            this.btnSalir.Size = new System.Drawing.Size(75, 32);
+            this.btnSalir.TabIndex = 26;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmAsignarRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(297, 248);
             this.ControlBox = false;
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnAsignar);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
             this.Name = "frmAsignarRol";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Asignacion de Roles";
+            this.Load += new System.EventHandler(this.frmAsignarRol_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button btnAsignar;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnSalir;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialRaisedButton btnAsignar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
     }
 }

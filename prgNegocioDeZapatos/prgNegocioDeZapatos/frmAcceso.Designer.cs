@@ -40,11 +40,12 @@
             // 
             this.btnIngresar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnIngresar.Depth = 0;
-            this.btnIngresar.Location = new System.Drawing.Point(109, 292);
+            this.btnIngresar.Location = new System.Drawing.Point(82, 237);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIngresar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Primary = true;
-            this.btnIngresar.Size = new System.Drawing.Size(100, 44);
+            this.btnIngresar.Size = new System.Drawing.Size(75, 36);
             this.btnIngresar.TabIndex = 6;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -54,11 +55,12 @@
             // 
             this.btnSalir.BackColor = System.Drawing.SystemColors.Control;
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(254, 292);
+            this.btnSalir.Location = new System.Drawing.Point(190, 237);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
-            this.btnSalir.Size = new System.Drawing.Size(100, 43);
+            this.btnSalir.Size = new System.Drawing.Size(75, 35);
             this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -70,10 +72,11 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(17, 135);
+            this.materialLabel1.Location = new System.Drawing.Point(13, 110);
+            this.materialLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(74, 24);
+            this.materialLabel1.Size = new System.Drawing.Size(61, 19);
             this.materialLabel1.TabIndex = 8;
             this.materialLabel1.Text = "Usuario";
             // 
@@ -84,10 +87,11 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(12, 190);
+            this.materialLabel2.Location = new System.Drawing.Point(9, 154);
+            this.materialLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(105, 24);
+            this.materialLabel2.Size = new System.Drawing.Size(86, 19);
             this.materialLabel2.TabIndex = 9;
             this.materialLabel2.Text = "Contraseña";
             // 
@@ -96,14 +100,15 @@
             this.materialSingleLineTextField1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.materialSingleLineTextField1.Depth = 0;
             this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(177, 131);
+            this.materialSingleLineTextField1.Location = new System.Drawing.Point(133, 106);
+            this.materialSingleLineTextField1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
             this.materialSingleLineTextField1.PasswordChar = '\0';
             this.materialSingleLineTextField1.SelectedText = "";
             this.materialSingleLineTextField1.SelectionLength = 0;
             this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(164, 28);
+            this.materialSingleLineTextField1.Size = new System.Drawing.Size(123, 23);
             this.materialSingleLineTextField1.TabIndex = 10;
             this.materialSingleLineTextField1.UseSystemPasswordChar = false;
             // 
@@ -112,23 +117,24 @@
             this.materialSingleLineTextField2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.materialSingleLineTextField2.Depth = 0;
             this.materialSingleLineTextField2.Hint = "";
-            this.materialSingleLineTextField2.Location = new System.Drawing.Point(177, 190);
+            this.materialSingleLineTextField2.Location = new System.Drawing.Point(133, 154);
+            this.materialSingleLineTextField2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
             this.materialSingleLineTextField2.PasswordChar = '\0';
             this.materialSingleLineTextField2.SelectedText = "";
             this.materialSingleLineTextField2.SelectionLength = 0;
             this.materialSingleLineTextField2.SelectionStart = 0;
-            this.materialSingleLineTextField2.Size = new System.Drawing.Size(164, 28);
+            this.materialSingleLineTextField2.Size = new System.Drawing.Size(123, 23);
             this.materialSingleLineTextField2.TabIndex = 11;
             this.materialSingleLineTextField2.UseSystemPasswordChar = false;
             // 
             // frmAcceso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(501, 359);
+            this.ClientSize = new System.Drawing.Size(376, 292);
             this.ControlBox = false;
             this.Controls.Add(this.materialSingleLineTextField2);
             this.Controls.Add(this.materialSingleLineTextField1);
@@ -136,10 +142,10 @@
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIngresar);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAcceso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de Sesion";
+            this.Load += new System.EventHandler(this.frmAcceso_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
