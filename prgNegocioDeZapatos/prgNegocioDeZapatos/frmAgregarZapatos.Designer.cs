@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.cbxColor = new System.Windows.Forms.ComboBox();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
-            this.txtTalla = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtModelo = new System.Windows.Forms.TextBox();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.cboColor = new System.Windows.Forms.ComboBox();
+            this.txtCategoria = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtTalla = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtModelo = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtCodigo = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,122 +42,125 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtPrecio = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtCosto = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtCosto = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnModificar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtConsultar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnAgregar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // cboColor
             // 
-            this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.cbxColor);
-            this.groupBox1.Controls.Add(this.txtCategoria);
-            this.groupBox1.Controls.Add(this.txtTalla);
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.txtModelo);
-            this.groupBox1.Controls.Add(this.txtCodigo);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 42);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(380, 334);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Informacion General";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(271, 42);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 32);
-            this.btnBuscar.TabIndex = 5;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // cbxColor
-            // 
-            this.cbxColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxColor.FormattingEnabled = true;
-            this.cbxColor.Items.AddRange(new object[] {
-            "Negro",
-            "Amarrillo",
-            "Cafe",
-            "Blanco",
-            "Azul",
-            "Rojo",
-            "Rosado",
-            "Verde",
-            "Kaquis"});
-            this.cbxColor.Location = new System.Drawing.Point(106, 242);
-            this.cbxColor.Name = "cbxColor";
-            this.cbxColor.Size = new System.Drawing.Size(147, 23);
-            this.cbxColor.TabIndex = 11;
+            this.cboColor.FormattingEnabled = true;
+            this.cboColor.Location = new System.Drawing.Point(111, 245);
+            this.cboColor.Name = "cboColor";
+            this.cboColor.Size = new System.Drawing.Size(142, 28);
+            this.cboColor.TabIndex = 18;
             // 
             // txtCategoria
             // 
-            this.txtCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoria.Location = new System.Drawing.Point(106, 292);
+            this.txtCategoria.Depth = 0;
+            this.txtCategoria.Hint = "";
+            this.txtCategoria.Location = new System.Drawing.Point(111, 287);
+            this.txtCategoria.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(147, 21);
-            this.txtCategoria.TabIndex = 10;
+            this.txtCategoria.PasswordChar = '\0';
+            this.txtCategoria.SelectedText = "";
+            this.txtCategoria.SelectionLength = 0;
+            this.txtCategoria.SelectionStart = 0;
+            this.txtCategoria.Size = new System.Drawing.Size(147, 28);
+            this.txtCategoria.TabIndex = 17;
+            this.txtCategoria.UseSystemPasswordChar = false;
             // 
             // txtTalla
             // 
-            this.txtTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTalla.Location = new System.Drawing.Point(106, 194);
+            this.txtTalla.Depth = 0;
+            this.txtTalla.Hint = "";
+            this.txtTalla.Location = new System.Drawing.Point(106, 192);
+            this.txtTalla.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTalla.Name = "txtTalla";
-            this.txtTalla.Size = new System.Drawing.Size(147, 21);
-            this.txtTalla.TabIndex = 9;
+            this.txtTalla.PasswordChar = '\0';
+            this.txtTalla.SelectedText = "";
+            this.txtTalla.SelectionLength = 0;
+            this.txtTalla.SelectionStart = 0;
+            this.txtTalla.Size = new System.Drawing.Size(147, 28);
+            this.txtTalla.TabIndex = 16;
+            this.txtTalla.UseSystemPasswordChar = false;
             // 
             // txtNombre
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(106, 148);
+            this.txtNombre.Depth = 0;
+            this.txtNombre.Hint = "";
+            this.txtNombre.Location = new System.Drawing.Point(106, 146);
+            this.txtNombre.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(147, 21);
-            this.txtNombre.TabIndex = 8;
+            this.txtNombre.PasswordChar = '\0';
+            this.txtNombre.SelectedText = "";
+            this.txtNombre.SelectionLength = 0;
+            this.txtNombre.SelectionStart = 0;
+            this.txtNombre.Size = new System.Drawing.Size(147, 28);
+            this.txtNombre.TabIndex = 15;
+            this.txtNombre.UseSystemPasswordChar = false;
             // 
             // txtModelo
             // 
-            this.txtModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModelo.Location = new System.Drawing.Point(106, 97);
+            this.txtModelo.Depth = 0;
+            this.txtModelo.Hint = "";
+            this.txtModelo.Location = new System.Drawing.Point(106, 92);
+            this.txtModelo.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(147, 21);
-            this.txtModelo.TabIndex = 7;
+            this.txtModelo.PasswordChar = '\0';
+            this.txtModelo.SelectedText = "";
+            this.txtModelo.SelectionLength = 0;
+            this.txtModelo.SelectionStart = 0;
+            this.txtModelo.Size = new System.Drawing.Size(147, 28);
+            this.txtModelo.TabIndex = 14;
+            this.txtModelo.UseSystemPasswordChar = false;
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(106, 48);
+            this.txtCodigo.Depth = 0;
+            this.txtCodigo.Hint = "";
+            this.txtCodigo.Location = new System.Drawing.Point(106, 45);
+            this.txtCodigo.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(147, 21);
-            this.txtCodigo.TabIndex = 6;
+            this.txtCodigo.PasswordChar = '\0';
+            this.txtCodigo.SelectedText = "";
+            this.txtCodigo.SelectionLength = 0;
+            this.txtCodigo.SelectionStart = 0;
+            this.txtCodigo.Size = new System.Drawing.Size(147, 28);
+            this.txtCodigo.TabIndex = 13;
+            this.txtCodigo.UseSystemPasswordChar = false;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Depth = 0;
+            this.btnBuscar.Location = new System.Drawing.Point(271, 33);
+            this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Primary = true;
+            this.btnBuscar.Size = new System.Drawing.Size(89, 40);
+            this.btnBuscar.TabIndex = 12;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(15, 295);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 16);
+            this.label6.Size = new System.Drawing.Size(90, 20);
             this.label6.TabIndex = 5;
             this.label6.Text = "Categoria";
             // 
@@ -167,7 +169,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(16, 245);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 16);
+            this.label5.Size = new System.Drawing.Size(54, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "Color";
             // 
@@ -176,7 +178,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(17, 200);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.Size = new System.Drawing.Size(50, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Talla";
             // 
@@ -185,7 +187,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(15, 154);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 16);
+            this.label3.Size = new System.Drawing.Size(74, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nombre";
             // 
@@ -194,7 +196,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(17, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 16);
+            this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Modelo";
             // 
@@ -203,19 +205,20 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(15, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 16);
+            this.label1.Size = new System.Drawing.Size(67, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo";
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.txtCantidad);
             this.groupBox2.Controls.Add(this.txtPrecio);
+            this.groupBox2.Controls.Add(this.txtCosto);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.txtCosto);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(474, 42);
+            this.groupBox2.Location = new System.Drawing.Point(454, 166);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(280, 190);
             this.groupBox2.TabIndex = 1;
@@ -223,19 +226,48 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Location = new System.Drawing.Point(92, 115);
+            this.txtCantidad.Depth = 0;
+            this.txtCantidad.Hint = "";
+            this.txtCantidad.Location = new System.Drawing.Point(105, 111);
+            this.txtCantidad.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(129, 21);
-            this.txtCantidad.TabIndex = 15;
+            this.txtCantidad.PasswordChar = '\0';
+            this.txtCantidad.SelectedText = "";
+            this.txtCantidad.SelectionLength = 0;
+            this.txtCantidad.SelectionStart = 0;
+            this.txtCantidad.Size = new System.Drawing.Size(147, 28);
+            this.txtCantidad.TabIndex = 18;
+            this.txtCantidad.UseSystemPasswordChar = false;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(92, 67);
+            this.txtPrecio.Depth = 0;
+            this.txtPrecio.Hint = "";
+            this.txtPrecio.Location = new System.Drawing.Point(92, 65);
+            this.txtPrecio.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(129, 21);
-            this.txtPrecio.TabIndex = 14;
+            this.txtPrecio.PasswordChar = '\0';
+            this.txtPrecio.SelectedText = "";
+            this.txtPrecio.SelectionLength = 0;
+            this.txtPrecio.SelectionStart = 0;
+            this.txtPrecio.Size = new System.Drawing.Size(147, 28);
+            this.txtPrecio.TabIndex = 17;
+            this.txtPrecio.UseSystemPasswordChar = false;
+            // 
+            // txtCosto
+            // 
+            this.txtCosto.Depth = 0;
+            this.txtCosto.Hint = "";
+            this.txtCosto.Location = new System.Drawing.Point(92, 25);
+            this.txtCosto.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtCosto.Name = "txtCosto";
+            this.txtCosto.PasswordChar = '\0';
+            this.txtCosto.SelectedText = "";
+            this.txtCosto.SelectionLength = 0;
+            this.txtCosto.SelectionStart = 0;
+            this.txtCosto.Size = new System.Drawing.Size(147, 28);
+            this.txtCosto.TabIndex = 16;
+            this.txtCosto.UseSystemPasswordChar = false;
             // 
             // label9
             // 
@@ -243,7 +275,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(16, 119);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 16);
+            this.label9.Size = new System.Drawing.Size(83, 20);
             this.label9.TabIndex = 13;
             this.label9.Text = "Cantidad";
             // 
@@ -253,17 +285,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(16, 73);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 16);
+            this.label8.Size = new System.Drawing.Size(63, 20);
             this.label8.TabIndex = 12;
             this.label8.Text = "Precio";
-            // 
-            // txtCosto
-            // 
-            this.txtCosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCosto.Location = new System.Drawing.Point(92, 29);
-            this.txtCosto.Name = "txtCosto";
-            this.txtCosto.Size = new System.Drawing.Size(129, 21);
-            this.txtCosto.TabIndex = 11;
             // 
             // label7
             // 
@@ -271,113 +295,135 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(16, 33);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 16);
+            this.label7.Size = new System.Drawing.Size(58, 20);
             this.label7.TabIndex = 6;
             this.label7.Text = "Costo";
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.btnSalir);
             this.groupBox3.Controls.Add(this.btnEliminar);
             this.groupBox3.Controls.Add(this.btnModificar);
-            this.groupBox3.Controls.Add(this.btnConsultar);
-            this.groupBox3.Controls.Add(this.btnSalir);
+            this.groupBox3.Controls.Add(this.txtConsultar);
             this.groupBox3.Controls.Add(this.btnAgregar);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox3.Location = new System.Drawing.Point(12, 414);
+            this.groupBox3.Location = new System.Drawing.Point(12, 444);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(763, 100);
+            this.groupBox3.Size = new System.Drawing.Size(763, 106);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Depth = 0;
+            this.btnSalir.Location = new System.Drawing.Point(640, 39);
+            this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Primary = true;
+            this.btnSalir.Size = new System.Drawing.Size(104, 40);
+            this.btnSalir.TabIndex = 17;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(483, 47);
+            this.btnEliminar.Depth = 0;
+            this.btnEliminar.Location = new System.Drawing.Point(484, 39);
+            this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(86, 32);
-            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.Primary = true;
+            this.btnEliminar.Size = new System.Drawing.Size(113, 40);
+            this.btnEliminar.TabIndex = 16;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(319, 47);
+            this.btnModificar.Depth = 0;
+            this.btnModificar.Location = new System.Drawing.Point(329, 39);
+            this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(89, 32);
-            this.btnModificar.TabIndex = 3;
+            this.btnModificar.Primary = true;
+            this.btnModificar.Size = new System.Drawing.Size(108, 40);
+            this.btnModificar.TabIndex = 15;
             this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // btnConsultar
+            // txtConsultar
             // 
-            this.btnConsultar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.Location = new System.Drawing.Point(157, 47);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(96, 32);
-            this.btnConsultar.TabIndex = 2;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = false;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(651, 47);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(80, 32);
-            this.btnSalir.TabIndex = 1;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.txtConsultar.Depth = 0;
+            this.txtConsultar.Location = new System.Drawing.Point(19, 39);
+            this.txtConsultar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtConsultar.Name = "txtConsultar";
+            this.txtConsultar.Primary = true;
+            this.txtConsultar.Size = new System.Drawing.Size(114, 40);
+            this.txtConsultar.TabIndex = 14;
+            this.txtConsultar.Text = "Consultar";
+            this.txtConsultar.UseVisualStyleBackColor = true;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(18, 47);
+            this.btnAgregar.Depth = 0;
+            this.btnAgregar.Location = new System.Drawing.Point(173, 39);
+            this.btnAgregar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(83, 32);
-            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.Primary = true;
+            this.btnAgregar.Size = new System.Drawing.Size(113, 40);
+            this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.cboColor);
+            this.groupBox1.Controls.Add(this.txtCategoria);
+            this.groupBox1.Controls.Add(this.txtTalla);
+            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.txtModelo);
+            this.groupBox1.Controls.Add(this.txtCodigo);
+            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(46, 104);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(380, 334);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Informacion General";
             // 
             // frmAgregarZapatos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(788, 531);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(788, 571);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "frmAgregarZapatos";
             this.Text = "Agregar Zapatos";
             this.Load += new System.EventHandler(this.frmAgregarZapatos_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtCategoria;
-        private System.Windows.Forms.TextBox txtTalla;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtModelo;
-        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -385,19 +431,25 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtCosto;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cbxColor;
-        private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnConsultar;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtTalla;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtNombre;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtModelo;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtCodigo;
+        private MaterialSkin.Controls.MaterialRaisedButton btnBuscar;
+        private System.Windows.Forms.ComboBox cboColor;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtCategoria;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtCantidad;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtPrecio;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtCosto;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
+        private MaterialSkin.Controls.MaterialRaisedButton btnEliminar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnModificar;
+        private MaterialSkin.Controls.MaterialRaisedButton txtConsultar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnAgregar;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
