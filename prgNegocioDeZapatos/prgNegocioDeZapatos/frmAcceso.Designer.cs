@@ -41,7 +41,7 @@
             this.btnIngresar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnIngresar.Depth = 0;
             this.btnIngresar.Location = new System.Drawing.Point(82, 237);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Primary = true;
@@ -56,7 +56,7 @@
             this.btnSalir.BackColor = System.Drawing.SystemColors.Control;
             this.btnSalir.Depth = 0;
             this.btnSalir.Location = new System.Drawing.Point(190, 237);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
@@ -64,6 +64,7 @@
             this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // materialLabel1
             // 
@@ -101,7 +102,7 @@
             this.materialSingleLineTextField1.Depth = 0;
             this.materialSingleLineTextField1.Hint = "";
             this.materialSingleLineTextField1.Location = new System.Drawing.Point(133, 106);
-            this.materialSingleLineTextField1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.materialSingleLineTextField1.Margin = new System.Windows.Forms.Padding(2);
             this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
             this.materialSingleLineTextField1.PasswordChar = '\0';
@@ -118,7 +119,7 @@
             this.materialSingleLineTextField2.Depth = 0;
             this.materialSingleLineTextField2.Hint = "";
             this.materialSingleLineTextField2.Location = new System.Drawing.Point(133, 154);
-            this.materialSingleLineTextField2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.materialSingleLineTextField2.Margin = new System.Windows.Forms.Padding(2);
             this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
             this.materialSingleLineTextField2.PasswordChar = '\0';

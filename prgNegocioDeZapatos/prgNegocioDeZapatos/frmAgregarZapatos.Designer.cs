@@ -64,7 +64,7 @@
             // 
             this.cboColor.FormattingEnabled = true;
             this.cboColor.Location = new System.Drawing.Point(83, 187);
-            this.cboColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboColor.Margin = new System.Windows.Forms.Padding(2);
             this.cboColor.Name = "cboColor";
             this.cboColor.Size = new System.Drawing.Size(108, 24);
             this.cboColor.TabIndex = 18;
@@ -74,7 +74,7 @@
             this.txtCategoria.Depth = 0;
             this.txtCategoria.Hint = "";
             this.txtCategoria.Location = new System.Drawing.Point(83, 219);
-            this.txtCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategoria.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.PasswordChar = '\0';
@@ -90,7 +90,7 @@
             this.txtTalla.Depth = 0;
             this.txtTalla.Hint = "";
             this.txtTalla.Location = new System.Drawing.Point(80, 147);
-            this.txtTalla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTalla.Margin = new System.Windows.Forms.Padding(2);
             this.txtTalla.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTalla.Name = "txtTalla";
             this.txtTalla.PasswordChar = '\0';
@@ -106,7 +106,7 @@
             this.txtNombre.Depth = 0;
             this.txtNombre.Hint = "";
             this.txtNombre.Location = new System.Drawing.Point(80, 112);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
@@ -122,7 +122,7 @@
             this.txtModelo.Depth = 0;
             this.txtModelo.Hint = "";
             this.txtModelo.Location = new System.Drawing.Point(80, 70);
-            this.txtModelo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtModelo.Margin = new System.Windows.Forms.Padding(2);
             this.txtModelo.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.PasswordChar = '\0';
@@ -138,7 +138,7 @@
             this.txtCodigo.Depth = 0;
             this.txtCodigo.Hint = "";
             this.txtCodigo.Location = new System.Drawing.Point(80, 34);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigo.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.PasswordChar = '\0';
@@ -153,7 +153,7 @@
             // 
             this.btnBuscar.Depth = 0;
             this.btnBuscar.Location = new System.Drawing.Point(203, 25);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Primary = true;
@@ -232,9 +232,9 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(340, 127);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(210, 145);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -244,7 +244,7 @@
             this.txtCantidad.Depth = 0;
             this.txtCantidad.Hint = "";
             this.txtCantidad.Location = new System.Drawing.Point(79, 85);
-            this.txtCantidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidad.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.PasswordChar = '\0';
@@ -260,7 +260,7 @@
             this.txtPrecio.Depth = 0;
             this.txtPrecio.Hint = "";
             this.txtPrecio.Location = new System.Drawing.Point(69, 50);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.PasswordChar = '\0';
@@ -276,7 +276,7 @@
             this.txtCosto.Depth = 0;
             this.txtCosto.Hint = "";
             this.txtCosto.Location = new System.Drawing.Point(69, 19);
-            this.txtCosto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCosto.Margin = new System.Windows.Forms.Padding(2);
             this.txtCosto.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.PasswordChar = '\0';
@@ -331,9 +331,9 @@
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox3.Location = new System.Drawing.Point(9, 340);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(572, 81);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
@@ -342,7 +342,7 @@
             // 
             this.btnSalir.Depth = 0;
             this.btnSalir.Location = new System.Drawing.Point(480, 30);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
@@ -350,12 +350,13 @@
             this.btnSalir.TabIndex = 17;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            
             // 
             // btnEliminar
             // 
             this.btnEliminar.Depth = 0;
             this.btnEliminar.Location = new System.Drawing.Point(363, 30);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Primary = true;
@@ -368,7 +369,7 @@
             // 
             this.btnModificar.Depth = 0;
             this.btnModificar.Location = new System.Drawing.Point(247, 30);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Primary = true;
@@ -381,7 +382,7 @@
             // 
             this.txtConsultar.Depth = 0;
             this.txtConsultar.Location = new System.Drawing.Point(14, 30);
-            this.txtConsultar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConsultar.Margin = new System.Windows.Forms.Padding(2);
             this.txtConsultar.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtConsultar.Name = "txtConsultar";
             this.txtConsultar.Primary = true;
@@ -394,7 +395,7 @@
             // 
             this.btnAgregar.Depth = 0;
             this.btnAgregar.Location = new System.Drawing.Point(130, 30);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Primary = true;
@@ -421,9 +422,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(34, 80);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(285, 255);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -441,7 +442,7 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAgregarZapatos";
             this.Text = "Agregar Zapatos";
             this.Load += new System.EventHandler(this.frmAgregarZapatos_Load);
