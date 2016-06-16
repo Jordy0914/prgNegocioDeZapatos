@@ -15,10 +15,14 @@ namespace prgNegocioDeZapatos
     public partial class frmMenu : MaterialForm
     {
         private readonly MaterialSkinManager materialSkinManager;
-    {
         public frmMenu()
         {
+            materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
             InitializeComponent();
+
         }
 
         private void frmMenu_Load(object sender, EventArgs e)
