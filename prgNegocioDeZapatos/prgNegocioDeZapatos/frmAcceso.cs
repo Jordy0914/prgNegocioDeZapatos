@@ -27,12 +27,19 @@ namespace prgNegocioDeZapatos
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-           
+            frmMenu menu = new frmMenu();
+            menu.Visible = true;
+            this.Visible = false;
         }
 
         private void frmAcceso_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
