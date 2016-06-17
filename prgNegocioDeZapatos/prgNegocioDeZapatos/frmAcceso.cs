@@ -27,7 +27,7 @@ namespace prgNegocioDeZapatos
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            frmMenu menu = new frmMenu();
+            MainForm menu = new MainForm();
             menu.Visible = true;
             this.Visible = false;
         }
