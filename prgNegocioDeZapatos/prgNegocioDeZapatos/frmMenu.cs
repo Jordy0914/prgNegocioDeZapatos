@@ -25,19 +25,6 @@ namespace prgNegocioDeZapatos
 
         }
 
-        private void frmMenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void crearRolToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
     }
 }

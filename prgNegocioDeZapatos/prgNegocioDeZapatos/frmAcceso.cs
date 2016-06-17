@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using MaterialSkin.Animations;
 namespace prgNegocioDeZapatos
 {
     public partial class frmAcceso : MaterialForm
