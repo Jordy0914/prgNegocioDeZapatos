@@ -10,11 +10,15 @@ namespace Entidades
     {
 
         #region Atributos
-
+        private String login;
+        private String password;
         private String nombre;
-        private String apellido;
+        private String apellido1;
+        private String apellido2;
         private int cedula;
         private String direccion;
+        private String tipoIdentificacion;
+        private String puesto;
         private String fechaNacimiento;
         private String telefono;
         private String email;
@@ -25,9 +29,13 @@ namespace Entidades
 
         public clsEntidadUsuario()
         {
-
+            this.login = "";
+            this.password = "";
             this.nombre = "";
-            this.apellido = "";
+            this.apellido1 = "";
+            this.apellido2 = "";
+            this.tipoIdentificacion = "";
+            this.puesto = "";
             this.cedula = 0;
             this.direccion = "";
             this.fechaNacimiento = "";
@@ -52,15 +60,26 @@ namespace Entidades
         }
 
 
-        public void setApellido(String apellido)
+        public void setApellido1(String apellido1)
         {
 
-            this.apellido = apellido;
+            this.apellido1 = apellido1;
         }
 
         public String getApellido()
         {
-            return this.apellido;
+            return this.apellido1;
+        }
+
+        public void setApellido2(String apellido2)
+        {
+
+            this.apellido2 = apellido2;
+        }
+
+        public String getApellido2()
+        {
+            return this.apellido2;
         }
 
         public void setCedula(int cedula)
@@ -120,7 +139,45 @@ namespace Entidades
             return this.email;
         }
 
+        public void setLogin(String login)
+        {
+            this.login = login;
+        }
 
+        public String getLogin()
+        {
+            return this.login;
+        }
+
+        public void setPassword (String password)
+        {
+            this.password = password;
+        }
+
+        public String getPassword()
+        {
+            return this.password;
+        }
+
+        public void setTipoIdentificacion(String tipoIdentificacion)
+        {
+            this.tipoIdentificacion = tipoIdentificacion;
+        }
+
+        public String getTipoIdentificacion()
+        {
+            return this.tipoIdentificacion;
+        }
+
+        public void setPuesto(String puesto)
+        {
+            this.puesto = puesto;
+        }
+
+        public String getPuesto()
+        {
+            return this.puesto;
+        }
 
 
         #endregion

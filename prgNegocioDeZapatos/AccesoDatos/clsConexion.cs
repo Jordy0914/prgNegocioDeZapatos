@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Data.SqlClient;
 
-namespace Modelo
+namespace AccesoDatos
 {
     public class clsConexion
     {
@@ -36,7 +36,7 @@ namespace Modelo
             this.codigo = "";
             this.clave = "";
             this.perfil = "";
-            this.baseDatos = "";
+            this.baseDatos = "tbZapatos";
 
         }//fin del metodo constructor
 
@@ -175,7 +175,8 @@ namespace Modelo
         public string mNomServidor()
         {
 
-            return Dns.GetHostName();
+          //  return Dns.GetHostName();
+            return "DELL\\SQLEXPRESS";
 
         }
 
