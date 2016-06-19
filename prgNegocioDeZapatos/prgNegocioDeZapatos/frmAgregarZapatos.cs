@@ -22,7 +22,7 @@ namespace prgNegocioDeZapatos
         clsConexion conexion;
         clsEntidadInventario inventario;
         clsZapatos clInventario;
-        private Boolean bolAgregar;
+        private Boolean bolAgregar,bolModificar;
 
 
         public frmAgregarZapatos(clsConexion cone)
@@ -80,7 +80,28 @@ namespace prgNegocioDeZapatos
 
         }//fin del metodo del boton de agregar
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            inventario.setModelo(txtModelo.Text);
+            inventario.setNombre(txtNombre.Text);
+            inventario.setTalla(Double.Parse(txtTalla.Text));
+            inventario.setColor(cboColor.Text);
+            inventario.setPrecio(Convert.ToInt32(txtPrecio.Text));
+            inventario.setCosto(Convert.ToInt32(txtCosto.Text));
+            inventario.setMarca(txtMarca.Text);
+            inventario.setCategoria(txtCategoria.Text);
+            inventario.setCantidad(Convert.ToInt32(txtCantidad.Text));
 
+            bolModificar = clInventario.mModificarInventario(conexion, inventario);
+
+            if (bolModificar == true)
+            {
+                MessageBox.Show("El Inventario ha sido modificado correctamente", "Registro correcto", MessageBoxButtons.OK);
+
+
+            }//fin del if
+            this.limpiar();
+        }
 
         public void limpiar()
         {

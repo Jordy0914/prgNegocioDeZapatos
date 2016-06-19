@@ -42,11 +42,11 @@ namespace LogicaNegocios
 
         public Boolean mInsertar(clsConexion cone, clsEntidadInventario pEntidadInventario)
         {
-                strSentencia = "Insert into tbInventario(idZapatos,idEmpledo,modelo,nombre,talla,color,costo,precio,marca,categoria,cantidad) Values ('" + pEntidadInventario.getIdZapato() + "','"
-                +pEntidadInventario.getIdEmpleado() + ",'"+pEntidadInventario.getModelo()+"','"+pEntidadInventario.getNombre()+"','"
-                +pEntidadInventario.getTalla()+"','"+pEntidadInventario.getColor()+"','"+pEntidadInventario.getCosto()+"','"
-                +pEntidadInventario.getPrecio()+"','"+pEntidadInventario.getMarca()+"','"+pEntidadInventario.getCategoria()+"','"
-                +pEntidadInventario.getCantidad()+"'')";
+          strSentencia = "Insert into tbInventario(idZapatos,idEmpledo,modelo,nombre,talla,color,costo,precio,marca,categoria,cantidad) Values (" + pEntidadInventario.getIdZapato() + ",'"
+                +pEntidadInventario.getIdEmpleado() + ",'"+pEntidadInventario.getModelo()+"','"+pEntidadInventario.getNombre()+"',"
+                +pEntidadInventario.getTalla()+",'"+pEntidadInventario.getColor()+"',"+pEntidadInventario.getCosto()+","
+                +pEntidadInventario.getPrecio()+",'"+pEntidadInventario.getMarca()+"','"+pEntidadInventario.getCategoria()+"',"
+                +pEntidadInventario.getCantidad()+"')";
             return cone.mEjecutar(strSentencia, cone);
         }
 
@@ -55,10 +55,22 @@ namespace LogicaNegocios
         public Boolean mEliminarInventario(clsConexion cone, clsEntidadInventario pEntidadInventario)
         {
 
-            strSentencia = "Delete from tbInventario where idZapato='" + pEntidadInventario.getIdZapato() + "'";
+            strSentencia = "Delete from tbInventario where idZapato=" + pEntidadInventario.getIdZapato() + "";
             return cone.mEjecutar(strSentencia, cone);
 
         }//fin del metodo
+
+        public Boolean mModificarInventario(clsConexion cone, clsEntidadInventario pEntidadInventario)
+        {
+
+         strSentencia = "Update tbInventario set modelo='" + pEntidadInventario.getModelo() + "', talla=" + pEntidadInventario.getTalla() + 
+                " , color='"+pEntidadInventario.getColor()+"', costo= "+pEntidadInventario.getCosto()+
+                " , precio= "+pEntidadInventario.getPrecio()+" ,marca='"+pEntidadInventario.getMarca()+
+                "',categoria='"+pEntidadInventario.getCategoria()+"', cantidad="+pEntidadInventario.getCantidad()+" where idZpato=" + pEntidadInventario.getIdZapato() +"";
+
+            return cone.mEjecutar(strSentencia, cone);
+
+        }//fin del metodo modificar 
 
 
         #endregion
