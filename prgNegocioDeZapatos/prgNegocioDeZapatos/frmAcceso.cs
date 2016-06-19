@@ -78,7 +78,7 @@ namespace prgNegocioDeZapatos
 
 
         #region Metodos Propios
-        //Este métoos permite verificar la existencia del usario segun el codigo y la clave
+        //Este métoos permite verificar la existencia del usuario segun el codigo y la clave
         public Boolean mValidarDatos()
         {
             if (intContador <= 2)

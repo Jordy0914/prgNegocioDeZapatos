@@ -36,7 +36,7 @@ namespace AccesoDatos
             this.codigo = "";
             this.clave = "";
             this.perfil = "";
-            this.baseDatos = "tbZapatos";
+            this.baseDatos = "dbZapatos";
 
         }//fin del metodo constructor
 
