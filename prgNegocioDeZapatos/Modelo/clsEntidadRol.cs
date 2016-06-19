@@ -12,7 +12,7 @@ namespace Entidades
         #region Atributos
 
         private String nombre;
-        private int codigo;
+        private int idRol;
         private int insertar;
         private int eliminar;
         private int consultar;
@@ -27,7 +27,7 @@ namespace Entidades
         {
 
             this.nombre = "";
-            this.codigo = 0;
+            this.idRol = 0;
             this.insertar = 0;
             this.eliminar = 0;
             this.consultar = 0;
@@ -53,17 +53,17 @@ namespace Entidades
             return this.nombre;
         }
 
-        public void setCodigo(int codigo)
+        public void setIdRol(int idRol)
         {
-            this.codigo = codigo;
+            this.idRol = idRol;
 
         }
 
 
-        public int getCodigo()
+        public int getIdRol()
         {
 
-            return this.codigo;
+            return this.idRol;
         }
 
 

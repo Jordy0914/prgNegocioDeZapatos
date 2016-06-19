@@ -175,8 +175,8 @@ namespace AccesoDatos
         public string mNomServidor()
         {
 
-          //  return Dns.GetHostName();
-            return "DELL\\SQLEXPRESS";
+           return Dns.GetHostName();
+           // return "DELL\\SQLEXPRESS";
 
         }
 

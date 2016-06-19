@@ -55,6 +55,8 @@
             this.txtConsultar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAgregar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtMarca = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -63,6 +65,20 @@
             // cboColor
             // 
             this.cboColor.FormattingEnabled = true;
+            this.cboColor.Items.AddRange(new object[] {
+            "Negro",
+            "Cafe",
+            "Blanco",
+            "Azul",
+            "Rojo ",
+            "Amarrillo",
+            "Rosado",
+            "Verde",
+            "Anaranjado",
+            "Kaquis",
+            "Celeste",
+            "Turquesa",
+            "Fucsia"});
             this.cboColor.Location = new System.Drawing.Point(83, 187);
             this.cboColor.Margin = new System.Windows.Forms.Padding(2);
             this.cboColor.Name = "cboColor";
@@ -73,8 +89,9 @@
             // 
             this.txtCategoria.Depth = 0;
             this.txtCategoria.Hint = "";
-            this.txtCategoria.Location = new System.Drawing.Point(83, 219);
+            this.txtCategoria.Location = new System.Drawing.Point(91, 262);
             this.txtCategoria.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCategoria.MaxLength = 32767;
             this.txtCategoria.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.PasswordChar = '\0';
@@ -83,6 +100,7 @@
             this.txtCategoria.SelectionStart = 0;
             this.txtCategoria.Size = new System.Drawing.Size(110, 23);
             this.txtCategoria.TabIndex = 17;
+            this.txtCategoria.TabStop = false;
             this.txtCategoria.UseSystemPasswordChar = false;
             // 
             // txtTalla
@@ -91,6 +109,7 @@
             this.txtTalla.Hint = "";
             this.txtTalla.Location = new System.Drawing.Point(80, 147);
             this.txtTalla.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTalla.MaxLength = 32767;
             this.txtTalla.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTalla.Name = "txtTalla";
             this.txtTalla.PasswordChar = '\0';
@@ -99,6 +118,7 @@
             this.txtTalla.SelectionStart = 0;
             this.txtTalla.Size = new System.Drawing.Size(110, 23);
             this.txtTalla.TabIndex = 16;
+            this.txtTalla.TabStop = false;
             this.txtTalla.UseSystemPasswordChar = false;
             // 
             // txtNombre
@@ -107,6 +127,7 @@
             this.txtNombre.Hint = "";
             this.txtNombre.Location = new System.Drawing.Point(80, 112);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombre.MaxLength = 32767;
             this.txtNombre.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
@@ -115,6 +136,7 @@
             this.txtNombre.SelectionStart = 0;
             this.txtNombre.Size = new System.Drawing.Size(110, 23);
             this.txtNombre.TabIndex = 15;
+            this.txtNombre.TabStop = false;
             this.txtNombre.UseSystemPasswordChar = false;
             // 
             // txtModelo
@@ -123,6 +145,7 @@
             this.txtModelo.Hint = "";
             this.txtModelo.Location = new System.Drawing.Point(80, 70);
             this.txtModelo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtModelo.MaxLength = 32767;
             this.txtModelo.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.PasswordChar = '\0';
@@ -131,6 +154,7 @@
             this.txtModelo.SelectionStart = 0;
             this.txtModelo.Size = new System.Drawing.Size(110, 23);
             this.txtModelo.TabIndex = 14;
+            this.txtModelo.TabStop = false;
             this.txtModelo.UseSystemPasswordChar = false;
             // 
             // txtCodigo
@@ -139,6 +163,7 @@
             this.txtCodigo.Hint = "";
             this.txtCodigo.Location = new System.Drawing.Point(80, 34);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCodigo.MaxLength = 32767;
             this.txtCodigo.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.PasswordChar = '\0';
@@ -147,6 +172,7 @@
             this.txtCodigo.SelectionStart = 0;
             this.txtCodigo.Size = new System.Drawing.Size(110, 23);
             this.txtCodigo.TabIndex = 13;
+            this.txtCodigo.TabStop = false;
             this.txtCodigo.UseSystemPasswordChar = false;
             // 
             // btnBuscar
@@ -165,7 +191,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 226);
+            this.label6.Location = new System.Drawing.Point(11, 269);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 16);
@@ -231,7 +257,7 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(340, 127);
+            this.groupBox2.Location = new System.Drawing.Point(342, 156);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
@@ -245,6 +271,7 @@
             this.txtCantidad.Hint = "";
             this.txtCantidad.Location = new System.Drawing.Point(79, 85);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCantidad.MaxLength = 32767;
             this.txtCantidad.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.PasswordChar = '\0';
@@ -253,6 +280,7 @@
             this.txtCantidad.SelectionStart = 0;
             this.txtCantidad.Size = new System.Drawing.Size(110, 23);
             this.txtCantidad.TabIndex = 18;
+            this.txtCantidad.TabStop = false;
             this.txtCantidad.UseSystemPasswordChar = false;
             // 
             // txtPrecio
@@ -261,6 +289,7 @@
             this.txtPrecio.Hint = "";
             this.txtPrecio.Location = new System.Drawing.Point(69, 50);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrecio.MaxLength = 32767;
             this.txtPrecio.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.PasswordChar = '\0';
@@ -269,6 +298,7 @@
             this.txtPrecio.SelectionStart = 0;
             this.txtPrecio.Size = new System.Drawing.Size(110, 23);
             this.txtPrecio.TabIndex = 17;
+            this.txtPrecio.TabStop = false;
             this.txtPrecio.UseSystemPasswordChar = false;
             // 
             // txtCosto
@@ -277,6 +307,7 @@
             this.txtCosto.Hint = "";
             this.txtCosto.Location = new System.Drawing.Point(69, 19);
             this.txtCosto.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCosto.MaxLength = 32767;
             this.txtCosto.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.PasswordChar = '\0';
@@ -285,6 +316,7 @@
             this.txtCosto.SelectionStart = 0;
             this.txtCosto.Size = new System.Drawing.Size(110, 23);
             this.txtCosto.TabIndex = 16;
+            this.txtCosto.TabStop = false;
             this.txtCosto.UseSystemPasswordChar = false;
             // 
             // label9
@@ -330,7 +362,7 @@
             this.groupBox3.Controls.Add(this.btnAgregar);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox3.Location = new System.Drawing.Point(9, 340);
+            this.groupBox3.Location = new System.Drawing.Point(8, 407);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -350,7 +382,6 @@
             this.btnSalir.TabIndex = 17;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            
             // 
             // btnEliminar
             // 
@@ -403,10 +434,13 @@
             this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.txtMarca);
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.cboColor);
             this.groupBox1.Controls.Add(this.txtCategoria);
             this.groupBox1.Controls.Add(this.txtTalla);
@@ -425,17 +459,45 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(285, 255);
+            this.groupBox1.Size = new System.Drawing.Size(285, 312);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion General";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 231);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 16);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Marca";
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.Depth = 0;
+            this.txtMarca.Hint = "";
+            this.txtMarca.Location = new System.Drawing.Point(81, 224);
+            this.txtMarca.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMarca.MaxLength = 32767;
+            this.txtMarca.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.PasswordChar = '\0';
+            this.txtMarca.SelectedText = "";
+            this.txtMarca.SelectionLength = 0;
+            this.txtMarca.SelectionStart = 0;
+            this.txtMarca.Size = new System.Drawing.Size(110, 23);
+            this.txtMarca.TabIndex = 20;
+            this.txtMarca.TabStop = false;
+            this.txtMarca.UseSystemPasswordChar = false;
             // 
             // frmAgregarZapatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(591, 437);
+            this.ClientSize = new System.Drawing.Size(591, 512);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -483,5 +545,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton txtConsultar;
         private MaterialSkin.Controls.MaterialRaisedButton btnAgregar;
         private System.Windows.Forms.GroupBox groupBox1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtMarca;
+        private System.Windows.Forms.Label label10;
     }
 }

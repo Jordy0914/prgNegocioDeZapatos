@@ -26,7 +26,7 @@ namespace LogicaNegocios
             strSentencia = "Select * from tbUsuario where login='" + pEntidadUsuario.getLogin() + "' and password='" + pEntidadUsuario.getPassword() + "'";
             return conexion.mSeleccionar(strSentencia, cone);
         }
-        #endregion
+        
 
         public SqlDataReader mConsultarCodigo (clsConexion cone, Entidades.clsEntidadUsuario pEntidadUsuario)
         {
@@ -47,5 +47,6 @@ namespace LogicaNegocios
             return cone.mEjecutar(strSentencia, cone);
         }
 
+        #endregion
     }
 }
