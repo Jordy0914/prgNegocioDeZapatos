@@ -36,7 +36,7 @@ namespace AccesoDatos
             this.codigo = "";
             this.clave = "";
             this.perfil = "";
-            this.baseDatos = "tbZapatos";
+            this.baseDatos = "dbZapatos";
 
         }//fin del metodo constructor
 
@@ -175,8 +175,8 @@ namespace AccesoDatos
         public string mNomServidor()
         {
 
-          //  return Dns.GetHostName();
-            return "DELL\\SQLEXPRESS";
+           return Dns.GetHostName();
+           // return "DELL\\SQLEXPRESS";
 
         }
 
