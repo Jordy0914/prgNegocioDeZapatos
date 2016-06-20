@@ -55,8 +55,8 @@
             this.txtConsultar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAgregar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.txtMarca = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -64,6 +64,7 @@
             // 
             // cboColor
             // 
+            this.cboColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboColor.FormattingEnabled = true;
             this.cboColor.Items.AddRange(new object[] {
             "Negro",
@@ -82,7 +83,7 @@
             this.cboColor.Location = new System.Drawing.Point(83, 187);
             this.cboColor.Margin = new System.Windows.Forms.Padding(2);
             this.cboColor.Name = "cboColor";
-            this.cboColor.Size = new System.Drawing.Size(108, 24);
+            this.cboColor.Size = new System.Drawing.Size(108, 23);
             this.cboColor.TabIndex = 18;
             // 
             // txtCategoria
@@ -269,7 +270,7 @@
             // 
             this.txtCantidad.Depth = 0;
             this.txtCantidad.Hint = "";
-            this.txtCantidad.Location = new System.Drawing.Point(79, 85);
+            this.txtCantidad.Location = new System.Drawing.Point(86, 84);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidad.MaxLength = 32767;
             this.txtCantidad.MouseState = MaterialSkin.MouseState.HOVER;
@@ -465,16 +466,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion General";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 231);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 16);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Marca";
-            // 
             // txtMarca
             // 
             this.txtMarca.Depth = 0;
@@ -492,6 +483,16 @@
             this.txtMarca.TabIndex = 20;
             this.txtMarca.TabStop = false;
             this.txtMarca.UseSystemPasswordChar = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 231);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 16);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Marca";
             // 
             // frmAgregarZapatos
             // 

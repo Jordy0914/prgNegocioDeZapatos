@@ -32,7 +32,6 @@ namespace prgNegocioDeZapatos
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
 
-
             this.inventario = new clsEntidadInventario();
             this.clInventario = new clsZapatos();
             this.conexion = cone;
