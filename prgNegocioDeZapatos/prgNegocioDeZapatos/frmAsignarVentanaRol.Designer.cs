@@ -41,8 +41,8 @@
             this.btnAgregar = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnModificar = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnEliminar = new MaterialSkin.Controls.MaterialFlatButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbxCodRole = new System.Windows.Forms.ComboBox();
+            this.cbxCodVentanas = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -109,12 +109,12 @@
             // 
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel3.Location = new System.Drawing.Point(25, 131);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(114, 18);
+            this.materialLabel3.Size = new System.Drawing.Size(117, 19);
             this.materialLabel3.TabIndex = 4;
             this.materialLabel3.Text = "Nombre del role";
             this.materialLabel3.Click += new System.EventHandler(this.materialLabel3_Click);
@@ -217,29 +217,29 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cbxCodRole
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(169, 75);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 13;
+            this.cbxCodRole.FormattingEnabled = true;
+            this.cbxCodRole.Location = new System.Drawing.Point(169, 75);
+            this.cbxCodRole.Name = "cbxCodRole";
+            this.cbxCodRole.Size = new System.Drawing.Size(121, 21);
+            this.cbxCodRole.TabIndex = 13;
             // 
-            // comboBox2
+            // cbxCodVentanas
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(169, 172);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 14;
+            this.cbxCodVentanas.FormattingEnabled = true;
+            this.cbxCodVentanas.Location = new System.Drawing.Point(169, 172);
+            this.cbxCodVentanas.Name = "cbxCodVentanas";
+            this.cbxCodVentanas.Size = new System.Drawing.Size(121, 21);
+            this.cbxCodVentanas.TabIndex = 14;
             // 
             // frmAsignarVentanaRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 404);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbxCodVentanas);
+            this.Controls.Add(this.cbxCodRole);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -276,7 +276,7 @@
         private MaterialSkin.Controls.MaterialFlatButton btnAgregar;
         private MaterialSkin.Controls.MaterialFlatButton btnModificar;
         private MaterialSkin.Controls.MaterialFlatButton btnEliminar;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbxCodRole;
+        private System.Windows.Forms.ComboBox cbxCodVentanas;
     }
 }
