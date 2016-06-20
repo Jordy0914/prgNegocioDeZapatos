@@ -19,7 +19,7 @@ namespace MaterialSkin.Controls
 
         public override string Text { get { return baseTextBox.Text; } set { baseTextBox.Text = value; } }
         public new object Tag { get { return baseTextBox.Tag; } set { baseTextBox.Tag = value; } }
-        public new int MaxLength { get { return baseTextBox.MaxLength; } set { baseTextBox.MaxLength = value; } }
+        //public new int MaxLength { get { return baseTextBox.MaxLength; } set { baseTextBox.MaxLength = value; } }
         
         public string SelectedText { get { return baseTextBox.SelectedText; } set { baseTextBox.SelectedText = value; } }
         public string Hint { get { return baseTextBox.Hint; } set { baseTextBox.Hint = value; } }
