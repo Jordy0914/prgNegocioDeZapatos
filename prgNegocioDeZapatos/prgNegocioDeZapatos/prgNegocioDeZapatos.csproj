@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAsignarRol - Copia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignarRol - Copia.Designer.cs">
+      <DependentUpon>frmAsignarRol - Copia.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAsignarVentanaRol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarZapatos.resx">
       <DependentUpon>frmAgregarZapatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsignarRol - Copia.resx">
+      <DependentUpon>frmAsignarRol - Copia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAsignarRol.resx">
       <DependentUpon>frmAsignarRol.cs</DependentUpon>

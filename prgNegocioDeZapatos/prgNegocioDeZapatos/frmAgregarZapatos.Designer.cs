@@ -92,7 +92,7 @@
             this.txtCategoria.Hint = "";
             this.txtCategoria.Location = new System.Drawing.Point(91, 262);
             this.txtCategoria.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCategoria.MaxLength = 32767;
+          //  this.txtCategoria.MaxLength = 32767;
             this.txtCategoria.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.PasswordChar = '\0';
@@ -110,7 +110,7 @@
             this.txtTalla.Hint = "";
             this.txtTalla.Location = new System.Drawing.Point(80, 147);
             this.txtTalla.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTalla.MaxLength = 32767;
+            //this.txtTalla.MaxLength = 32767;
             this.txtTalla.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTalla.Name = "txtTalla";
             this.txtTalla.PasswordChar = '\0';
@@ -128,7 +128,7 @@
             this.txtNombre.Hint = "";
             this.txtNombre.Location = new System.Drawing.Point(80, 112);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNombre.MaxLength = 32767;
+           // this.txtNombre.MaxLength = 32767;
             this.txtNombre.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
@@ -146,7 +146,7 @@
             this.txtModelo.Hint = "";
             this.txtModelo.Location = new System.Drawing.Point(80, 70);
             this.txtModelo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtModelo.MaxLength = 32767;
+            //this.txtModelo.MaxLength = 32767;
             this.txtModelo.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.PasswordChar = '\0';
@@ -164,7 +164,7 @@
             this.txtCodigo.Hint = "";
             this.txtCodigo.Location = new System.Drawing.Point(80, 34);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCodigo.MaxLength = 32767;
+            //this.txtCodigo.MaxLength = 32767;
             this.txtCodigo.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.PasswordChar = '\0';
@@ -272,7 +272,7 @@
             this.txtCantidad.Hint = "";
             this.txtCantidad.Location = new System.Drawing.Point(86, 84);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCantidad.MaxLength = 32767;
+           // this.txtCantidad.MaxLength = 32767;
             this.txtCantidad.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.PasswordChar = '\0';
@@ -290,7 +290,7 @@
             this.txtPrecio.Hint = "";
             this.txtPrecio.Location = new System.Drawing.Point(69, 50);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPrecio.MaxLength = 32767;
+           // this.txtPrecio.MaxLength = 32767;
             this.txtPrecio.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.PasswordChar = '\0';
@@ -308,7 +308,7 @@
             this.txtCosto.Hint = "";
             this.txtCosto.Location = new System.Drawing.Point(69, 19);
             this.txtCosto.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCosto.MaxLength = 32767;
+            //this.txtCosto.MaxLength = 32767;
             this.txtCosto.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.PasswordChar = '\0';
@@ -472,7 +472,7 @@
             this.txtMarca.Hint = "";
             this.txtMarca.Location = new System.Drawing.Point(81, 224);
             this.txtMarca.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMarca.MaxLength = 32767;
+           // this.txtMarca.MaxLength = 32767;
             this.txtMarca.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.PasswordChar = '\0';

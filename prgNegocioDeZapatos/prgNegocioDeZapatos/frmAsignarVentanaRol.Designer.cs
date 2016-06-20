@@ -30,7 +30,6 @@
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtNombreRole = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtCodVentana = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
@@ -43,6 +42,8 @@
             this.btnEliminar = new MaterialSkin.Controls.MaterialFlatButton();
             this.cbxCodRole = new System.Windows.Forms.ComboBox();
             this.cbxCodVentanas = new System.Windows.Forms.ComboBox();
+            this.txtSalir = new MaterialSkin.Controls.MaterialFlatButton();
+            this.txtNombreRole = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -72,22 +73,6 @@
             this.materialLabel2.TabIndex = 1;
             this.materialLabel2.Text = "Codigo de ventana";
             this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
-            // 
-            // txtNombreRole
-            // 
-            this.txtNombreRole.Depth = 0;
-            this.txtNombreRole.Hint = "";
-            this.txtNombreRole.Location = new System.Drawing.Point(169, 127);
-            this.txtNombreRole.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtNombreRole.Name = "txtNombreRole";
-            this.txtNombreRole.PasswordChar = '\0';
-            this.txtNombreRole.SelectedText = "";
-            this.txtNombreRole.SelectionLength = 0;
-            this.txtNombreRole.SelectionStart = 0;
-            this.txtNombreRole.Size = new System.Drawing.Size(121, 23);
-            this.txtNombreRole.TabIndex = 2;
-            this.txtNombreRole.TabStop = false;
-            this.txtNombreRole.UseSystemPasswordChar = false;
             // 
             // txtCodVentana
             // 
@@ -135,7 +120,7 @@
             // chbInsertar
             // 
             this.chbInsertar.AutoSize = true;
-            this.chbInsertar.Location = new System.Drawing.Point(604, 107);
+            this.chbInsertar.Location = new System.Drawing.Point(506, 94);
             this.chbInsertar.Name = "chbInsertar";
             this.chbInsertar.Size = new System.Drawing.Size(61, 17);
             this.chbInsertar.TabIndex = 6;
@@ -145,7 +130,7 @@
             // choModificar
             // 
             this.choModificar.AutoSize = true;
-            this.choModificar.Location = new System.Drawing.Point(604, 144);
+            this.choModificar.Location = new System.Drawing.Point(506, 134);
             this.choModificar.Name = "choModificar";
             this.choModificar.Size = new System.Drawing.Size(69, 17);
             this.choModificar.TabIndex = 7;
@@ -155,7 +140,7 @@
             // chbEliminar
             // 
             this.chbEliminar.AutoSize = true;
-            this.chbEliminar.Location = new System.Drawing.Point(604, 189);
+            this.chbEliminar.Location = new System.Drawing.Point(505, 172);
             this.chbEliminar.Name = "chbEliminar";
             this.chbEliminar.Size = new System.Drawing.Size(62, 17);
             this.chbEliminar.TabIndex = 8;
@@ -165,7 +150,7 @@
             // chboConsultar
             // 
             this.chboConsultar.AutoSize = true;
-            this.chboConsultar.Location = new System.Drawing.Point(604, 229);
+            this.chboConsultar.Location = new System.Drawing.Point(505, 214);
             this.chboConsultar.Name = "chboConsultar";
             this.chboConsultar.Size = new System.Drawing.Size(70, 17);
             this.chboConsultar.TabIndex = 9;
@@ -177,7 +162,7 @@
             this.btnAgregar.AutoSize = true;
             this.btnAgregar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAgregar.Depth = 0;
-            this.btnAgregar.Location = new System.Drawing.Point(29, 354);
+            this.btnAgregar.Location = new System.Drawing.Point(62, 353);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAgregar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregar.Name = "btnAgregar";
@@ -192,7 +177,7 @@
             this.btnModificar.AutoSize = true;
             this.btnModificar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnModificar.Depth = 0;
-            this.btnModificar.Location = new System.Drawing.Point(225, 353);
+            this.btnModificar.Location = new System.Drawing.Point(158, 354);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnModificar.Name = "btnModificar";
@@ -207,7 +192,7 @@
             this.btnEliminar.AutoSize = true;
             this.btnEliminar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnEliminar.Depth = 0;
-            this.btnEliminar.Location = new System.Drawing.Point(422, 353);
+            this.btnEliminar.Location = new System.Drawing.Point(271, 353);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminar.Name = "btnEliminar";
@@ -216,6 +201,7 @@
             this.btnEliminar.TabIndex = 12;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // cbxCodRole
             // 
@@ -233,11 +219,43 @@
             this.cbxCodVentanas.Size = new System.Drawing.Size(121, 21);
             this.cbxCodVentanas.TabIndex = 14;
             // 
+            // txtSalir
+            // 
+            this.txtSalir.AutoSize = true;
+            this.txtSalir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.txtSalir.Depth = 0;
+            this.txtSalir.Location = new System.Drawing.Point(363, 354);
+            this.txtSalir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtSalir.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtSalir.Name = "txtSalir";
+            this.txtSalir.Primary = false;
+            this.txtSalir.Size = new System.Drawing.Size(49, 36);
+            this.txtSalir.TabIndex = 15;
+            this.txtSalir.Text = "Salir";
+            this.txtSalir.UseVisualStyleBackColor = true;
+            // 
+            // txtNombreRole
+            // 
+            this.txtNombreRole.Depth = 0;
+            this.txtNombreRole.Hint = "";
+            this.txtNombreRole.Location = new System.Drawing.Point(169, 127);
+            this.txtNombreRole.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtNombreRole.Name = "txtNombreRole";
+            this.txtNombreRole.PasswordChar = '\0';
+            this.txtNombreRole.SelectedText = "";
+            this.txtNombreRole.SelectionLength = 0;
+            this.txtNombreRole.SelectionStart = 0;
+            this.txtNombreRole.Size = new System.Drawing.Size(121, 23);
+            this.txtNombreRole.TabIndex = 2;
+            this.txtNombreRole.TabStop = false;
+            this.txtNombreRole.UseSystemPasswordChar = false;
+            // 
             // frmAsignarVentanaRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 404);
+            this.Controls.Add(this.txtSalir);
             this.Controls.Add(this.cbxCodVentanas);
             this.Controls.Add(this.cbxCodRole);
             this.Controls.Add(this.btnEliminar);
@@ -265,7 +283,6 @@
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreRole;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCodVentana;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
@@ -278,5 +295,7 @@
         private MaterialSkin.Controls.MaterialFlatButton btnEliminar;
         private System.Windows.Forms.ComboBox cbxCodRole;
         private System.Windows.Forms.ComboBox cbxCodVentanas;
+        private MaterialSkin.Controls.MaterialFlatButton txtSalir;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreRole;
     }
 }

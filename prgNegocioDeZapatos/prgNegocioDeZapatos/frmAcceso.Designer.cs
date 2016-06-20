@@ -122,7 +122,7 @@
             this.txtPassword.Hint = "";
             this.txtPassword.Location = new System.Drawing.Point(177, 190);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPassword.MaxLength = 32767;
+///            this.txtPassword.MaxLength = 32767;
             this.txtPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
