@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace prgNegocioDeZapatos
 {
-    public partial class Inventario : MaterialForm
+    public partial class frmReporte : MaterialForm
     {
         private readonly MaterialSkinManager materialSkinManager;
-        public Inventario()
+        public frmReporte()
         {
 
             materialSkinManager = MaterialSkinManager.Instance;

@@ -1,6 +1,6 @@
 ﻿namespace prgNegocioDeZapatos
 {
-    partial class Inventario
+    partial class frmReporte
     {
         /// <summary>
         /// Required designer variable.
@@ -144,15 +144,15 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
-            // Inventario
+            // frmReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 359);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lsvReporteZapatos);
-            this.Name = "Inventario";
-            this.Text = "frmReporte";
+            this.Name = "frmReporte";
+            this.Text = "Inventario";
             this.Load += new System.EventHandler(this.frmReporte_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
