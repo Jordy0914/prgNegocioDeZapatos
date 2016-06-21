@@ -101,7 +101,7 @@
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Colo";
+            this.columnHeader6.Text = "Color";
             this.columnHeader6.Width = 50;
             // 
             // columnHeader7
