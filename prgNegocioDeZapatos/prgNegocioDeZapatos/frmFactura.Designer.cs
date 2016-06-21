@@ -63,7 +63,7 @@
             // 
             this.txtCodFactura.Depth = 0;
             this.txtCodFactura.Hint = "";
-            this.txtCodFactura.Location = new System.Drawing.Point(130, 73);
+            this.txtCodFactura.Location = new System.Drawing.Point(132, 73);
             this.txtCodFactura.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCodFactura.Name = "txtCodFactura";
             this.txtCodFactura.PasswordChar = '\0';
