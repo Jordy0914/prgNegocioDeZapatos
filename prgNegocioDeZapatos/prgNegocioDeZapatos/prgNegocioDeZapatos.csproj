@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAsignarRol - Copia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAsignarRol - Copia.Designer.cs">
-      <DependentUpon>frmAsignarRol - Copia.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAsignarVentanaRol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +82,12 @@
     <Compile Include="frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUsuariosRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuariosRol.Designer.cs">
+      <DependentUpon>frmUsuariosRol.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVentana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,9 +108,6 @@
     <EmbeddedResource Include="frmAgregarZapatos.resx">
       <DependentUpon>frmAgregarZapatos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAsignarRol - Copia.resx">
-      <DependentUpon>frmAsignarRol - Copia.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmAsignarRol.resx">
       <DependentUpon>frmAsignarRol.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuariosRol.resx">
+      <DependentUpon>frmUsuariosRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVentana.resx">
       <DependentUpon>frmVentana.cs</DependentUpon>

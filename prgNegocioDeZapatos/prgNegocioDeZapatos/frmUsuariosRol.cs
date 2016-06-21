@@ -9,13 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
-
+using MaterialSkin.Animations;
+using Entidades;
+using LogicaNegocios;
+using AccesoDatos;
 namespace prgNegocioDeZapatos
 {
-    public partial class frmAsignarRol : MaterialForm
+    public partial class frmUsuariosRol :   MaterialForm
     {
         private readonly MaterialSkinManager materialSkinManager;
-        public frmAsignarRol()
+        public frmUsuariosRol()
         {
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -25,16 +28,14 @@ namespace prgNegocioDeZapatos
             InitializeComponent();
         }
 
-        
-    
-        private void frmAsignarRol_Load(object sender, EventArgs e)
+        private void frmUsuariosRol_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void materialFlatButton1_Click(object sender, EventArgs e)
         {
-            Close();
+
         }
     }
 }

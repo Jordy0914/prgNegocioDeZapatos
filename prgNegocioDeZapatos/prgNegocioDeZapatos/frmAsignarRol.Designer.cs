@@ -39,6 +39,7 @@
             this.txtNombreUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtNombreRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.btnConsultar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -178,13 +179,27 @@
             this.materialLabel4.TabIndex = 31;
             this.materialLabel4.Text = "Nombre del rol";
             // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Depth = 0;
+            this.btnConsultar.Location = new System.Drawing.Point(334, 72);
+            this.btnConsultar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Primary = true;
+            this.btnConsultar.Size = new System.Drawing.Size(95, 32);
+            this.btnConsultar.TabIndex = 32;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
             // frmAsignarRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(365, 284);
+            this.ClientSize = new System.Drawing.Size(507, 284);
             this.ControlBox = false;
+            this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.txtNombreRol);
             this.Controls.Add(this.txtNombreUsuario);
@@ -217,5 +232,6 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreUsuario;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreRol;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialRaisedButton btnConsultar;
     }
 }
