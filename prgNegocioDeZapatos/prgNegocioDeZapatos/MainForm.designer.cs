@@ -37,18 +37,11 @@ namespace prgNegocioDeZapatos
             this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
-            this.opcion1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.materialContextMenuStrip1 = new MaterialSkin.Controls.MaterialContextMenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.materialToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.materialTabControl1.SuspendLayout();
-            this.materialContextMenuStrip1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bfgfdvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sgsddToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialFlatButton2
@@ -114,116 +107,44 @@ namespace prgNegocioDeZapatos
             this.materialDivider1.TabIndex = 16;
             this.materialDivider1.Text = "materialDivider1";
             // 
-            // opcion1
+            // menuStrip1
             // 
-            this.opcion1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.opcion1.BaseTabControl = this.materialTabControl1;
-            this.opcion1.Depth = 0;
-            this.opcion1.Location = new System.Drawing.Point(0, 63);
-            this.opcion1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.opcion1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.opcion1.Name = "opcion1";
-            this.opcion1.Size = new System.Drawing.Size(824, 59);
-            this.opcion1.TabIndex = 17;
-            this.opcion1.Text = "Seguridad";
+            this.menuStrip1.BackColor = System.Drawing.Color.DimGray;
+            this.menuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mantenimientoToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 70);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuStrip1.Size = new System.Drawing.Size(813, 28);
+            this.menuStrip1.TabIndex = 20;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // materialTabControl1
+            // mantenimientoToolStripMenuItem
             // 
-            this.materialTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTabControl1.Controls.Add(this.tabPage1);
-            this.materialTabControl1.Controls.Add(this.tabPage2);
-            this.materialTabControl1.Controls.Add(this.tabPage3);
-            this.materialTabControl1.Controls.Add(this.tabPage5);
-            this.materialTabControl1.Depth = 0;
-            this.materialTabControl1.Location = new System.Drawing.Point(13, 153);
-            this.materialTabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabControl1.Name = "materialTabControl1";
-            this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(769, 315);
-            this.materialTabControl1.TabIndex = 18;
+            this.mantenimientoToolStripMenuItem.BackColor = System.Drawing.Color.DimGray;
+            this.mantenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bfgfdvToolStripMenuItem,
+            this.sgsddToolStripMenuItem});
+            this.mantenimientoToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mantenimientoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
+            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
+            this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
             // 
-            // tabPage1
+            // bfgfdvToolStripMenuItem
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage1.Size = new System.Drawing.Size(761, 286);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Mantenimiento";
+            this.bfgfdvToolStripMenuItem.Name = "bfgfdvToolStripMenuItem";
+            this.bfgfdvToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.bfgfdvToolStripMenuItem.Text = "bfgfdv";
             // 
-            // tabPage2
+            // sgsddToolStripMenuItem
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage2.Size = new System.Drawing.Size(761, 286);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Venta";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.White;
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage3.Size = new System.Drawing.Size(761, 286);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "MaterialTabPage3";
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage5.Size = new System.Drawing.Size(761, 286);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // materialContextMenuStrip1
-            // 
-            this.materialContextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialContextMenuStrip1.Depth = 0;
-            this.materialContextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.materialContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.materialToolStripMenuItem1});
-            this.materialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialContextMenuStrip1.Name = "materialContextMenuStrip1";
-            this.materialContextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.materialContextMenuStrip1.ShowCheckMargin = true;
-            this.materialContextMenuStrip1.Size = new System.Drawing.Size(303, 86);
-            this.materialContextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.materialContextMenuStrip1_Opening);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
-            this.toolStripMenuItem1.Text = "Seguridad";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 26);
-            this.toolStripMenuItem2.Text = "sadas";
-            // 
-            // materialToolStripMenuItem1
-            // 
-            this.materialToolStripMenuItem1.AutoSize = false;
-            this.materialToolStripMenuItem1.Name = "materialToolStripMenuItem1";
-            this.materialToolStripMenuItem1.Size = new System.Drawing.Size(120, 30);
-            this.materialToolStripMenuItem1.Text = "materialToolStripMenuItem1";
+            this.sgsddToolStripMenuItem.Name = "sgsddToolStripMenuItem";
+            this.sgsddToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.sgsddToolStripMenuItem.Text = "sgsdd";
             // 
             // MainForm
             // 
@@ -231,18 +152,19 @@ namespace prgNegocioDeZapatos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(813, 528);
-            this.Controls.Add(this.opcion1);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.materialFlatButton3);
             this.Controls.Add(this.materialFlatButton2);
-            this.Controls.Add(this.materialTabControl1);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.materialFlatButton1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
+            this.Padding = new System.Windows.Forms.Padding(0, 70, 0, 0);
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.materialTabControl1.ResumeLayout(false);
-            this.materialContextMenuStrip1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,16 +174,10 @@ namespace prgNegocioDeZapatos
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
         private MaterialFlatButton materialFlatButton2;
         private MaterialDivider materialDivider1;
-        private MaterialTabSelector opcion1;
         private MaterialFlatButton materialFlatButton3;
-        private MaterialTabControl materialTabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private TabPage tabPage3;
-        private TabPage tabPage5;
-        private MaterialContextMenuStrip materialContextMenuStrip1;
-        private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem toolStripMenuItem2;
-        private ToolStripMenuItem materialToolStripMenuItem1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem mantenimientoToolStripMenuItem;
+        private ToolStripMenuItem bfgfdvToolStripMenuItem;
+        private ToolStripMenuItem sgsddToolStripMenuItem;
     }
 }
