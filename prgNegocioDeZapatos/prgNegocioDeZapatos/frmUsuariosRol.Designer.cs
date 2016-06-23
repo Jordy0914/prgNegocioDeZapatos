@@ -31,7 +31,7 @@
             this.lsvUsuariosRol = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnSalir = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
             // lsvUsuariosRol
@@ -42,9 +42,10 @@
             this.columnHeader2});
             this.lsvUsuariosRol.FullRowSelect = true;
             this.lsvUsuariosRol.GridLines = true;
-            this.lsvUsuariosRol.Location = new System.Drawing.Point(64, 89);
+            this.lsvUsuariosRol.Location = new System.Drawing.Point(85, 110);
+            this.lsvUsuariosRol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lsvUsuariosRol.Name = "lsvUsuariosRol";
-            this.lsvUsuariosRol.Size = new System.Drawing.Size(260, 97);
+            this.lsvUsuariosRol.Size = new System.Drawing.Size(345, 118);
             this.lsvUsuariosRol.TabIndex = 0;
             this.lsvUsuariosRol.UseCompatibleStateImageBehavior = false;
             this.lsvUsuariosRol.View = System.Windows.Forms.View.Details;
@@ -61,32 +62,28 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.AutoSize = true;
-            this.btnSalir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(275, 210);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSalir.Location = new System.Drawing.Point(343, 261);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Primary = false;
-            this.btnSalir.Size = new System.Drawing.Size(49, 36);
+            this.btnSalir.Primary = true;
+            this.btnSalir.Size = new System.Drawing.Size(86, 35);
             this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.materialFlatButton1_Click);
             // 
             // frmUsuariosRol
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 261);
+            this.ClientSize = new System.Drawing.Size(528, 321);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lsvUsuariosRol);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmUsuariosRol";
             this.Text = "Seleccionar Usuario";
             this.Load += new System.EventHandler(this.frmUsuariosRol_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -95,6 +92,6 @@
         private System.Windows.Forms.ListView lsvUsuariosRol;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private MaterialSkin.Controls.MaterialFlatButton btnSalir;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
     }
 }

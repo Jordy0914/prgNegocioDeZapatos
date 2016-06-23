@@ -31,6 +31,11 @@ namespace prgNegocioDeZapatos
 
         }
 
+        private void materialContextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
 
 
         /*cuadro

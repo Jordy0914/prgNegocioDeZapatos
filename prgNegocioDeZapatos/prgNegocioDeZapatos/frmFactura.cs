@@ -31,9 +31,6 @@ namespace prgNegocioDeZapatos
 
         }
 
-        private void materialLabel6_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

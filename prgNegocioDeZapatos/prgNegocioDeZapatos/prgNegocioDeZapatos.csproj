@@ -76,12 +76,6 @@
     <Compile Include="frmFactura.Designer.cs">
       <DependentUpon>frmFactura.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReporte.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmReporte.Designer.cs">
-      <DependentUpon>frmReporte.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmRol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,9 +123,6 @@
     <EmbeddedResource Include="frmFactura.resx">
       <DependentUpon>frmFactura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReporte.resx">
-      <DependentUpon>frmReporte.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmRol.resx">
       <DependentUpon>frmRol.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +146,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -187,6 +179,9 @@
       <Project>{34c834c6-4412-477e-b1d7-fbcb2e49733b}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1466668214_find.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
