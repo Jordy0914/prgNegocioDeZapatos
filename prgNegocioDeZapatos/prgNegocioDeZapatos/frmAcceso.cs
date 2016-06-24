@@ -20,10 +20,12 @@ namespace prgNegocioDeZapatos
     {
         #region Atributos
         private clsConexion conexion;
+        private int intContador;
+
         private clsEntidadUsuario pEntidadUsuario;
         private clsUsuario usuario;
         private SqlDataReader dtrUsuario; //Para el retorno de las tuplas
-        private int intContador;
+        
         #endregion
 
         private readonly MaterialSkinManager materialSkinManager;
@@ -33,23 +35,26 @@ namespace prgNegocioDeZapatos
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
+
             conexion = new clsConexion();
+            intContador = 0;
+
             pEntidadUsuario = new clsEntidadUsuario();
             usuario = new clsUsuario();
-            intContador = 0;
+            
             InitializeComponent();
-        }
-
-        private void btnIngresar_Click(object sender, EventArgs e)
-        {
-            MainForm menu = new MainForm();
-            menu.Visible = true;
-            this.Visible = false;
         }
 
         private void frmAcceso_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            this.SetVisibleCore(false);
+            MainForm menu = new MainForm();
+            menu.Show();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -62,16 +67,16 @@ namespace prgNegocioDeZapatos
         {
             if (e.KeyChar == (char)(Keys.Enter))
                 //El evento "Focus" permite trasladar el cursor del mouse al objeto indicado
-                this.txtLogin.Focus();
+                this.txtPassword.Focus();
         }
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)(Keys.Enter))
             {
-                if (mValidarDatos() == true)
+                if (mValidarDatos())
                 {
-                    this.btnIngresar.Enabled = true;
+                    this.btnIngresar.Focus();
                 }
             }
         }//fin KeyPressClave
@@ -83,7 +88,6 @@ namespace prgNegocioDeZapatos
         {
             if (intContador <= 2)
             {
-
                 //Llenado de lo atributos de la clase EntidadUsuario
                 pEntidadUsuario.setLogin(this.txtLogin.Text.Trim());
                 pEntidadUsuario.setPassword(this.txtPassword.Text.Trim());
@@ -96,8 +100,8 @@ namespace prgNegocioDeZapatos
                 {
                     if (dtrUsuario.Read())
                     {
-                        pEntidadUsuario.setLogin(dtrUsuario.GetString(1));  // |0=codigo|1=clave|2=perfil|
-                        pEntidadUsuario.setPassword(dtrUsuario.GetString(3));
+                        pEntidadUsuario.setLogin(dtrUsuario.GetString(1));  
+                        pEntidadUsuario.setPassword(dtrUsuario.GetString(2));
 
                         if (pEntidadUsuario.getLogin() == this.txtLogin.Text.Trim() && pEntidadUsuario.getPassword() == this.txtPassword.Text.Trim())
                         {
@@ -107,7 +111,7 @@ namespace prgNegocioDeZapatos
 
                         else
                         {
-                            MessageBox.Show("El usuario esta bloqueado", "Atención", MessageBoxButtons.OK);
+                            MessageBox.Show("Usuario o contraseña incorrectos", "Atención", MessageBoxButtons.OK);
                             return false;
                         }//fin del pEntidadUsuario
 
@@ -134,5 +138,7 @@ namespace prgNegocioDeZapatos
 
         }//fin metodo
         #endregion
+
+        
     }
 }

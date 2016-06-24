@@ -42,7 +42,7 @@
             this.btnIngresar.Depth = 0;
             this.btnIngresar.Enabled = false;
             this.btnIngresar.Location = new System.Drawing.Point(82, 237);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Primary = true;
@@ -57,7 +57,7 @@
             this.btnSalir.BackColor = System.Drawing.SystemColors.Control;
             this.btnSalir.Depth = 0;
             this.btnSalir.Location = new System.Drawing.Point(190, 237);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
@@ -103,7 +103,7 @@
             this.txtLogin.Depth = 0;
             this.txtLogin.Hint = "";
             this.txtLogin.Location = new System.Drawing.Point(133, 106);
-            this.txtLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(2);
             this.txtLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.PasswordChar = '\0';
@@ -122,7 +122,7 @@
             this.txtPassword.Depth = 0;
             this.txtPassword.Hint = "";
             this.txtPassword.Location = new System.Drawing.Point(133, 154);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';

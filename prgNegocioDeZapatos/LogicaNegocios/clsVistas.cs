@@ -18,8 +18,6 @@ namespace LogicaNegocios
         //Permite las sentencias del SQL Transac
         private string strSentencia;
         //Permite enviar la ejecución de la sentencia al modelo en la clase conexion
-
-        clsConexion conexion = new clsConexion();
         #endregion
 
 

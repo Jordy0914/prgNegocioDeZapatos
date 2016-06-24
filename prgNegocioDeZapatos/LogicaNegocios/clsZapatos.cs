@@ -21,8 +21,6 @@ namespace LogicaNegocios
         //Permite las sentencias del SQL Transac
         private string strSentencia;
         //Permite enviar la ejecución de la sentencia al modelo en la clase conexion
-
-        clsConexion conexion = new clsConexion();
         #endregion
 
 
@@ -49,8 +47,6 @@ namespace LogicaNegocios
                 +pEntidadInventario.getCantidad()+"')";
             return cone.mEjecutar(strSentencia, cone);
         }
-
-
 
         public Boolean mEliminarInventario(clsConexion cone, clsEntidadInventario pEntidadInventario)
         {
