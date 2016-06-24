@@ -53,7 +53,7 @@ namespace prgNegocioDeZapatos
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             this.SetVisibleCore(false);
-            MainForm menu = new MainForm();
+            MainForm menu = new MainForm(this.conexion);
             menu.Show();
         }
 
@@ -137,6 +137,7 @@ namespace prgNegocioDeZapatos
             }//fin else  contador
 
         }//fin metodo
+
         #endregion
 
         

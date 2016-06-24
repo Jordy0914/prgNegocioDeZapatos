@@ -6,13 +6,17 @@ using System.Threading;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using AccesoDatos;
 
 namespace prgNegocioDeZapatos
 {
     public partial class MainForm : MaterialForm
     {
         private readonly MaterialSkinManager materialSkinManager;
-        public MainForm()
+        private clsConexion conexion;
+
+
+        public MainForm(clsConexion conexion)
         {
             InitializeComponent();
 
@@ -22,6 +26,7 @@ namespace prgNegocioDeZapatos
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
 
+            this.conexion = conexion;
             // Add dummy data to the listview
             //seedListView();
         }
