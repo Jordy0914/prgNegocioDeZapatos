@@ -7,61 +7,75 @@ using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using AccesoDatos;
+using Entidades;
+using LogicaNegocios;
+
+using System.Data.SqlClient;
 
 namespace prgNegocioDeZapatos
 {
     public partial class MainForm : MaterialForm
     {
+        #region Atributos
+
         private readonly MaterialSkinManager materialSkinManager;
         private clsConexion conexion;
 
+        private clsEntidadUsuario pEntidadUsuario;
+        private clsUsuario usuario;
+        private SqlDataReader dtrUsuario;
 
-        public MainForm(clsConexion conexion)
+        #endregion
+
+        public MainForm(clsConexion conexion, clsEntidadUsuario pEntidadUsuario)
         {
             InitializeComponent();
 
-            // Initialize MaterialSkinManager
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
 
             this.conexion = conexion;
-            // Add dummy data to the listview
-            //seedListView();
+            this.pEntidadUsuario = pEntidadUsuario;
+
+            this.usuario = new clsUsuario();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            this.mCrearMenu();
         }
 
-        private void materialContextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+
+
+        #region Metodos
+        
+        public void mCrearMenu()
         {
+            dtrUsuario = usuario.mConsultarMenu(this.conexion, this.pEntidadUsuario);
+            
+                ToolStripMenuItem menu = new ToolStripMenuItem();
+                ToolStripMenuItem subMenu = new ToolStripMenuItem();
+                menu.Text = "hola0";
+                subMenu.Text = "hola1";
+
+                subMenu.Click += new EventHandler(toolStripButton1_Click);
+
+                menu.DropDown.Items.Add(subMenu);
+
+                this.menuPrincipal.Items.Add(menu);
+
+            
 
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Jordy encende el a/c");
+        }
 
+    #endregion
 
-        /*cuadro
-       private void seedListView()
-       {
-           //Define
-           var data = new[]
-           {
-               new []{"Lollipop", "392", "0.2", "0"},
-               new []{"KitKat", "518", "26.0", "7"},
-               new []{"Ice cream sandwich", "237", "9.0", "4.3"},
-               new []{"Jelly Bean", "375", "0.0", "0.0"},
-               new []{"Honeycomb", "408", "3.2", "6.5"}
-           };
-
-           //Add
-           foreach (string[] version in data)
-           {
-               var item = new ListViewItem(version);
-               materialListView1.Items.Add(item);
-           }
-       }*/
-    }
+}
 }

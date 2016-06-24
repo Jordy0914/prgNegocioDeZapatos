@@ -53,7 +53,7 @@ namespace prgNegocioDeZapatos
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             this.SetVisibleCore(false);
-            MainForm menu = new MainForm(this.conexion);
+            MainForm menu = new MainForm(this.conexion, this.pEntidadUsuario);
             menu.Show();
         }
 
@@ -100,6 +100,7 @@ namespace prgNegocioDeZapatos
                 {
                     if (dtrUsuario.Read())
                     {
+                        pEntidadUsuario.setIdUsuario(Convert.ToString((dtrUsuario.GetInt32(0))));
                         pEntidadUsuario.setLogin(dtrUsuario.GetString(1));  
                         pEntidadUsuario.setPassword(dtrUsuario.GetString(2));
 
