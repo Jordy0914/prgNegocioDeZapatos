@@ -23,14 +23,14 @@ namespace LogicaNegocios
         //Metodo para accesar al sistema, trae codigo y clave de ventana de acceso
         public SqlDataReader mConsultarUsuario(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Select * from tbUsuario where login='" + pEntidadUsuario.getLogin() + "' and password='" + pEntidadUsuario.getPassword() + "'";
-            return conexion.mSeleccionar(strSentencia, cone);
+            strSentencia = "Select * from tbUsuario where usuario='" + pEntidadUsuario.getLogin() + "' and password='" + pEntidadUsuario.getPassword() + "'";
+            return cone.mSeleccionar(strSentencia, cone);
         }
         
 
         public SqlDataReader mConsultarCodigo (clsConexion cone, Entidades.clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Select * from tbUsuario where login ='" + pEntidadUsuario.getLogin() + "'";
+            strSentencia = "Select * from tbUsuario where usuario ='" + pEntidadUsuario.getLogin() + "'";
             return cone.mSeleccionar(strSentencia, cone);
         }
 

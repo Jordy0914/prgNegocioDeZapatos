@@ -18,7 +18,7 @@ namespace AccesoDatos
         private String clave;
         private String perfil;
 
-        private String baseDatos = "";
+        private String baseDatos = "dbZapatos";
 
         private SqlConnection conexion;
 
@@ -33,8 +33,8 @@ namespace AccesoDatos
         public clsConexion()
         {
 
-            this.codigo = "";
-            this.clave = "";
+            this.codigo = "AdmZapatos";
+            this.clave = "123";
             this.perfil = "";
             this.baseDatos = "dbZapatos";
 
@@ -160,6 +160,7 @@ namespace AccesoDatos
             {
                 conexion = new SqlConnection();
                 conexion.ConnectionString = "user id='" + cone.getCodigo() + "';password='" + cone.getClave() + "';Data Source='" + mNomServidor() + "';Initial Catalog='" + this.baseDatos + "'";
+                conexion.Open();
                 return true;
 
             }//fin del try

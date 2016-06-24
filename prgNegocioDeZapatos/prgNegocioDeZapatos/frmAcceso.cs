@@ -83,9 +83,6 @@ namespace prgNegocioDeZapatos
         {
             if (intContador <= 2)
             {
-                //Llenado de los atributos del servidor para conectarme a la base de datos
-                conexion.setCodigo("AdmZapatos");
-                conexion.setClave("123");
 
                 //Llenado de lo atributos de la clase EntidadUsuario
                 pEntidadUsuario.setLogin(this.txtLogin.Text.Trim());
@@ -99,39 +96,42 @@ namespace prgNegocioDeZapatos
                 {
                     if (dtrUsuario.Read())
                     {
-                        //    pEntidadUsuario.setPerfil(dtrUsuario.GetString(2));  // |0=codigo|1=clave|2=perfil|
-                        //  pEntidadUsuario.setEstado(dtrUsuario.GetInt32(3));   // No parsear ni cast, INT32 es el recomendado
+                        pEntidadUsuario.setLogin(dtrUsuario.GetString(1));  // |0=codigo|1=clave|2=perfil|
+                        pEntidadUsuario.setPassword(dtrUsuario.GetString(3));
 
-                        /*if (pEntidadUsuario.getEstado() == 0)
+                        if (pEntidadUsuario.getLogin() == this.txtLogin.Text.Trim() && pEntidadUsuario.getPassword() == this.txtPassword.Text.Trim())
                         {
                             this.btnIngresar.Enabled = true;
                             return true;
-                        }
+                        }//fin del if para verificar que el usuario agregado coincida con el que inicia sesion
+
                         else
                         {
                             MessageBox.Show("El usuario esta bloqueado", "Atención", MessageBoxButtons.OK);
                             return false;
                         }//fin del pEntidadUsuario
-                        */
-                        return true;
-                    }
+
+
+                    }//fin del if del Read
                     else
                     {
                         MessageBox.Show("El Usuario no existe", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return false;
-                    }//fin if read
-                }
+                    }//fin else read
+
+                }//fin del if del null
                 else
                 {
                     MessageBox.Show("El usuario no existe", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return false;
-                }//fin if null
-            }
+                }//fin else null
+            }//fin del if del contador
             else
             {
                 MessageBox.Show("usted digitó 3 veces su usuario de forma errónea", "Usuario Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
-            }//fin contador
+            }//fin else  contador
+
         }//fin metodo
         #endregion
     }
