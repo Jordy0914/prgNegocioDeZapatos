@@ -25,15 +25,9 @@ namespace LogicaNegocios
             return cone.mSeleccionar(strSentencia, cone);
         }
 
-        public SqlDataReader mConsultarRol(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
+        public SqlDataReader mConsultarMenuPrincipal(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Select idRol from tbUsuariosRoles where idUsuario=" + pEntidadUsuario.getIdUsuario() + "   ";
-            return cone.mSeleccionar(strSentencia, cone);
-        }
-
-        public SqlDataReader mConsultarMenu(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
-        {
-            strSentencia = "Select distinct M.idMenuPadre, M.descripcion, M.posicion, M.habilitadoMenu, M.url from tbMenu M, tbRolesVistas RV where idRol = '"+pEntidadUsuario.getIdUsuario()+"' order by M.posicion";
+            strSentencia = "Select distinct M.descripcion, M.posicion, M.habilitadoMenu from tbMenu M, tbRolesVistas RV , tbUsuariosRoles UR where RV.idRol = UR.idRol and UR.idUsuario = '"+pEntidadUsuario.getIdUsuario()+"' and M.idMenuPadre = (Select idMenu from tbMenu where descripcion = 'Principal') order by M.posicion";
             return cone.mSeleccionar(strSentencia, cone);
         }
 

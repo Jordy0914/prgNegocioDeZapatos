@@ -10,7 +10,7 @@ namespace Entidades
     {
 
         #region Atributos
-        private string idUsuario;
+        private int idUsuario;
         private String login;
         private String password;
         private String nombre;
@@ -30,7 +30,7 @@ namespace Entidades
 
         public clsEntidadUsuario()
         {
-            this.idUsuario = "";
+            this.idUsuario = 0;
             this.login = "";
             this.password = "";
             this.nombre = "";
@@ -50,12 +50,12 @@ namespace Entidades
 
         #region Metodos
 
-        public void setIdUsuario(string idUsuario)
+        public void setIdUsuario(int idUsuario)
         {
             this.idUsuario = idUsuario;
         }
 
-        public string getIdUsuario()
+        public int getIdUsuario()
         {
             return this.idUsuario;
         }

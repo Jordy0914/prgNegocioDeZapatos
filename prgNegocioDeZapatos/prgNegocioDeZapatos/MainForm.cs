@@ -53,27 +53,35 @@ namespace prgNegocioDeZapatos
         
         public void mCrearMenu()
         {
-            dtrUsuario = usuario.mConsultarMenu(this.conexion, this.pEntidadUsuario);
+            dtrUsuario = usuario.mConsultarMenuPrincipal(this.conexion, this.pEntidadUsuario);
             
                 ToolStripMenuItem menu = new ToolStripMenuItem();
                 ToolStripMenuItem subMenu = new ToolStripMenuItem();
-                menu.Text = "hola0";
-                subMenu.Text = "hola1";
 
-                subMenu.Click += new EventHandler(toolStripButton1_Click);
+            while(dtrUsuario.Read())
+            {
+                MessageBox.Show(dtrUsuario.GetString(0));
+            }
 
-                menu.DropDown.Items.Add(subMenu);
+            //menu.Text = "hola0";
+            //    subMenu.Text = "hola1";
 
-                this.menuPrincipal.Items.Add(menu);
+               
+
+            //    menu.DropDown.Items.Add(subMenu);
+
+            //    this.menuPrincipal.Items.Add(menu);
 
             
 
         }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Jordy encende el a/c");
-        }
+        
+        //private void toolStripButton1_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Jordy encende el a/c");
+        //    subMenu.Click += new EventHandler(toolStripButton1_Click);
+        //}
+        
 
     #endregion
 
