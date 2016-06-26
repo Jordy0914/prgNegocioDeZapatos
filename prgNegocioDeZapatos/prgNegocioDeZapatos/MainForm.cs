@@ -23,7 +23,8 @@ namespace prgNegocioDeZapatos
 
         private clsEntidadUsuario pEntidadUsuario;
         private clsUsuario usuario;
-        private SqlDataReader dtrUsuario;
+        private SqlDataReader dtrUsuarioMenu;
+        private SqlDataReader dtrUsuarioSubMenu;
 
         #endregion
 
@@ -53,37 +54,41 @@ namespace prgNegocioDeZapatos
         
         public void mCrearMenu()
         {
-            dtrUsuario = usuario.mConsultarMenuPrincipal(this.conexion, this.pEntidadUsuario);
-            
-                ToolStripMenuItem menu = new ToolStripMenuItem();
-                ToolStripMenuItem subMenu = new ToolStripMenuItem();
+            dtrUsuarioMenu = usuario.mConsultarMenuPrincipal(this.conexion, this.pEntidadUsuario);
+            ToolStripMenuItem menu;
+            ToolStripMenuItem subMenu;
 
-            while(dtrUsuario.Read())
+            while (dtrUsuarioMenu.Read())
             {
-                MessageBox.Show(dtrUsuario.GetString(0));
-            }
+                menu = new ToolStripMenuItem();
+                menu.Text = dtrUsuarioMenu.GetString(1);
+                dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion, dtrUsuarioMenu.GetInt32(0));
 
-            //menu.Text = "hola0";
-            //    subMenu.Text = "hola1";
+                while(dtrUsuarioSubMenu.Read())
+                {
+                    subMenu = new ToolStripMenuItem();
+                    subMenu.Text = dtrUsuarioSubMenu.GetString(1);
+                    menu.DropDown.Items.Add(subMenu);
+                }
 
-               
+                menuPrincipal.Items.Add(menu);
+            }         
+        } // fin crear menu
 
-            //    menu.DropDown.Items.Add(subMenu);
 
-            //    this.menuPrincipal.Items.Add(menu);
 
-            
 
-        }
-        
+        //subMenu.Click += new EventHandler(toolStripButton1_Click);
+  
+
+
         //private void toolStripButton1_Click(object sender, EventArgs e)
         //{
-        //    MessageBox.Show("Jordy encende el a/c");
-        //    subMenu.Click += new EventHandler(toolStripButton1_Click);
+        //    MessageBox.Show("Jordy encende el a/c")
         //}
-        
 
-    #endregion
 
-}
+        #endregion
+
+    }
 }
