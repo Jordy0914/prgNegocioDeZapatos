@@ -26,6 +26,8 @@ namespace prgNegocioDeZapatos
         private SqlDataReader dtrUsuarioMenu;
         private SqlDataReader dtrUsuarioSubMenu;
 
+        private clsEntidadMenu pEntidadMenu;
+
         #endregion
 
         public MainForm(clsConexion conexion, clsEntidadUsuario pEntidadUsuario)
@@ -38,20 +40,61 @@ namespace prgNegocioDeZapatos
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
 
             this.conexion = conexion;
-            this.pEntidadUsuario = pEntidadUsuario;
 
+            this.pEntidadUsuario = pEntidadUsuario;
             this.usuario = new clsUsuario();
+
+            this.pEntidadMenu = new clsEntidadMenu();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.mCrearMenu();
+            this.mAlmacenarMenuPrincipalTemp();
         }
 
+        #region Metodos Almacenar MenuTemp
 
+        public void mAlmacenarMenuPrincipalTemp()
+        {
+            dtrUsuarioMenu = usuario.mConsultarMenuPrincipal(this.conexion, this.pEntidadUsuario);
 
-        #region Metodos
-        
+            // 0 = idMenu 'int'
+            // 1 = descripcion 'string'
+            // 2 = posicion 'int'
+            // 3 = habilitadoMenu 'int'
+
+            while(dtrUsuarioMenu.Read())
+            {
+                pEntidadMenu.setIdMenu(dtrUsuarioMenu.GetInt32(0));
+                pEntidadMenu.setDescripcion(dtrUsuarioMenu.GetString(1));
+                pEntidadMenu.setPosicion(dtrUsuarioMenu.GetInt32(2));
+                pEntidadMenu.setHabilitadoMenu(Convert.ToInt32((dtrUsuarioMenu.GetBoolean(3))));
+                usuario.mInsertarMenuTemporal(this.conexion, pEntidadMenu);
+
+                dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion,this.pEntidadUsuario,dtrUsuarioMenu.GetInt32(0));
+                this.mAlmacenarMenusSecundariosTemp(dtrUsuarioSubMenu);     
+            }
+        }
+
+        public void mAlmacenarMenusSecundariosTemp(SqlDataReader dtr)
+        {
+            while (dtr.Read())
+            {
+                pEntidadMenu.setIdMenu(dtr.GetInt32(0));
+                pEntidadMenu.setDescripcion(dtr.GetString(1));
+                pEntidadMenu.setPosicion(dtr.GetInt32(2));
+                pEntidadMenu.setHabilitadoMenu(Convert.ToInt32((dtr.GetBoolean(3))));
+                usuario.mInsertarMenuTemporal(this.conexion, pEntidadMenu);
+
+                dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion, this.pEntidadUsuario, dtr.GetInt32(0));
+                mAlmacenarMenusSecundariosTemp(dtrUsuarioSubMenu);
+            }
+        }
+
+        #endregion
+
+        #region Metodos Propios
+
         public void mCrearMenu()
         {
             dtrUsuarioMenu = usuario.mConsultarMenuPrincipal(this.conexion, this.pEntidadUsuario);
@@ -62,7 +105,7 @@ namespace prgNegocioDeZapatos
             {
                 menu = new ToolStripMenuItem();
                 menu.Text = dtrUsuarioMenu.GetString(1);
-                dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion, dtrUsuarioMenu.GetInt32(0));
+                dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion,this.pEntidadUsuario, dtrUsuarioMenu.GetInt32(0));
                 this.mCrearSubMenusRecursivo(dtrUsuarioSubMenu,menu);
                 menuPrincipal.Items.Add(menu);
             }         
@@ -76,23 +119,12 @@ namespace prgNegocioDeZapatos
             {
                 subMenu = new ToolStripMenuItem();
                 subMenu.Text = dtr.GetString(1);
-                dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion, dtr.GetInt32(0));
+                dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion,this.pEntidadUsuario, dtr.GetInt32(0));
                 menu.DropDown.Items.Add(subMenu);
                 mCrearSubMenusRecursivo(dtrUsuarioSubMenu, subMenu);
             }
-
         }
-
-
-
-        //subMenu.Click += new EventHandler(toolStripButton1_Click);
- 
-        //private void toolStripButton1_Click(object sender, EventArgs e)
-        //{
-        //    MessageBox.Show("Jordy encende el a/c")
-        //}
-
-
+        
         #endregion
 
     }
