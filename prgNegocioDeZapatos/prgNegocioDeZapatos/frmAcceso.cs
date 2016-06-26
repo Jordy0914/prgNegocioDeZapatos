@@ -102,22 +102,11 @@ namespace prgNegocioDeZapatos
                 {
                     if (dtrUsuario.Read())
                     {
-                        pEntidadUsuario.setLogin(dtrUsuario.GetString(1));  // |0=codigo|1=clave|2=perfil|
-                        pEntidadUsuario.setPassword(dtrUsuario.GetString(3));
+                        pEntidadUsuario.setIdUsuario(dtrUsuario.GetInt32(0));  // |0 idUsuario
 
-                        if (pEntidadUsuario.getLogin() == this.txtLogin.Text.Trim() && pEntidadUsuario.getPassword() == this.txtPassword.Text.Trim())
-                        {
-                            this.btnIngresar.Enabled = true;
-                            return true;
-                        }//fin del if para verificar que el usuario agregado coincida con el que inicia sesion
-
-                        else
-                        {
-                            MessageBox.Show("El usuario esta bloqueado", "Atención", MessageBoxButtons.OK);
-                            return false;
-                        }//fin del pEntidadUsuario
-
-
+                        this.btnIngresar.Enabled = true;
+                        return true;
+                       
                     }//fin del if del Read
                     else
                     {
