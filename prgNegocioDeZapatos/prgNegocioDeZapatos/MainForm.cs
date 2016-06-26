@@ -56,32 +56,37 @@ namespace prgNegocioDeZapatos
         {
             dtrUsuarioMenu = usuario.mConsultarMenuPrincipal(this.conexion, this.pEntidadUsuario);
             ToolStripMenuItem menu;
-            ToolStripMenuItem subMenu;
+            
 
             while (dtrUsuarioMenu.Read())
             {
                 menu = new ToolStripMenuItem();
                 menu.Text = dtrUsuarioMenu.GetString(1);
                 dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion, dtrUsuarioMenu.GetInt32(0));
-
-                while(dtrUsuarioSubMenu.Read())
-                {
-                    subMenu = new ToolStripMenuItem();
-                    subMenu.Text = dtrUsuarioSubMenu.GetString(1);
-                    menu.DropDown.Items.Add(subMenu);
-                }
-
+                this.mCrearSubMenusRecursivo(dtrUsuarioSubMenu,menu);
                 menuPrincipal.Items.Add(menu);
             }         
         } // fin crear menu
 
+        public void mCrearSubMenusRecursivo(SqlDataReader dtr,  ToolStripMenuItem menu)
+        {
+           ToolStripMenuItem subMenu;
+
+            while (dtr.Read())
+            {
+                subMenu = new ToolStripMenuItem();
+                subMenu.Text = dtr.GetString(1);
+                dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion, dtr.GetInt32(0));
+                menu.DropDown.Items.Add(subMenu);
+                mCrearSubMenusRecursivo(dtrUsuarioSubMenu, subMenu);
+            }
+
+        }
 
 
 
         //subMenu.Click += new EventHandler(toolStripButton1_Click);
-  
-
-
+ 
         //private void toolStripButton1_Click(object sender, EventArgs e)
         //{
         //    MessageBox.Show("Jordy encende el a/c")
