@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboUsuario = new System.Windows.Forms.ComboBox();
+            this.cboRol = new System.Windows.Forms.ComboBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.btnAsignar = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -42,21 +42,22 @@
             this.btnConsultar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cboUsuario
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(136, 72);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cboUsuario.FormattingEnabled = true;
+            this.cboUsuario.Location = new System.Drawing.Point(136, 79);
+            this.cboUsuario.Name = "cboUsuario";
+            this.cboUsuario.Size = new System.Drawing.Size(166, 21);
+            this.cboUsuario.TabIndex = 1;
+            this.cboUsuario.SelectedIndexChanged += new System.EventHandler(this.cboUsuario_SelectedIndexChanged);
             // 
-            // comboBox2
+            // cboRol
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(136, 137);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(166, 21);
-            this.comboBox2.TabIndex = 3;
+            this.cboRol.FormattingEnabled = true;
+            this.cboRol.Location = new System.Drawing.Point(136, 178);
+            this.cboRol.Name = "cboRol";
+            this.cboRol.Size = new System.Drawing.Size(166, 21);
+            this.cboRol.TabIndex = 3;
             // 
             // materialLabel1
             // 
@@ -64,7 +65,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(11, 74);
+            this.materialLabel1.Location = new System.Drawing.Point(11, 79);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(61, 19);
@@ -77,7 +78,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(12, 141);
+            this.materialLabel2.Location = new System.Drawing.Point(12, 177);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(31, 19);
@@ -87,7 +88,7 @@
             // btnAsignar
             // 
             this.btnAsignar.Depth = 0;
-            this.btnAsignar.Location = new System.Drawing.Point(15, 240);
+            this.btnAsignar.Location = new System.Drawing.Point(58, 294);
             this.btnAsignar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAsignar.Name = "btnAsignar";
             this.btnAsignar.Primary = true;
@@ -99,7 +100,7 @@
             // btnSalir
             // 
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(202, 240);
+            this.btnSalir.Location = new System.Drawing.Point(279, 294);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
@@ -112,7 +113,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Depth = 0;
-            this.btnEliminar.Location = new System.Drawing.Point(109, 240);
+            this.btnEliminar.Location = new System.Drawing.Point(164, 294);
             this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Primary = true;
@@ -127,7 +128,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(11, 108);
+            this.materialLabel3.Location = new System.Drawing.Point(11, 125);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(119, 19);
@@ -138,7 +139,7 @@
             // 
             this.txtNombreUsuario.Depth = 0;
             this.txtNombreUsuario.Hint = "";
-            this.txtNombreUsuario.Location = new System.Drawing.Point(136, 108);
+            this.txtNombreUsuario.Location = new System.Drawing.Point(136, 121);
             this.txtNombreUsuario.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.PasswordChar = '\0';
@@ -154,7 +155,7 @@
             // 
             this.txtNombreRol.Depth = 0;
             this.txtNombreRol.Hint = "";
-            this.txtNombreRol.Location = new System.Drawing.Point(136, 179);
+            this.txtNombreRol.Location = new System.Drawing.Point(136, 219);
             this.txtNombreRol.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombreRol.Name = "txtNombreRol";
             this.txtNombreRol.PasswordChar = '\0';
@@ -172,7 +173,7 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(12, 170);
+            this.materialLabel4.Location = new System.Drawing.Point(11, 223);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(109, 19);
@@ -182,7 +183,7 @@
             // btnConsultar
             // 
             this.btnConsultar.Depth = 0;
-            this.btnConsultar.Location = new System.Drawing.Point(334, 72);
+            this.btnConsultar.Location = new System.Drawing.Point(316, 73);
             this.btnConsultar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Primary = true;
@@ -197,7 +198,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(507, 284);
+            this.ClientSize = new System.Drawing.Size(455, 365);
             this.ControlBox = false;
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.materialLabel4);
@@ -209,8 +210,8 @@
             this.Controls.Add(this.btnAsignar);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboRol);
+            this.Controls.Add(this.cboUsuario);
             this.Name = "frmAsignarRol";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Asignacion de Roles";
@@ -221,8 +222,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboUsuario;
+        private System.Windows.Forms.ComboBox cboRol;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialRaisedButton btnAsignar;

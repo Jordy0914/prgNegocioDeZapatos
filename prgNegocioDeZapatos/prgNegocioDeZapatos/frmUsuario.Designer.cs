@@ -38,15 +38,25 @@
             this.txtDireccion = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtFechaN = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtCedula = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtApellidos = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtApellido1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            this.cboTipoI = new System.Windows.Forms.ComboBox();
+            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtApellido2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -57,16 +67,16 @@
             this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.btnConsultar);
             this.groupBox1.Controls.Add(this.btnIngresar);
-            this.groupBox1.Location = new System.Drawing.Point(12, 431);
+            this.groupBox1.Location = new System.Drawing.Point(32, 523);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(598, 100);
+            this.groupBox1.Size = new System.Drawing.Size(730, 76);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             // 
             // btnSalir
             // 
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(490, 49);
+            this.btnSalir.Location = new System.Drawing.Point(616, 31);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
@@ -79,7 +89,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Depth = 0;
-            this.btnEliminar.Location = new System.Drawing.Point(363, 49);
+            this.btnEliminar.Location = new System.Drawing.Point(464, 31);
             this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Primary = true;
@@ -91,7 +101,7 @@
             // btnModificar
             // 
             this.btnModificar.Depth = 0;
-            this.btnModificar.Location = new System.Drawing.Point(238, 49);
+            this.btnModificar.Location = new System.Drawing.Point(310, 31);
             this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Primary = true;
@@ -103,7 +113,7 @@
             // btnConsultar
             // 
             this.btnConsultar.Depth = 0;
-            this.btnConsultar.Location = new System.Drawing.Point(120, 49);
+            this.btnConsultar.Location = new System.Drawing.Point(161, 31);
             this.btnConsultar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Primary = true;
@@ -115,7 +125,7 @@
             // btnIngresar
             // 
             this.btnIngresar.Depth = 0;
-            this.btnIngresar.Location = new System.Drawing.Point(17, 49);
+            this.btnIngresar.Location = new System.Drawing.Point(12, 31);
             this.btnIngresar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Primary = true;
@@ -127,10 +137,14 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.txtApellido2);
+            this.groupBox2.Controls.Add(this.materialLabel9);
+            this.groupBox2.Controls.Add(this.cboTipoI);
+            this.groupBox2.Controls.Add(this.materialLabel8);
             this.groupBox2.Controls.Add(this.txtDireccion);
             this.groupBox2.Controls.Add(this.txtFechaN);
             this.groupBox2.Controls.Add(this.txtCedula);
-            this.groupBox2.Controls.Add(this.txtApellidos);
+            this.groupBox2.Controls.Add(this.txtApellido1);
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.materialLabel5);
             this.groupBox2.Controls.Add(this.materialLabel4);
@@ -138,19 +152,19 @@
             this.groupBox2.Controls.Add(this.materialLabel2);
             this.groupBox2.Controls.Add(this.materialLabel1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(18, 72);
+            this.groupBox2.Location = new System.Drawing.Point(18, 80);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(476, 341);
+            this.groupBox2.Size = new System.Drawing.Size(476, 422);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Informacion del Usuario";
+            this.groupBox2.Text = "Informacion del Personal";
             // 
             // txtDireccion
             // 
             this.txtDireccion.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtDireccion.Depth = 0;
             this.txtDireccion.Hint = "";
-            this.txtDireccion.Location = new System.Drawing.Point(175, 264);
+            this.txtDireccion.Location = new System.Drawing.Point(165, 378);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDireccion.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtDireccion.Name = "txtDireccion";
@@ -160,6 +174,7 @@
             this.txtDireccion.SelectionStart = 0;
             this.txtDireccion.Size = new System.Drawing.Size(244, 23);
             this.txtDireccion.TabIndex = 33;
+            this.txtDireccion.TabStop = false;
             this.txtDireccion.UseSystemPasswordChar = false;
             // 
             // txtFechaN
@@ -167,7 +182,7 @@
             this.txtFechaN.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtFechaN.Depth = 0;
             this.txtFechaN.Hint = "";
-            this.txtFechaN.Location = new System.Drawing.Point(175, 201);
+            this.txtFechaN.Location = new System.Drawing.Point(175, 317);
             this.txtFechaN.Margin = new System.Windows.Forms.Padding(2);
             this.txtFechaN.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtFechaN.Name = "txtFechaN";
@@ -177,6 +192,7 @@
             this.txtFechaN.SelectionStart = 0;
             this.txtFechaN.Size = new System.Drawing.Size(211, 23);
             this.txtFechaN.TabIndex = 32;
+            this.txtFechaN.TabStop = false;
             this.txtFechaN.UseSystemPasswordChar = false;
             // 
             // txtCedula
@@ -184,7 +200,7 @@
             this.txtCedula.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtCedula.Depth = 0;
             this.txtCedula.Hint = "";
-            this.txtCedula.Location = new System.Drawing.Point(175, 151);
+            this.txtCedula.Location = new System.Drawing.Point(175, 262);
             this.txtCedula.Margin = new System.Windows.Forms.Padding(2);
             this.txtCedula.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCedula.Name = "txtCedula";
@@ -194,31 +210,33 @@
             this.txtCedula.SelectionStart = 0;
             this.txtCedula.Size = new System.Drawing.Size(244, 23);
             this.txtCedula.TabIndex = 31;
+            this.txtCedula.TabStop = false;
             this.txtCedula.UseSystemPasswordChar = false;
             // 
-            // txtApellidos
+            // txtApellido1
             // 
-            this.txtApellidos.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtApellidos.Depth = 0;
-            this.txtApellidos.Hint = "";
-            this.txtApellidos.Location = new System.Drawing.Point(175, 105);
-            this.txtApellidos.Margin = new System.Windows.Forms.Padding(2);
-            this.txtApellidos.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.PasswordChar = '\0';
-            this.txtApellidos.SelectedText = "";
-            this.txtApellidos.SelectionLength = 0;
-            this.txtApellidos.SelectionStart = 0;
-            this.txtApellidos.Size = new System.Drawing.Size(244, 23);
-            this.txtApellidos.TabIndex = 30;
-            this.txtApellidos.UseSystemPasswordChar = false;
+            this.txtApellido1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtApellido1.Depth = 0;
+            this.txtApellido1.Hint = "";
+            this.txtApellido1.Location = new System.Drawing.Point(175, 101);
+            this.txtApellido1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtApellido1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtApellido1.Name = "txtApellido1";
+            this.txtApellido1.PasswordChar = '\0';
+            this.txtApellido1.SelectedText = "";
+            this.txtApellido1.SelectionLength = 0;
+            this.txtApellido1.SelectionStart = 0;
+            this.txtApellido1.Size = new System.Drawing.Size(244, 23);
+            this.txtApellido1.TabIndex = 30;
+            this.txtApellido1.TabStop = false;
+            this.txtApellido1.UseSystemPasswordChar = false;
             // 
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtNombre.Depth = 0;
             this.txtNombre.Hint = "";
-            this.txtNombre.Location = new System.Drawing.Point(175, 54);
+            this.txtNombre.Location = new System.Drawing.Point(175, 50);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombre.Name = "txtNombre";
@@ -228,6 +246,7 @@
             this.txtNombre.SelectionStart = 0;
             this.txtNombre.Size = new System.Drawing.Size(244, 23);
             this.txtNombre.TabIndex = 29;
+            this.txtNombre.TabStop = false;
             this.txtNombre.UseSystemPasswordChar = false;
             // 
             // materialLabel5
@@ -237,7 +256,7 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(22, 264);
+            this.materialLabel5.Location = new System.Drawing.Point(21, 382);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(73, 19);
@@ -251,7 +270,7 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(22, 214);
+            this.materialLabel4.Location = new System.Drawing.Point(21, 321);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(131, 19);
@@ -265,7 +284,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(22, 165);
+            this.materialLabel3.Location = new System.Drawing.Point(22, 266);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(64, 19);
@@ -279,12 +298,12 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(22, 109);
+            this.materialLabel2.Location = new System.Drawing.Point(21, 105);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(72, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(112, 19);
             this.materialLabel2.TabIndex = 25;
-            this.materialLabel2.Text = "Apellidos";
+            this.materialLabel2.Text = "Primer Apellido";
             // 
             // materialLabel1
             // 
@@ -300,13 +319,145 @@
             this.materialLabel1.TabIndex = 24;
             this.materialLabel1.Text = "Nombre";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.txtPassword);
+            this.groupBox3.Controls.Add(this.txtUsuario);
+            this.groupBox3.Controls.Add(this.materialLabel7);
+            this.groupBox3.Controls.Add(this.materialLabel6);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(518, 166);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(264, 148);
+            this.groupBox3.TabIndex = 22;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Datos de Acceso";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Depth = 0;
+            this.txtPassword.Hint = "";
+            this.txtPassword.Location = new System.Drawing.Point(108, 100);
+            this.txtPassword.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.SelectedText = "";
+            this.txtPassword.SelectionLength = 0;
+            this.txtPassword.SelectionStart = 0;
+            this.txtPassword.Size = new System.Drawing.Size(136, 23);
+            this.txtPassword.TabIndex = 3;
+            this.txtPassword.TabStop = false;
+            this.txtPassword.UseSystemPasswordChar = false;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Depth = 0;
+            this.txtUsuario.Hint = "";
+            this.txtUsuario.Location = new System.Drawing.Point(108, 47);
+            this.txtUsuario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.PasswordChar = '\0';
+            this.txtUsuario.SelectedText = "";
+            this.txtUsuario.SelectionLength = 0;
+            this.txtUsuario.SelectionStart = 0;
+            this.txtUsuario.Size = new System.Drawing.Size(136, 23);
+            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.TabStop = false;
+            this.txtUsuario.UseSystemPasswordChar = false;
+            // 
+            // materialLabel7
+            // 
+            this.materialLabel7.AutoSize = true;
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel7.Location = new System.Drawing.Point(16, 104);
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            this.materialLabel7.Size = new System.Drawing.Size(86, 19);
+            this.materialLabel7.TabIndex = 1;
+            this.materialLabel7.Text = "Contraseña";
+            // 
+            // materialLabel6
+            // 
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel6.Location = new System.Drawing.Point(18, 47);
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(61, 19);
+            this.materialLabel6.TabIndex = 0;
+            this.materialLabel6.Text = "Usuario";
+            // 
+            // materialLabel8
+            // 
+            this.materialLabel8.AutoSize = true;
+            this.materialLabel8.BackColor = System.Drawing.Color.White;
+            this.materialLabel8.Depth = 0;
+            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel8.Location = new System.Drawing.Point(22, 207);
+            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel8.Name = "materialLabel8";
+            this.materialLabel8.Size = new System.Drawing.Size(154, 19);
+            this.materialLabel8.TabIndex = 34;
+            this.materialLabel8.Text = "Tipo de Identificacion";
+            // 
+            // cboTipoI
+            // 
+            this.cboTipoI.FormattingEnabled = true;
+            this.cboTipoI.Items.AddRange(new object[] {
+            "Cedula ",
+            "Pasaporte",
+            "Cedula Extranjera"});
+            this.cboTipoI.Location = new System.Drawing.Point(182, 207);
+            this.cboTipoI.Name = "cboTipoI";
+            this.cboTipoI.Size = new System.Drawing.Size(193, 24);
+            this.cboTipoI.TabIndex = 35;
+            // 
+            // materialLabel9
+            // 
+            this.materialLabel9.AutoSize = true;
+            this.materialLabel9.BackColor = System.Drawing.Color.White;
+            this.materialLabel9.Depth = 0;
+            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel9.Location = new System.Drawing.Point(22, 159);
+            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel9.Name = "materialLabel9";
+            this.materialLabel9.Size = new System.Drawing.Size(126, 19);
+            this.materialLabel9.TabIndex = 36;
+            this.materialLabel9.Text = "Segundo Apellido";
+            // 
+            // txtApellido2
+            // 
+            this.txtApellido2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtApellido2.Depth = 0;
+            this.txtApellido2.Hint = "";
+            this.txtApellido2.Location = new System.Drawing.Point(175, 155);
+            this.txtApellido2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtApellido2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtApellido2.Name = "txtApellido2";
+            this.txtApellido2.PasswordChar = '\0';
+            this.txtApellido2.SelectedText = "";
+            this.txtApellido2.SelectionLength = 0;
+            this.txtApellido2.SelectionStart = 0;
+            this.txtApellido2.Size = new System.Drawing.Size(244, 23);
+            this.txtApellido2.TabIndex = 37;
+            this.txtApellido2.TabStop = false;
+            this.txtApellido2.UseSystemPasswordChar = false;
+            // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(625, 543);
+            this.ClientSize = new System.Drawing.Size(807, 618);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmUsuario";
@@ -316,6 +467,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -330,7 +483,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtFechaN;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombre;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtApellidos;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtApellido1;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCedula;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtDireccion;
         private MaterialSkin.Controls.MaterialRaisedButton btnIngresar;
@@ -338,5 +491,14 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnModificar;
         private MaterialSkin.Controls.MaterialRaisedButton btnEliminar;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtPassword;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtUsuario;
+        private System.Windows.Forms.ComboBox cboTipoI;
+        private MaterialSkin.Controls.MaterialLabel materialLabel8;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtApellido2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel9;
     }
 }

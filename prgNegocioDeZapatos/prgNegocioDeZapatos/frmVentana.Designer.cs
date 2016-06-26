@@ -45,11 +45,10 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(16, 95);
-            this.materialLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.materialLabel1.Location = new System.Drawing.Point(12, 77);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(71, 24);
+            this.materialLabel1.Size = new System.Drawing.Size(57, 19);
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "Código";
             this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
@@ -60,38 +59,36 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(16, 142);
-            this.materialLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.materialLabel2.Location = new System.Drawing.Point(12, 115);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(79, 24);
+            this.materialLabel2.Size = new System.Drawing.Size(63, 19);
             this.materialLabel2.TabIndex = 1;
             this.materialLabel2.Text = "Nombre";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 142);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(81, 115);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(108, 94);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Location = new System.Drawing.Point(81, 76);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 22);
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 3;
             // 
             // btnEliminar
             // 
             this.btnEliminar.Depth = 0;
-            this.btnEliminar.Location = new System.Drawing.Point(275, 235);
+            this.btnEliminar.Location = new System.Drawing.Point(206, 191);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Primary = true;
-            this.btnEliminar.Size = new System.Drawing.Size(105, 45);
+            this.btnEliminar.Size = new System.Drawing.Size(79, 37);
             this.btnEliminar.TabIndex = 19;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -99,11 +96,12 @@
             // btnModificar
             // 
             this.btnModificar.Depth = 0;
-            this.btnModificar.Location = new System.Drawing.Point(151, 235);
+            this.btnModificar.Location = new System.Drawing.Point(113, 191);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Primary = true;
-            this.btnModificar.Size = new System.Drawing.Size(105, 45);
+            this.btnModificar.Size = new System.Drawing.Size(79, 37);
             this.btnModificar.TabIndex = 18;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -111,11 +109,12 @@
             // btnSalir
             // 
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(410, 235);
+            this.btnSalir.Location = new System.Drawing.Point(308, 191);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
-            this.btnSalir.Size = new System.Drawing.Size(105, 45);
+            this.btnSalir.Size = new System.Drawing.Size(79, 37);
             this.btnSalir.TabIndex = 17;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -123,11 +122,12 @@
             // btnAgregar
             // 
             this.btnAgregar.Depth = 0;
-            this.btnAgregar.Location = new System.Drawing.Point(20, 235);
+            this.btnAgregar.Location = new System.Drawing.Point(15, 191);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Primary = true;
-            this.btnAgregar.Size = new System.Drawing.Size(105, 45);
+            this.btnAgregar.Size = new System.Drawing.Size(79, 37);
             this.btnAgregar.TabIndex = 16;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -135,22 +135,22 @@
             // btnBuscar
             // 
             this.btnBuscar.Depth = 0;
-            this.btnBuscar.Location = new System.Drawing.Point(263, 91);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Location = new System.Drawing.Point(197, 74);
             this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Primary = true;
-            this.btnBuscar.Size = new System.Drawing.Size(100, 28);
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 20;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // frmVentana
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(551, 321);
+            this.ClientSize = new System.Drawing.Size(413, 261);
+            this.ControlBox = false;
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -160,7 +160,6 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmVentana";
             this.Text = "Administrar Ventanas";
             this.Load += new System.EventHandler(this.frmVentana_Load);
