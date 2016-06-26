@@ -49,14 +49,17 @@ namespace prgNegocioDeZapatos
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.mAlmacenarMenuPrincipalTemp();
+            this.mAlmacenarMenuPrincipalRolTemp();
+            this.mAlmacenarMenuPrincipalDirectoTemp();
+            this.mCrearMenu();
+            this.usuario.mEliminarMenuTemp(this.conexion);
         }
 
         #region Metodos Almacenar MenuTemp
 
-        public void mAlmacenarMenuPrincipalTemp()
+        public void mAlmacenarMenuPrincipalRolTemp()
         {
-            dtrUsuarioMenu = usuario.mConsultarMenuPrincipal(this.conexion, this.pEntidadUsuario);
+            dtrUsuarioMenu = usuario.mConsultarMenuPrincipalRol(this.conexion, this.pEntidadUsuario);
 
             // 0 = idMenu 'int'
             // 1 = idMenuPadre 'int'
@@ -81,12 +84,12 @@ namespace prgNegocioDeZapatos
                 
                 usuario.mInsertarMenuTemporal(this.conexion, pEntidadMenu);
 
-                dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion,this.pEntidadUsuario,dtrUsuarioMenu.GetInt32(0));
-                this.mAlmacenarMenusSecundariosTemp(dtrUsuarioSubMenu);     
+                dtrUsuarioSubMenu = usuario.mConsultarSubmenusRol(this.conexion,this.pEntidadUsuario,dtrUsuarioMenu.GetInt32(0));
+                this.mAlmacenarMenusSecundariosRolTemp(dtrUsuarioSubMenu);     
             }
         }
 
-        public void mAlmacenarMenusSecundariosTemp(SqlDataReader dtr)
+        public void mAlmacenarMenusSecundariosRolTemp(SqlDataReader dtr)
         {
             while (dtr.Read())
             {
@@ -105,8 +108,62 @@ namespace prgNegocioDeZapatos
                
                 usuario.mInsertarMenuTemporal(this.conexion, pEntidadMenu);
 
-                dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion, this.pEntidadUsuario, dtr.GetInt32(0));
-                mAlmacenarMenusSecundariosTemp(dtrUsuarioSubMenu);
+                dtrUsuarioSubMenu = usuario.mConsultarSubmenusRol(this.conexion, this.pEntidadUsuario, dtr.GetInt32(0));
+                mAlmacenarMenusSecundariosRolTemp(dtrUsuarioSubMenu);
+            }
+        }
+
+        public void mAlmacenarMenuPrincipalDirectoTemp()
+        {
+            dtrUsuarioMenu = usuario.mConsultarMenuPrincipalDirecto(this.conexion, this.pEntidadUsuario);
+
+            // 0 = idMenu 'int'
+            // 1 = idMenuPadre 'int'
+            // 2 = descripcion 'string'
+            // 3 = posicion 'int'
+            // 4 = habilitadoMenu 'int'
+            // 5 = url  string
+
+            while (dtrUsuarioMenu.Read())
+            {
+                pEntidadMenu.setIdMenu(dtrUsuarioMenu.GetInt32(0));
+                pEntidadMenu.setIdMenuPadre(dtrUsuarioMenu.GetInt32(1));
+                pEntidadMenu.setDescripcion(dtrUsuarioMenu.GetString(2));
+                pEntidadMenu.setPosicion(dtrUsuarioMenu.GetInt32(3));
+                pEntidadMenu.setHabilitadoMenu(Convert.ToInt32((dtrUsuarioMenu.GetBoolean(4))));
+
+                try
+                {
+                    pEntidadMenu.setUrl(dtrUsuarioMenu.GetString(5));
+                }
+                catch (Exception e) { }
+
+                usuario.mInsertarMenuTemporal(this.conexion, pEntidadMenu);
+
+                this.mAlmacenarMenusSecundariosDirectoTemp();
+            }
+        }
+
+        public void mAlmacenarMenusSecundariosDirectoTemp()
+        {
+
+            dtrUsuarioSubMenu = usuario.mConsultarSubmenusDirecto(this.conexion, this.pEntidadUsuario);
+
+            while (dtrUsuarioSubMenu.Read())
+            {
+                pEntidadMenu.setIdMenu(dtrUsuarioSubMenu.GetInt32(0));
+                pEntidadMenu.setIdMenuPadre(dtrUsuarioSubMenu.GetInt32(1));
+                pEntidadMenu.setDescripcion(dtrUsuarioSubMenu.GetString(2));
+                pEntidadMenu.setPosicion(dtrUsuarioSubMenu.GetInt32(3));
+                pEntidadMenu.setHabilitadoMenu(Convert.ToInt32((dtrUsuarioSubMenu.GetBoolean(4))));
+
+                try
+                {
+                    pEntidadMenu.setUrl(dtrUsuarioSubMenu.GetString(5));
+                }
+                catch (Exception e) { }
+
+                usuario.mInsertarMenuTemporal(this.conexion, pEntidadMenu);
             }
         }
 
@@ -119,7 +176,7 @@ namespace prgNegocioDeZapatos
 
         public void mCrearMenu()
         {
-            dtrUsuarioMenu = usuario.mConsultarMenuPrincipal(this.conexion, this.pEntidadUsuario);
+            dtrUsuarioMenu = usuario.mCrearMenuPrincipal(this.conexion);
             ToolStripMenuItem menu;
 
             // 0 = idMenu 'int'
@@ -133,7 +190,7 @@ namespace prgNegocioDeZapatos
             {
                 menu = new ToolStripMenuItem();
                 menu.Text = dtrUsuarioMenu.GetString(2);
-                dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion,this.pEntidadUsuario,dtrUsuarioMenu.GetInt32(0));
+                dtrUsuarioSubMenu = usuario.mCrearMenusSecundarios(this.conexion,dtrUsuarioMenu.GetInt32(0));
                 this.mCrearSubMenusRecursivo(dtrUsuarioSubMenu,menu);
                 menuPrincipal.Items.Add(menu);
             }         
@@ -147,7 +204,7 @@ namespace prgNegocioDeZapatos
             {
                 subMenu = new ToolStripMenuItem();
                 subMenu.Text = dtr.GetString(2);
-                dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion,this.pEntidadUsuario, dtr.GetInt32(0));
+                dtrUsuarioSubMenu = usuario.mCrearMenusSecundarios(this.conexion,dtr.GetInt32(0));
                 menu.DropDown.Items.Add(subMenu);
                 mCrearSubMenusRecursivo(dtrUsuarioSubMenu, subMenu);
             }
