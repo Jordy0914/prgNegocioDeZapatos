@@ -24,7 +24,8 @@ namespace LogicaNegocios
 
         public Boolean mAgregarEmpleado(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Insert into tbEmpleado(nombre,apellido1,apellido2,direccion,tipoIdentificacion,fechaNacimiento,puesto,cedula) Values ('"+pEntidadUsuario.getNombre()+ "','"+pEntidadUsuario.getApellido()
+            strSentencia = "Insert into tbUsuario(login,password,nombre,apellido1,apellido2,direccion,tipoIdentificacion,fechaNacimiento,puesto,cedula) Values ('"+pEntidadUsuario.getLogin()+"','"+pEntidadUsuario.getNombre()
+           + "','"+pEntidadUsuario.getPassword()+"','"+pEntidadUsuario.getApellido()
             +",'"+pEntidadUsuario.getApellido2()+"','"+pEntidadUsuario.getDireccion()+"','"+pEntidadUsuario.getTipoIdentificacion()
             +"','"+pEntidadUsuario.getFechaNacimiento()+"','"+pEntidadUsuario.getPuesto()+"','"+pEntidadUsuario.getCedula()+"'')";
                  
