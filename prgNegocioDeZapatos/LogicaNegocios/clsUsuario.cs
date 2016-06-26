@@ -31,6 +31,21 @@ namespace LogicaNegocios
             return cone.mSeleccionar(strSentencia, cone);
         }
 
+        public SqlDataReader mConsultarUsuarioNombre(clsConexion cone)
+        {
+            strSentencia = "Select * from tbUsuario";
+            return cone.mSeleccionar(strSentencia, cone);
+        }
+
+        public SqlDataReader mConsultarUsuarioGeneral(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
+        {
+            strSentencia = "Select * from tbUsuario where idUsuario= '"+pEntidadUsuario.getIdUsuario()+"'";
+            return cone.mSeleccionar(strSentencia, cone);
+        }
+
+
         #endregion
+
+
     }
 }

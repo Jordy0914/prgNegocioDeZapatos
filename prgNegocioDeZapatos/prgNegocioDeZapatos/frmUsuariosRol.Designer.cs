@@ -42,10 +42,9 @@
             this.columnHeader2});
             this.lsvUsuariosRol.FullRowSelect = true;
             this.lsvUsuariosRol.GridLines = true;
-            this.lsvUsuariosRol.Location = new System.Drawing.Point(85, 110);
-            this.lsvUsuariosRol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lsvUsuariosRol.Location = new System.Drawing.Point(64, 89);
             this.lsvUsuariosRol.Name = "lsvUsuariosRol";
-            this.lsvUsuariosRol.Size = new System.Drawing.Size(345, 118);
+            this.lsvUsuariosRol.Size = new System.Drawing.Size(260, 97);
             this.lsvUsuariosRol.TabIndex = 0;
             this.lsvUsuariosRol.UseCompatibleStateImageBehavior = false;
             this.lsvUsuariosRol.View = System.Windows.Forms.View.Details;
@@ -63,23 +62,24 @@
             // btnSalir
             // 
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(343, 261);
+            this.btnSalir.Location = new System.Drawing.Point(257, 212);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
-            this.btnSalir.Size = new System.Drawing.Size(86, 35);
+            this.btnSalir.Size = new System.Drawing.Size(64, 28);
             this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // frmUsuariosRol
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 321);
+            this.ClientSize = new System.Drawing.Size(396, 261);
+            this.ControlBox = false;
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lsvUsuariosRol);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmUsuariosRol";
             this.Text = "Seleccionar Usuario";
             this.Load += new System.EventHandler(this.frmUsuariosRol_Load);

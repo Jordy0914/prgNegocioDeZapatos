@@ -86,8 +86,10 @@ namespace prgNegocioDeZapatos
         //Este métoos permite verificar la existencia del usuario segun el codigo y la clave
         public Boolean mValidarDatos()
         {
+
             if (intContador <= 2)
             {
+
                 //Llenado de lo atributos de la clase EntidadUsuario
                 pEntidadUsuario.setLogin(this.txtLogin.Text.Trim());
                 pEntidadUsuario.setPassword(this.txtPassword.Text.Trim());
@@ -100,11 +102,22 @@ namespace prgNegocioDeZapatos
                 {
                     if (dtrUsuario.Read())
                     {
-                        pEntidadUsuario.setIdUsuario(dtrUsuario.GetInt32(0));
-                       
-                        this.btnIngresar.Enabled = true;
-                        return true;
-                    
+                        pEntidadUsuario.setLogin(dtrUsuario.GetString(1));  // |0=codigo|1=clave|2=perfil|
+                        pEntidadUsuario.setPassword(dtrUsuario.GetString(3));
+
+                        if (pEntidadUsuario.getLogin() == this.txtLogin.Text.Trim() && pEntidadUsuario.getPassword() == this.txtPassword.Text.Trim())
+                        {
+                            this.btnIngresar.Enabled = true;
+                            return true;
+                        }//fin del if para verificar que el usuario agregado coincida con el que inicia sesion
+
+                        else
+                        {
+                            MessageBox.Show("El usuario esta bloqueado", "Atención", MessageBoxButtons.OK);
+                            return false;
+                        }//fin del pEntidadUsuario
+
+
                     }//fin del if del Read
                     else
                     {
