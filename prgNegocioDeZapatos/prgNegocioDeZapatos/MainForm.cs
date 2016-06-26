@@ -59,16 +59,26 @@ namespace prgNegocioDeZapatos
             dtrUsuarioMenu = usuario.mConsultarMenuPrincipal(this.conexion, this.pEntidadUsuario);
 
             // 0 = idMenu 'int'
-            // 1 = descripcion 'string'
-            // 2 = posicion 'int'
-            // 3 = habilitadoMenu 'int'
+            // 1 = idMenuPadre 'int'
+            // 2 = descripcion 'string'
+            // 3 = posicion 'int'
+            // 4 = habilitadoMenu 'int'
+            // 5 = url  string
 
             while(dtrUsuarioMenu.Read())
             {
                 pEntidadMenu.setIdMenu(dtrUsuarioMenu.GetInt32(0));
-                pEntidadMenu.setDescripcion(dtrUsuarioMenu.GetString(1));
-                pEntidadMenu.setPosicion(dtrUsuarioMenu.GetInt32(2));
-                pEntidadMenu.setHabilitadoMenu(Convert.ToInt32((dtrUsuarioMenu.GetBoolean(3))));
+                pEntidadMenu.setIdMenuPadre(dtrUsuarioMenu.GetInt32(1));
+                pEntidadMenu.setDescripcion(dtrUsuarioMenu.GetString(2));
+                pEntidadMenu.setPosicion(dtrUsuarioMenu.GetInt32(3));
+                pEntidadMenu.setHabilitadoMenu(Convert.ToInt32((dtrUsuarioMenu.GetBoolean(4))));
+
+                try
+                {
+                    pEntidadMenu.setUrl(dtrUsuarioMenu.GetString(5));
+                }
+                catch (Exception e) { }
+                
                 usuario.mInsertarMenuTemporal(this.conexion, pEntidadMenu);
 
                 dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion,this.pEntidadUsuario,dtrUsuarioMenu.GetInt32(0));
@@ -81,9 +91,18 @@ namespace prgNegocioDeZapatos
             while (dtr.Read())
             {
                 pEntidadMenu.setIdMenu(dtr.GetInt32(0));
-                pEntidadMenu.setDescripcion(dtr.GetString(1));
-                pEntidadMenu.setPosicion(dtr.GetInt32(2));
-                pEntidadMenu.setHabilitadoMenu(Convert.ToInt32((dtr.GetBoolean(3))));
+                pEntidadMenu.setIdMenuPadre(dtr.GetInt32(1));
+                pEntidadMenu.setDescripcion(dtr.GetString(2));
+                pEntidadMenu.setPosicion(dtr.GetInt32(3));
+                pEntidadMenu.setHabilitadoMenu(Convert.ToInt32((dtr.GetBoolean(4))));
+
+
+                try
+                {
+                    pEntidadMenu.setUrl(dtr.GetString(5));
+                }
+                catch (Exception e) { }
+               
                 usuario.mInsertarMenuTemporal(this.conexion, pEntidadMenu);
 
                 dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion, this.pEntidadUsuario, dtr.GetInt32(0));
@@ -93,19 +112,28 @@ namespace prgNegocioDeZapatos
 
         #endregion
 
+
+
+
         #region Metodos Propios
 
         public void mCrearMenu()
         {
             dtrUsuarioMenu = usuario.mConsultarMenuPrincipal(this.conexion, this.pEntidadUsuario);
             ToolStripMenuItem menu;
-            
+
+            // 0 = idMenu 'int'
+            // 1 = idMenuPadre 'int'
+            // 2 = descripcion 'string'
+            // 3 = posicion 'int'
+            // 4 = habilitadoMenu 'int'
+            // 5 = url  string
 
             while (dtrUsuarioMenu.Read())
             {
                 menu = new ToolStripMenuItem();
-                menu.Text = dtrUsuarioMenu.GetString(1);
-                dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion,this.pEntidadUsuario, dtrUsuarioMenu.GetInt32(0));
+                menu.Text = dtrUsuarioMenu.GetString(2);
+                dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion,this.pEntidadUsuario,dtrUsuarioMenu.GetInt32(0));
                 this.mCrearSubMenusRecursivo(dtrUsuarioSubMenu,menu);
                 menuPrincipal.Items.Add(menu);
             }         
@@ -118,7 +146,7 @@ namespace prgNegocioDeZapatos
             while (dtr.Read())
             {
                 subMenu = new ToolStripMenuItem();
-                subMenu.Text = dtr.GetString(1);
+                subMenu.Text = dtr.GetString(2);
                 dtrUsuarioSubMenu = usuario.mConsultarSubmenus(this.conexion,this.pEntidadUsuario, dtr.GetInt32(0));
                 menu.DropDown.Items.Add(subMenu);
                 mCrearSubMenusRecursivo(dtrUsuarioSubMenu, subMenu);
