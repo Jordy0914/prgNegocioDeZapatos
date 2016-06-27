@@ -27,7 +27,7 @@ namespace LogicaNegocios
 
         public SqlDataReader mConsultarMenuRol(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Select distinct M.idMenu, M.idMenuPadre, M.descripcion, M.posicion, M.habilitadoMenu, M.url from tbMenu M, tbRolesVistas RV , tbUsuariosRoles UR where UR.idRol = RV.idRol and RV.idMenu = M.idMenu and UR.idUsuario = " + pEntidadUsuario.getIdUsuario() + "         ";
+            strSentencia = "Select distinct M.idMenu, M.idMenuPadre, M.descripcion, M.posicion, M.habilitadoMenu, M.url from tbMenu M, tbRolesVistas RV , tbUsuariosRoles UR where UR.idRol = RV.idRol and RV.idMenu = M.idMenu and UR.idUsuario = " + pEntidadUsuario.getIdUsuario() + "";
             return cone.mSeleccionar(strSentencia, cone);
         }
 
@@ -59,7 +59,7 @@ namespace LogicaNegocios
 
         public void mEliminarMenuTemp(clsConexion cone)
         {
-            strSentencia = "Delete * from tbMenuTemp";
+            strSentencia = "truncate table tbMenuTemp";
             cone.mEjecutar(strSentencia, cone);
         }
 
