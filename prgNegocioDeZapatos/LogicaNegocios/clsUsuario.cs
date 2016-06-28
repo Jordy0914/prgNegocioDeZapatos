@@ -77,6 +77,17 @@ namespace LogicaNegocios
             return cone.mSeleccionar(strSentencia, cone);
         }
 
+
+        public Boolean mAgregarUsuario(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
+        {
+            strSentencia = "Insert into tbUsuario(login,password,nombre,apellido1,apellido2,direccion,tipoIdentificacion,fechaNacimiento,puesto,cedula) Values ('" + pEntidadUsuario.getLogin() + "','" + pEntidadUsuario.getNombre()
+           + "','" + pEntidadUsuario.getPassword() + "','" + pEntidadUsuario.getApellido()
+            + ",'" + pEntidadUsuario.getApellido2() + "','" + pEntidadUsuario.getDireccion() + "','" + pEntidadUsuario.getTipoIdentificacion()
+            + "','" + pEntidadUsuario.getFechaNacimiento() + "','" + pEntidadUsuario.getPuesto() + "','" + pEntidadUsuario.getCedula() + "'')";
+
+            return cone.mEjecutar(strSentencia, cone);
+        }//fin del metodo agregar empleado
+
         #endregion
 
 

@@ -58,6 +58,7 @@
             this.cboRol.Name = "cboRol";
             this.cboRol.Size = new System.Drawing.Size(166, 21);
             this.cboRol.TabIndex = 3;
+            this.cboRol.SelectedIndexChanged += new System.EventHandler(this.cboRol_SelectedIndexChanged);
             // 
             // materialLabel1
             // 

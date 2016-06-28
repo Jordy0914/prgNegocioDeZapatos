@@ -25,7 +25,7 @@ namespace LogicaNegocios
 
     //    public SqlDataReader mConsultarIdVista(clsConexion cone, clsEntidadMenu pEntidadVista)
     //    {
-    //        strSentencia = "Select * from tbVistas where idVista ='" + pEntidadVista.idVista + "'";
+    //        strSentencia = "Select * from tbVistas where idVista ='" + pEntidadVista.getIdVista + "'";
     //        return cone.mSeleccionar(strSentencia, cone);
     //    }//fin del metodo mConsultarIdVista
 
