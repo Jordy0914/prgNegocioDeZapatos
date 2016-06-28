@@ -38,6 +38,28 @@ namespace LogicaNegocios
         }
 
 
+        public Boolean mInsertarRol(clsConexion cone, clsEntidadRol pEntidadRol)
+        {
+            strSentencia = "Insert into tbRoles(idRol,nombre) values ('" + pEntidadRol.getIdRol() + "','" + pEntidadRol.getNombre() + "'')";
+            return cone.mEjecutar(strSentencia, cone);
+        }//fin del metodo mInsertarVista
+
+        public Boolean mEliminarRol(clsConexion cone, clsEntidadRol pEntidadRol)
+        {
+            strSentencia = "Delete from tbRoles where idRol='" + pEntidadRol.getIdRol() + "'";
+            return cone.mEjecutar(strSentencia, cone);
+        }//fin del metodo mEliminarVista
+
+        public Boolean mModificarRol(clsConexion cone, clsEntidadRol pEntidadRol)
+        {
+
+            strSentencia = "Update tbRoles set nombre='" + pEntidadRol.getNombre() + " where idRol=" + pEntidadRol.getIdRol() + "";
+
+            return cone.mEjecutar(strSentencia, cone);
+
+        }//fin del metodo modificar 
+
+
         #endregion
 
     }
