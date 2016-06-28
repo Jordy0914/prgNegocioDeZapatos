@@ -117,14 +117,18 @@ namespace prgNegocioDeZapatos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(610, 429);
+            this.ControlBox = false;
             this.Controls.Add(this.menuPrincipal);
             this.Controls.Add(this.materialFlatButton3);
             this.Controls.Add(this.materialFlatButton2);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.materialFlatButton1);
+            this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(0, 57, 0, 0);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

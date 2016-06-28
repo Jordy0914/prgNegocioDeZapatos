@@ -35,6 +35,10 @@
             this.btnConsultar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnIngresar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtApellido2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
+            this.cboTipoI = new System.Windows.Forms.ComboBox();
+            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.txtDireccion = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtFechaN = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtCedula = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -50,10 +54,6 @@
             this.txtUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
-            this.cboTipoI = new System.Windows.Forms.ComboBox();
-            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtApellido2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -158,6 +158,64 @@
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion del Personal";
+            // 
+            // txtApellido2
+            // 
+            this.txtApellido2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtApellido2.Depth = 0;
+            this.txtApellido2.Hint = "";
+            this.txtApellido2.Location = new System.Drawing.Point(175, 155);
+            this.txtApellido2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtApellido2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtApellido2.Name = "txtApellido2";
+            this.txtApellido2.PasswordChar = '\0';
+            this.txtApellido2.SelectedText = "";
+            this.txtApellido2.SelectionLength = 0;
+            this.txtApellido2.SelectionStart = 0;
+            this.txtApellido2.Size = new System.Drawing.Size(244, 23);
+            this.txtApellido2.TabIndex = 37;
+            this.txtApellido2.TabStop = false;
+            this.txtApellido2.UseSystemPasswordChar = false;
+            // 
+            // materialLabel9
+            // 
+            this.materialLabel9.AutoSize = true;
+            this.materialLabel9.BackColor = System.Drawing.Color.White;
+            this.materialLabel9.Depth = 0;
+            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel9.Location = new System.Drawing.Point(22, 159);
+            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel9.Name = "materialLabel9";
+            this.materialLabel9.Size = new System.Drawing.Size(126, 19);
+            this.materialLabel9.TabIndex = 36;
+            this.materialLabel9.Text = "Segundo Apellido";
+            // 
+            // cboTipoI
+            // 
+            this.cboTipoI.FormattingEnabled = true;
+            this.cboTipoI.Items.AddRange(new object[] {
+            "Cedula ",
+            "Pasaporte",
+            "Cedula Extranjera"});
+            this.cboTipoI.Location = new System.Drawing.Point(182, 207);
+            this.cboTipoI.Name = "cboTipoI";
+            this.cboTipoI.Size = new System.Drawing.Size(193, 24);
+            this.cboTipoI.TabIndex = 35;
+            // 
+            // materialLabel8
+            // 
+            this.materialLabel8.AutoSize = true;
+            this.materialLabel8.BackColor = System.Drawing.Color.White;
+            this.materialLabel8.Depth = 0;
+            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel8.Location = new System.Drawing.Point(22, 207);
+            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel8.Name = "materialLabel8";
+            this.materialLabel8.Size = new System.Drawing.Size(154, 19);
+            this.materialLabel8.TabIndex = 34;
+            this.materialLabel8.Text = "Tipo de Identificacion";
             // 
             // txtDireccion
             // 
@@ -392,64 +450,6 @@
             this.materialLabel6.TabIndex = 0;
             this.materialLabel6.Text = "Usuario";
             // 
-            // materialLabel8
-            // 
-            this.materialLabel8.AutoSize = true;
-            this.materialLabel8.BackColor = System.Drawing.Color.White;
-            this.materialLabel8.Depth = 0;
-            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel8.Location = new System.Drawing.Point(22, 207);
-            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel8.Name = "materialLabel8";
-            this.materialLabel8.Size = new System.Drawing.Size(154, 19);
-            this.materialLabel8.TabIndex = 34;
-            this.materialLabel8.Text = "Tipo de Identificacion";
-            // 
-            // cboTipoI
-            // 
-            this.cboTipoI.FormattingEnabled = true;
-            this.cboTipoI.Items.AddRange(new object[] {
-            "Cedula ",
-            "Pasaporte",
-            "Cedula Extranjera"});
-            this.cboTipoI.Location = new System.Drawing.Point(182, 207);
-            this.cboTipoI.Name = "cboTipoI";
-            this.cboTipoI.Size = new System.Drawing.Size(193, 24);
-            this.cboTipoI.TabIndex = 35;
-            // 
-            // materialLabel9
-            // 
-            this.materialLabel9.AutoSize = true;
-            this.materialLabel9.BackColor = System.Drawing.Color.White;
-            this.materialLabel9.Depth = 0;
-            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel9.Location = new System.Drawing.Point(22, 159);
-            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel9.Name = "materialLabel9";
-            this.materialLabel9.Size = new System.Drawing.Size(126, 19);
-            this.materialLabel9.TabIndex = 36;
-            this.materialLabel9.Text = "Segundo Apellido";
-            // 
-            // txtApellido2
-            // 
-            this.txtApellido2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtApellido2.Depth = 0;
-            this.txtApellido2.Hint = "";
-            this.txtApellido2.Location = new System.Drawing.Point(175, 155);
-            this.txtApellido2.Margin = new System.Windows.Forms.Padding(2);
-            this.txtApellido2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtApellido2.Name = "txtApellido2";
-            this.txtApellido2.PasswordChar = '\0';
-            this.txtApellido2.SelectedText = "";
-            this.txtApellido2.SelectionLength = 0;
-            this.txtApellido2.SelectionStart = 0;
-            this.txtApellido2.Size = new System.Drawing.Size(244, 23);
-            this.txtApellido2.TabIndex = 37;
-            this.txtApellido2.TabStop = false;
-            this.txtApellido2.UseSystemPasswordChar = false;
-            // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,7 +461,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmUsuario";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar Usuarios";
             this.Load += new System.EventHandler(this.frmUsuario_Load);
             this.groupBox1.ResumeLayout(false);

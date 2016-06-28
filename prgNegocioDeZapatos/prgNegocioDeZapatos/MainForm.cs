@@ -12,12 +12,13 @@ using LogicaNegocios;
 
 using System.Data.SqlClient;
 
+using System.Reflection;
+
 namespace prgNegocioDeZapatos
 {
     public partial class MainForm : MaterialForm
     {
         #region Atributos
-
         private readonly MaterialSkinManager materialSkinManager;
         private clsConexion conexion;
 
@@ -27,7 +28,7 @@ namespace prgNegocioDeZapatos
         private SqlDataReader dtrUsuarioSubMenu;
 
         private clsEntidadMenu pEntidadMenu;
-
+        private string url = "";
         #endregion
 
         public MainForm(clsConexion conexion, clsEntidadUsuario pEntidadUsuario)
@@ -117,16 +118,13 @@ namespace prgNegocioDeZapatos
 
         #endregion
 
-
-
-
         #region Metodos Propios
 
         public void mCrearMenu()
         {
-            dtrUsuarioMenu = usuario.mCrearMenuPrincipal(this.conexion);
             ToolStripMenuItem menu;
-
+            dtrUsuarioMenu = usuario.mCrearMenuPrincipal(this.conexion);
+           
             // 0 = idMenu 'int'
             // 1 = idMenuPadre 'int'
             // 2 = descripcion 'string'
@@ -152,12 +150,28 @@ namespace prgNegocioDeZapatos
             {
                 subMenu = new ToolStripMenuItem();
                 subMenu.Text = dtr.GetString(2);
-                dtrUsuarioSubMenu = usuario.mCrearMenusSecundarios(this.conexion,dtr.GetInt32(0));
+                this.url = dtr.GetString(5);         
+                if (!String.IsNullOrEmpty(url))
+                {
+                    subMenu.Click += new EventHandler(newToolStripMenuItem_Click);
+                }
                 menu.DropDown.Items.Add(subMenu);
+                dtrUsuarioSubMenu = usuario.mCrearMenusSecundarios(this.conexion,dtr.GetInt32(0));
                 mCrearSubMenusRecursivo(dtrUsuarioSubMenu, subMenu);
             }
         }
-        
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Assembly asm = Assembly.GetEntryAssembly();
+            Type formName = asm.GetType("prgNegocioDeZapatos."+url);
+            Form f = (Form)Activator.CreateInstance(formName);
+            if(f != null)
+            {
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
         #endregion
 
     }
