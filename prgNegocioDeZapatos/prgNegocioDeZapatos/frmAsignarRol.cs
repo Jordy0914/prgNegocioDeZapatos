@@ -44,7 +44,8 @@ namespace prgNegocioDeZapatos
             this.conexion = new clsConexion();
             this.usuario = new clsEntidadUsuario();
             this.clUsuario = new clsUsuario();
-
+            this.rol = new clsEntidadRol();
+            this.clRol = new clsRol();
 
             InitializeComponent();
         }
@@ -80,10 +81,11 @@ namespace prgNegocioDeZapatos
 
         public void llenarComboRol()
         {
-            //dtrSentencia = clUsuario.mConsultarUsuarioNombre(conexion);
+            dtrSentencia = clRol.mConsultarRolNombre(conexion);
 
             while (dtrSentencia.Read())
             {
+               
                 cboRol.Items.Add(dtrSentencia.GetInt32(0));
             }
 
@@ -102,5 +104,18 @@ namespace prgNegocioDeZapatos
                 txtNombreUsuario.Text = dtrSentencia.GetString(1);
             }
         }//fin del metodo
+
+        private void cboRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            rol.setIdRol(Convert.ToInt32(cboRol.Text));
+
+            dtrSentencia = clRol.mConsultarRolGeneral(conexion, rol);
+
+            if (dtrSentencia.Read())
+
+            {
+                txtNombreRol.Text = dtrSentencia.GetString(1);
+            }
+        }
     }
 }
