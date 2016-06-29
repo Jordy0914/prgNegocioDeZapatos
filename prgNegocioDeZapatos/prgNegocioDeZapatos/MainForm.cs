@@ -145,34 +145,66 @@ namespace prgNegocioDeZapatos
         public void mCrearSubMenusRecursivo(SqlDataReader dtr,  ToolStripMenuItem menu)
         {
            ToolStripMenuItem subMenu;
-
+            
             while (dtr.Read())
             {
                 subMenu = new ToolStripMenuItem();
                 subMenu.Text = dtr.GetString(2);
-                this.url = dtr.GetString(5);         
-                if (!String.IsNullOrEmpty(url))
-                {
-                    subMenu.Click += new EventHandler(newToolStripMenuItem_Click);
-                }
+                subMenu.Tag = dtr.GetString(5);             
                 menu.DropDown.Items.Add(subMenu);
                 dtrUsuarioSubMenu = usuario.mCrearMenusSecundarios(this.conexion,dtr.GetInt32(0));
-                mCrearSubMenusRecursivo(dtrUsuarioSubMenu, subMenu);
+                if(dtrUsuarioSubMenu.HasRows)
+                    mCrearSubMenusRecursivo(dtrUsuarioSubMenu, subMenu);
+                else
+                    subMenu.Click += new EventHandler(MenuItemClicked);
             }
         }
 
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+    
+        private void MenuItemClicked(object sender, EventArgs e)
         {
-            Assembly asm = Assembly.GetEntryAssembly();
-            Type formName = asm.GetType("prgNegocioDeZapatos."+url);
-            Form f = (Form)Activator.CreateInstance(formName);
-            if(f != null)
+            Assembly Ensamblado = Assembly.GetEntryAssembly();
+            // if the sender is a ToolStripMenuItem
+            if (sender.GetType() == typeof(ToolStripMenuItem))
             {
-                f.MdiParent = this;
-                f.Show();
+                string NombreFormulario = ((ToolStripItem)sender).Tag.ToString();
+               
+                Type tipo = Ensamblado.GetType(Ensamblado.GetName().Name + "." + NombreFormulario);
+                if (tipo == null)
+                {
+                    MessageBox.Show("No se encontró el formulario", "Error de ubicación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (!this.FormularioEstaAbierto(NombreFormulario))
+                    {
+                        Form f = (Form)Activator.CreateInstance(tipo);
+                        f.MdiParent = this;
+                        f.Show();
+                    }
+                }
             }
         }
-        #endregion
 
+        private Boolean FormularioEstaAbierto(String NombreDelFrm)
+        {
+            if (this.MdiChildren.Length > 0)
+            {
+                for (int i = 0; i < this.MdiChildren.Length; i++)
+                {            
+                    if (this.MdiChildren[i].Name == NombreDelFrm.Substring(NombreDelFrm.IndexOf("frm"),NombreDelFrm.Length - NombreDelFrm.IndexOf("frm")))
+                    {
+                        MessageBox.Show("El formulario solicitado ya se encuentra abierto");
+                        return true;
+                    }
+                }
+                return false;
+            }
+            else
+                return false;
+        }
+
+
+        #endregion
     }
 }
