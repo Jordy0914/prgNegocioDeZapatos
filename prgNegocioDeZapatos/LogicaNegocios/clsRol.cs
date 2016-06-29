@@ -22,7 +22,7 @@ namespace LogicaNegocios
 
 
 
-        #region Atributos
+        #region Metodos
 
         public SqlDataReader mConsultarRolNombre(clsConexion cone)
         {
