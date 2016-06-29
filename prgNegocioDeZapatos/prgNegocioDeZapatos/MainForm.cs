@@ -28,7 +28,7 @@ namespace prgNegocioDeZapatos
         private SqlDataReader dtrUsuarioSubMenu;
 
         private clsEntidadMenu pEntidadMenu;
-        private string url = "";
+
         #endregion
 
         public MainForm(clsConexion conexion, clsEntidadUsuario pEntidadUsuario)
@@ -136,9 +136,12 @@ namespace prgNegocioDeZapatos
             {
                 menu = new ToolStripMenuItem();
                 menu.Text = dtrUsuarioMenu.GetString(2);
-                dtrUsuarioSubMenu = usuario.mCrearMenusSecundarios(this.conexion,dtrUsuarioMenu.GetInt32(0));
-                this.mCrearSubMenusRecursivo(dtrUsuarioSubMenu,menu);
                 menuPrincipal.Items.Add(menu);
+                dtrUsuarioSubMenu = usuario.mCrearMenusSecundarios(this.conexion,dtrUsuarioMenu.GetInt32(0));
+                if(dtrUsuarioSubMenu.HasRows)
+                    this.mCrearSubMenusRecursivo(dtrUsuarioSubMenu,menu);
+                if (menu.Text == "Salir")
+                    menu.Click += new EventHandler(SalirClicked);
             }         
         } // fin crear menu
 
@@ -160,16 +163,15 @@ namespace prgNegocioDeZapatos
             }
         }
 
-    
         private void MenuItemClicked(object sender, EventArgs e)
         {
             Assembly Ensamblado = Assembly.GetEntryAssembly();
-            // if the sender is a ToolStripMenuItem
+    
             if (sender.GetType() == typeof(ToolStripMenuItem))
             {
                 string NombreFormulario = ((ToolStripItem)sender).Tag.ToString();
-               
                 Type tipo = Ensamblado.GetType(Ensamblado.GetName().Name + "." + NombreFormulario);
+
                 if (tipo == null)
                 {
                     MessageBox.Show("No se encontró el formulario", "Error de ubicación", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -191,8 +193,8 @@ namespace prgNegocioDeZapatos
             if (this.MdiChildren.Length > 0)
             {
                 for (int i = 0; i < this.MdiChildren.Length; i++)
-                {            
-                    if (this.MdiChildren[i].Name == NombreDelFrm.Substring(NombreDelFrm.IndexOf("frm"),NombreDelFrm.Length - NombreDelFrm.IndexOf("frm")))
+                {
+                    if (this.MdiChildren[i].Name == NombreDelFrm.Substring(NombreDelFrm.IndexOf("frm"), NombreDelFrm.Length - NombreDelFrm.IndexOf("frm")))
                     {
                         MessageBox.Show("El formulario solicitado ya se encuentra abierto");
                         return true;
@@ -204,6 +206,10 @@ namespace prgNegocioDeZapatos
                 return false;
         }
 
+        private void SalirClicked(object sender, EventArgs e)
+        {
+            Application.Restart(); 
+        }
 
         #endregion
     }
