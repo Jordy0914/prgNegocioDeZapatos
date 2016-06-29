@@ -52,7 +52,7 @@ namespace prgNegocioDeZapatos
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            this.SetVisibleCore(false);
+            this.Hide();
             MainForm menu = new MainForm(this.conexion, this.pEntidadUsuario);
             menu.Show();
         }
