@@ -91,7 +91,7 @@ namespace prgNegocioDeZapatos
             inventario.setCategoria(txtCategoria.Text);
             inventario.setCantidad(Convert.ToInt32(txtCantidad.Text));
 
-            bolModificar = clInventario.mModificarInventario(conexion, inventario);
+            bolModificar = clInventario.mModificarProducto(conexion, inventario);
 
             if (bolModificar == true)
             {

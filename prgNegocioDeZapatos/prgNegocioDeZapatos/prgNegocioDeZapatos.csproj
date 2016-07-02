@@ -76,6 +76,12 @@
     <Compile Include="frmFactura.Designer.cs">
       <DependentUpon>frmFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaProducto.Designer.cs">
+      <DependentUpon>frmListaProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFactura.resx">
       <DependentUpon>frmFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaProducto.resx">
+      <DependentUpon>frmListaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRol.resx">
       <DependentUpon>frmRol.cs</DependentUpon>

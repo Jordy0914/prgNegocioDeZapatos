@@ -58,6 +58,12 @@ namespace LogicaNegocios
 
         }//fin del metodo mEliminarVista
 
+        public SqlDataReader mConsultarIdFactura(clsConexion cone)
+        {
+            strSentencia = " Select count(*) from tbFacturaEncabezado";
+            return cone.mSeleccionar(strSentencia, cone);
+        }
+
         #endregion
 
 
