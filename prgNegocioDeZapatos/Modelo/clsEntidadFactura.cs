@@ -99,14 +99,14 @@ namespace Entidades
         }
 
 
-        public void setSubTotal(Double subtoltal)
+        public void setSubTotal(Double subtotal)
         {
-            this.subtotal = subtoltal;
+            this.subtotal = subtotal;
 
         }
 
 
-        public Double getSubToltal()
+        public Double getSubTotal()
         {
 
             return subtotal;
@@ -120,7 +120,7 @@ namespace Entidades
         }
 
 
-        public Double getToltal()
+        public Double getTotal()
         {
 
             return total;

@@ -209,6 +209,7 @@ namespace prgNegocioDeZapatos
         private void SalirClicked(object sender, EventArgs e)
         {
             Application.Restart(); 
+
         }
 
         #endregion

@@ -60,12 +60,12 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(14, 39);
+            this.materialLabel1.Location = new System.Drawing.Point(18, 90);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(137, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(111, 19);
             this.materialLabel1.TabIndex = 0;
-            this.materialLabel1.Text = "Codigo del Usuario";
+            this.materialLabel1.Text = "Codigo de Role";
             this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
             // 
             // materialLabel2
@@ -82,22 +82,21 @@
             this.materialLabel2.Text = "Codigo de vista";
             this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
             // 
-            // txtNombreVista
+            // txtCodVentana
             // 
-            this.txtNombreVista.Depth = 0;
-            this.txtNombreVista.Enabled = false;
-            this.txtNombreVista.Hint = "";
-            this.txtNombreVista.Location = new System.Drawing.Point(177, 189);
-            this.txtNombreVista.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtNombreVista.Name = "txtNombreVista";
-            this.txtNombreVista.PasswordChar = '\0';
-            this.txtNombreVista.SelectedText = "";
-            this.txtNombreVista.SelectionLength = 0;
-            this.txtNombreVista.SelectionStart = 0;
-            this.txtNombreVista.Size = new System.Drawing.Size(121, 23);
-            this.txtNombreVista.TabIndex = 3;
-            this.txtNombreVista.TabStop = false;
-            this.txtNombreVista.UseSystemPasswordChar = false;
+            this.txtCodVentana.Depth = 0;
+            this.txtCodVentana.Hint = "";
+            this.txtCodVentana.Location = new System.Drawing.Point(169, 258);
+            this.txtCodVentana.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtCodVentana.Name = "txtCodVentana";
+            this.txtCodVentana.PasswordChar = '\0';
+            this.txtCodVentana.SelectedText = "";
+            this.txtCodVentana.SelectionLength = 0;
+            this.txtCodVentana.SelectionStart = 0;
+            this.txtCodVentana.Size = new System.Drawing.Size(121, 23);
+            this.txtCodVentana.TabIndex = 3;
+            this.txtCodVentana.TabStop = false;
+            this.txtCodVentana.UseSystemPasswordChar = false;
             // 
             // materialLabel3
             // 
@@ -108,9 +107,9 @@
             this.materialLabel3.Location = new System.Drawing.Point(14, 87);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(143, 19);
+            this.materialLabel3.Size = new System.Drawing.Size(117, 19);
             this.materialLabel3.TabIndex = 4;
-            this.materialLabel3.Text = "Nombre del Usuario";
+            this.materialLabel3.Text = "Nombre del role";
             this.materialLabel3.Click += new System.EventHandler(this.materialLabel3_Click);
             // 
             // materialLabel4
@@ -122,9 +121,11 @@
             this.materialLabel4.Location = new System.Drawing.Point(14, 193);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(135, 19);
+            this.materialLabel4.Size = new System.Drawing.Size(133, 19);
             this.materialLabel4.TabIndex = 5;
-            this.materialLabel4.Text = "Nombre de la vista";
+            this.materialLabel4.Text = "Codigo de ventana";
+            // 
+            // cbxCodRole
             // 
             // chbInsertar
             // 
@@ -193,8 +194,8 @@
             // btnEliminar
             // 
             this.btnEliminar.Depth = 0;
-            this.btnEliminar.Location = new System.Drawing.Point(233, 19);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Location = new System.Drawing.Point(254, 332);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Primary = true;
@@ -206,8 +207,8 @@
             // btnModificar
             // 
             this.btnModificar.Depth = 0;
-            this.btnModificar.Location = new System.Drawing.Point(133, 19);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificar.Location = new System.Drawing.Point(162, 332);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Primary = true;
@@ -219,8 +220,8 @@
             // btnSalir
             // 
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(329, 19);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalir.Location = new System.Drawing.Point(356, 332);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
@@ -232,8 +233,8 @@
             // btnAgregar
             // 
             this.btnAgregar.Depth = 0;
-            this.btnAgregar.Location = new System.Drawing.Point(33, 19);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregar.Location = new System.Drawing.Point(63, 332);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Primary = true;
@@ -381,11 +382,24 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(651, 436);
             this.ControlBox = false;
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "frmAsignarVistasUsuario";
-            this.Text = "Asignar Vistas a Usuario";
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.chbConsultar);
+            this.Controls.Add(this.chbEliminar);
+            this.Controls.Add(this.chbModificar);
+            this.Controls.Add(this.chbInsertar);
+            this.Controls.Add(this.cbxCodVentanas);
+            this.Controls.Add(this.cbxCodRole);
+            this.Controls.Add(this.materialLabel4);
+            this.Controls.Add(this.materialLabel3);
+            this.Controls.Add(this.txtCodVentana);
+            this.Controls.Add(this.txtNombreRole);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.materialLabel1);
+            this.Name = "frmAsignarVentanaRol";
+            this.Text = "Asignar Ventanas a Role";
             this.Load += new System.EventHandler(this.frmAsignarVentanaRol_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -400,7 +414,7 @@
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreVista;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtCodVentana;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialCheckBox chbInsertar;

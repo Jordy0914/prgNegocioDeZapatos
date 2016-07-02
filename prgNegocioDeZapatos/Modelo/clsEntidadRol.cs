@@ -17,6 +17,10 @@ namespace Entidades
         private int eliminar;
         private int consultar;
         private int modificar;
+        private int creadoPor;
+        private DateTime fechaCreacion;
+        private int modificadoPor;
+        private DateTime fechaModificacion;
 
         #endregion
 
@@ -32,6 +36,10 @@ namespace Entidades
             this.eliminar = 0;
             this.consultar = 0;
             this.modificar = 0;
+            this.creadoPor = 0;
+            this.fechaCreacion = DateTime.MaxValue;
+            this.modificadoPor = 0;
+            this.fechaModificacion = DateTime.MaxValue;
         }
 
         #endregion
@@ -119,6 +127,56 @@ namespace Entidades
         {
 
             return this.eliminar;
+        }
+
+        public void setCreadoPor(int creadoPor)
+        {
+            this.creadoPor = creadoPor;
+
+        }
+
+        public int getCreadoPor()
+        {
+
+            return creadoPor;
+        }
+
+
+        public void setFechaCreacion(DateTime fechaCreacion)
+        {
+            this.fechaCreacion = fechaCreacion;
+        }
+
+
+        public DateTime getFechaCreacion()
+        {
+
+            return fechaCreacion;
+        }
+
+        public void setModificadoPor(int modificadoPor)
+        {
+            this.modificadoPor = modificadoPor;
+
+        }
+
+        public int getModificadoPor()
+        {
+
+            return modificadoPor;
+        }
+
+
+        public void setFechaModificacion(DateTime fechaModificacion)
+        {
+            this.fechaModificacion = fechaModificacion;
+        }
+
+
+        public DateTime getFechaModificacion()
+        {
+
+            return fechaModificacion;
         }
 
 

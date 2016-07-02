@@ -193,6 +193,7 @@
             // 
             // cboTipoI
             // 
+            this.cboTipoI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoI.FormattingEnabled = true;
             this.cboTipoI.Items.AddRange(new object[] {
             "Cedula ",
