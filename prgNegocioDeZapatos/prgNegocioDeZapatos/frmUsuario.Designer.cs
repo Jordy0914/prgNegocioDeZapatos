@@ -65,18 +65,17 @@
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.btnModificar);
-            this.groupBox1.Controls.Add(this.btnConsultar);
             this.groupBox1.Controls.Add(this.btnIngresar);
-            this.groupBox1.Location = new System.Drawing.Point(32, 523);
+            this.groupBox1.Location = new System.Drawing.Point(123, 523);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(730, 76);
+            this.groupBox1.Size = new System.Drawing.Size(566, 76);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             // 
             // btnSalir
             // 
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(616, 31);
+            this.btnSalir.Location = new System.Drawing.Point(430, 31);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
@@ -89,7 +88,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Depth = 0;
-            this.btnEliminar.Location = new System.Drawing.Point(464, 31);
+            this.btnEliminar.Location = new System.Drawing.Point(304, 31);
             this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Primary = true;
@@ -101,7 +100,7 @@
             // btnModificar
             // 
             this.btnModificar.Depth = 0;
-            this.btnModificar.Location = new System.Drawing.Point(310, 31);
+            this.btnModificar.Location = new System.Drawing.Point(161, 31);
             this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Primary = true;
@@ -113,7 +112,7 @@
             // btnConsultar
             // 
             this.btnConsultar.Depth = 0;
-            this.btnConsultar.Location = new System.Drawing.Point(161, 31);
+            this.btnConsultar.Location = new System.Drawing.Point(385, 50);
             this.btnConsultar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Primary = true;
@@ -125,7 +124,7 @@
             // btnIngresar
             // 
             this.btnIngresar.Depth = 0;
-            this.btnIngresar.Location = new System.Drawing.Point(12, 31);
+            this.btnIngresar.Location = new System.Drawing.Point(38, 31);
             this.btnIngresar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Primary = true;
@@ -140,6 +139,7 @@
             this.groupBox2.Controls.Add(this.txtApellido2);
             this.groupBox2.Controls.Add(this.materialLabel9);
             this.groupBox2.Controls.Add(this.cboTipoI);
+            this.groupBox2.Controls.Add(this.btnConsultar);
             this.groupBox2.Controls.Add(this.materialLabel8);
             this.groupBox2.Controls.Add(this.txtDireccion);
             this.groupBox2.Controls.Add(this.txtFechaN);
@@ -154,7 +154,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(18, 80);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(476, 422);
+            this.groupBox2.Size = new System.Drawing.Size(494, 422);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion del Personal";
@@ -172,7 +172,7 @@
             this.txtApellido2.SelectedText = "";
             this.txtApellido2.SelectionLength = 0;
             this.txtApellido2.SelectionStart = 0;
-            this.txtApellido2.Size = new System.Drawing.Size(244, 23);
+            this.txtApellido2.Size = new System.Drawing.Size(189, 23);
             this.txtApellido2.TabIndex = 37;
             this.txtApellido2.TabStop = false;
             this.txtApellido2.UseSystemPasswordChar = false;
@@ -201,7 +201,7 @@
             "Cedula Extranjera"});
             this.cboTipoI.Location = new System.Drawing.Point(182, 207);
             this.cboTipoI.Name = "cboTipoI";
-            this.cboTipoI.Size = new System.Drawing.Size(193, 23);
+            this.cboTipoI.Size = new System.Drawing.Size(182, 24);
             this.cboTipoI.TabIndex = 35;
             // 
             // materialLabel8
@@ -231,7 +231,7 @@
             this.txtDireccion.SelectedText = "";
             this.txtDireccion.SelectionLength = 0;
             this.txtDireccion.SelectionStart = 0;
-            this.txtDireccion.Size = new System.Drawing.Size(244, 23);
+            this.txtDireccion.Size = new System.Drawing.Size(199, 23);
             this.txtDireccion.TabIndex = 33;
             this.txtDireccion.TabStop = false;
             this.txtDireccion.UseSystemPasswordChar = false;
@@ -249,7 +249,7 @@
             this.txtFechaN.SelectedText = "";
             this.txtFechaN.SelectionLength = 0;
             this.txtFechaN.SelectionStart = 0;
-            this.txtFechaN.Size = new System.Drawing.Size(211, 23);
+            this.txtFechaN.Size = new System.Drawing.Size(189, 23);
             this.txtFechaN.TabIndex = 32;
             this.txtFechaN.TabStop = false;
             this.txtFechaN.UseSystemPasswordChar = false;
@@ -267,7 +267,7 @@
             this.txtCedula.SelectedText = "";
             this.txtCedula.SelectionLength = 0;
             this.txtCedula.SelectionStart = 0;
-            this.txtCedula.Size = new System.Drawing.Size(244, 23);
+            this.txtCedula.Size = new System.Drawing.Size(189, 23);
             this.txtCedula.TabIndex = 31;
             this.txtCedula.TabStop = false;
             this.txtCedula.UseSystemPasswordChar = false;
@@ -285,7 +285,7 @@
             this.txtApellido1.SelectedText = "";
             this.txtApellido1.SelectionLength = 0;
             this.txtApellido1.SelectionStart = 0;
-            this.txtApellido1.Size = new System.Drawing.Size(244, 23);
+            this.txtApellido1.Size = new System.Drawing.Size(189, 23);
             this.txtApellido1.TabIndex = 30;
             this.txtApellido1.TabStop = false;
             this.txtApellido1.UseSystemPasswordChar = false;
@@ -303,7 +303,7 @@
             this.txtNombre.SelectedText = "";
             this.txtNombre.SelectionLength = 0;
             this.txtNombre.SelectionStart = 0;
-            this.txtNombre.Size = new System.Drawing.Size(244, 23);
+            this.txtNombre.Size = new System.Drawing.Size(189, 23);
             this.txtNombre.TabIndex = 29;
             this.txtNombre.TabStop = false;
             this.txtNombre.UseSystemPasswordChar = false;
@@ -386,7 +386,7 @@
             this.groupBox3.Controls.Add(this.materialLabel7);
             this.groupBox3.Controls.Add(this.materialLabel6);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(518, 166);
+            this.groupBox3.Location = new System.Drawing.Point(531, 181);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(264, 148);
             this.groupBox3.TabIndex = 22;
@@ -456,7 +456,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(807, 618);
+            this.ClientSize = new System.Drawing.Size(813, 618);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

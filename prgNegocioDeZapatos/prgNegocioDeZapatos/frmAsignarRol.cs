@@ -41,7 +41,6 @@ namespace prgNegocioDeZapatos
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
 
-            this.conexion = new clsConexion();
             this.usuario = new clsEntidadUsuario();
             this.clUsuario = new clsUsuario();
             this.rol = new clsEntidadRol();
@@ -54,8 +53,6 @@ namespace prgNegocioDeZapatos
     
         private void frmAsignarRol_Load(object sender, EventArgs e)
         {
-            this.llenarComboUsuario();
-            this.llenarComboRol();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -67,64 +64,6 @@ namespace prgNegocioDeZapatos
         {
 
         }
-
-        public void llenarComboUsuario()
-        {
-            dtrSentencia = clUsuario.mConsultarUsuarioNombre(conexion);
-
-            while (dtrSentencia.Read())
-            {
-                cboUsuario.Items.Add(dtrSentencia.GetInt32(0));
-            }
-
-        }//fin del metodo para llenar el combox de usuario
-
-        public void llenarComboRol()
-        {
-            dtrSentencia = clRol.mConsultarRolNombre(conexion);
-
-            while (dtrSentencia.Read())
-            {
-               
-                cboRol.Items.Add(dtrSentencia.GetInt32(0));
-            }
-
-        }//fin del metodo para llenar el combox de usuario
-
-
-        private void cboUsuario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            usuario.setIdUsuario(Convert.ToInt32(cboUsuario.Text));
-
-            dtrSentencia = clUsuario.mConsultarUsuarioGeneral(conexion, usuario);
-
-            if (dtrSentencia.Read())
-
-            {
-                txtNombreUsuario.Text = dtrSentencia.GetString(1);
-            }
-        }//fin del metodo
-
-        private void cboRol_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            rol.setIdRol(Convert.ToInt32(cboRol.Text));
-
-            dtrSentencia = clRol.mConsultarRolGeneral(conexion, rol);
-
-            if (dtrSentencia.Read())
-
-            {
-                txtNombreRol.Text = dtrSentencia.GetString(1);
-            }
-        }//fin del metodo 
-
-
-        public void Limpiar()
-        {
-            this.cboUsuario.Text = "";
-            this.txtNombreUsuario.Text = "";
-            this.cboRol.Text = "";
-            this.txtNombreRol.Text = "";
-        }
+        
     }
 }

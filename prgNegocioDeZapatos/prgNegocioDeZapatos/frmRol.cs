@@ -24,21 +24,11 @@ namespace prgNegocioDeZapatos
             InitializeComponent();
         }
 
-      
-
         private void frmRol_Load(object sender, EventArgs e)
         {
 
         }
-
-        public void Limpiar()
-        {
-            this.txtCodigoRol.Text = "";
-            this.txtNombreRol.Text = "";
-           
-        }
-
-
+        
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
