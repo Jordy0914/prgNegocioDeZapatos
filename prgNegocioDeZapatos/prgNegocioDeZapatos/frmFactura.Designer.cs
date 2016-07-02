@@ -366,6 +366,7 @@
             this.lvProductos.TabIndex = 21;
             this.lvProductos.UseCompatibleStateImageBehavior = false;
             this.lvProductos.View = System.Windows.Forms.View.Details;
+            this.lvProductos.SelectedIndexChanged += new System.EventHandler(this.lvProductos_SelectedIndexChanged);
             // 
             // codigo
             // 

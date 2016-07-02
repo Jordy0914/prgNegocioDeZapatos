@@ -26,6 +26,7 @@ namespace prgNegocioDeZapatos
         clsZapatos clProducto;
         clsConexion conexion;
         private Boolean bolAgregarE, bolAgregarD, bolModificar, bolEliminar;
+        public int codigoProductos;
 
         public frmFactura() {
 
@@ -54,35 +55,40 @@ namespace prgNegocioDeZapatos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            producto.setIdZapato(Convert.ToInt32(txtCodProducto.Text.Trim()));
+            //consulta el estudiante por carnet
 
-            factura.setIdFactura(Convert.ToInt32(txtCodProducto.Text));
-            factura.setIdProducto(Convert.ToInt32(txtProducto.Text));
-            factura.setIdUsuario(Convert.ToInt32(txtPrecio.Text));
-            factura.setCantidad(Convert.ToInt32(txtCantidad.Text));
-            factura.setSubTotal(Convert.ToDouble(txtSubTotal.Text));
-            factura.setTotal(Convert.ToDouble(txtTotal.Text));
+            dtrProducto = clProducto.mConsultarProducto(conexion, producto);
+            this.llenarLista();
 
-            bolAgregarE = clFactura.mInsertarFacturaEncabezado(conexion,factura);
-            bolAgregarD = clFactura.mInsertarFacturaDetalle(conexion, factura);
+            //factura.setIdFactura(Convert.ToInt32(txtCodProducto.Text));
+            //factura.setIdProducto(Convert.ToInt32(txtProducto.Text));
+            //factura.setIdUsuario(Convert.ToInt32(txtPrecio.Text));
+            //factura.setCantidad(Convert.ToInt32(txtCantidad.Text));
+            //factura.setSubTotal(Convert.ToDouble(txtSubTotal.Text));
+            //factura.setTotal(Convert.ToDouble(txtTotal.Text));
 
-            if (bolAgregarE == true && bolAgregarD == true)
-            {
+            //bolAgregarE = clFactura.mInsertarFacturaEncabezado(conexion,factura);
+            //bolAgregarD = clFactura.mInsertarFacturaDetalle(conexion, factura);
 
-                MessageBox.Show("Ha sido agregado correctamente", "Registro correcto", MessageBoxButtons.OK);
-                btnAgregar.Enabled = false;
-                this.Limpiar();
+            //if (bolAgregarE == true && bolAgregarD == true)
+            //{
+
+            //    MessageBox.Show("Ha sido agregado correctamente", "Registro correcto", MessageBoxButtons.OK);
+            //    btnAgregar.Enabled = false;
+            //    this.Limpiar();
 
 
 
-            }//fin del if de agregar
+            //}//fin del if de agregar
 
-            else {
+            //else {
 
-                MessageBox.Show("Problemas al agregar", "Error", MessageBoxButtons.OK);
+            //    MessageBox.Show("Problemas al agregar", "Error", MessageBoxButtons.OK);
                
-                this.Limpiar();
+            //    this.Limpiar();
 
-            }
+            //}
 
            
 
@@ -163,6 +169,23 @@ namespace prgNegocioDeZapatos
             }//fin del if que verifica que no este null
 
         }//fin del metodo que consulta el producto segun su id
+
+        private void lvProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < lvProductos.Items.Count; i++)
+            {
+                if (lvProductos.Items[i].Selected)
+                {
+                    codigoProductos = Convert.ToInt32(lvProductos.Items[i].Text);
+                }
+
+            }
+        }
+
+        public int getCodProductos()
+        {
+            return (codigoProductos);
+        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
