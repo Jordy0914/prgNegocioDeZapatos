@@ -27,7 +27,9 @@ namespace prgNegocioDeZapatos
         clsConexion conexion;
         private Boolean bolAgregarE, bolAgregarD, bolModificar, bolEliminar;
         public int codigoProductos;
-
+        public int precios;
+        private int total = 0;
+        
         public frmFactura() {
 
 
@@ -51,54 +53,51 @@ namespace prgNegocioDeZapatos
             factura.setIdFactura(Convert.ToInt32(txtCodProducto.Text));
              bolEliminar=clFactura.mEliminarFactura(conexion, factura);
 
-        }
+        }//fin de la accion del boton eliminar
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            producto.setIdZapato(Convert.ToInt32(txtCodProducto.Text.Trim()));
-            //consulta el estudiante por carnet
-
-            dtrProducto = clProducto.mConsultarProducto(conexion, producto);
-            this.llenarLista();
-
-            //factura.setIdFactura(Convert.ToInt32(txtCodProducto.Text));
-            //factura.setIdProducto(Convert.ToInt32(txtProducto.Text));
-            //factura.setIdUsuario(Convert.ToInt32(txtPrecio.Text));
-            //factura.setCantidad(Convert.ToInt32(txtCantidad.Text));
-            //factura.setSubTotal(Convert.ToDouble(txtSubTotal.Text));
-            //factura.setTotal(Convert.ToDouble(txtTotal.Text));
-
-            //bolAgregarE = clFactura.mInsertarFacturaEncabezado(conexion,factura);
-            //bolAgregarD = clFactura.mInsertarFacturaDetalle(conexion, factura);
-
-            //if (bolAgregarE == true && bolAgregarD == true)
-            //{
-
-            //    MessageBox.Show("Ha sido agregado correctamente", "Registro correcto", MessageBoxButtons.OK);
-            //    btnAgregar.Enabled = false;
-            //    this.Limpiar();
-
-
-
-            //}//fin del if de agregar
-
-            //else {
-
-            //    MessageBox.Show("Problemas al agregar", "Error", MessageBoxButtons.OK);
-               
-            //    this.Limpiar();
-
-            //}
-
-           
-
-        }
-
+       
    
         private void frmFactura_Load(object sender, EventArgs e)
         {
             this.mConsultaIdFactura();
         }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            producto.setIdZapato(Convert.ToInt32(txtCodProducto.Text.Trim()));
+
+            dtrProducto = clProducto.mConsultarProducto(conexion, producto);
+
+            factura.setIdFactura(Convert.ToInt32(txtCodProducto.Text));
+            factura.setIdProducto(Convert.ToInt32(txtProducto.Text));
+            factura.setIdUsuario(Convert.ToInt32(txtPrecio.Text));
+            factura.setCantidad(Convert.ToInt32(txtCantidad.Text));
+            factura.setSubTotal(Convert.ToDouble(txtSubTotal.Text));
+            factura.setTotal(Convert.ToDouble(txtTotal.Text));
+
+            bolAgregarE = clFactura.mInsertarFacturaEncabezado(conexion, factura);
+            bolAgregarD = clFactura.mInsertarFacturaDetalle(conexion, factura);
+
+            if (bolAgregarE == true && bolAgregarD == true)
+            {
+
+                MessageBox.Show("Ha sido agregado correctamente", "Registro correcto", MessageBoxButtons.OK);
+                btnAgregar.Enabled = false;
+                this.Limpiar();
+
+
+
+            }//fin del if de agregar
+
+            else {
+
+                MessageBox.Show("Problemas al agregar", "Error", MessageBoxButtons.OK);
+
+                this.Limpiar();
+
+            }
+
+        }//fin de la accion del boton realizar venta
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -144,15 +143,14 @@ namespace prgNegocioDeZapatos
             }
 
 
-      }//fin del buscar
+      }//fin de la accion del boton buscar
 
 
         public void mConsultaProducto()
         {
 
             producto.setIdZapato(Convert.ToInt32(txtCodProducto.Text.Trim()));
-            //consulta el estudiante por carnet
-
+           
             dtrProducto = clProducto.mConsultarProducto(conexion,producto);
 
             if (dtrProducto != null)
@@ -180,17 +178,32 @@ namespace prgNegocioDeZapatos
                 }
 
             }
-        }
+        }//fin del metodo para agregar los items a la lista
 
         public int getCodProductos()
         {
             return (codigoProductos);
         }
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+            this.llenarLista();//llena la lista con el codigo del producto
+            this.txtCantidad.Text = (mContarProductos());
+            this.txtSubTotal.Text = ""+ this.calcularPrecio();
+            // this.Limpiar();
+
+        }//fin de la accion del boton agregar
+
+        public int calcularPrecio()
+        {
+          return total = total + (Convert.ToInt32(this.txtPrecio.Text) * Convert.ToInt32(this.txtCantidadProducto.Text));
+        }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
-        }
+        }//fin del la accion del boton salir
 
 
         public void mConsultaIdFactura()
@@ -224,10 +237,26 @@ namespace prgNegocioDeZapatos
         public void llenarLista()
         {
 
+            if (getCodProductos() != 0)
+            {
+                producto.setIdZapato(Convert.ToInt32(txtCodProducto.Text));
+            
+            }//fin del if que verifica que contenga datos
+
             ListViewItem lista;
             lista = lvProductos.Items.Add(txtCodProducto.Text);
+        }//fin del metodo para llenar la lista con datos
 
+        private String mContarProductos()
+        {
+            double contar = 0;
+            foreach (ListViewItem item in lvProductos.Items)
+            {
+                contar++;
+            }
+            return contar.ToString();
         }
+
 
         public void Limpiar()
         {
