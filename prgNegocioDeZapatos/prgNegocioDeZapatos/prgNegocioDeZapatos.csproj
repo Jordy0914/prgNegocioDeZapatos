@@ -70,6 +70,12 @@
     <Compile Include="frmAsignarRol.Designer.cs">
       <DependentUpon>frmAsignarRol.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAsignarVistasUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignarVistasUsuario.Designer.cs">
+      <DependentUpon>frmAsignarVistasUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAsignarVistasRol.resx">
       <DependentUpon>frmAsignarVistasRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsignarVistasUsuario.resx">
+      <DependentUpon>frmAsignarVistasUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFactura.resx">
       <DependentUpon>frmFactura.cs</DependentUpon>
