@@ -31,7 +31,7 @@ namespace prgNegocioDeZapatos
 
         #endregion
 
-        public MainForm(clsConexion conexion, clsEntidadUsuario pEntidadUsuario)
+        public MainForm(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
             InitializeComponent();
 
@@ -40,7 +40,7 @@ namespace prgNegocioDeZapatos
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
 
-            this.conexion = conexion;
+            this.conexion = cone;
 
             this.pEntidadUsuario = pEntidadUsuario;
             this.usuario = new clsUsuario();
@@ -171,6 +171,8 @@ namespace prgNegocioDeZapatos
             {
                 string NombreFormulario = ((ToolStripItem)sender).Tag.ToString();
                 Type tipo = Ensamblado.GetType(Ensamblado.GetName().Name + "." + NombreFormulario);
+                
+
 
                 if (tipo == null)
                 {
@@ -180,7 +182,7 @@ namespace prgNegocioDeZapatos
                 {
                     if (!this.FormularioEstaAbierto(NombreFormulario))
                     {
-                        Form f = (Form)Activator.CreateInstance(tipo);
+                        Form f = (Form)Activator.CreateInstance(tipo,conexion);
                         f.MdiParent = this;
                         f.Show();
                     }

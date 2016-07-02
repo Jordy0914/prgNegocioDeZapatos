@@ -8,9 +8,7 @@ namespace Entidades
 {
    public  class clsEntidadRol
     {
-
         #region Atributos
-
         private String nombre;
         private int idRol;
         private int insertar;
@@ -21,15 +19,11 @@ namespace Entidades
         private DateTime fechaCreacion;
         private int modificadoPor;
         private DateTime fechaModificacion;
-
         #endregion
 
-
         #region Constructor
-
         public clsEntidadRol()
         {
-
             this.nombre = "";
             this.idRol = 0;
             this.insertar = 0;
@@ -41,148 +35,108 @@ namespace Entidades
             this.modificadoPor = 0;
             this.fechaModificacion = DateTime.MaxValue;
         }
-
         #endregion
 
-
         #region Metodos
-
-
         public void setNombre(String nombre)
         {
             this.nombre = nombre;
-
         }
-
 
         public String getNombre()
         {
-
             return this.nombre;
         }
 
         public void setIdRol(int idRol)
         {
             this.idRol = idRol;
-
         }
-
 
         public int getIdRol()
-        {
-
+        { 
             return this.idRol;
         }
-
 
         public void setInsertar(int insertar)
         {
             this.insertar = insertar;
-
         }
-
 
         public int getInsertar()
         {
-
             return this.insertar;
         }
 
         public void setConsultar(int consultar)
         {
             this.consultar = consultar;
-
         }
-
 
         public int getConsultar()
         {
-
             return this.consultar;
         }
-
 
         public void setModificar(int modificar)
         {
             this.modificar = modificar;
-
         }
-
 
         public int getModificar()
         {
-
             return this.modificar;
         }
-
 
         public void setEliminar(int eliminar)
         {
             this.eliminar = eliminar;
-
         }
-
 
         public int getEliminar()
         {
-
             return this.eliminar;
         }
 
         public void setCreadoPor(int creadoPor)
         {
             this.creadoPor = creadoPor;
-
         }
 
         public int getCreadoPor()
         {
-
             return creadoPor;
         }
-
 
         public void setFechaCreacion(DateTime fechaCreacion)
         {
             this.fechaCreacion = fechaCreacion;
         }
 
-
         public DateTime getFechaCreacion()
         {
-
             return fechaCreacion;
         }
 
         public void setModificadoPor(int modificadoPor)
         {
             this.modificadoPor = modificadoPor;
-
         }
 
         public int getModificadoPor()
         {
-
             return modificadoPor;
         }
-
 
         public void setFechaModificacion(DateTime fechaModificacion)
         {
             this.fechaModificacion = fechaModificacion;
         }
 
-
         public DateTime getFechaModificacion()
         {
-
             return fechaModificacion;
         }
-
-
         #endregion
-
-
-
     }
 }

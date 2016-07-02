@@ -9,20 +9,19 @@ using System.Data.SqlClient;
 
 namespace LogicaNegocios
 {
-
-
     public class clsRol
     {
-
         #region Atributos
-
         private string strSentencia;
-
         #endregion
 
-
-
         #region Metodos
+        public SqlDataReader mConsutarRol(clsConexion cone)
+        {
+            this.strSentencia = "Select idRol, nombre from tbRoles";
+            return cone.mSeleccionar(strSentencia, cone);
+        }
+         /////////////////////////////////////////////////////////////////
 
         public SqlDataReader mConsultarRolNombre(clsConexion cone)
         {

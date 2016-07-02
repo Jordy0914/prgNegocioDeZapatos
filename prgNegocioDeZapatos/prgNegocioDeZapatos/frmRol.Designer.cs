@@ -34,14 +34,14 @@
             this.chConsultar = new MaterialSkin.Controls.MaterialCheckBox();
             this.chInsertar = new MaterialSkin.Controls.MaterialCheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtNombreRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtCodRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblAdvertencia = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAgregar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtNombreRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -131,7 +131,7 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.txtNombreRol);
-            this.groupBox2.Controls.Add(this.txtRol);
+            this.groupBox2.Controls.Add(this.txtCodRol);
             this.groupBox2.Controls.Add(this.lblAdvertencia);
             this.groupBox2.Controls.Add(this.materialLabel2);
             this.groupBox2.Controls.Add(this.materialLabel1);
@@ -143,16 +143,49 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion del Rol";
             // 
+            // txtNombreRol
+            // 
+            this.txtNombreRol.Depth = 0;
+            this.txtNombreRol.Hint = "";
+            this.txtNombreRol.Location = new System.Drawing.Point(141, 90);
+            this.txtNombreRol.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtNombreRol.Name = "txtNombreRol";
+            this.txtNombreRol.PasswordChar = '\0';
+            this.txtNombreRol.SelectedText = "";
+            this.txtNombreRol.SelectionLength = 0;
+            this.txtNombreRol.SelectionStart = 0;
+            this.txtNombreRol.Size = new System.Drawing.Size(121, 23);
+            this.txtNombreRol.TabIndex = 29;
+            this.txtNombreRol.TabStop = false;
+            this.txtNombreRol.UseSystemPasswordChar = false;
+            // 
+            // txtCodRol
+            // 
+            this.txtCodRol.Depth = 0;
+            this.txtCodRol.Enabled = false;
+            this.txtCodRol.Hint = "";
+            this.txtCodRol.Location = new System.Drawing.Point(141, 37);
+            this.txtCodRol.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtCodRol.Name = "txtCodRol";
+            this.txtCodRol.PasswordChar = '\0';
+            this.txtCodRol.SelectedText = "";
+            this.txtCodRol.SelectionLength = 0;
+            this.txtCodRol.SelectionStart = 0;
+            this.txtCodRol.Size = new System.Drawing.Size(139, 23);
+            this.txtCodRol.TabIndex = 28;
+            this.txtCodRol.TabStop = false;
+            this.txtCodRol.UseSystemPasswordChar = false;
+            // 
             // lblAdvertencia
             // 
             this.lblAdvertencia.AutoSize = true;
             this.lblAdvertencia.Depth = 0;
-            this.lblAdvertencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lblAdvertencia.ForeColor = System.Drawing.Color.Red;
+            this.lblAdvertencia.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblAdvertencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblAdvertencia.Location = new System.Drawing.Point(7, 125);
             this.lblAdvertencia.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblAdvertencia.Name = "lblAdvertencia";
-            this.lblAdvertencia.Size = new System.Drawing.Size(10, 15);
+            this.lblAdvertencia.Size = new System.Drawing.Size(13, 19);
             this.lblAdvertencia.TabIndex = 27;
             this.lblAdvertencia.Text = "¡";
             this.lblAdvertencia.Visible = false;
@@ -222,39 +255,6 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // txtRol
-            // 
-            this.txtRol.Depth = 0;
-            this.txtRol.Enabled = false;
-            this.txtRol.Hint = "";
-            this.txtRol.Location = new System.Drawing.Point(141, 37);
-            this.txtRol.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtRol.Name = "txtRol";
-            this.txtRol.PasswordChar = '\0';
-            this.txtRol.SelectedText = "";
-            this.txtRol.SelectionLength = 0;
-            this.txtRol.SelectionStart = 0;
-            this.txtRol.Size = new System.Drawing.Size(139, 23);
-            this.txtRol.TabIndex = 28;
-            this.txtRol.TabStop = false;
-            this.txtRol.UseSystemPasswordChar = false;
-            // 
-            // txtNombreRol
-            // 
-            this.txtNombreRol.Depth = 0;
-            this.txtNombreRol.Hint = "";
-            this.txtNombreRol.Location = new System.Drawing.Point(141, 90);
-            this.txtNombreRol.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtNombreRol.Name = "txtNombreRol";
-            this.txtNombreRol.PasswordChar = '\0';
-            this.txtNombreRol.SelectedText = "";
-            this.txtNombreRol.SelectionLength = 0;
-            this.txtNombreRol.SelectionStart = 0;
-            this.txtNombreRol.Size = new System.Drawing.Size(121, 23);
-            this.txtNombreRol.TabIndex = 29;
-            this.txtNombreRol.TabStop = false;
-            this.txtNombreRol.UseSystemPasswordChar = false;
-            // 
             // frmRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,6 +292,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
         private MaterialSkin.Controls.MaterialLabel lblAdvertencia;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreRol;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtRol;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtCodRol;
     }
 }
