@@ -62,6 +62,27 @@ namespace prgNegocioDeZapatos
             bolAgregarE = clFactura.mInsertarFacturaEncabezado(conexion,factura);
             bolAgregarD = clFactura.mInsertarFacturaDetalle(conexion, factura);
 
+            if (bolAgregarE == true && bolAgregarD == true)
+            {
+
+                MessageBox.Show("Ha sido agregado correctamente", "Registro correcto", MessageBoxButtons.OK);
+                btnAgregar.Enabled = false;
+                this.Limpiar();
+
+
+
+            }//fin del if de agregar
+
+            else {
+
+                MessageBox.Show("Problemas al agregar", "Error", MessageBoxButtons.OK);
+               
+                this.Limpiar();
+
+            }
+
+           
+
         }
 
         
@@ -112,5 +133,16 @@ namespace prgNegocioDeZapatos
         {
             Close();
         }
+
+        public void Limpiar()
+        {
+            this.txtCodFactura.Text = "";
+            this.txtCodProducto.Text = "";
+            this.txtCodUsuario.Text = "";
+            this.txtCantidad.Text = "";
+            this.txtSubTotal.Text = "";
+            this.txtTotal.Text = "";
+
+        }//fin del metodo limpiar
     }
 }

@@ -29,9 +29,11 @@ namespace prgNegocioDeZapatos
 
         }
 
-        private void materialLabel1_Click(object sender, EventArgs e)
+        public void Limpiar()
         {
-
+            this.txtCodigo.Text = "";
+            this.txtNombre.Text = "";
+           
         }
     }
 }

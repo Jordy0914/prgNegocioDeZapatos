@@ -366,12 +366,12 @@
             // btnSalir
             // 
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(522, 23);
+            this.btnSalir.Location = new System.Drawing.Point(513, 23);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
-            this.btnSalir.Size = new System.Drawing.Size(58, 24);
+            this.btnSalir.Size = new System.Drawing.Size(67, 24);
             this.btnSalir.TabIndex = 17;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;

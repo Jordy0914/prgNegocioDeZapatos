@@ -33,12 +33,24 @@ namespace prgNegocioDeZapatos
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-
-            DialogResult respuesta = MessageBox.Show("Saliendo del sistema de usuario", "Salir", MessageBoxButtons.OK, MessageBoxIcon.Question);
             Close();
 
         }
 
-        
+
+        public void Limpiar()
+        {
+            this.txtNombre.Text = "";
+            this.txtApellido1.Text = "";
+            this.txtApellido2.Text = "";
+            this.cboTipoI.Text = "";
+            this.txtCedula.Text = "";
+            this.txtFechaN.Text = "";
+            this.txtDireccion.Text = "";
+            this.txtUsuario.Text = "";
+            this.txtPassword.Text = "";
+        }
+
+
     }
 }

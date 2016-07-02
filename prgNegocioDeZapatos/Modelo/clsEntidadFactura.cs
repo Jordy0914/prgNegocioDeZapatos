@@ -99,9 +99,9 @@ namespace Entidades
         }
 
 
-        public void setSubTotal(Double subtoltal)
+        public void setSubTotal(Double subtotal)
         {
-            this.subtotal = subtoltal;
+            this.subtotal = subtotal;
 
         }
 

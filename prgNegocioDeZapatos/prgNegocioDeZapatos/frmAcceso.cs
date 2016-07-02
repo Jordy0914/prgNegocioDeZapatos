@@ -59,6 +59,7 @@ namespace prgNegocioDeZapatos
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            DialogResult respuesta = MessageBox.Show("Saliendo del sistema", "Salir", MessageBoxButtons.OK, MessageBoxIcon.Question);
             Application.Exit();
         }
 

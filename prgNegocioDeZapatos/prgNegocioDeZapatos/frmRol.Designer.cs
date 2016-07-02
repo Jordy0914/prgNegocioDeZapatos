@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNombreRol = new System.Windows.Forms.TextBox();
+            this.txtCodigoRol = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chEliminar = new MaterialSkin.Controls.MaterialCheckBox();
             this.chModificar = new MaterialSkin.Controls.MaterialCheckBox();
@@ -47,19 +47,19 @@
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtNombreRol
             // 
-            this.textBox1.Location = new System.Drawing.Point(120, 94);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 22);
-            this.textBox1.TabIndex = 2;
+            this.txtNombreRol.Location = new System.Drawing.Point(120, 94);
+            this.txtNombreRol.Name = "txtNombreRol";
+            this.txtNombreRol.Size = new System.Drawing.Size(153, 22);
+            this.txtNombreRol.TabIndex = 2;
             // 
-            // textBox2
+            // txtCodigoRol
             // 
-            this.textBox2.Location = new System.Drawing.Point(120, 40);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 3;
+            this.txtCodigoRol.Location = new System.Drawing.Point(120, 40);
+            this.txtCodigoRol.Name = "txtCodigoRol";
+            this.txtCodigoRol.Size = new System.Drawing.Size(100, 22);
+            this.txtCodigoRol.TabIndex = 3;
             // 
             // groupBox1
             // 
@@ -147,8 +147,8 @@
             this.groupBox2.Controls.Add(this.btnBuscar);
             this.groupBox2.Controls.Add(this.materialLabel2);
             this.groupBox2.Controls.Add(this.materialLabel1);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtNombreRol);
+            this.groupBox2.Controls.Add(this.txtCodigoRol);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 91);
             this.groupBox2.Name = "groupBox2";
@@ -258,8 +258,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNombreRol;
+        private System.Windows.Forms.TextBox txtCodigoRol;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;

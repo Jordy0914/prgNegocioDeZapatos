@@ -31,7 +31,13 @@ namespace prgNegocioDeZapatos
 
         }
 
-      
+        public void Limpiar()
+        {
+            this.txtCodigoRol.Text = "";
+            this.txtNombreRol.Text = "";
+           
+        }
+
 
         private void btnSalir_Click(object sender, EventArgs e)
         {

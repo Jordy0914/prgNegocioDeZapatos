@@ -116,6 +116,15 @@ namespace prgNegocioDeZapatos
             {
                 txtNombreRol.Text = dtrSentencia.GetString(1);
             }
+        }//fin del metodo 
+
+
+        public void Limpiar()
+        {
+            this.cboUsuario.Text = "";
+            this.txtNombreUsuario.Text = "";
+            this.cboRol.Text = "";
+            this.txtNombreRol.Text = "";
         }
     }
 }

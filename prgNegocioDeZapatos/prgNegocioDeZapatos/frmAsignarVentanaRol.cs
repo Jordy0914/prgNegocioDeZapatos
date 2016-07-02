@@ -50,5 +50,13 @@ namespace prgNegocioDeZapatos
         {
 
         }
+
+        public void Limpiar()
+        {
+            this.cbxCodRole.Text = "";
+            this.txtNombreRole.Text = "";
+            this.cbxCodVentanas.Text = "";
+            this.txtNomVentana.Text = "";
+        }//fin del metodo limpiar
     }
 }
