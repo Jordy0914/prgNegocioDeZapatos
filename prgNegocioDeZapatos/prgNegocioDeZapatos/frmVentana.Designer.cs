@@ -51,7 +51,7 @@
             this.materialLabel1.Size = new System.Drawing.Size(57, 19);
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "Código";
-            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
+      
             // 
             // materialLabel2
             // 

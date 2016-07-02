@@ -193,6 +193,7 @@
             // 
             // cboTipoI
             // 
+            this.cboTipoI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoI.FormattingEnabled = true;
             this.cboTipoI.Items.AddRange(new object[] {
             "Cedula ",
@@ -200,7 +201,7 @@
             "Cedula Extranjera"});
             this.cboTipoI.Location = new System.Drawing.Point(182, 207);
             this.cboTipoI.Name = "cboTipoI";
-            this.cboTipoI.Size = new System.Drawing.Size(193, 24);
+            this.cboTipoI.Size = new System.Drawing.Size(193, 23);
             this.cboTipoI.TabIndex = 35;
             // 
             // materialLabel8
