@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cboUsuario = new System.Windows.Forms.ComboBox();
-            this.cboRol = new System.Windows.Forms.ComboBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.btnAsignar = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -40,25 +38,10 @@
             this.txtNombreRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.btnConsultar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtIdUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtIdRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
-            // 
-            // cboUsuario
-            // 
-            this.cboUsuario.FormattingEnabled = true;
-            this.cboUsuario.Location = new System.Drawing.Point(136, 79);
-            this.cboUsuario.Name = "cboUsuario";
-            this.cboUsuario.Size = new System.Drawing.Size(166, 21);
-            this.cboUsuario.TabIndex = 1;
-            this.cboUsuario.SelectedIndexChanged += new System.EventHandler(this.cboUsuario_SelectedIndexChanged);
-            // 
-            // cboRol
-            // 
-            this.cboRol.FormattingEnabled = true;
-            this.cboRol.Location = new System.Drawing.Point(136, 178);
-            this.cboRol.Name = "cboRol";
-            this.cboRol.Size = new System.Drawing.Size(166, 21);
-            this.cboRol.TabIndex = 3;
-            this.cboRol.SelectedIndexChanged += new System.EventHandler(this.cboRol_SelectedIndexChanged);
             // 
             // materialLabel1
             // 
@@ -139,6 +122,7 @@
             // txtNombreUsuario
             // 
             this.txtNombreUsuario.Depth = 0;
+            this.txtNombreUsuario.Enabled = false;
             this.txtNombreUsuario.Hint = "";
             this.txtNombreUsuario.Location = new System.Drawing.Point(136, 121);
             this.txtNombreUsuario.MouseState = MaterialSkin.MouseState.HOVER;
@@ -155,6 +139,7 @@
             // txtNombreRol
             // 
             this.txtNombreRol.Depth = 0;
+            this.txtNombreRol.Enabled = false;
             this.txtNombreRol.Hint = "";
             this.txtNombreRol.Location = new System.Drawing.Point(136, 219);
             this.txtNombreRol.MouseState = MaterialSkin.MouseState.HOVER;
@@ -194,6 +179,52 @@
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
+            // txtIdUsuario
+            // 
+            this.txtIdUsuario.Depth = 0;
+            this.txtIdUsuario.Enabled = false;
+            this.txtIdUsuario.Hint = "";
+            this.txtIdUsuario.Location = new System.Drawing.Point(136, 82);
+            this.txtIdUsuario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtIdUsuario.Name = "txtIdUsuario";
+            this.txtIdUsuario.PasswordChar = '\0';
+            this.txtIdUsuario.SelectedText = "";
+            this.txtIdUsuario.SelectionLength = 0;
+            this.txtIdUsuario.SelectionStart = 0;
+            this.txtIdUsuario.Size = new System.Drawing.Size(166, 23);
+            this.txtIdUsuario.TabIndex = 33;
+            this.txtIdUsuario.TabStop = false;
+            this.txtIdUsuario.UseSystemPasswordChar = false;
+            // 
+            // txtIdRol
+            // 
+            this.txtIdRol.Depth = 0;
+            this.txtIdRol.Enabled = false;
+            this.txtIdRol.Hint = "";
+            this.txtIdRol.Location = new System.Drawing.Point(136, 177);
+            this.txtIdRol.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtIdRol.Name = "txtIdRol";
+            this.txtIdRol.PasswordChar = '\0';
+            this.txtIdRol.SelectedText = "";
+            this.txtIdRol.SelectionLength = 0;
+            this.txtIdRol.SelectionStart = 0;
+            this.txtIdRol.Size = new System.Drawing.Size(166, 23);
+            this.txtIdRol.TabIndex = 34;
+            this.txtIdRol.TabStop = false;
+            this.txtIdRol.UseSystemPasswordChar = false;
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(316, 177);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(95, 32);
+            this.materialRaisedButton1.TabIndex = 35;
+            this.materialRaisedButton1.Text = "Consultar";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            // 
             // frmAsignarRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,6 +232,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(455, 365);
             this.ControlBox = false;
+            this.Controls.Add(this.materialRaisedButton1);
+            this.Controls.Add(this.txtIdRol);
+            this.Controls.Add(this.txtIdUsuario);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.txtNombreRol);
@@ -211,8 +245,6 @@
             this.Controls.Add(this.btnAsignar);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.cboRol);
-            this.Controls.Add(this.cboUsuario);
             this.Name = "frmAsignarRol";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Asignacion de Roles";
@@ -223,8 +255,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox cboUsuario;
-        private System.Windows.Forms.ComboBox cboRol;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialRaisedButton btnAsignar;
@@ -235,5 +265,8 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreRol;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialRaisedButton btnConsultar;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtIdUsuario;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtIdRol;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
     }
 }

@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAsignarVentanaRol.cs">
+    <Compile Include="frmAsignarVistasRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAsignarVentanaRol.Designer.cs">
-      <DependentUpon>frmAsignarVentanaRol.cs</DependentUpon>
+    <Compile Include="frmAsignarVistasRol.Designer.cs">
+      <DependentUpon>frmAsignarVistasRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAsignarVistasUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignarVistasUsuario.Designer.cs">
+      <DependentUpon>frmAsignarVistasUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAcceso.cs">
       <SubType>Form</SubType>
@@ -88,18 +94,6 @@
     <Compile Include="frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUsuariosRol.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmUsuariosRol.Designer.cs">
-      <DependentUpon>frmUsuariosRol.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmVentana.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmVentana.Designer.cs">
-      <DependentUpon>frmVentana.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,8 +111,11 @@
     <EmbeddedResource Include="frmAsignarRol.resx">
       <DependentUpon>frmAsignarRol.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAsignarVentanaRol.resx">
-      <DependentUpon>frmAsignarVentanaRol.cs</DependentUpon>
+    <EmbeddedResource Include="frmAsignarVistasRol.resx">
+      <DependentUpon>frmAsignarVistasRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsignarVistasUsuario.resx">
+      <DependentUpon>frmAsignarVistasUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFactura.resx">
       <DependentUpon>frmFactura.cs</DependentUpon>
@@ -128,12 +125,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmUsuariosRol.resx">
-      <DependentUpon>frmUsuariosRol.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmVentana.resx">
-      <DependentUpon>frmVentana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -28,38 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chEliminar = new MaterialSkin.Controls.MaterialCheckBox();
             this.chModificar = new MaterialSkin.Controls.MaterialCheckBox();
             this.chConsultar = new MaterialSkin.Controls.MaterialCheckBox();
             this.chInsertar = new MaterialSkin.Controls.MaterialCheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.lblAdvertencia = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAgregar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtNombreRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(120, 94);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 22);
-            this.textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(120, 40);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 3;
             // 
             // groupBox1
             // 
@@ -144,11 +130,11 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.btnBuscar);
+            this.groupBox2.Controls.Add(this.txtNombreRol);
+            this.groupBox2.Controls.Add(this.txtRol);
+            this.groupBox2.Controls.Add(this.lblAdvertencia);
             this.groupBox2.Controls.Add(this.materialLabel2);
             this.groupBox2.Controls.Add(this.materialLabel1);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 91);
             this.groupBox2.Name = "groupBox2";
@@ -157,17 +143,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion del Rol";
             // 
-            // btnBuscar
+            // lblAdvertencia
             // 
-            this.btnBuscar.Depth = 0;
-            this.btnBuscar.Location = new System.Drawing.Point(253, 38);
-            this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Primary = true;
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 9;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.lblAdvertencia.AutoSize = true;
+            this.lblAdvertencia.Depth = 0;
+            this.lblAdvertencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lblAdvertencia.ForeColor = System.Drawing.Color.Red;
+            this.lblAdvertencia.Location = new System.Drawing.Point(7, 125);
+            this.lblAdvertencia.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblAdvertencia.Name = "lblAdvertencia";
+            this.lblAdvertencia.Size = new System.Drawing.Size(10, 15);
+            this.lblAdvertencia.TabIndex = 27;
+            this.lblAdvertencia.Text = "¡";
+            this.lblAdvertencia.Visible = false;
             // 
             // materialLabel2
             // 
@@ -203,7 +191,7 @@
             this.groupBox3.Controls.Add(this.btnSalir);
             this.groupBox3.Controls.Add(this.btnAgregar);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(181, 296);
+            this.groupBox3.Location = new System.Drawing.Point(181, 300);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(292, 65);
             this.groupBox3.TabIndex = 8;
@@ -234,12 +222,45 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
+            // txtRol
+            // 
+            this.txtRol.Depth = 0;
+            this.txtRol.Enabled = false;
+            this.txtRol.Hint = "";
+            this.txtRol.Location = new System.Drawing.Point(141, 37);
+            this.txtRol.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtRol.Name = "txtRol";
+            this.txtRol.PasswordChar = '\0';
+            this.txtRol.SelectedText = "";
+            this.txtRol.SelectionLength = 0;
+            this.txtRol.SelectionStart = 0;
+            this.txtRol.Size = new System.Drawing.Size(139, 23);
+            this.txtRol.TabIndex = 28;
+            this.txtRol.TabStop = false;
+            this.txtRol.UseSystemPasswordChar = false;
+            // 
+            // txtNombreRol
+            // 
+            this.txtNombreRol.Depth = 0;
+            this.txtNombreRol.Hint = "";
+            this.txtNombreRol.Location = new System.Drawing.Point(141, 90);
+            this.txtNombreRol.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtNombreRol.Name = "txtNombreRol";
+            this.txtNombreRol.PasswordChar = '\0';
+            this.txtNombreRol.SelectedText = "";
+            this.txtNombreRol.SelectionLength = 0;
+            this.txtNombreRol.SelectionStart = 0;
+            this.txtNombreRol.Size = new System.Drawing.Size(121, 23);
+            this.txtNombreRol.TabIndex = 29;
+            this.txtNombreRol.TabStop = false;
+            this.txtNombreRol.UseSystemPasswordChar = false;
+            // 
             // frmRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(631, 383);
+            this.ClientSize = new System.Drawing.Size(646, 402);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -258,8 +279,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -270,7 +289,9 @@
         private MaterialSkin.Controls.MaterialCheckBox chConsultar;
         private MaterialSkin.Controls.MaterialCheckBox chInsertar;
         private MaterialSkin.Controls.MaterialRaisedButton btnAgregar;
-        private MaterialSkin.Controls.MaterialRaisedButton btnBuscar;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
+        private MaterialSkin.Controls.MaterialLabel lblAdvertencia;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreRol;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtRol;
     }
 }
