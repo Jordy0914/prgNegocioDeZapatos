@@ -10,7 +10,6 @@ namespace AccesoDatos
 {
     public class clsConexion
     {
-
         #region  Atributos 
         private String codigo;
         private String clave;
@@ -31,7 +30,6 @@ namespace AccesoDatos
         #endregion
 
         #region Propiedades // son los set y los get
-
         public void setCodigo(String codigo)
         {
             this.codigo = codigo.Trim();
@@ -96,7 +94,7 @@ namespace AccesoDatos
                 else
                     return false;
             }//fin del try
-            catch
+            catch(Exception e)
             {
                 return false;
             }//fin del catch
@@ -119,9 +117,9 @@ namespace AccesoDatos
 
         public string mNomServidor()
         {
-           return Dns.GetHostName();
-         //  return "DESKTOP-A1FRNG4\\SQLEXPRESS";
-           // return "DELL\\SQLEXPRESS";
+         //  return Dns.GetHostName();
+          return "DESKTOP-A1FRNG4\\SQLEXPRESS";
+         // return "DELL\\SQLEXPRESS";
         }
         #endregion  //fin de la region de metodos
     }

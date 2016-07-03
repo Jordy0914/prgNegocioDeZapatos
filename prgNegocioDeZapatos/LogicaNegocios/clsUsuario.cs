@@ -25,58 +25,42 @@ namespace LogicaNegocios
             return cone.mSeleccionar(strSentencia, cone);
         }
 
-        public SqlDataReader mConsultarMenuRol(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
+        public SqlDataReader mConsultarVistasRol(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Select distinct M.idMenu, M.idMenuPadre, M.descripcion, M.posicion, M.habilitadoMenu, M.url from tbMenu M, tbRolesVistas RV , tbUsuariosRoles UR where UR.idRol = RV.idRol and RV.idMenu = M.idMenu and UR.idUsuario = " + pEntidadUsuario.getIdUsuario() + "";
+            strSentencia = "Select distinct V.idVista, V.idPadre, V.descripcion, V.posicion, V.habilitadoMenu, V.url from tbVistas V, tbRolesVistas RV , tbUsuariosRoles UR where UR.idRol = RV.idRol and RV.idVista = V.idVista and UR.idUsuario = " + pEntidadUsuario.getIdUsuario() + "";
             return cone.mSeleccionar(strSentencia, cone);
         }
 
-        public SqlDataReader mConsultarMenuDirecto(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
+        public SqlDataReader mConsultarVistasDirectas(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Select distinct M.idMenu, M.idMenuPadre, M.descripcion, M.posicion, M.habilitadoMenu, M.url from tbMenu M, tbUsuarioVistas UV where M.idMenu = UV.idMenu and UV.idUsuario = "+pEntidadUsuario.getIdUsuario()+" and M.idMenu not in(select idMenu from tbMenuTemp)";
+            strSentencia = "Select distinct V.idVista, V.idPadre, V.descripcion, V.posicion, V.habilitadoMenu, V.url from tbVistas V, tbUsuarioVistas UV where UV.idVista = V.idVista and UV.idUsuario = "+pEntidadUsuario.getIdUsuario()+" and V.idVista not in(select idVista from tbVistasTemp)";
             return cone.mSeleccionar(strSentencia, cone);
         }
       
         public SqlDataReader mCrearMenuPrincipal (clsConexion cone)
         {
-            strSentencia = "Select distinct MT.idMenu, MT.idMenuPadre, MT.descripcion, MT.posicion, MT.habilitadoMenu, MT.url from tbMenuTemp MT where MT.idMenuPadre = (Select idMenu from tbMenu where descripcion = 'Principal') order by MT.posicion";
+            strSentencia = "Select distinct VT.idVista, VT.idPadre, VT.descripcion, VT.posicion, VT.habilitadoMenu, VT.url from tbVistasTemp VT where VT.idPadre = (Select idVista from tbVistas where descripcion = 'Principal') order by VT.posicion";
             return cone.mSeleccionar(strSentencia, cone);
         }
 
         public SqlDataReader mCrearMenusSecundarios (clsConexion cone, int menuPadre)
         {
-            strSentencia = "Select distinct MT.idMenu, MT.idMenuPadre, MT.descripcion, MT.posicion, MT.habilitadoMenu, MT.url from tbMenuTemp MT where MT.idMenuPadre = "+menuPadre+" order by MT.posicion";
+            strSentencia = "Select distinct VT.idVista, VT.idPadre, VT.descripcion, VT.posicion, VT.habilitadoMenu, VT.url from tbVistasTemp VT where VT.idPadre = "+menuPadre+" order by VT.posicion";
             return cone.mSeleccionar(strSentencia, cone);
         }
 
-        public void mInsertarMenuTemporal(clsConexion cone, clsEntidadMenu pEntidadMenu)
+        public void mInsertarVistasTemp(clsConexion cone, clsEntidadVista pEntidadVista)
         {
-            strSentencia = "Insert into tbMenuTemp (idMenu, idMenuPadre, descripcion, posicion, habilitadoMenu, url) "
-                + "values(" + pEntidadMenu.getIdMenu() + " , " + pEntidadMenu.getIdMenuPadre() + " , '" + pEntidadMenu.getDescripcion() + "' , " + pEntidadMenu.getPosicion() + " , " + pEntidadMenu.getHabilitadoMenu() + " , '" + pEntidadMenu.getUrl() + "'       )";
-
+            strSentencia = "Insert into tbVistasTemp(idVista, idPadre, descripcion, posicion, habilitadoMenu, url) "
+                + "values(" + pEntidadVista.getIdVista() + " , " + pEntidadVista.getIdPadre() + " , '" + pEntidadVista.getDescripcion() + "' , " + pEntidadVista.getPosicion() + " , " + pEntidadVista.getHabilitadoMenu() + " , '" + pEntidadVista.getUrl() + "')";
             cone.mEjecutar(strSentencia, cone);
         }
 
-        public void mEliminarMenuTemp(clsConexion cone)
+        public void mEliminarVistasTemp(clsConexion cone)
         {
-            strSentencia = "truncate table tbMenuTemp";
+            strSentencia = "truncate table tbVistasTemp";
             cone.mEjecutar(strSentencia, cone);
         }
-
-
-
-        public SqlDataReader mConsultarUsuarioNombre(clsConexion cone)
-        {
-            strSentencia = "Select * from tbUsuario";
-            return cone.mSeleccionar(strSentencia, cone);
-        }
-
-        public SqlDataReader mConsultarUsuarioGeneral(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
-        {
-            strSentencia = "Select * from tbUsuario where idUsuario= '"+pEntidadUsuario.getIdUsuario()+"'";
-            return cone.mSeleccionar(strSentencia, cone);
-        }
-
 
         public Boolean mAgregarUsuario(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
@@ -84,12 +68,8 @@ namespace LogicaNegocios
            + "','" + pEntidadUsuario.getPassword() + "','" + pEntidadUsuario.getApellido()
             + ",'" + pEntidadUsuario.getApellido2() + "','" + pEntidadUsuario.getDireccion() + "','" + pEntidadUsuario.getTipoIdentificacion()
             + "','" + pEntidadUsuario.getFechaNacimiento() + "','" + pEntidadUsuario.getPuesto() + "','" + pEntidadUsuario.getCedula() + "'')";
-
             return cone.mEjecutar(strSentencia, cone);
         }//fin del metodo agregar empleado
-
         #endregion
-
-
     }
 }
