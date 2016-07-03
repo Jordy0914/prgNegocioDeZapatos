@@ -31,6 +31,7 @@ namespace prgNegocioDeZapatos
         public int precios;
         private int total = 0;
         private int numeroFactura = 0;
+        private Double descuento;
 
         public frmFactura() {
 
@@ -74,9 +75,10 @@ namespace prgNegocioDeZapatos
             factura.setTotal(Convert.ToDouble(txtTotal.Text));
             factura.setIdUsuario(0);
 
-           facturaDetalle.setIdFactura(Convert.ToInt32(txtNumeroF.Text));
+            facturaDetalle.setIdFactura(Convert.ToInt32(txtNumeroF.Text));
             facturaDetalle.setIdProducto(Convert.ToInt32(Convert.ToInt32(this.lvProductos.Items[0].Text)));
             facturaDetalle.setCantidad(Convert.ToInt32(txtCantidadProducto.Text));
+            facturaDetalle.setDescuento(descuento);
             facturaDetalle.setSubTotal(Convert.ToDouble(txtSubTotal.Text));
           
 
@@ -86,7 +88,6 @@ namespace prgNegocioDeZapatos
             if (bolAgregarE == true && bolAgregarD == true)
             {
                 MessageBox.Show("Ha sido agregado correctamente", "Registro correcto", MessageBoxButtons.OK);
-                //btnAgregar.Enabled = false;
                 this.Limpiar();
 
             }//fin del if de agregar
@@ -199,7 +200,7 @@ namespace prgNegocioDeZapatos
 
         private void cboDescuento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Double descuento = total +( Convert.ToDouble(cboDescuento.SelectedItem) / 100 * total) ;
+            descuento = total +( Convert.ToDouble(cboDescuento.SelectedItem) / 100 * total) ;
             this.txtTotal.Text = "" + descuento;
 
         }//fin de la accion del combobox de descuento

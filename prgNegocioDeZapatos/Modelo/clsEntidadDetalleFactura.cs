@@ -17,6 +17,7 @@ namespace Entidades
         private int idProducto;
         private int cantidad;
         private Double subtotal;
+        private Double descuento;
      
 
 
@@ -32,6 +33,7 @@ namespace Entidades
             this.idProducto = 0;
             this.cantidad = 0;
             this.subtotal = 0.0;
+            this.descuento = 0.0;
         
 
         }
@@ -92,6 +94,21 @@ namespace Entidades
         {
 
             return subtotal;
+        }
+
+
+
+        public void setDescuento(Double descuento)
+        {
+            this.descuento = descuento;
+
+        }
+
+
+        public Double getDescuento()
+        {
+
+            return descuento;
         }
 
         #endregion

@@ -42,7 +42,7 @@ namespace prgNegocioDeZapatos
         {
 
             strSentencia = clProducto.mConsultarProductoGeneral(conexion);
-            while (strSentencia.Read())
+          while (strSentencia.Read())
 
             {
                 ListViewItem lista;

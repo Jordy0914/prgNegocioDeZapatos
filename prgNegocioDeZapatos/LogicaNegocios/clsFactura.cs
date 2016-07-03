@@ -30,8 +30,8 @@ namespace LogicaNegocios
 
         public Boolean mInsertarFacturaDetalle(clsConexion cone, clsEntidadDetalleFactura pEntidadFacturaD)
         {
-            strSentencia = "Insert into tbFacturaDetalle(idFactura,idProducto,cantidad,subtotal) values (" + pEntidadFacturaD.getIdFactura() + "," + pEntidadFacturaD.getIdProducto()
-                + "," + pEntidadFacturaD.getCantidad() + "," + pEntidadFacturaD.getSubTotal() + ")";
+            strSentencia = "Insert into tbFacturaDetalle(idFactura,idProducto,cantidad,descuento,subtotal) values (" + pEntidadFacturaD.getIdFactura() + "," + pEntidadFacturaD.getIdProducto()
+                + "," + pEntidadFacturaD.getCantidad() + "," + pEntidadFacturaD.getDescuento() + "," + pEntidadFacturaD.getSubTotal() + ")";
             return cone.mEjecutar(strSentencia, cone);
 
         }//fin del metodo mInsertar
