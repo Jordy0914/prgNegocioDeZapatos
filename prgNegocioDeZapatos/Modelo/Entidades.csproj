@@ -45,7 +45,6 @@
     <Compile Include="clsEntidadProveedor.cs" />
     <Compile Include="clsEntidadRol.cs" />
     <Compile Include="clsEntidadUsuario.cs" />
-    <Compile Include="clsEntidadMenu.cs" />
     <Compile Include="clsEntidadVista.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

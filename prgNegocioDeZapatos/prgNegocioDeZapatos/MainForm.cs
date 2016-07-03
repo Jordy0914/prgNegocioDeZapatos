@@ -23,12 +23,11 @@ namespace prgNegocioDeZapatos
         private clsConexion conexion;
 
         private clsEntidadUsuario pEntidadUsuario;
-        private clsUsuario usuario;
-        private SqlDataReader dtrUsuarioMenu;
-        private SqlDataReader dtrUsuarioSubMenu;
+        private clsUsuario clUsuario;
+        private SqlDataReader dtrMenu;
+        private SqlDataReader dtrSubMenu;
 
-        private clsEntidadMenu pEntidadMenu;
-
+        private clsEntidadVista pEntidadVista;
         #endregion
 
         public MainForm(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
@@ -43,126 +42,123 @@ namespace prgNegocioDeZapatos
             this.conexion = cone;
 
             this.pEntidadUsuario = pEntidadUsuario;
-            this.usuario = new clsUsuario();
+            this.clUsuario = new clsUsuario();
 
-            this.pEntidadMenu = new clsEntidadMenu();
+            this.pEntidadVista = new clsEntidadVista();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.mAlmacenarMenuRolTemp();
-            this.mAlmacenarMenuDirectoTemp();
+            this.mAlmacenarVistasRolTemp();
+            this.mAlmacenarVistasDirectasTemp();
             this.mCrearMenu();
-            this.usuario.mEliminarMenuTemp(this.conexion);
+            this.clUsuario.mEliminarVistasTemp(this.conexion);
         }
 
-        #region Metodos Almacenar MenuTemp
-
-        public void mAlmacenarMenuRolTemp()
+        #region Metodos Almacenar VistasTemp y Creacion del menu
+        public void mAlmacenarVistasRolTemp()
         {
-            dtrUsuarioMenu = usuario.mConsultarMenuRol(this.conexion, this.pEntidadUsuario);
+            dtrMenu = clUsuario.mConsultarVistasRol(this.conexion, this.pEntidadUsuario);
 
             // 0 = idMenu 'int'
-            // 1 = idMenuPadre 'int'
+            // 1 = idPadre 'int'
             // 2 = descripcion 'string'
             // 3 = posicion 'int'
             // 4 = habilitadoMenu 'int'
             // 5 = url  string
 
-            while(dtrUsuarioMenu.Read())
+            while(dtrMenu.Read())
             {
-                pEntidadMenu.setIdMenu(dtrUsuarioMenu.GetInt32(0));
-                pEntidadMenu.setIdMenuPadre(dtrUsuarioMenu.GetInt32(1));
-                pEntidadMenu.setDescripcion(dtrUsuarioMenu.GetString(2));
-                pEntidadMenu.setPosicion(dtrUsuarioMenu.GetInt32(3));
-                pEntidadMenu.setHabilitadoMenu(Convert.ToInt32((dtrUsuarioMenu.GetBoolean(4))));
+                pEntidadVista.setIdVista(dtrMenu.GetInt32(0));
+                pEntidadVista.setIdPadre(dtrMenu.GetInt32(1));
+                pEntidadVista.setDescripcion(dtrMenu.GetString(2));
+                pEntidadVista.setPosicion(dtrMenu.GetInt32(3));
+                pEntidadVista.setHabilitadoMenu(Convert.ToInt32((dtrMenu.GetBoolean(4))));
 
                 try
                 {
-                    pEntidadMenu.setUrl(dtrUsuarioMenu.GetString(5));
+                    pEntidadVista.setUrl(dtrMenu.GetString(5));
                 }
                 catch (Exception e) { }
-                
-                usuario.mInsertarMenuTemporal(this.conexion, pEntidadMenu);     
+
+                clUsuario.mInsertarVistasTemp(this.conexion, pEntidadVista);     
             }
         }
 
-        public void mAlmacenarMenuDirectoTemp()
+        public void mAlmacenarVistasDirectasTemp()
         {
-            dtrUsuarioMenu = usuario.mConsultarMenuDirecto(this.conexion, this.pEntidadUsuario);
+            dtrMenu = clUsuario.mConsultarVistasDirectas(this.conexion, this.pEntidadUsuario);
 
             // 0 = idMenu 'int'
-            // 1 = idMenuPadre 'int'
+            // 1 = idPadre 'int'
             // 2 = descripcion 'string'
             // 3 = posicion 'int'
             // 4 = habilitadoMenu 'int'
             // 5 = url  string
 
-            while (dtrUsuarioMenu.Read())
+            while (dtrMenu.Read())
             {
-                pEntidadMenu.setIdMenu(dtrUsuarioMenu.GetInt32(0));
-                pEntidadMenu.setIdMenuPadre(dtrUsuarioMenu.GetInt32(1));
-                pEntidadMenu.setDescripcion(dtrUsuarioMenu.GetString(2));
-                pEntidadMenu.setPosicion(dtrUsuarioMenu.GetInt32(3));
-                pEntidadMenu.setHabilitadoMenu(Convert.ToInt32((dtrUsuarioMenu.GetBoolean(4))));
+                pEntidadVista.setIdVista(dtrMenu.GetInt32(0));
+                pEntidadVista.setIdPadre(dtrMenu.GetInt32(1));
+                pEntidadVista.setDescripcion(dtrMenu.GetString(2));
+                pEntidadVista.setPosicion(dtrMenu.GetInt32(3));
+                pEntidadVista.setHabilitadoMenu(Convert.ToInt32((dtrMenu.GetBoolean(4))));
 
                 try
                 {
-                    pEntidadMenu.setUrl(dtrUsuarioMenu.GetString(5));
+                    pEntidadVista.setUrl(dtrMenu.GetString(5));
                 }
                 catch (Exception e) { }
 
-                usuario.mInsertarMenuTemporal(this.conexion, pEntidadMenu);
+                clUsuario.mInsertarVistasTemp(this.conexion,pEntidadVista);
             }
         }
-
-        #endregion
-
-        #region Metodos Propios
 
         public void mCrearMenu()
         {
             ToolStripMenuItem menu;
-            dtrUsuarioMenu = usuario.mCrearMenuPrincipal(this.conexion);
-           
+            dtrMenu = clUsuario.mCrearMenuPrincipal(this.conexion);
+
             // 0 = idMenu 'int'
-            // 1 = idMenuPadre 'int'
+            // 1 = idPadre 'int'
             // 2 = descripcion 'string'
             // 3 = posicion 'int'
             // 4 = habilitadoMenu 'int'
             // 5 = url  string
 
-            while (dtrUsuarioMenu.Read())
+            while (dtrMenu.Read())
             {
                 menu = new ToolStripMenuItem();
-                menu.Text = dtrUsuarioMenu.GetString(2);
+                menu.Text = dtrMenu.GetString(2);
                 menuPrincipal.Items.Add(menu);
-                dtrUsuarioSubMenu = usuario.mCrearMenusSecundarios(this.conexion,dtrUsuarioMenu.GetInt32(0));
-                if(dtrUsuarioSubMenu.HasRows)
-                    this.mCrearSubMenusRecursivo(dtrUsuarioSubMenu,menu);
+                dtrSubMenu = clUsuario.mCrearMenusSecundarios(this.conexion, dtrMenu.GetInt32(0));
+                if (dtrSubMenu.HasRows)
+                    this.mCrearSubMenusRecursivo(dtrSubMenu, menu);
                 if (menu.Text == "Salir")
                     menu.Click += new EventHandler(SalirClicked);
-            }         
+            }
         } // fin crear menu
 
-        public void mCrearSubMenusRecursivo(SqlDataReader dtr,  ToolStripMenuItem menu)
+        public void mCrearSubMenusRecursivo(SqlDataReader dtr, ToolStripMenuItem menu)
         {
-           ToolStripMenuItem subMenu;
-            
+            ToolStripMenuItem subMenu;
+
             while (dtr.Read())
             {
                 subMenu = new ToolStripMenuItem();
                 subMenu.Text = dtr.GetString(2);
-                subMenu.Tag = dtr.GetString(5);             
+                subMenu.Tag = dtr.GetString(5);
                 menu.DropDown.Items.Add(subMenu);
-                dtrUsuarioSubMenu = usuario.mCrearMenusSecundarios(this.conexion,dtr.GetInt32(0));
-                if(dtrUsuarioSubMenu.HasRows)
-                    mCrearSubMenusRecursivo(dtrUsuarioSubMenu, subMenu);
+                dtrSubMenu = clUsuario.mCrearMenusSecundarios(this.conexion, dtr.GetInt32(0));
+                if (dtrSubMenu.HasRows)
+                    mCrearSubMenusRecursivo(dtrSubMenu, subMenu);
                 else
                     subMenu.Click += new EventHandler(MenuItemClicked);
             }
         }
+        #endregion
 
+        #region Metodos Propios
         private void MenuItemClicked(object sender, EventArgs e)
         {
             Assembly Ensamblado = Assembly.GetEntryAssembly();
@@ -171,8 +167,7 @@ namespace prgNegocioDeZapatos
             {
                 string NombreFormulario = ((ToolStripItem)sender).Tag.ToString();
                 Type tipo = Ensamblado.GetType(Ensamblado.GetName().Name + "." + NombreFormulario);
-                
-
+                Object[] parametros = { this.conexion, this.pEntidadUsuario }; 
 
                 if (tipo == null)
                 {
@@ -182,7 +177,7 @@ namespace prgNegocioDeZapatos
                 {
                     if (!this.FormularioEstaAbierto(NombreFormulario))
                     {
-                        Form f = (Form)Activator.CreateInstance(tipo,conexion);
+                        Form f = (Form)Activator.CreateInstance(tipo,parametros);
                         f.MdiParent = this;
                         f.Show();
                     }
@@ -211,7 +206,6 @@ namespace prgNegocioDeZapatos
         private void SalirClicked(object sender, EventArgs e)
         {
             Application.Restart(); 
-
         }
 
         #endregion

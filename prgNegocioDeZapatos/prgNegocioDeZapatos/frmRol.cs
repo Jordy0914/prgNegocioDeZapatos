@@ -21,11 +21,12 @@ namespace prgNegocioDeZapatos
     {
         private readonly MaterialSkinManager materialSkinManager;
         private clsConexion conexion;
-        private clsEntidadRol rol;
+        private clsEntidadRol pEntidadRol;
+        private clsEntidadUsuario pEntidadUsuario;
         private clsRol clRol;
         private SqlDataReader dtrRol;
 
-        public frmRol(clsConexion cone)
+        public frmRol(clsConexion cone,clsEntidadUsuario pEntidadUsuario)
         {
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -33,7 +34,8 @@ namespace prgNegocioDeZapatos
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
 
             this.conexion = cone;
-            this.rol = new clsEntidadRol();
+            this.pEntidadRol = new clsEntidadRol();
+            this.pEntidadUsuario = pEntidadUsuario;
             this.clRol = new clsRol();
 
             InitializeComponent();
@@ -42,6 +44,7 @@ namespace prgNegocioDeZapatos
         private void frmRol_Load(object sender, EventArgs e)
         {
             this.actualizarIdRol();
+            MessageBox.Show("el id del usuario es " + pEntidadUsuario.getIdUsuario());
         }
         
         private void btnSalir_Click(object sender, EventArgs e)
@@ -52,11 +55,11 @@ namespace prgNegocioDeZapatos
         #region Metodos Propios
         public void actualizarIdRol()
         {
-            dtrRol = clRol.mConsutarRol(this.conexion);
+            dtrRol = clRol.mConsutarNumeroRol(this.conexion);
             if (dtrRol.Read())
                 this.txtCodRol.Text = Convert.ToString(dtrRol.GetInt32(0));
             else
-                this.txtCodRol.Text = "0";
+                this.txtCodRol.Text = "1";
         }
         #endregion
 
