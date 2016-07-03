@@ -28,10 +28,10 @@ namespace LogicaNegocios
             return cone.mEjecutar(strSentencia, cone);
         }//fin del metodo mInsertar
 
-        public Boolean mInsertarFacturaDetalle(clsConexion cone, clsEntidadFactura pEntidadFactura)
+        public Boolean mInsertarFacturaDetalle(clsConexion cone, clsEntidadDetalleFactura pEntidadFacturaD)
         {
-            strSentencia = "Insert into tbFacturaDetalle(idFactura,idProducto,cantidad,subtotal) values (" + pEntidadFactura.getIdFactura() + "," + pEntidadFactura.getIdProducto()
-                + "," + pEntidadFactura.getCantidad() + "," + pEntidadFactura.getSubTotal() + ")";
+            strSentencia = "Insert into tbFacturaDetalle(idFactura,idProducto,cantidad,subtotal) values (" + pEntidadFacturaD.getIdFactura() + "," + pEntidadFacturaD.getIdProducto()
+                + "," + pEntidadFacturaD.getCantidad() + "," + pEntidadFacturaD.getSubTotal() + ")";
             return cone.mEjecutar(strSentencia, cone);
 
         }//fin del metodo mInsertar

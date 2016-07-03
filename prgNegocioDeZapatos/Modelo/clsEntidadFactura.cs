@@ -14,9 +14,6 @@ namespace Entidades
 
         private int idFactura;
         private int idUsuario;
-        private int idProducto; 
-        private int cantidad;
-        private Double subtotal;
         private Double total;
 
 
@@ -31,9 +28,6 @@ namespace Entidades
 
             this.idFactura = 0;
             this.idUsuario = 0;
-            this.idProducto = 0;
-            this.cantidad = 0;   
-            this.subtotal = 0.0;
             this.total = 0.0;
 
         }
@@ -70,55 +64,11 @@ namespace Entidades
             return idUsuario;
         }
 
-
-
-        public void setIdProducto(int idProducto)
-        {
-            this.idProducto = idProducto;
-
-        }
-
-
-        public int getIdProducto()
-        {
-
-            return idProducto;
-        }
-
-        public void setCantidad(int cantidad)
-        {
-            this.cantidad = cantidad;
-
-        }
-
-
-        public int getCantidad()
-        {
-
-            return cantidad;
-        }
-
-
-        public void setSubTotal(Double subtotal)
-        {
-            this.subtotal = subtotal;
-
-        }
-
-
-        public Double getSubTotal()
-        {
-
-            return subtotal;
-        }
-
-
         public void setTotal(Double total)
         {
             this.total = total;
 
         }
-
 
         public Double getTotal()
         {

@@ -20,8 +20,8 @@ namespace prgNegocioDeZapatos
     {
         private readonly MaterialSkinManager materialSkinManager;
         clsConexion conexion;
-        clsEntidadInventario inventario;
-        clsZapatos clInventario;
+        clsEntidadProducto inventario;
+        clsProducto clInventario;
         private Boolean bolAgregar,bolModificar;
 
 
@@ -32,8 +32,8 @@ namespace prgNegocioDeZapatos
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
 
-            this.inventario = new clsEntidadInventario();
-            this.clInventario = new clsZapatos();
+            this.inventario = new clsEntidadProducto();
+            this.clInventario = new clsProducto();
             this.conexion = cone;
 
             InitializeComponent();
@@ -55,7 +55,7 @@ namespace prgNegocioDeZapatos
         {
 
 
-            inventario.setIdZapato(Convert.ToInt32(txtCodigo.Text));
+            inventario.setIdProducto(Convert.ToInt32(txtCodigo.Text));
             inventario.setModelo(txtModelo.Text);
             inventario.setNombre(txtNombre.Text);
             inventario.setTalla(Double.Parse(txtTalla.Text));

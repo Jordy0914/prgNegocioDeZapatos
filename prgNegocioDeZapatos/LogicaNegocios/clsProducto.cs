@@ -14,7 +14,7 @@ using AccesoDatos;
 
 namespace LogicaNegocios
 {
-    public class clsZapatos
+    public class clsProducto
     {
 
         #region Atributos
@@ -26,9 +26,9 @@ namespace LogicaNegocios
 
         #region Metodos
 
-        public SqlDataReader mConsultarProducto(clsConexion cone, clsEntidadInventario pEntidadInventario)
+        public SqlDataReader mConsultarProducto(clsConexion cone, clsEntidadProducto pEntidadInventario)
         {
-            strSentencia = "Select * from tbProducto where idProducto ='" + pEntidadInventario.getIdZapato() + "'";
+            strSentencia = "Select * from tbProducto where idProducto ='" + pEntidadInventario.getIdProducto() + "'";
             return cone.mSeleccionar(strSentencia, cone);
         }
 
@@ -38,9 +38,9 @@ namespace LogicaNegocios
             return cone.mSeleccionar(strSentencia, cone);
         }
 
-        public Boolean mInsertar(clsConexion cone, clsEntidadInventario pEntidadInventario)
+        public Boolean mInsertar(clsConexion cone, clsEntidadProducto pEntidadInventario)
         {
-          strSentencia = "Insert into tbProducto(idProducto,idEmpledo,modelo,nombre,talla,color,costo,precio,marca,categoria,cantidad) Values (" + pEntidadInventario.getIdZapato() + ",'"
+          strSentencia = "Insert into tbProducto(idProducto,idEmpledo,modelo,nombre,talla,color,costo,precio,marca,categoria,cantidad) Values (" + pEntidadInventario.getIdProducto() + ",'"
                 +pEntidadInventario.getIdEmpleado() + ",'"+pEntidadInventario.getModelo()+"','"+pEntidadInventario.getNombre()+"',"
                 +pEntidadInventario.getTalla()+",'"+pEntidadInventario.getColor()+"',"+pEntidadInventario.getCosto()+","
                 +pEntidadInventario.getPrecio()+",'"+pEntidadInventario.getMarca()+"','"+pEntidadInventario.getCategoria()+"',"
@@ -48,21 +48,21 @@ namespace LogicaNegocios
             return cone.mEjecutar(strSentencia, cone);
         }
 
-        public Boolean mEliminarProducto(clsConexion cone, clsEntidadInventario pEntidadInventario)
+        public Boolean mEliminarProducto(clsConexion cone, clsEntidadProducto pEntidadInventario)
         {
 
-            strSentencia = "Delete from tbProducto where idProducto=" + pEntidadInventario.getIdZapato() + "";
+            strSentencia = "Delete from tbProducto where idProducto=" + pEntidadInventario.getIdProducto() + "";
             return cone.mEjecutar(strSentencia, cone);
 
         }//fin del metodo
 
-        public Boolean mModificarProducto(clsConexion cone, clsEntidadInventario pEntidadInventario)
+        public Boolean mModificarProducto(clsConexion cone, clsEntidadProducto pEntidadInventario)
         {
 
          strSentencia = "Update tbProducto set modelo='" + pEntidadInventario.getModelo() + "', talla=" + pEntidadInventario.getTalla() + 
                 " , color='"+pEntidadInventario.getColor()+"', costo= "+pEntidadInventario.getCosto()+
                 " , precio= "+pEntidadInventario.getPrecio()+" ,marca='"+pEntidadInventario.getMarca()+
-                "',categoria='"+pEntidadInventario.getCategoria()+"', cantidad="+pEntidadInventario.getCantidad()+" where idProducto=" + pEntidadInventario.getIdZapato() +"";
+                "',categoria='"+pEntidadInventario.getCategoria()+"', cantidad="+pEntidadInventario.getCantidad()+" where idProducto=" + pEntidadInventario.getIdProducto() +"";
 
             return cone.mEjecutar(strSentencia, cone);
 

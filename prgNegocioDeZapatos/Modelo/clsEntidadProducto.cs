@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-   public  class clsEntidadInventario
+   public  class clsEntidadProducto
     {
 
 
         #region Atributos
 
-        private int idZapato;
+        private int idProducto;
         private int idEmpleado;
         private String modelo;
         private String nombre;
@@ -35,9 +35,9 @@ namespace Entidades
 
         #region Constructor
 
-        public clsEntidadInventario() { 
+        public clsEntidadProducto() { 
 
-             this.idZapato=0;
+             this.idProducto=0;
              this.idEmpleado=0;
              this.modelo="";
              this.nombre="";
@@ -59,17 +59,17 @@ namespace Entidades
         #region Metodos 
 
 
-        public void setIdZapato(int idZapato)
+        public void setIdProducto(int idProducto)
         {
-            this.idZapato = idZapato;
+            this.idProducto = idProducto;
 
         }
 
 
-        public int getIdZapato()
+        public int getIdProducto()
         {
 
-            return idZapato;
+            return idProducto;
         }
 
 

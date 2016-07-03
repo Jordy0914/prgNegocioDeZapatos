@@ -20,8 +20,8 @@ namespace prgNegocioDeZapatos
         private readonly MaterialSkinManager materialSkinManager;
         SqlDataReader strSentencia;
         clsConexion conexion;
-        clsEntidadInventario productos;
-        clsZapatos clProducto;
+        clsEntidadProducto productos;
+        clsProducto clProducto;
         public int idProducto;
 
         public frmListaProducto(clsConexion conexion)
@@ -31,8 +31,8 @@ namespace prgNegocioDeZapatos
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
 
-            productos = new clsEntidadInventario();
-            clProducto = new clsZapatos();
+            productos = new clsEntidadProducto();
+            clProducto = new clsProducto();
             this.conexion = conexion;
 
             InitializeComponent();

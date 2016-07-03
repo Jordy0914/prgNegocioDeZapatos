@@ -36,6 +36,7 @@
             // 
             // lvLista
             // 
+            this.lvLista.BackColor = System.Drawing.Color.White;
             this.lvLista.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.codigo,
             this.producto});

@@ -40,8 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsEntidadDetalleFactura.cs" />
     <Compile Include="clsEntidadFactura.cs" />
-    <Compile Include="clsEntidadInventario.cs" />
+    <Compile Include="clsEntidadProducto.cs" />
     <Compile Include="clsEntidadProveedor.cs" />
     <Compile Include="clsEntidadRol.cs" />
     <Compile Include="clsEntidadUsuario.cs" />
