@@ -9,86 +9,32 @@ namespace Entidades
     public class clsEntidadVista
     {
         #region Atributos
-        private int idVista;
-        private int idPadre;
-        private string descripcion;
-        private int posicion;
-        private int habilitadoMenu;
-        private string url;
         #endregion
 
         #region Constructores
-        public clsEntidadVista()
-        {
-            this.idVista = -1;
-            this.idPadre = -1;
-            this.descripcion = "";
-            this.posicion = -1;
-            this.habilitadoMenu = -1;
-            this.url = "";   
-        }
+        public clsEntidadVista() { }
         #endregion
 
         #region Metodos
-        public void setIdVista(int idVista)
-        {
-            this.idVista = idVista;
-        }
+        public int IdVista { get; set; }
 
-        public int getIdVista()
-        {
-            return this.idVista;
-        }
+        public int IdPadre { get; set; }
 
-        public void setIdPadre(int idPadre)
-        {
-            this.idPadre = idPadre;
-        }
+        public string Descripcion { get; set; }
 
-        public int getIdPadre()
-        {
-            return this.idPadre;
-        }
-        
-        public void setDescripcion(string descripcion)
-        {
-            this.descripcion = descripcion;
-        }
+        public int Posicion { get; set; }
 
-        public string getDescripcion()
-        {
-            return this.descripcion;
-        }
+        public int HabilitadoMenu { get;set; }
 
-        public void setPosicion(int posicion)
-        {
-            this.posicion = posicion;
-        }
+        public string Url { get; set; }
 
-        public int getPosicion ()
-        {
-            return this.posicion;
-        }
-        
-        public void setHabilitadoMenu(int habilitadoMenu)
-        {
-            this.habilitadoMenu = habilitadoMenu;
-        }
+        public int Insertar { get; set; }
 
-        public int getHabilitadoMenu()
-        {
-            return this.habilitadoMenu;
-        }
+        public int Modificar { get; set;}
 
-        public void setUrl(string url)
-        {
-            this.url = url;
-        }
+        public int Eliminar { get; set; }
 
-        public string getUrl()
-        {
-            return this.url;
-        }
+        public int Consultar { get; set; }
         #endregion
     }
 }

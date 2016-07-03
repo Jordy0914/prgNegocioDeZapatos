@@ -59,25 +59,30 @@ namespace prgNegocioDeZapatos
         public void mAlmacenarVistasRolTemp()
         {
             dtrMenu = clUsuario.mConsultarVistasRol(this.conexion, this.pEntidadUsuario);
-
             // 0 = idMenu 'int'
             // 1 = idPadre 'int'
             // 2 = descripcion 'string'
             // 3 = posicion 'int'
             // 4 = habilitadoMenu 'int'
             // 5 = url  string
-
-            while(dtrMenu.Read())
+            // 6 = insertar
+            // 7 = modificar
+            // 8 = eliminar
+            // 9 = consultar
+            while (dtrMenu.Read())
             {
-                pEntidadVista.setIdVista(dtrMenu.GetInt32(0));
-                pEntidadVista.setIdPadre(dtrMenu.GetInt32(1));
-                pEntidadVista.setDescripcion(dtrMenu.GetString(2));
-                pEntidadVista.setPosicion(dtrMenu.GetInt32(3));
-                pEntidadVista.setHabilitadoMenu(Convert.ToInt32((dtrMenu.GetBoolean(4))));
-
+                pEntidadVista.IdVista = (dtrMenu.GetInt32(0));
+                pEntidadVista.IdPadre = (dtrMenu.GetInt32(1));
+                pEntidadVista.Descripcion = (dtrMenu.GetString(2));
+                pEntidadVista.Posicion = (dtrMenu.GetInt32(3));
+                pEntidadVista.HabilitadoMenu = (Convert.ToInt32((dtrMenu.GetBoolean(4))));
+                pEntidadVista.Insertar = (Convert.ToInt32((dtrMenu.GetBoolean(6))));
+                pEntidadVista.Modificar = (Convert.ToInt32((dtrMenu.GetBoolean(7))));
+                pEntidadVista.Eliminar = (Convert.ToInt32((dtrMenu.GetBoolean(8))));
+                pEntidadVista.Consultar = (Convert.ToInt32((dtrMenu.GetBoolean(9))));
                 try
                 {
-                    pEntidadVista.setUrl(dtrMenu.GetString(5));
+                    pEntidadVista.Url = (dtrMenu.GetString(5));
                 }
                 catch (Exception e) { }
 
@@ -88,25 +93,30 @@ namespace prgNegocioDeZapatos
         public void mAlmacenarVistasDirectasTemp()
         {
             dtrMenu = clUsuario.mConsultarVistasDirectas(this.conexion, this.pEntidadUsuario);
-
             // 0 = idMenu 'int'
             // 1 = idPadre 'int'
             // 2 = descripcion 'string'
             // 3 = posicion 'int'
             // 4 = habilitadoMenu 'int'
             // 5 = url  string
-
+            // 6 = insertar
+            // 7 = modificar
+            // 8 = eliminar
+            // 9 = consultar
             while (dtrMenu.Read())
             {
-                pEntidadVista.setIdVista(dtrMenu.GetInt32(0));
-                pEntidadVista.setIdPadre(dtrMenu.GetInt32(1));
-                pEntidadVista.setDescripcion(dtrMenu.GetString(2));
-                pEntidadVista.setPosicion(dtrMenu.GetInt32(3));
-                pEntidadVista.setHabilitadoMenu(Convert.ToInt32((dtrMenu.GetBoolean(4))));
-
+                pEntidadVista.IdVista = (dtrMenu.GetInt32(0));
+                pEntidadVista.IdPadre = (dtrMenu.GetInt32(1));
+                pEntidadVista.Descripcion = (dtrMenu.GetString(2));
+                pEntidadVista.Posicion = (dtrMenu.GetInt32(3));
+                pEntidadVista.HabilitadoMenu = (Convert.ToInt32((dtrMenu.GetBoolean(4))));
+                pEntidadVista.Insertar = (Convert.ToInt32((dtrMenu.GetBoolean(6))));
+                pEntidadVista.Modificar = (Convert.ToInt32((dtrMenu.GetBoolean(7))));
+                pEntidadVista.Eliminar = (Convert.ToInt32((dtrMenu.GetBoolean(8))));
+                pEntidadVista.Consultar = (Convert.ToInt32((dtrMenu.GetBoolean(9))));
                 try
                 {
-                    pEntidadVista.setUrl(dtrMenu.GetString(5));
+                    pEntidadVista.Url = (dtrMenu.GetString(5));
                 }
                 catch (Exception e) { }
 
@@ -118,14 +128,12 @@ namespace prgNegocioDeZapatos
         {
             ToolStripMenuItem menu;
             dtrMenu = clUsuario.mCrearMenuPrincipal(this.conexion);
-
             // 0 = idMenu 'int'
             // 1 = idPadre 'int'
             // 2 = descripcion 'string'
             // 3 = posicion 'int'
             // 4 = habilitadoMenu 'int'
             // 5 = url  string
-
             while (dtrMenu.Read())
             {
                 menu = new ToolStripMenuItem();
@@ -153,7 +161,13 @@ namespace prgNegocioDeZapatos
                 if (dtrSubMenu.HasRows)
                     mCrearSubMenusRecursivo(dtrSubMenu, subMenu);
                 else
+                {
+                    pEntidadVista.Insertar = (Convert.ToInt32((dtr.GetBoolean(6))));
+                    pEntidadVista.Modificar = (Convert.ToInt32((dtr.GetBoolean(7))));
+                    pEntidadVista.Eliminar = (Convert.ToInt32((dtr.GetBoolean(8))));
+                    pEntidadVista.Consultar = (Convert.ToInt32((dtr.GetBoolean(9))));
                     subMenu.Click += new EventHandler(MenuItemClicked);
+                }         
             }
         }
         #endregion
@@ -167,7 +181,7 @@ namespace prgNegocioDeZapatos
             {
                 string NombreFormulario = ((ToolStripItem)sender).Tag.ToString();
                 Type tipo = Ensamblado.GetType(Ensamblado.GetName().Name + "." + NombreFormulario);
-                Object[] parametros = { this.conexion, this.pEntidadUsuario }; 
+                Object[] parametros = { this.conexion, this.pEntidadUsuario, this.pEntidadVista }; 
 
                 if (tipo == null)
                 {

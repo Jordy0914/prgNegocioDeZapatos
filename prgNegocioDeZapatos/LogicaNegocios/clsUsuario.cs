@@ -27,13 +27,13 @@ namespace LogicaNegocios
 
         public SqlDataReader mConsultarVistasRol(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Select distinct V.idVista, V.idPadre, V.descripcion, V.posicion, V.habilitadoMenu, V.url from tbVistas V, tbRolesVistas RV , tbUsuariosRoles UR where UR.idRol = RV.idRol and RV.idVista = V.idVista and UR.idUsuario = " + pEntidadUsuario.getIdUsuario() + "";
+            strSentencia = "Select distinct V.idVista, V.idPadre, V.descripcion, V.posicion, V.habilitadoMenu, V.url, RV.insertar, RV.modificar, RV.eliminar, RV.consultar from tbVistas V, tbRolesVistas RV , tbUsuariosRoles UR where UR.idRol = RV.idRol and RV.idVista = V.idVista and UR.idUsuario = "+pEntidadUsuario.getIdUsuario()+"";
             return cone.mSeleccionar(strSentencia, cone);
         }
 
         public SqlDataReader mConsultarVistasDirectas(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Select distinct V.idVista, V.idPadre, V.descripcion, V.posicion, V.habilitadoMenu, V.url from tbVistas V, tbUsuarioVistas UV where UV.idVista = V.idVista and UV.idUsuario = "+pEntidadUsuario.getIdUsuario()+" and V.idVista not in(select idVista from tbVistasTemp)";
+            strSentencia = "Select distinct V.idVista, V.idPadre, V.descripcion, V.posicion, V.habilitadoMenu, V.url, UV.insertar, UV.modificar, UV.eliminar, UV.consultar from tbVistas V, tbUsuarioVistas UV where UV.idVista = V.idVista and UV.idUsuario = " + pEntidadUsuario.getIdUsuario()+" and V.idVista not in(select idVista from tbVistasTemp)";
             return cone.mSeleccionar(strSentencia, cone);
         }
       
@@ -45,14 +45,14 @@ namespace LogicaNegocios
 
         public SqlDataReader mCrearMenusSecundarios (clsConexion cone, int menuPadre)
         {
-            strSentencia = "Select distinct VT.idVista, VT.idPadre, VT.descripcion, VT.posicion, VT.habilitadoMenu, VT.url from tbVistasTemp VT where VT.idPadre = "+menuPadre+" order by VT.posicion";
+            strSentencia = "Select distinct VT.idVista, VT.idPadre, VT.descripcion, VT.posicion, VT.habilitadoMenu, VT.url, VT.insertar, VT.modificar, VT.eliminar, VT.consultar from tbVistasTemp VT where VT.idPadre = " + menuPadre+" order by VT.posicion";
             return cone.mSeleccionar(strSentencia, cone);
         }
 
         public void mInsertarVistasTemp(clsConexion cone, clsEntidadVista pEntidadVista)
         {
-            strSentencia = "Insert into tbVistasTemp(idVista, idPadre, descripcion, posicion, habilitadoMenu, url) "
-                + "values(" + pEntidadVista.getIdVista() + " , " + pEntidadVista.getIdPadre() + " , '" + pEntidadVista.getDescripcion() + "' , " + pEntidadVista.getPosicion() + " , " + pEntidadVista.getHabilitadoMenu() + " , '" + pEntidadVista.getUrl() + "')";
+            strSentencia = "Insert into tbVistasTemp(idVista, idPadre, descripcion, posicion, habilitadoMenu, url, insertar, modificar, eliminar, consultar) "
+                + "values(" + pEntidadVista.IdVista + " , " + pEntidadVista.IdPadre + " , '" + pEntidadVista.Descripcion + "' , " + pEntidadVista.Posicion + " , " + pEntidadVista.HabilitadoMenu + " , '" + pEntidadVista.Url + "' , "+pEntidadVista.Insertar+" , "+pEntidadVista.Modificar+" , "+pEntidadVista.Eliminar+" , "+pEntidadVista.Consultar+")";
             cone.mEjecutar(strSentencia, cone);
         }
 

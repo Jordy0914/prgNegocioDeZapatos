@@ -42,6 +42,9 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAgregar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnModificar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnConsultar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -130,6 +133,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.btnConsultar);
             this.groupBox2.Controls.Add(this.txtNombreRol);
             this.groupBox2.Controls.Add(this.txtCodRol);
             this.groupBox2.Controls.Add(this.lblAdvertencia);
@@ -221,19 +225,21 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.btnEliminar);
+            this.groupBox3.Controls.Add(this.btnModificar);
             this.groupBox3.Controls.Add(this.btnSalir);
             this.groupBox3.Controls.Add(this.btnAgregar);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(181, 300);
+            this.groupBox3.Location = new System.Drawing.Point(113, 300);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(292, 65);
+            this.groupBox3.Size = new System.Drawing.Size(413, 65);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             // 
             // btnSalir
             // 
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(177, 19);
+            this.btnSalir.Location = new System.Drawing.Point(328, 19);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
@@ -246,14 +252,50 @@
             // btnAgregar
             // 
             this.btnAgregar.Depth = 0;
-            this.btnAgregar.Location = new System.Drawing.Point(36, 19);
+            this.btnAgregar.Location = new System.Drawing.Point(20, 19);
             this.btnAgregar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Primary = true;
             this.btnAgregar.Size = new System.Drawing.Size(75, 30);
             this.btnAgregar.TabIndex = 27;
-            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Text = "Insertar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Depth = 0;
+            this.btnModificar.Location = new System.Drawing.Point(119, 19);
+            this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Primary = true;
+            this.btnModificar.Size = new System.Drawing.Size(89, 30);
+            this.btnModificar.TabIndex = 28;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Depth = 0;
+            this.btnEliminar.Location = new System.Drawing.Point(231, 19);
+            this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Primary = true;
+            this.btnEliminar.Size = new System.Drawing.Size(75, 30);
+            this.btnEliminar.TabIndex = 29;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Depth = 0;
+            this.btnConsultar.Location = new System.Drawing.Point(278, 37);
+            this.btnConsultar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Primary = true;
+            this.btnConsultar.Size = new System.Drawing.Size(75, 30);
+            this.btnConsultar.TabIndex = 28;
+            this.btnConsultar.Text = "Agregar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
             // 
             // frmRol
             // 
@@ -293,5 +335,8 @@
         private MaterialSkin.Controls.MaterialLabel lblAdvertencia;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreRol;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCodRol;
+        private MaterialSkin.Controls.MaterialRaisedButton btnEliminar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnModificar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnConsultar;
     }
 }

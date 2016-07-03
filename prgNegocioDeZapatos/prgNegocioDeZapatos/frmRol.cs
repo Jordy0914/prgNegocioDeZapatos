@@ -17,16 +17,17 @@ using System.Data.SqlClient;
 
 namespace prgNegocioDeZapatos
 {
-    public partial class frmRol : MaterialForm
+    public partial class frmRol : MaterialForm , IPermisos
     {
         private readonly MaterialSkinManager materialSkinManager;
         private clsConexion conexion;
         private clsEntidadRol pEntidadRol;
         private clsEntidadUsuario pEntidadUsuario;
+        private clsEntidadVista pEntidadVista;
         private clsRol clRol;
-        private SqlDataReader dtrRol;
+        private SqlDataReader dtrRol;       
 
-        public frmRol(clsConexion cone,clsEntidadUsuario pEntidadUsuario)
+        public frmRol(clsConexion cone,clsEntidadUsuario pEntidadUsuario,clsEntidadVista vista)
         {
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -36,6 +37,7 @@ namespace prgNegocioDeZapatos
             this.conexion = cone;
             this.pEntidadRol = new clsEntidadRol();
             this.pEntidadUsuario = pEntidadUsuario;
+            this.pEntidadVista = vista;
             this.clRol = new clsRol();
 
             InitializeComponent();
@@ -43,8 +45,10 @@ namespace prgNegocioDeZapatos
 
         private void frmRol_Load(object sender, EventArgs e)
         {
-            this.actualizarIdRol();
-            MessageBox.Show("el id del usuario es " + pEntidadUsuario.getIdUsuario());
+            this.activarInsertar(Convert.ToBoolean(this.pEntidadVista.Insertar));
+            this.activarModificar(Convert.ToBoolean(this.pEntidadVista.Modificar));
+            this.activarEliminar(Convert.ToBoolean(this.pEntidadVista.Eliminar));
+            this.activarConsultar(Convert.ToBoolean(this.pEntidadVista.Consultar));
         }
         
         private void btnSalir_Click(object sender, EventArgs e)
@@ -61,8 +65,30 @@ namespace prgNegocioDeZapatos
             else
                 this.txtCodRol.Text = "1";
         }
+
+        public void activarInsertar(Boolean condicion)
+        {
+            this.btnAgregar.Enabled = condicion;
+            this.btnAgregar.Visible = condicion;
+        }
+
+        public void activarModificar(Boolean condicion)
+        {
+            this.btnModificar.Enabled = condicion;
+            this.btnModificar.Visible = condicion;
+        }
+
+        public void activarEliminar(Boolean condicion)
+        {
+            this.btnEliminar.Enabled = condicion;
+            this.btnEliminar.Visible = condicion;
+        }
+
+        public void activarConsultar(Boolean condicion)
+        {
+            this.btnConsultar.Enabled = condicion;
+            this.btnConsultar.Visible = condicion;
+        }
         #endregion
-
-
     }
 }
