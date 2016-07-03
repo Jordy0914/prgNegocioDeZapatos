@@ -117,8 +117,8 @@ namespace AccesoDatos
 
         public string mNomServidor()
         {
-          //return Dns.GetHostName();
-          return "DESKTOP-A1FRNG4\\SQLEXPRESS";
+          return Dns.GetHostName();
+          //return "DESKTOP-A1FRNG4\\SQLEXPRESS";
          // return "DELL\\SQLEXPRESS";
         }
         #endregion  //fin de la region de metodos

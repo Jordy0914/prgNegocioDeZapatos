@@ -68,6 +68,13 @@ namespace LogicaNegocios
 
         }//fin del metodo modificar 
 
+        public Boolean mModificarCantidad(clsConexion cone, clsEntidadProducto pEntidadProducto)
+        {
+
+            strSentencia = "update tbProducto set cantidad =" + pEntidadProducto.getCantidad() + " where idProducto=" + pEntidadProducto.getIdProducto() + "";
+            return cone.mEjecutar(strSentencia, cone);
+        }
+
 
         #endregion
     }

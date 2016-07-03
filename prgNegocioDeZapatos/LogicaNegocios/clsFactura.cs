@@ -23,7 +23,7 @@ namespace LogicaNegocios
 
         public Boolean mInsertarFacturaEncabezado(clsConexion cone, clsEntidadFactura pEntidadFactura)
         {
-            strSentencia = "Insert into tbFacturaEncabezado(idFactura,idUsuario,total) values (" + pEntidadFactura.getIdFactura() + "," + pEntidadFactura.getIdUsuario()
+            strSentencia = "Insert into tbFacturaEncabezado(idUsuario,total) values ("+ pEntidadFactura.getIdUsuario()
                 + "," + pEntidadFactura.getTotal() +")";
             return cone.mEjecutar(strSentencia, cone);
         }//fin del metodo mInsertar
@@ -56,13 +56,22 @@ namespace LogicaNegocios
             strSentencia = "Delete from tbFacturaEncabezado where idFactura=" + pEntidadFactura.getIdFactura() + "";
             return cone.mEjecutar(strSentencia, cone);
 
-        }//fin del metodo mEliminarVista
+        }//fin del metodo mEliminarFactura
+
+        public Boolean mModificarFactura(clsConexion cone, clsEntidadFactura pEntidadFactura)
+        {
+            strSentencia = "Update tbFacturaEncabezado set  where idFactura=" + pEntidadFactura.getIdFactura() + "";
+            return cone.mEjecutar(strSentencia, cone);
+
+        }//fin del metodo mModificarFactura
 
         public SqlDataReader mConsultarIdFactura(clsConexion cone)
         {
             strSentencia = " Select count(*) from tbFacturaEncabezado";
             return cone.mSeleccionar(strSentencia, cone);
         }
+
+
 
         #endregion
 

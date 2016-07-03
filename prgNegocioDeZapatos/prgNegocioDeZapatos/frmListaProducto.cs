@@ -41,23 +41,23 @@ namespace prgNegocioDeZapatos
         private void frmListaProducto_Load(object sender, EventArgs e)
         {
 
-            strSentencia = clProducto.mConsultarProductoGeneral(conexion);
+          strSentencia = clProducto.mConsultarProductoGeneral(conexion);
           while (strSentencia.Read())
 
             {
                 ListViewItem lista;
-                lista = lvLista.Items.Add(Convert.ToString(strSentencia.GetInt32(0)));
+                lista = lvListaProductos.Items.Add(Convert.ToString(strSentencia.GetInt32(0)));
                 lista.SubItems.Add(strSentencia.GetString(2));
 
-            }
+            }//fin del while
 
-        }
+        }//fin del metodo
 
 
-        public int  getid()
+        public int  getidProducto()
         {
             return (idProducto);
-        }
+        }//fin del metodo getid
 
 
 
@@ -74,14 +74,14 @@ namespace prgNegocioDeZapatos
         private void lvLista_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            for (int i = 0; i < lvLista.Items.Count; i++)
+            for (int i = 0; i < lvListaProductos.Items.Count; i++)
             {
-                if (lvLista.Items[i].Selected)
+                if (lvListaProductos.Items[i].Selected)
                 {
-                    idProducto = Convert.ToInt32(lvLista.Items[i].Text);
+                    idProducto = Convert.ToInt32(lvListaProductos.Items[i].Text);
                 }
-            }
+            }//fin del for
+       }//fin del metodo
 
-       }
     }//fin de la clase
 }
