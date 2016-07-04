@@ -121,7 +121,7 @@ namespace prgNegocioDeZapatos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
            
-            frmListaProducto consultarProducto = new frmListaProducto(conexion);
+            frmLista consultarProducto = new frmLista(conexion);
             consultarProducto.ShowDialog();
 
             if (consultarProducto.getidProducto() != 0 || consultarProducto.getidProducto() == 0)

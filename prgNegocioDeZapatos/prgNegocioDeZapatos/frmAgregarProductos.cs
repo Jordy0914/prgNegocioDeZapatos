@@ -9,75 +9,97 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
-
+using System.Data.SqlClient;
 using Entidades;
 using LogicaNegocios;
 using AccesoDatos;
+using System.Globalization;
 
 namespace prgNegocioDeZapatos
 {
     
-    public partial class frmAgregarProductos : MaterialForm 
+    public partial class frmAgregarProductos : MaterialForm, IPermisos 
     {
+        #region Atributos
         private readonly MaterialSkinManager materialSkinManager;
         clsConexion conexion;
-        clsEntidadProducto inventario;
-        clsProducto clInventario;
-        private Boolean bolAgregar,bolModificar;
+
+        clsEntidadProducto productos;
+        clsEntidadUsuario usuarios;
+
+        clsProducto clProductos;
+        SqlDataReader dtrProducto;
 
 
-        public frmAgregarProductos()//clsConexion cone)
+        private clsVistas clVistas;
+        private clsEntidadVista pEntidadVista;
+        private SqlDataReader dtrVista;
+
+        private Boolean bolAgregar,bolModificar, bolEliminar;
+
+        #endregion
+
+        #region Constructor
+        public frmAgregarProductos()//clsConexion cone, clsEntidadUsuario pEntidadUsuario, clsEntidadVista vista)
         {
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
-            this.inventario = new clsEntidadProducto();
-            this.clInventario = new clsProducto();
+            this.conexion = new clsConexion();
+            this.productos = new clsEntidadProducto();
+            this.clProductos = new clsProducto();
+            this.usuarios = new clsEntidadUsuario();
+            //this.clVistas = new clsVistas();
+            //this.pEntidadVista = vista;
             //this.conexion = cone;
             InitializeComponent();
         }
+        #endregion
 
-
-        private void frmAgregarZapatos_Load(object sender, EventArgs e, GroupBox gro)
+        #region Metodos del IPermisos
+        public void activarInsertar(Boolean condicion)
         {
-            btnAgregar.Visible = true;
-            btnAgregar.Enabled = true;
-            btnModificar.Visible = true;
-            btnModificar.Enabled = true;
-            groupBox3.AutoSize=true;
-
-            
- 
+            this.btnAgregar.Enabled = condicion;
         }
 
-
-        private void btnSalir_Click(object sender, EventArgs e)
+        public void activarModificar(Boolean condicion)
         {
-            Close();
+            this.btnModificar.Enabled = condicion;
         }
+
+        public void activarEliminar(Boolean condicion)
+        {
+            this.btnEliminar.Enabled = condicion;
+        }
+
+        public void activarConsultar(Boolean condicion)
+        {
+           
+        }
+        #endregion
+    
+        #region Eventos
+
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
+            productos.setModelo(txtModelo.Text);
+            productos.setNombre(txtNombre.Text);
+            productos.setTalla(Double.Parse(txtTalla.Text));
+            productos.setColor(cboColor.Text);
+            productos.setPrecio(Convert.ToInt32(txtPrecio.Text));
+            productos.setCosto(Convert.ToInt32(txtCosto.Text));
+            productos.setMarca(txtMarca.Text);
+            productos.setCategoria(txtCategoria.Text);
+            productos.setCantidad(Convert.ToInt32(txtCantidad.Text));
 
-            inventario.setIdProducto(Convert.ToInt32(txtCodigo.Text));
-            inventario.setModelo(txtModelo.Text);
-            inventario.setNombre(txtNombre.Text);
-            inventario.setTalla(Double.Parse(txtTalla.Text));
-            inventario.setColor(cboColor.Text);
-            inventario.setPrecio(Convert.ToInt32(txtPrecio.Text));
-            inventario.setCosto(Convert.ToInt32(txtCosto.Text));
-            inventario.setMarca(txtMarca.Text);
-            inventario.setCategoria(txtCategoria.Text);
-            inventario.setCantidad(Convert.ToInt32(txtCantidad.Text));
-
-
-            bolAgregar= clInventario.mInsertar(conexion, inventario);
+            bolAgregar= clProductos.mInsertar(conexion, productos, usuarios);
 
             if (bolAgregar == true)
             {
-                MessageBox.Show("El Inventario ha sido agregado correctamente", "Registro correcto", MessageBoxButtons.OK);
+                MessageBox.Show("El producto ha sido agregado correctamente", "Registro correcto", MessageBoxButtons.OK);
 
 
             }//fin del if
@@ -87,47 +109,90 @@ namespace prgNegocioDeZapatos
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            inventario.setModelo(txtModelo.Text);
-            inventario.setNombre(txtNombre.Text);
-            inventario.setTalla(Double.Parse(txtTalla.Text));
-            inventario.setColor(cboColor.Text);
-            inventario.setPrecio(Convert.ToInt32(txtPrecio.Text));
-            inventario.setCosto(Convert.ToInt32(txtCosto.Text));
-            inventario.setMarca(txtMarca.Text);
-            inventario.setCategoria(txtCategoria.Text);
-            inventario.setCantidad(Convert.ToInt32(txtCantidad.Text));
+            productos.setModelo(txtModelo.Text);
+            productos.setNombre(txtNombre.Text);
+            productos.setTalla(Double.Parse(txtTalla.Text));
+            productos.setColor(cboColor.Text);
+            productos.setPrecio(Convert.ToInt32(txtPrecio.Text));
+            productos.setCosto(Convert.ToInt32(txtCosto.Text));
+            productos.setMarca(txtMarca.Text);
+            productos.setCategoria(txtCategoria.Text);
+            productos.setCantidad(Convert.ToInt32(txtCantidad.Text));
 
-            bolModificar = clInventario.mModificarProducto(conexion, inventario);
+            bolModificar = clProductos.mModificarProducto(conexion, productos);
 
             if (bolModificar == true)
             {
-                MessageBox.Show("El Inventario ha sido modificado correctamente", "Registro correcto", MessageBoxButtons.OK);
+                MessageBox.Show("El producto ha sido modificado correctamente", "Registro correcto", MessageBoxButtons.OK);
+
+
+            }//fin del if
+            this.limpiar();
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            frmLista consultarProducto = new frmLista(conexion);
+            consultarProducto.ShowDialog();
+
+            if (consultarProducto.getidProducto() != 0 || consultarProducto.getidProducto() == 0)
+            {
+                productos.setIdProducto(consultarProducto.getidProducto());
+                txtCodigo.Text = Convert.ToString(consultarProducto.getidProducto());
+                mConsultaProducto();
+            }//fin del if que verifica que no sea igual a 0
+        }
+
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            //this.Close();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            bolEliminar = clProductos.mEliminarProducto(conexion, productos);
+            if (bolEliminar == true)
+            {
+                MessageBox.Show("El producto ha sido eliminado correctamente", "Registro correcto", MessageBoxButtons.OK);
 
 
             }//fin del if
             this.limpiar();
         }
 
+        #endregion
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        #region Metodos Propios
+        public void mConsultaProducto()
         {
 
-        }
+            productos.setIdProducto(Convert.ToInt32(txtCodigo.Text.Trim()));
 
-        private void btnSalir_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+            dtrProducto = clProductos.mConsultarProducto(conexion, productos);
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
+            if (dtrProducto != null)
+            {
 
-        }
+                if (dtrProducto.Read())
+                {
+                    this.txtModelo.Text = dtrProducto.GetString(1);
+                    this.txtNombre.Text = dtrProducto.GetString(2);
+                    this.txtTalla.Text = Convert.ToString(dtrProducto.GetDecimal(3));
+                    this.cboColor.Text =  dtrProducto.GetString(4);
+                    this.txtCosto.Text =   Convert.ToString(dtrProducto.GetInt32(5));
+                    this.txtPrecio.Text =   Convert.ToString(dtrProducto.GetInt32(6));
+                    this.txtMarca.Text = dtrProducto.GetString(7);
+                    this.txtCategoria.Text = dtrProducto.GetString(8);
+                    this.txtCantidad.Text = Convert.ToString(dtrProducto.GetInt32(9));
+                
+                }//FIN READ
 
-        private void txtConsultar_Click(object sender, EventArgs e)
-        {
+            }//fin del if que verifica que no este null
 
-        }
+        }//fin del metodo que consulta el producto segun su id
+
+       
 
         private void frmAgregarProductos_Load(object sender, EventArgs e)
         {
@@ -139,6 +204,7 @@ namespace prgNegocioDeZapatos
 
             this.txtNombre.Text = "";
             this.txtCodigo.Text = "";
+            this.txtModelo.Text = "";
             this.txtTalla.Text = "";
             this.cboColor.Text = "";
             this.txtPrecio.Text="";
@@ -148,6 +214,21 @@ namespace prgNegocioDeZapatos
             this.txtCantidad.Text = "";
 
         }//fin del metodo limpiar
+
+        private void activarPermisos()
+        {
+            this.dtrVista = clVistas.mConsultarPermisosVista(this.conexion, this.pEntidadVista);
+
+            if (dtrVista.Read())
+            {
+                this.activarInsertar(dtrVista.GetBoolean(0));
+                this.activarModificar(dtrVista.GetBoolean(1));
+                this.activarEliminar(dtrVista.GetBoolean(2));
+                this.activarConsultar(dtrVista.GetBoolean(3));
+            }
+        }
+
+        #endregion
 
     }//fin de la clase
 }

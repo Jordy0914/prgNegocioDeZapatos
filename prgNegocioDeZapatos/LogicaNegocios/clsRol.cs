@@ -24,42 +24,26 @@ namespace LogicaNegocios
         
         public SqlDataReader mConsultarNombreRol(clsConexion cone, clsEntidadRol pEntidadRol)
         {
-            strSentencia = "Select R.nombre from tbRoles R where R.nombre = '"+pEntidadRol.getNombre()+"'";
+            strSentencia = "Select R.idRol, R.nombre from tbRoles R where R.nombre = '"+ pEntidadRol.Nombre +"' ";
             return cone.mSeleccionar(strSentencia, cone);
         }
 
-
-
-        public SqlDataReader mConsultarRolGeneral(clsConexion cone, clsEntidadRol pEntidadRol)
+        public Boolean mInsertarRol(clsConexion cone, clsEntidadRol pEntidadRol, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Select * from tbRoles where idRol= '" + pEntidadRol.getIdRol() + "'";
-            return cone.mSeleccionar(strSentencia, cone);
-        }
-
-
-        public Boolean mInsertarRol(clsConexion cone, clsEntidadRol pEntidadRol)
-        {
-            strSentencia = "Insert into tbRoles(idRol,nombre) values ('" + pEntidadRol.getIdRol() + "','" + pEntidadRol.getNombre() + "'')";
+            strSentencia = "Insert into tbRoles(nombre,creadoPor,fechaCreacion) values ('" + pEntidadRol.Nombre + "' , "+pEntidadUsuario.IdUsuario+" , getDate())";
             return cone.mEjecutar(strSentencia, cone);
         }//fin del metodo mInsertarVista
 
+        public Boolean mModificarRol(clsConexion cone, clsEntidadRol pEntidadRol , clsEntidadUsuario pEntidadUsuario)
+        {
+            strSentencia = "Update tbRoles set nombre = '"+ pEntidadRol.Nombre + "' , modificadoPor = "+ pEntidadUsuario.IdUsuario +" , fechaModificacion = getDate()  where idRol = " + pEntidadRol.IdRol + "  ";
+            return cone.mEjecutar(strSentencia, cone);
+        }//fin del metodo modificar
         public Boolean mEliminarRol(clsConexion cone, clsEntidadRol pEntidadRol)
         {
-            strSentencia = "Delete from tbRoles where idRol='" + pEntidadRol.getIdRol() + "'";
+            strSentencia = "Delete from tbRoles where idRol='" + pEntidadRol.IdRol + "'";
             return cone.mEjecutar(strSentencia, cone);
         }//fin del metodo mEliminarVista
-
-        public Boolean mModificarRol(clsConexion cone, clsEntidadRol pEntidadRol)
-        {
-
-            strSentencia = "Update tbRoles set nombre='" + pEntidadRol.getNombre() + " where idRol=" + pEntidadRol.getIdRol() + "";
-
-            return cone.mEjecutar(strSentencia, cone);
-
-        }//fin del metodo modificar 
-
-
         #endregion
-
     }
 }

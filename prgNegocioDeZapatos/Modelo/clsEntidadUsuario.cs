@@ -8,147 +8,37 @@ namespace Entidades
 {
     public class clsEntidadUsuario
     {
-
         #region Atributos
-        private int idUsuario;
-        private String login;
-        private String password;
-        private String nombre;
-        private String apellido1;
-        private String apellido2;
-        private int cedula;
-        private String direccion;
-        private String tipoIdentificacion;
-        private String puesto;
-        private String fechaNacimiento;
-        private String telefono;
-        private String email;
-
+        public int IdUsuario;
+        public String login;
+        public String password;
+        public String nombre;
+        public String apellido1;
+        public String apellido2;
+        public String direccion;
+        public String tipoIdentificacion;
+        public DateTime fechaNacimiento;
+        public String puesto;
+        public int cedula;
+        public int creadoPor;
+        public DateTime fechaCreacion;
+        public int modificadoPor;
+        public DateTime fechaModificacion;
         #endregion
 
         #region Constructor
-
-        public clsEntidadUsuario()
-        {
-            this.idUsuario = 0;
-            this.login = "";
-            this.password = "";
-            this.nombre = "";
-            this.apellido1 = "";
-            this.apellido2 = "";
-            this.tipoIdentificacion = "";
-            this.puesto = "";
-            this.cedula = 0;
-            this.direccion = "";
-            this.fechaNacimiento = "";
-            this.telefono = "";
-            this.email = "";
-
-        }//fin del constructor
-
+        public clsEntidadUsuario(){}//fin del constructor
         #endregion
 
         #region Metodos
-
-        public void setIdUsuario(int idUsuario)
+        public void setIdUsuario (int idUsuario)
         {
-            this.idUsuario = idUsuario;
+            this.IdUsuario = idUsuario;
         }
 
         public int getIdUsuario()
         {
-            return this.idUsuario;
-        }
-
-        public void setNombre(String nombre)
-        {
-
-            this.nombre = nombre;
-        }
-
-        public String getNombre()
-        {
-            return this.nombre;
-        }
-
-
-        public void setApellido1(String apellido1)
-        {
-
-            this.apellido1 = apellido1;
-        }
-
-        public String getApellido()
-        {
-            return this.apellido1;
-        }
-
-        public void setApellido2(String apellido2)
-        {
-
-            this.apellido2 = apellido2;
-        }
-
-        public String getApellido2()
-        {
-            return this.apellido2;
-        }
-
-        public void setCedula(int cedula)
-        {
-
-            this.cedula = cedula;
-        }
-
-        public int getCedula()
-        {
-            return this.cedula;
-        }
-
-
-        public void setDireccion(String direccion)
-        {
-
-            this.direccion = direccion;
-        }
-
-        public String getDireccion()
-        {
-            return this.direccion;
-        }
-
-
-        public void setFechaNacimiento(String fechaNacimiento)
-        {
-
-            this.fechaNacimiento = fechaNacimiento;
-        }
-
-        public String getFechaNacimiento()
-        {
-            return this.fechaNacimiento;
-        }
-
-        public void setTelefono(String telefono)
-        {
-
-            this.telefono = telefono;
-        }
-
-        public String getTelefono()
-        {
-            return this.telefono;
-        }
-
-        public void setEmail(String email)
-        {
-
-            this.email = email;
-        }
-
-        public String getEmail()
-        {
-            return this.email;
+            return IdUsuario;
         }
 
         public void setLogin(String login)
@@ -158,27 +48,76 @@ namespace Entidades
 
         public String getLogin()
         {
-            return this.login;
+            return login;
         }
 
-        public void setPassword (String password)
+        public void setPassword(String password)
         {
-            this.password = password;
+            this.password = password.Trim();
         }
 
         public String getPassword()
         {
-            return this.password;
+            return password;
         }
 
-        public void setTipoIdentificacion(String tipoIdentificacion)
+        public void setNombre(String nombre )
         {
-            this.tipoIdentificacion = tipoIdentificacion;
+            this.nombre = nombre;
+        }
+
+        public String getNombre()
+        {
+            return nombre;       }
+
+        public void setApellido1(String apellido1 )
+        {
+            this.apellido1 = apellido1;
+        }
+
+        public String getApellido1()
+        {
+            return apellido1;
+        }
+
+        public void setApellido2(String apellido2)
+        {
+            this.apellido2 = apellido2;
+        }
+
+        public String getApellido2()
+        {
+            return apellido2;
+        }
+
+        public void setDireccion(String direccion)
+        {
+            this.direccion = direccion;
+        }
+
+        public String getDireccion()
+        {
+            return direccion;
+        }
+
+        public void setTipoIdentificacion(String tipo)
+        {
+            this.tipoIdentificacion = tipo;
         }
 
         public String getTipoIdentificacion()
         {
-            return this.tipoIdentificacion;
+            return tipoIdentificacion;
+        }
+
+        public void setFechaN(DateTime fechaNacimiento)
+        {
+            this.fechaNacimiento = fechaNacimiento;
+        }
+
+        public DateTime getFechaN()
+        {
+            return fechaNacimiento;
         }
 
         public void setPuesto(String puesto)
@@ -188,8 +127,69 @@ namespace Entidades
 
         public String getPuesto()
         {
-            return this.puesto;
+            return puesto;
         }
+
+        public void setCedula(int cedula)
+        {
+            this.cedula = cedula;
+        }
+
+        public int getCedula()
+        {
+            return cedula;
+        }
+
+        public void setCreadoPor(int creadoPor)
+        {
+            this.creadoPor = creadoPor;
+
+        }
+
+        public int getCreadoPor()
+        {
+
+            return creadoPor;
+        }
+
+
+        public void setFechaCreacion(DateTime fechaCreacion)
+        {
+            this.fechaCreacion = fechaCreacion;
+        }
+
+
+        public DateTime getFechaCreacion()
+        {
+
+            return fechaCreacion;
+        }
+
+        public void setModificadoPor(int modificadoPor)
+        {
+            this.modificadoPor = modificadoPor;
+
+        }
+
+        public int getModificadoPor()
+        {
+
+            return modificadoPor;
+        }
+
+
+        public void setFechaModificacion(DateTime fechaModificacion)
+        {
+            this.fechaModificacion = fechaModificacion;
+        }
+
+
+        public DateTime getFechaModificacion()
+        {
+
+            return fechaModificacion;
+        }
+
 
 
         #endregion

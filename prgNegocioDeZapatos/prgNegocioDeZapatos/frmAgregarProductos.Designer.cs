@@ -156,6 +156,7 @@
             // txtCodigo
             // 
             this.txtCodigo.Depth = 0;
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.Hint = "";
             this.txtCodigo.Location = new System.Drawing.Point(88, 28);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
@@ -339,7 +340,6 @@
             this.groupBox3.Controls.Add(this.btnEliminar);
             this.groupBox3.Controls.Add(this.btnModificar);
             this.groupBox3.Controls.Add(this.btnAgregar);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.ForeColor = System.Drawing.Color.Transparent;
             this.groupBox3.Location = new System.Drawing.Point(0, 391);
@@ -354,7 +354,6 @@
             // 
             this.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSalir.Depth = 0;
-            this.btnSalir.Enabled = false;
             this.btnSalir.Location = new System.Drawing.Point(433, 25);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
@@ -364,15 +363,13 @@
             this.btnSalir.TabIndex = 17;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Visible = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // btnEliminar
             // 
             this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEliminar.Depth = 0;
-            this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(247, 25);
+            this.btnEliminar.Location = new System.Drawing.Point(340, 25);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminar.Name = "btnEliminar";
@@ -381,15 +378,13 @@
             this.btnEliminar.TabIndex = 16;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Visible = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnModificar.Depth = 0;
-            this.btnModificar.Enabled = false;
-            this.btnModificar.Location = new System.Drawing.Point(154, 26);
+            this.btnModificar.Location = new System.Drawing.Point(247, 25);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnModificar.Name = "btnModificar";
@@ -398,15 +393,13 @@
             this.btnModificar.TabIndex = 15;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Visible = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAgregar.Depth = 0;
-            this.btnAgregar.Enabled = false;
-            this.btnAgregar.Location = new System.Drawing.Point(340, 25);
+            this.btnAgregar.Location = new System.Drawing.Point(154, 25);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregar.Name = "btnAgregar";
@@ -415,7 +408,6 @@
             this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Visible = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // groupBox1
@@ -493,7 +485,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(662, 457);
+            this.ClientSize = new System.Drawing.Size(662, 461);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

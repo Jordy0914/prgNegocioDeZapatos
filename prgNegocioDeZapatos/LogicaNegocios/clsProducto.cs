@@ -38,15 +38,15 @@ namespace LogicaNegocios
             return cone.mSeleccionar(strSentencia, cone);
         }
 
-        public Boolean mInsertar(clsConexion cone, clsEntidadProducto pEntidadInventario)
+ 
+        public Boolean mInsertar(clsConexion cone, clsEntidadProducto pEntidadInventario, clsEntidadUsuario pEntidadUsuario)
         {
-          strSentencia = "Insert into tbProducto(idProducto,idEmpledo,modelo,nombre,talla,color,costo,precio,marca,categoria,cantidad) Values (" + pEntidadInventario.getIdProducto() + ",'"
-                +pEntidadInventario.getIdEmpleado() + ",'"+pEntidadInventario.getModelo()+"','"+pEntidadInventario.getNombre()+"',"
-                +pEntidadInventario.getTalla()+",'"+pEntidadInventario.getColor()+"',"+pEntidadInventario.getCosto()+","
-                +pEntidadInventario.getPrecio()+",'"+pEntidadInventario.getMarca()+"','"+pEntidadInventario.getCategoria()+"',"
-                +pEntidadInventario.getCantidad()+"')";
+            strSentencia = "Insert into tbProducto(modelo,nombre,talla,color,costo,precio,marca,categoria,cantidad, creadoPor, fechaCreacion) Values ('" + pEntidadInventario.getModelo() + "','" + pEntidadInventario.getNombre() +
+                "'," + pEntidadInventario.getTalla() + ",'" + pEntidadInventario.getColor() + "'," +pEntidadInventario.getCosto()+","+pEntidadInventario.getPrecio()+",'"+
+                pEntidadInventario.getMarca()+"','"+pEntidadInventario.getCategoria()+"',"+pEntidadInventario.getCantidad()+","+pEntidadUsuario.IdUsuario+", getDate())";
             return cone.mEjecutar(strSentencia, cone);
         }
+
 
         public Boolean mEliminarProducto(clsConexion cone, clsEntidadProducto pEntidadInventario)
         {
