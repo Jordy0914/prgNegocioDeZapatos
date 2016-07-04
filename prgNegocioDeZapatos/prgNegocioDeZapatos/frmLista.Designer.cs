@@ -36,10 +36,12 @@
             // 
             // lvGeneral
             // 
+            this.lvGeneral.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.lvGeneral.BackColor = System.Drawing.Color.White;
             this.lvGeneral.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.codigo,
             this.objeto});
+            this.lvGeneral.FullRowSelect = true;
             this.lvGeneral.GridLines = true;
             this.lvGeneral.Location = new System.Drawing.Point(72, 91);
             this.lvGeneral.Name = "lvGeneral";

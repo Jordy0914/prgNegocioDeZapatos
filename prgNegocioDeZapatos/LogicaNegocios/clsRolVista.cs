@@ -19,6 +19,12 @@ namespace LogicaNegocios
         #endregion
 
         #region Metodos
+        public Boolean insertarRolVista(clsConexion cone, clsEntidadRolesVistas pEntidadRolVista, clsEntidadUsuario pEntidadUsuario)
+        {
+            strSentencia = "Insert into tbRolesVistas (idRol, idVista, insertar, modificar, eliminar, consultar, creadoPor, fechaCreacion) " +
+                "values("+ pEntidadRolVista.IdRol +","+ pEntidadRolVista.IdVista +",'"+ pEntidadRolVista.Insertar+ "','"+ pEntidadRolVista.Modificar+ "','"+ pEntidadRolVista.Eliminar +"','"+ pEntidadRolVista.Consultar +"','"+ pEntidadUsuario.IdUsuario +"', getDate())";
+            return cone.mEjecutar(strSentencia, cone);
+        }
         #endregion
     }
 }

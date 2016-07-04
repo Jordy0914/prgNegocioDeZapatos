@@ -107,5 +107,10 @@ namespace prgNegocioDeZapatos
             this.txtPassword.Text = "";
         }
         #endregion
+
+        private void frmUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

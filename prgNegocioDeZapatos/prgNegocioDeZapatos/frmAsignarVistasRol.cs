@@ -27,10 +27,10 @@ namespace prgNegocioDeZapatos
         private clsEntidadRolesVistas pEntidadRolVista;
         private clsEntidadUsuario pEntidadUsuario;
         private clsEntidadVista pEntidadVista;
-
+        
         private clsRolVista clRolVista;
         private clsVistas clVistas;
-
+        
         private SqlDataReader dtrVista;
         private SqlDataReader dtrRolVista;
         private Boolean boolModificar, boolEliminar;
@@ -80,11 +80,55 @@ namespace prgNegocioDeZapatos
             this.btnConsultarRol.Enabled = condicion;
             this.btnConsultarVista.Enabled = condicion;
         }
+        #endregion
 
+        #region Eventos
         private void btnConsultarRol_Click(object sender, EventArgs e)
         {
-            frmLista lista = new frmLista(this.conexion, "usuarios");
-            lista.Show();
+            frmLista lista = new frmLista(this.conexion, "rol");
+            lista.ShowDialog();
+
+            this.txtCodRol.Text = Convert.ToString(lista.idSelecto);
+            this.txtNombreRol.Text = lista.nombre;
+        }
+
+        private void btnConsultarVista_Click(object sender, EventArgs e)
+        {
+            frmLista lista = new frmLista(this.conexion, "vistas");
+            lista.ShowDialog();
+
+            this.txtCodVista.Text = Convert.ToString(lista.idSelecto);
+            this.txtNombreVista.Text = lista.nombre;
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            this.pEntidadRolVista.IdRol = Convert.ToInt32(this.txtCodRol.Text);
+            this.pEntidadRolVista.IdVista = Convert.ToInt32(this.txtCodVista.Text);
+            this.pEntidadRolVista.Insertar = this.chbInsertar.Checked;
+            this.pEntidadRolVista.Modificar = this.chbModificar.Checked;
+            this.pEntidadRolVista.Eliminar = this.chbEliminar.Checked;
+            this.pEntidadRolVista.Consultar = this.chbConsultar.Checked;
+
+            if (this.clRolVista.insertarRolVista(this.conexion, this.pEntidadRolVista, this.pEntidadUsuario))
+            {
+                MessageBox.Show("Insertado Correctamente");
+                this.mLimpiar();
+            }
+                
+            else
+                MessageBox.Show("Problemas al insertar");
+
+        }
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            frmModificarRolesVistas modificar = new frmModificarRolesVistas();
+            modificar.ShowDialog();
         }
         #endregion
 
@@ -100,6 +144,18 @@ namespace prgNegocioDeZapatos
                 this.boolEliminar = (dtrVista.GetBoolean(2));
                 this.activarConsultar(dtrVista.GetBoolean(3));
             }
+        }
+
+        private void mLimpiar()
+        {
+            this.txtCodRol.Text = "";
+            this.txtNombreRol.Text = "";
+            this.txtCodVista.Text = "";
+            this.txtNombreVista.Text = "";
+            this.chbInsertar.Checked = false;
+            this.chbModificar.Checked = false;
+            this.chbEliminar.Checked = false;
+            this.chbConsultar.Checked = false;
         }
         #endregion
 
