@@ -17,15 +17,20 @@ namespace prgNegocioDeZapatos
 {
     public partial class frmLista : MaterialForm
     {
+        #region Atributos
         private readonly MaterialSkinManager materialSkinManager;
-        SqlDataReader strSentencia;
-        clsConexion conexion;
-        clsEntidadProducto pEntidadProducto;
-        clsEntidadUsuario pEntidadUsuario;
-        clsProducto clProducto;
-        clsUsuario clUsuarios;
+        private SqlDataReader strSentencia;
+        private clsConexion conexion;
+        private clsEntidadProducto pEntidadProducto;
+        private clsEntidadUsuario pEntidadUsuario;
+        private clsProducto clProducto;
+        private clsUsuario clUsuarios;
+        private clsRol clRol;
+        private clsVistas clVistas;
         private string tipo;
         public int idSelecto { get; set; }
+        public String nombre { get; set; }
+        #endregion
 
         public frmLista(clsConexion conexion, string tipo)
         {
@@ -41,6 +46,8 @@ namespace prgNegocioDeZapatos
 
             clProducto = new clsProducto();
             clUsuarios = new clsUsuario();
+            clRol = new clsRol();
+            clVistas = new clsVistas();
 
             this.tipo = tipo;
 
@@ -49,27 +56,7 @@ namespace prgNegocioDeZapatos
 
         private void frmListaProducto_Load(object sender, EventArgs e)
         {
-            if (this.tipo == "usuarios")
-            {
-                this.Text = "Lista Usuarios";
-                strSentencia = clUsuarios.mConsultarUsuarioGeneral(conexion);
-                while (strSentencia.Read())
-                {
-                    ListViewItem lista;
-                    lista = lvGeneral.Items.Add(Convert.ToString(strSentencia.GetInt32(0)));
-                    lista.SubItems.Add(strSentencia.GetString(1));
-                }//fin del while
-            }
-            if (this.tipo == "producto")
-            {
-                strSentencia = clProducto.mConsultarProductoGeneral(conexion);
-                while (strSentencia.Read())
-                {
-                    ListViewItem lista;
-                    lista = lvGeneral.Items.Add(Convert.ToString(strSentencia.GetInt32(0)));
-                    lista.SubItems.Add(strSentencia.GetString(1));
-                }//fin del while
-            }
+            this.llenarLV();
         }//fin del metodo
 
         #region Eventos
@@ -90,9 +77,61 @@ namespace prgNegocioDeZapatos
                 if (lvGeneral.Items[i].Selected)
                 {
                     idSelecto = Convert.ToInt32(lvGeneral.Items[i].Text);
+
+                    nombre = lvGeneral.Items[i].SubItems[1].Text;
                 }
             }//fin del for
         }//fin del metodo
-        #endregion       
+        #endregion
+
+        #region Metodos Propios
+        public void llenarLV()
+        {
+            if (this.tipo == "usuarios")
+            {
+                this.Text = "Lista Usuarios";
+                strSentencia = clUsuarios.mConsultarUsuarioGeneral(conexion);
+                while (strSentencia.Read())
+                {
+                    ListViewItem lista;
+                    lista = lvGeneral.Items.Add(Convert.ToString(strSentencia.GetInt32(0)));
+                    lista.SubItems.Add(strSentencia.GetString(1));
+                }//fin del while
+            }
+            if (this.tipo == "producto")
+            {
+                this.Text = "Lista Productos";
+                strSentencia = clProducto.mConsultarProductoGeneral(conexion);
+                while (strSentencia.Read())
+                {
+                    ListViewItem lista;
+                    lista = lvGeneral.Items.Add(Convert.ToString(strSentencia.GetInt32(0)));
+                    lista.SubItems.Add(strSentencia.GetString(1));
+                }//fin del while
+            }
+            if (this.tipo == "rol")
+            {
+                this.Text = "Lista Roles";
+                strSentencia = clRol.mConsultarRolesGenerales(conexion);
+                while (strSentencia.Read())
+                {
+                    ListViewItem lista;
+                    lista = lvGeneral.Items.Add(Convert.ToString(strSentencia.GetInt32(0)));
+                    lista.SubItems.Add(strSentencia.GetString(1));
+                }//fin del while
+            }
+            if (this.tipo == "vistas")
+            {
+                this.Text = "Lista de Vista";
+                strSentencia = clVistas.mConsultarVistasGenerales(conexion);
+                while (strSentencia.Read())
+                {
+                    ListViewItem lista;
+                    lista = lvGeneral.Items.Add(Convert.ToString(strSentencia.GetInt32(0)));
+                    lista.SubItems.Add(strSentencia.GetString(1));
+                }//fin del while
+            }
+        }
+        #endregion
     }//fin de la clase
 }

@@ -20,6 +20,12 @@ namespace LogicaNegocios
         #endregion
 
         #region Metodos
+        public SqlDataReader mConsultarVistasGenerales(clsConexion cone)
+        {
+            this.strSentencia = "Select V.idVista, V.descripcion from tbVistas V";
+            return cone.mSeleccionar(strSentencia, cone);
+        }
+
         public SqlDataReader mConsultarPermisosVista(clsConexion cone, clsEntidadVista pEntidadVista)
         {
             strSentencia = "Select VT.insertar, VT.modificar, VT.eliminar, VT.consultar from tbVistasTemp VT where VT.url ='" + pEntidadVista.Url + "'";

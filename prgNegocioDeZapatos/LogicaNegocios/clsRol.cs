@@ -16,9 +16,9 @@ namespace LogicaNegocios
         #endregion
 
         #region Metodos
-        public SqlDataReader mConsutarNumeroRol(clsConexion cone)
+        public SqlDataReader mConsultarRolesGenerales(clsConexion cone)
         {
-            this.strSentencia = "Select count(*) from tbRoles";
+            this.strSentencia = "Select R.idRol, R.nombre from tbRoles R";
             return cone.mSeleccionar(strSentencia, cone);
         }
 

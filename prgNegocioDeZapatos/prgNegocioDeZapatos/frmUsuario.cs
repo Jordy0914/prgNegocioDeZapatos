@@ -216,5 +216,10 @@ namespace prgNegocioDeZapatos
             this.btnBuscar.Enabled = condicion;
         }
         #endregion
+
+        private void frmUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
