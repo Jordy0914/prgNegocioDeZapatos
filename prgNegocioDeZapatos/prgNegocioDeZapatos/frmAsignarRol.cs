@@ -29,18 +29,19 @@ namespace prgNegocioDeZapatos
 
         clsEntidadRol rol;
         clsRol clRol;
-
+        private clsEntidadVista pEntidadVista;
         clsConexion conexion;
        
         #endregion
 
-        public frmAsignarRol(clsConexion cone, clsEntidadUsuario pEntidadUsuario, clsVistas vistas)
+        public frmAsignarRol(clsConexion cone, clsEntidadUsuario pEntidadUsuario, clsEntidadVista vistas)
         {
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
             this.conexion = cone;
+            this.pEntidadVista = vistas;
             this.usuario = pEntidadUsuario;
             this.rol = new clsEntidadRol();
             this.clUsuario = new clsUsuario();
@@ -75,14 +76,14 @@ namespace prgNegocioDeZapatos
 
         private void btnBuscarRol_Click(object sender, EventArgs e)
         {
-            frmLista consultarRol = new frmLista(conexion, "usuarios");
+            frmLista consultarRol = new frmLista(conexion, "rol");
             consultarRol.ShowDialog();
 
             if (consultarRol.idSelecto != 0 || consultarRol.idSelecto == 0)
             {
                 this.rol.IdRol = (consultarRol.idSelecto);
                 txtIdRol.Text = Convert.ToString(consultarRol.idSelecto);
-                mConsultaUsuario();
+                mConsultaRol();
             }//fin del if que verifica que no sea igual a 0
         }
 
@@ -109,7 +110,7 @@ namespace prgNegocioDeZapatos
             {
                 if (dtrRoles.Read())
                 {
-                    this.txtNombreUsuario.Text = dtrRoles.GetString(1);
+                    this.txtNombreRol.Text = dtrRoles.GetString(1);
                 }//FIN READ
             }//fin del if que verifica que no este null
         }//fin del metodo que consulta el producto segun su id

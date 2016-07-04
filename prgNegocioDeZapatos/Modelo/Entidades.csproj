@@ -45,6 +45,7 @@
     <Compile Include="clsEntidadProducto.cs" />
     <Compile Include="clsEntidadProveedor.cs" />
     <Compile Include="clsEntidadRol.cs" />
+    <Compile Include="clsEntidadRolesUsuarios.cs" />
     <Compile Include="clsEntidadUsuario.cs" />
     <Compile Include="clsEntidadVista.cs" />
     <Compile Include="clsEntidadRolesVistas.cs" />
