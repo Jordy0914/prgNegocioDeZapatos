@@ -84,6 +84,7 @@
             this.btnAsignar.TabIndex = 25;
             this.btnAsignar.Text = "Agregar";
             this.btnAsignar.UseVisualStyleBackColor = true;
+            this.btnAsignar.Click += new System.EventHandler(this.btnAsignar_Click);
             // 
             // btnSalir
             // 

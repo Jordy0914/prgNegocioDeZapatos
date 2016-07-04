@@ -87,6 +87,11 @@ namespace prgNegocioDeZapatos
             }//fin del if que verifica que no sea igual a 0
         }
 
+        private void btnAsignar_Click(object sender, EventArgs e)
+        {
+
+        }
+
         #region metodosPropios
 
         public void mConsultaUsuario()
