@@ -28,7 +28,7 @@ namespace prgNegocioDeZapatos
         SqlDataReader dtrUsuarios;
 
         private Boolean bolAgregar, bolModificar, bolEliminar;
-        public static int señal;
+        
 
         public frmUsuario()
         {
@@ -54,14 +54,12 @@ namespace prgNegocioDeZapatos
         #region Eventos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            señal = 1;
-            txtUsuario.Enabled = false;
-            frmLista consultarUsuario = new frmLista(conexion);
+            frmLista consultarUsuario = new frmLista(conexion,"usuarios");
             consultarUsuario.ShowDialog();
 
-            if (consultarUsuario.getidUsuario() != 0 || consultarUsuario.getidUsuario() == 0)
+            if (consultarUsuario.idSelecto != 0 || consultarUsuario.idSelecto == 0)
             {
-                this.pEntidadUsuario.setIdUsuario(consultarUsuario.getidUsuario());
+                this.pEntidadUsuario.IdUsuario=(consultarUsuario.getidUsuario());
                 txtCodigo.Text = Convert.ToString(consultarUsuario.getidUsuario());
                 mConsultaUsuario();
             }//fin del if que verifica que no sea igual a 0
