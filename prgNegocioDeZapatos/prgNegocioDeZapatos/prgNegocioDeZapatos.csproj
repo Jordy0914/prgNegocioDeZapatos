@@ -64,10 +64,10 @@
     <Compile Include="frmAgregarProductos.Designer.cs">
       <DependentUpon>frmAgregarProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAsignarRol.cs">
+    <Compile Include="Properties\frmAsignarRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAsignarRol.Designer.cs">
+    <Compile Include="Properties\frmAsignarRol.Designer.cs">
       <DependentUpon>frmAsignarRol.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAsignarVistasUsuario.cs">
@@ -121,7 +121,7 @@
     <EmbeddedResource Include="frmAgregarProductos.resx">
       <DependentUpon>frmAgregarProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAsignarRol.resx">
+    <EmbeddedResource Include="Properties\frmAsignarRol.resx">
       <DependentUpon>frmAsignarRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAsignarVistasRol.resx">
