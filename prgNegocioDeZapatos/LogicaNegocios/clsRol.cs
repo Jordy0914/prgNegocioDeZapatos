@@ -24,35 +24,35 @@ namespace LogicaNegocios
         
         public SqlDataReader mConsultarNombreRol(clsConexion cone, clsEntidadRol pEntidadRol)
         {
-            strSentencia = "Select R.nombre from tbRoles R where R.nombre = '"+pEntidadRol.getNombre()+"'";
+            strSentencia = "Select R.nombre from tbRoles R where R.nombre = '"+pEntidadRol.Nombre+"'";
             return cone.mSeleccionar(strSentencia, cone);
         }
+
+        public Boolean mInsertarRol(clsConexion cone, clsEntidadRol pEntidadRol, clsEntidadUsuario pEntidadUsuario)
+        {
+            strSentencia = "Insert into tbRoles(nombre,creadoPor,fechaCreacion) values ('" + pEntidadRol.Nombre + "' , "+pEntidadUsuario.IdUsuario+" , getDate())";
+            return cone.mEjecutar(strSentencia, cone);
+        }//fin del metodo mInsertarVista
+        /////////////////////////////////////////////////////////////////////////////
 
 
 
         public SqlDataReader mConsultarRolGeneral(clsConexion cone, clsEntidadRol pEntidadRol)
         {
-            strSentencia = "Select * from tbRoles where idRol= '" + pEntidadRol.getIdRol() + "'";
+            strSentencia = "Select * from tbRoles where idRol= '" + pEntidadRol.IdRol + "'";
             return cone.mSeleccionar(strSentencia, cone);
         }
 
-
-        public Boolean mInsertarRol(clsConexion cone, clsEntidadRol pEntidadRol)
-        {
-            strSentencia = "Insert into tbRoles(idRol,nombre) values ('" + pEntidadRol.getIdRol() + "','" + pEntidadRol.getNombre() + "'')";
-            return cone.mEjecutar(strSentencia, cone);
-        }//fin del metodo mInsertarVista
-
         public Boolean mEliminarRol(clsConexion cone, clsEntidadRol pEntidadRol)
         {
-            strSentencia = "Delete from tbRoles where idRol='" + pEntidadRol.getIdRol() + "'";
+            strSentencia = "Delete from tbRoles where idRol='" + pEntidadRol.IdRol + "'";
             return cone.mEjecutar(strSentencia, cone);
         }//fin del metodo mEliminarVista
 
         public Boolean mModificarRol(clsConexion cone, clsEntidadRol pEntidadRol)
         {
 
-            strSentencia = "Update tbRoles set nombre='" + pEntidadRol.getNombre() + " where idRol=" + pEntidadRol.getIdRol() + "";
+            strSentencia = "Update tbRoles set nombre='" + pEntidadRol.Nombre + " where idRol=" + pEntidadRol.IdRol + "";
 
             return cone.mEjecutar(strSentencia, cone);
 

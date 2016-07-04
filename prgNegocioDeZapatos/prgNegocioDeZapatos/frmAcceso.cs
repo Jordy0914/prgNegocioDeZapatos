@@ -25,10 +25,9 @@ namespace prgNegocioDeZapatos
         private clsEntidadUsuario pEntidadUsuario;
         private clsUsuario usuario;
         private SqlDataReader dtrUsuario; //Para el retorno de las tuplas
-        
+        private readonly MaterialSkinManager materialSkinManager;
         #endregion
 
-        private readonly MaterialSkinManager materialSkinManager;
         public frmAcceso()
         {
             materialSkinManager = MaterialSkinManager.Instance;
@@ -63,7 +62,6 @@ namespace prgNegocioDeZapatos
             Application.Exit();
         }
 
-
         private void txtLogin_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)(Keys.Enter))
@@ -82,18 +80,15 @@ namespace prgNegocioDeZapatos
             }
         }//fin KeyPressClave
 
-
         #region Metodos Propios
         //Este métoos permite verificar la existencia del usuario segun el codigo y la clave
         public Boolean mValidarDatos()
         {
-
             if (intContador <= 2)
             {
-
                 //Llenado de lo atributos de la clase EntidadUsuario
-                pEntidadUsuario.setLogin(this.txtLogin.Text.Trim());
-                pEntidadUsuario.setPassword(this.txtPassword.Text.Trim());
+                pEntidadUsuario.Login = (this.txtLogin.Text.Trim());
+                pEntidadUsuario.Password = (this.txtPassword.Text.Trim());
 
                 //Consltar si el usuario existe
                 dtrUsuario = usuario.mConsultarUsuario(conexion, pEntidadUsuario);
@@ -103,18 +98,15 @@ namespace prgNegocioDeZapatos
                 {
                     if (dtrUsuario.Read())
                     {
-                        pEntidadUsuario.setIdUsuario(dtrUsuario.GetInt32(0));  // |0 idUsuario
-
+                        pEntidadUsuario.IdUsuario = (dtrUsuario.GetInt32(0));  // |0 idUsuario
                         this.btnIngresar.Enabled = true;
-                        return true;
-                       
+                        return true;                   
                     }//fin del if del Read
                     else
                     {
                         MessageBox.Show("El Usuario no existe", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return false;
                     }//fin else read
-
                 }//fin del if del null
                 else
                 {
@@ -127,11 +119,7 @@ namespace prgNegocioDeZapatos
                 MessageBox.Show("usted digitó 3 veces su usuario de forma errónea", "Usuario Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }//fin else  contador
-
         }//fin metodo
-
         #endregion
-
-        
     }
 }

@@ -21,19 +21,23 @@ namespace LogicaNegocios
         //Metodo para accesar al sistema, trae codigo y clave de ventana de acceso
         public SqlDataReader mConsultarUsuario(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Select idUsuario, login, password from tbUsuario where login='" + pEntidadUsuario.getLogin() + "' and password='" + pEntidadUsuario.getPassword() + "'";
+            strSentencia = "Select idUsuario, login, password from tbUsuario where login='" + pEntidadUsuario.Login + "' and password='" + pEntidadUsuario.Password + "'";
             return cone.mSeleccionar(strSentencia, cone);
         }
 
         public SqlDataReader mConsultarVistasRol(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Select distinct V.idVista, V.idPadre, V.descripcion, V.posicion, V.habilitadoMenu, V.url, RV.insertar, RV.modificar, RV.eliminar, RV.consultar from tbVistas V, tbRolesVistas RV , tbUsuariosRoles UR where UR.idRol = RV.idRol and RV.idVista = V.idVista and UR.idUsuario = "+pEntidadUsuario.getIdUsuario()+"";
+            strSentencia = "Select distinct V.idVista, V.idPadre, V.descripcion, V.posicion, V.habilitadoMenu, V.url, RV.insertar, RV.modificar, RV.eliminar, RV.consultar " +
+             "from tbVistas V, tbRolesVistas RV, tbUsuariosRoles UR " +
+             "where UR.idRol = RV.idRol " +
+             "and RV.idVista = V.idVista " +
+             "and UR.idUsuario =" + pEntidadUsuario.IdUsuario +"";
             return cone.mSeleccionar(strSentencia, cone);
         }
 
         public SqlDataReader mConsultarVistasDirectas(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Select distinct V.idVista, V.idPadre, V.descripcion, V.posicion, V.habilitadoMenu, V.url, UV.insertar, UV.modificar, UV.eliminar, UV.consultar from tbVistas V, tbUsuarioVistas UV where UV.idVista = V.idVista and UV.idUsuario = " + pEntidadUsuario.getIdUsuario()+" and V.idVista not in(select idVista from tbVistasTemp)";
+            strSentencia = "Select distinct V.idVista, V.idPadre, V.descripcion, V.posicion, V.habilitadoMenu, V.url, UV.insertar, UV.modificar, UV.eliminar, UV.consultar from tbVistas V, tbUsuarioVistas UV where UV.idVista = V.idVista and UV.idUsuario = " + pEntidadUsuario.IdUsuario +" and V.idVista not in(select idVista from tbVistasTemp)";
             return cone.mSeleccionar(strSentencia, cone);
         }
       
@@ -64,10 +68,10 @@ namespace LogicaNegocios
 
         public Boolean mAgregarUsuario(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Insert into tbUsuario(login,password,nombre,apellido1,apellido2,direccion,tipoIdentificacion,fechaNacimiento,puesto,cedula) Values ('" + pEntidadUsuario.getLogin() + "','" + pEntidadUsuario.getNombre()
-           + "','" + pEntidadUsuario.getPassword() + "','" + pEntidadUsuario.getApellido()
-            + ",'" + pEntidadUsuario.getApellido2() + "','" + pEntidadUsuario.getDireccion() + "','" + pEntidadUsuario.getTipoIdentificacion()
-            + "','" + pEntidadUsuario.getFechaNacimiento() + "','" + pEntidadUsuario.getPuesto() + "','" + pEntidadUsuario.getCedula() + "'')";
+            strSentencia = "Insert into tbUsuario(login,password,nombre,apellido1,apellido2,direccion,tipoIdentificacion,fechaNacimiento,puesto,cedula) Values ('" + pEntidadUsuario.Login + "','" + pEntidadUsuario.Nombre
+           + "','" + pEntidadUsuario.Password + "','" + pEntidadUsuario.Apellido1
+            + ",'" + pEntidadUsuario.Apellido2 + "','" + pEntidadUsuario.Direccion + "','" + pEntidadUsuario.TipoIdentificacion
+            + "','" + pEntidadUsuario.FechaNacimiento + "','" + pEntidadUsuario.Puesto + "','" + pEntidadUsuario.Cedula + "'')";
             return cone.mEjecutar(strSentencia, cone);
         }//fin del metodo agregar empleado
         #endregion

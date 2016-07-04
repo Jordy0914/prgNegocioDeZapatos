@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -22,17 +23,19 @@ namespace prgNegocioDeZapatos
         #region Atributos
         private readonly MaterialSkinManager materialSkinManager;
         private clsConexion conexion;
+
         private clsEntidadRol pEntidadRol;
         private clsEntidadUsuario pEntidadUsuario;
         private clsEntidadVista pEntidadVista;
+
         private clsRol clRol;
         private clsVistas clVistas;
+
         private SqlDataReader dtrVista;
         private SqlDataReader dtrRol;
-        private string nombreForm;
         #endregion
 
-        public frmRol(clsConexion cone,clsEntidadUsuario pEntidadUsuario, string nombreForm)
+        public frmRol(clsConexion cone,clsEntidadUsuario pEntidadUsuario, clsEntidadVista vista)
         {
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -40,38 +43,25 @@ namespace prgNegocioDeZapatos
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
 
             this.conexion = cone;
+
             this.pEntidadUsuario = pEntidadUsuario;
             this.pEntidadRol = new clsEntidadRol();
-            this.pEntidadVista = new clsEntidadVista();
+            this.pEntidadVista = vista;
             
             this.clRol = new clsRol();
             this.clVistas = new clsVistas();
-            this.nombreForm = nombreForm;
-
+            
             InitializeComponent();
         }
 
         private void frmRol_Load(object sender, EventArgs e)
         {
-            pEntidadVista.Url = nombreForm;
-            this.dtrVista = clVistas.mConsultarPermisosVista(this.conexion, this.pEntidadVista);
-
-            if(dtrVista.Read())
-            {
-                this.pEntidadVista.Insertar = Convert.ToInt32(dtrVista.GetBoolean(0));
-                this.pEntidadVista.Modificar = Convert.ToInt32(dtrVista.GetBoolean(1));
-                this.pEntidadVista.Eliminar = Convert.ToInt32(dtrVista.GetBoolean(2));
-                this.pEntidadVista.Consultar = Convert.ToInt32(dtrVista.GetBoolean(3));
-            }
-
-            this.activarInsertar(Convert.ToBoolean(this.pEntidadVista.Insertar));
-            this.activarModificar(Convert.ToBoolean(this.pEntidadVista.Modificar));
-            this.activarEliminar(Convert.ToBoolean(this.pEntidadVista.Eliminar));
-            this.activarConsultar(Convert.ToBoolean(this.pEntidadVista.Consultar));
-      
+            this.activarPermisos();
+            this.actualizarIdRol();
             this.txtNombreRol.LostFocus += new EventHandler(Validar_Textbox);
         }
-        
+
+        #region Eventos
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
@@ -79,40 +69,50 @@ namespace prgNegocioDeZapatos
 
         private void Validar_Textbox(object Sender, EventArgs e)
         {
-            pEntidadRol.setNombre(this.txtNombreRol.Text);
+            pEntidadRol.Nombre = (this.txtNombreRol.Text);
             dtrRol = clRol.mConsultarNombreRol(conexion,pEntidadRol);
 
-            if(dtrRol.HasRows)
+            if (dtrRol.HasRows)
             {
                 this.lblAdvertencia.Visible = true;
                 this.lblAdvertencia.Text = "Este nombre ya existe";
                 this.txtNombreRol.Focus();
             }
+            else
+                this.lblAdvertencia.Visible = false;
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            this.pEntidadRol.Nombre = this.txtNombreRol.Text;
+            this.pEntidadRol.CreadoPor = this.pEntidadUsuario.IdUsuario;
+        
+            if (this.clRol.mInsertarRol(this.conexion, this.pEntidadRol, this.pEntidadUsuario))
+                MessageBox.Show("Insertado con exito");
+            else
+                MessageBox.Show("No hace ni ostia");
+        }
+        #endregion
 
         #region Metodos del IPermisos
         public void activarInsertar(Boolean condicion)
         {
             this.btnAgregar.Enabled = condicion;
-            this.btnAgregar.Visible = condicion;
         }
 
         public void activarModificar(Boolean condicion)
         {
             this.btnModificar.Enabled = condicion;
-            this.btnModificar.Visible = condicion;
         }
 
         public void activarEliminar(Boolean condicion)
         {
             this.btnEliminar.Enabled = condicion;
-            this.btnEliminar.Visible = condicion;
         }
 
         public void activarConsultar(Boolean condicion)
         {
             this.btnConsultar.Enabled = condicion;
-            this.btnConsultar.Visible = condicion;
         }
         #endregion
 
@@ -125,6 +125,19 @@ namespace prgNegocioDeZapatos
             else
                 this.txtCodRol.Text = "1";
         }
-        #endregion
+
+        private void activarPermisos()
+        {
+            this.dtrVista = clVistas.mConsultarPermisosVista(this.conexion, this.pEntidadVista);
+
+            if (dtrVista.Read())
+            {
+                this.activarInsertar(dtrVista.GetBoolean(0));
+                this.activarModificar(dtrVista.GetBoolean(1));
+                this.activarEliminar(dtrVista.GetBoolean(2));
+                this.activarConsultar(dtrVista.GetBoolean(3));
+            }    
+        }
+        #endregion     
     }
 }

@@ -23,11 +23,12 @@ namespace prgNegocioDeZapatos
         private clsConexion conexion;
 
         private clsEntidadUsuario pEntidadUsuario;
+        private clsEntidadVista pEntidadVista;
+
         private clsUsuario clUsuario;
+
         private SqlDataReader dtrMenu;
         private SqlDataReader dtrSubMenu;
-
-        private clsEntidadVista pEntidadVista;
         #endregion
 
         public MainForm(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
@@ -42,9 +43,9 @@ namespace prgNegocioDeZapatos
             this.conexion = cone;
 
             this.pEntidadUsuario = pEntidadUsuario;
-            this.clUsuario = new clsUsuario();
-
             this.pEntidadVista = new clsEntidadVista();
+
+            this.clUsuario = new clsUsuario();            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -165,7 +166,7 @@ namespace prgNegocioDeZapatos
         }
         #endregion
 
-        #region Metodos Propios
+        #region Eventos
         private void MenuItemClicked(object sender, EventArgs e)
         {
             Assembly Ensamblado = Assembly.GetEntryAssembly();
@@ -174,7 +175,9 @@ namespace prgNegocioDeZapatos
             {
                 string NombreFormulario = ((ToolStripItem)sender).Tag.ToString();
                 Type tipo = Ensamblado.GetType(Ensamblado.GetName().Name + "." + NombreFormulario);
-                Object[] parametros = { this.conexion, this.pEntidadUsuario, NombreFormulario }; 
+                pEntidadVista = new clsEntidadVista();
+                pEntidadVista.Url = NombreFormulario;
+                Object[] parametros = { this.conexion, this.pEntidadUsuario, pEntidadVista }; 
 
                 if (tipo == null)
                 {
@@ -192,6 +195,14 @@ namespace prgNegocioDeZapatos
             }
         }
 
+        private void SalirClicked(object sender, EventArgs e)
+        {
+            this.clUsuario.mEliminarVistasTemp(this.conexion);
+            Application.Restart(); 
+        }
+        #endregion
+
+        #region Metodos Propios
         private Boolean FormularioEstaAbierto(String NombreDelFrm)
         {
             if (this.MdiChildren.Length > 0)
@@ -208,12 +219,6 @@ namespace prgNegocioDeZapatos
             }
             else
                 return false;
-        }
-
-        private void SalirClicked(object sender, EventArgs e)
-        {
-            this.clUsuario.mEliminarVistasTemp(this.conexion);
-            Application.Restart(); 
         }
         #endregion
     }
