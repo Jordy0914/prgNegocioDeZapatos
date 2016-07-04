@@ -33,6 +33,7 @@ namespace prgNegocioDeZapatos
 
         private SqlDataReader dtrVista;
         private SqlDataReader dtrRol;
+        private Boolean boolModificar;
         #endregion
 
         public frmRol(clsConexion cone,clsEntidadUsuario pEntidadUsuario, clsEntidadVista vista)
@@ -57,8 +58,7 @@ namespace prgNegocioDeZapatos
         private void frmRol_Load(object sender, EventArgs e)
         {
             this.activarPermisos();
-            this.actualizarIdRol();
-            this.txtNombreRol.LostFocus += new EventHandler(Validar_Textbox);
+            this.mActualizarIdRol();
         }
 
         #region Eventos
@@ -67,30 +67,77 @@ namespace prgNegocioDeZapatos
             Close();
         }
 
-        private void Validar_Textbox(object Sender, EventArgs e)
-        {
-            pEntidadRol.Nombre = (this.txtNombreRol.Text);
-            dtrRol = clRol.mConsultarNombreRol(conexion,pEntidadRol);
-
-            if (dtrRol.HasRows)
-            {
-                this.lblAdvertencia.Visible = true;
-                this.lblAdvertencia.Text = "Este nombre ya existe";
-                this.txtNombreRol.Focus();
-            }
-            else
-                this.lblAdvertencia.Visible = false;
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            this.pEntidadRol.Nombre = this.txtNombreRol.Text;
-            this.pEntidadRol.CreadoPor = this.pEntidadUsuario.IdUsuario;
-        
-            if (this.clRol.mInsertarRol(this.conexion, this.pEntidadRol, this.pEntidadUsuario))
-                MessageBox.Show("Insertado con exito");
+            if (this.txtNombreRol.Text == "")
+            {
+                MessageBox.Show("Debe insertar un nombre");
+            }
+                else if (this.VerificarNombreRol()) { }
             else
-                MessageBox.Show("No hace ni ostia");
+            {
+                this.pEntidadRol.Nombre = this.txtNombreRol.Text;
+                this.pEntidadRol.CreadoPor = this.pEntidadUsuario.IdUsuario;
+
+                if (this.clRol.mInsertarRol(this.conexion, this.pEntidadRol, this.pEntidadUsuario))
+                {
+                    MessageBox.Show("Insertado con exito");
+                    this.mLimpiar();
+                }
+                else
+                    MessageBox.Show("Problemas al insertar");
+            }
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            if (this.txtNombreRol.Text == "")
+            {
+                this.mLlenarLbAnuncio("Digite el nombre el rol");
+            }
+            else
+            {
+                String mensaje = "Escriba el nuevo nombre y presione 'Modificar'\n" +
+                             "O elimine el rol presionando 'Eliminar'";
+
+                pEntidadRol.Nombre = (this.txtNombreRol.Text);
+                dtrRol = clRol.mConsultarNombreRol(conexion, pEntidadRol);
+
+                if (dtrRol.HasRows)
+                {
+                    if (dtrRol.Read())
+                    {
+                        if (boolModificar)
+                        {
+                            this.txtCodRol.Text = Convert.ToString(dtrRol.GetInt32(0));
+                            this.mLlenarLbAnuncio(mensaje);
+                            this.activarModificar(boolModificar);
+                            this.txtNombreRol.Focus();
+                        }
+                        else
+                            this.mLlenarLbAnuncio("Solo puede consultar");
+                    }
+                }
+                else
+                    this.mLlenarLbAnuncio("El rol no existe");
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            this.pEntidadRol = new clsEntidadRol();
+            this.pEntidadRol.IdRol = Convert.ToInt32(txtCodRol.Text);
+            this.pEntidadRol.Nombre = txtNombreRol.Text;
+
+            if(clRol.mModificarRol(this.conexion, this.pEntidadRol))
+            {
+                MessageBox.Show("Modificado con exito");
+                this.mLimpiar();
+            }
+                
+            else
+                MessageBox.Show("Problemas al modificar");
+
         }
         #endregion
 
@@ -117,11 +164,11 @@ namespace prgNegocioDeZapatos
         #endregion
 
         #region Metodos Propios
-        public void actualizarIdRol()
+        public void mActualizarIdRol()
         {
             dtrRol = clRol.mConsutarNumeroRol(this.conexion);
             if (dtrRol.Read())
-                this.txtCodRol.Text = Convert.ToString(dtrRol.GetInt32(0));
+                this.txtCodRol.Text = Convert.ToString(dtrRol.GetInt32(0) + 1);
             else
                 this.txtCodRol.Text = "1";
         }
@@ -133,11 +180,44 @@ namespace prgNegocioDeZapatos
             if (dtrVista.Read())
             {
                 this.activarInsertar(dtrVista.GetBoolean(0));
-                this.activarModificar(dtrVista.GetBoolean(1));
+                this.boolModificar = (dtrVista.GetBoolean(1));
                 this.activarEliminar(dtrVista.GetBoolean(2));
                 this.activarConsultar(dtrVista.GetBoolean(3));
             }    
         }
-        #endregion     
+
+        private void mLimpiar()
+        {
+            this.txtNombreRol.Text = "";
+            this.lblAdvertencia.Visible = false;
+            this.mActualizarIdRol();
+        }
+
+        private Boolean VerificarNombreRol()
+        {
+            pEntidadRol.Nombre = (this.txtNombreRol.Text);
+            dtrRol = clRol.mConsultarNombreRol(conexion, pEntidadRol);
+
+            if (dtrRol.HasRows)
+            {
+                this.mLlenarLbAnuncio("Este nombre ya existe!");
+                this.txtNombreRol.Focus();
+                return true;
+            }
+            else
+            {
+                this.lblAdvertencia.Visible = false;
+                return false;
+            }
+        }
+
+        private void mLlenarLbAnuncio(string mensaje)
+        {
+            this.lblAdvertencia.Visible = true;
+            this.lblAdvertencia.Text = mensaje;
+        }
+        #endregion
+
+        
     }
 }

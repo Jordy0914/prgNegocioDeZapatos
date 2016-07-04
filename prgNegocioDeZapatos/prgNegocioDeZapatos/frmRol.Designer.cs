@@ -64,14 +64,15 @@
             // btnConsultar
             // 
             this.btnConsultar.Depth = 0;
-            this.btnConsultar.Location = new System.Drawing.Point(227, 42);
+            this.btnConsultar.Location = new System.Drawing.Point(268, 90);
             this.btnConsultar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Primary = true;
-            this.btnConsultar.Size = new System.Drawing.Size(85, 30);
+            this.btnConsultar.Size = new System.Drawing.Size(60, 30);
             this.btnConsultar.TabIndex = 28;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // txtNombreRol
             // 
@@ -111,7 +112,7 @@
             this.lblAdvertencia.AutoSize = true;
             this.lblAdvertencia.Depth = 0;
             this.lblAdvertencia.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblAdvertencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblAdvertencia.ForeColor = System.Drawing.Color.Red;
             this.lblAdvertencia.Location = new System.Drawing.Point(7, 125);
             this.lblAdvertencia.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblAdvertencia.Name = "lblAdvertencia";
@@ -184,6 +185,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnModificar.Depth = 0;
+            this.btnModificar.Enabled = false;
             this.btnModificar.Location = new System.Drawing.Point(119, 19);
             this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnModificar.Name = "btnModificar";
@@ -192,6 +194,7 @@
             this.btnModificar.TabIndex = 28;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnSalir
             // 

@@ -43,7 +43,7 @@ namespace LogicaNegocios
         {
             strSentencia = "Insert into tbProducto(modelo,nombre,talla,color,costo,precio,marca,categoria,cantidad, creadoPor, fechaCreacion) Values ('" + pEntidadInventario.getModelo() + "','" + pEntidadInventario.getNombre() +
                 "'," + pEntidadInventario.getTalla() + ",'" + pEntidadInventario.getColor() + "'," +pEntidadInventario.getCosto()+","+pEntidadInventario.getPrecio()+",'"+
-                pEntidadInventario.getMarca()+"','"+pEntidadInventario.getCategoria()+"',"+pEntidadInventario.getCantidad()+","+pEntidadUsuario.getIdUsuario()+", getDate())";
+                pEntidadInventario.getMarca()+"','"+pEntidadInventario.getCategoria()+"',"+pEntidadInventario.getCantidad()+","+pEntidadUsuario.IdUsuario+", getDate())";
             return cone.mEjecutar(strSentencia, cone);
         }
 
