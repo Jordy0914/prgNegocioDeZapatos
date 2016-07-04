@@ -34,31 +34,16 @@ namespace LogicaNegocios
             return cone.mEjecutar(strSentencia, cone);
         }//fin del metodo mInsertarVista
 
-        public Boolean mModificarRol(clsConexion cone, clsEntidadRol pEntidadRol)
+        public Boolean mModificarRol(clsConexion cone, clsEntidadRol pEntidadRol , clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Update tbRoles set nombre = '"+ pEntidadRol.Nombre + "' where idRol = " + pEntidadRol.IdRol + "  ";
+            strSentencia = "Update tbRoles set nombre = '"+ pEntidadRol.Nombre + "' , modificadoPor = "+ pEntidadUsuario.IdUsuario +" , fechaModificacion = getDate()  where idRol = " + pEntidadRol.IdRol + "  ";
             return cone.mEjecutar(strSentencia, cone);
         }//fin del metodo modificar
-        /////////////////////////////////////////////////////////////////////////////
-
-
-
-        public SqlDataReader mConsultarRolGeneral(clsConexion cone, clsEntidadRol pEntidadRol)
-        {
-            strSentencia = "Select * from tbRoles where idRol= '" + pEntidadRol.IdRol + "'";
-            return cone.mSeleccionar(strSentencia, cone);
-        }
-
         public Boolean mEliminarRol(clsConexion cone, clsEntidadRol pEntidadRol)
         {
             strSentencia = "Delete from tbRoles where idRol='" + pEntidadRol.IdRol + "'";
             return cone.mEjecutar(strSentencia, cone);
         }//fin del metodo mEliminarVista
-
-         
-
-
         #endregion
-
     }
 }

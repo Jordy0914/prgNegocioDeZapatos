@@ -112,7 +112,7 @@
             this.lblAdvertencia.AutoSize = true;
             this.lblAdvertencia.Depth = 0;
             this.lblAdvertencia.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblAdvertencia.ForeColor = System.Drawing.Color.Red;
+            this.lblAdvertencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblAdvertencia.Location = new System.Drawing.Point(7, 125);
             this.lblAdvertencia.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblAdvertencia.Name = "lblAdvertencia";
@@ -170,6 +170,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminar.Depth = 0;
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.Location = new System.Drawing.Point(231, 19);
             this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminar.Name = "btnEliminar";
@@ -178,6 +179,7 @@
             this.btnEliminar.TabIndex = 29;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 

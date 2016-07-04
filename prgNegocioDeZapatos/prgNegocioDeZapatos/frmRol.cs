@@ -33,7 +33,7 @@ namespace prgNegocioDeZapatos
 
         private SqlDataReader dtrVista;
         private SqlDataReader dtrRol;
-        private Boolean boolModificar;
+        private Boolean boolModificar , boolEliminar ;
         #endregion
 
         public frmRol(clsConexion cone,clsEntidadUsuario pEntidadUsuario, clsEntidadVista vista)
@@ -58,7 +58,6 @@ namespace prgNegocioDeZapatos
         private void frmRol_Load(object sender, EventArgs e)
         {
             this.activarPermisos();
-            this.mActualizarIdRol();
         }
 
         #region Eventos
@@ -114,6 +113,12 @@ namespace prgNegocioDeZapatos
                             this.activarModificar(boolModificar);
                             this.txtNombreRol.Focus();
                         }
+                        if (boolEliminar)
+                        {
+                                this.txtCodRol.Text = Convert.ToString(dtrRol.GetInt32(0));
+                                this.mLlenarLbAnuncio(mensaje);
+                                this.activarEliminar(boolEliminar);
+                        }
                         else
                             this.mLlenarLbAnuncio("Solo puede consultar");
                     }
@@ -129,15 +134,28 @@ namespace prgNegocioDeZapatos
             this.pEntidadRol.IdRol = Convert.ToInt32(txtCodRol.Text);
             this.pEntidadRol.Nombre = txtNombreRol.Text;
 
-            if(clRol.mModificarRol(this.conexion, this.pEntidadRol))
+            if(clRol.mModificarRol(this.conexion, this.pEntidadRol, this.pEntidadUsuario))
             {
                 MessageBox.Show("Modificado con exito");
                 this.mLimpiar();
-            }
-                
+            }        
             else
                 MessageBox.Show("Problemas al modificar");
 
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            this.pEntidadRol = new clsEntidadRol();
+            this.pEntidadRol.IdRol = Convert.ToInt32(txtCodRol.Text);
+
+            if (clRol.mEliminarRol(this.conexion, this.pEntidadRol))
+            {
+                MessageBox.Show("Eliminado con exito");
+                this.mLimpiar();
+            }
+            else
+                MessageBox.Show("Problemas al eliminar");
         }
         #endregion
 
@@ -164,15 +182,6 @@ namespace prgNegocioDeZapatos
         #endregion
 
         #region Metodos Propios
-        public void mActualizarIdRol()
-        {
-            dtrRol = clRol.mConsutarNumeroRol(this.conexion);
-            if (dtrRol.Read())
-                this.txtCodRol.Text = Convert.ToString(dtrRol.GetInt32(0) + 1);
-            else
-                this.txtCodRol.Text = "1";
-        }
-
         private void activarPermisos()
         {
             this.dtrVista = clVistas.mConsultarPermisosVista(this.conexion, this.pEntidadVista);
@@ -181,7 +190,7 @@ namespace prgNegocioDeZapatos
             {
                 this.activarInsertar(dtrVista.GetBoolean(0));
                 this.boolModificar = (dtrVista.GetBoolean(1));
-                this.activarEliminar(dtrVista.GetBoolean(2));
+                this.boolEliminar = (dtrVista.GetBoolean(2));
                 this.activarConsultar(dtrVista.GetBoolean(3));
             }    
         }
@@ -190,7 +199,9 @@ namespace prgNegocioDeZapatos
         {
             this.txtNombreRol.Text = "";
             this.lblAdvertencia.Visible = false;
-            this.mActualizarIdRol();
+            this.btnModificar.Enabled = false;
+            this.btnEliminar.Enabled = false;
+            this.txtCodRol.Text = "";
         }
 
         private Boolean VerificarNombreRol()
@@ -217,7 +228,5 @@ namespace prgNegocioDeZapatos
             this.lblAdvertencia.Text = mensaje;
         }
         #endregion
-
-        
     }
 }
