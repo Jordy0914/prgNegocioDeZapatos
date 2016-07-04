@@ -133,13 +133,13 @@ namespace prgNegocioDeZapatos
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            frmLista consultarProducto = new frmLista(conexion);
+            frmLista consultarProducto = new frmLista(conexion,"producto");
             consultarProducto.ShowDialog();
 
-            if (consultarProducto.getidProducto() != 0 || consultarProducto.getidProducto() == 0)
+            if (consultarProducto.idSelecto != 0 || consultarProducto.idSelecto == 0)
             {
-                this.productos.setIdProducto(consultarProducto.getidProducto());
-                txtCodigo.Text = Convert.ToString(consultarProducto.getidProducto());
+                productos.setIdProducto(consultarProducto.idSelecto);
+                txtCodigo.Text = Convert.ToString(consultarProducto.idSelecto);
                 mConsultaProducto();
             }//fin del if que verifica que no sea igual a 0
         }

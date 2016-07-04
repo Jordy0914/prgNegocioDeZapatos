@@ -163,6 +163,7 @@
             this.btnConsultarRol.TabIndex = 7;
             this.btnConsultarRol.Text = "buscar";
             this.btnConsultarRol.UseVisualStyleBackColor = true;
+            this.btnConsultarRol.Click += new System.EventHandler(this.btnConsultarRol_Click);
             // 
             // txtCodVista
             // 

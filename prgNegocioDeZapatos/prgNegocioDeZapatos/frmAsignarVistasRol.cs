@@ -80,6 +80,12 @@ namespace prgNegocioDeZapatos
             this.btnConsultarRol.Enabled = condicion;
             this.btnConsultarVista.Enabled = condicion;
         }
+
+        private void btnConsultarRol_Click(object sender, EventArgs e)
+        {
+            frmLista lista = new frmLista(this.conexion, "usuarios");
+            lista.Show();
+        }
         #endregion
 
         #region Metodos Propios

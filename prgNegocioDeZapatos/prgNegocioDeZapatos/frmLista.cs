@@ -20,89 +20,79 @@ namespace prgNegocioDeZapatos
         private readonly MaterialSkinManager materialSkinManager;
         SqlDataReader strSentencia;
         clsConexion conexion;
-        clsEntidadProducto productos;
+        clsEntidadProducto pEntidadProducto;
+        clsEntidadUsuario pEntidadUsuario;
         clsProducto clProducto;
         clsUsuario clUsuarios;
-        clsEntidadUsuario usuarios;
-        public int idProducto;
-        public int idUsuario;
+        private string tipo;
+        public int idSelecto { get; set; }
 
-        public frmLista(clsConexion conexion)
+        public frmLista(clsConexion conexion, string tipo)
         {
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
-            productos = new clsEntidadProducto();
-            clProducto = new clsProducto();
-            usuarios = new clsEntidadUsuario();
-            clUsuarios = new clsUsuario();
+
             this.conexion = conexion;
+
+            pEntidadProducto = new clsEntidadProducto();
+            pEntidadUsuario = new clsEntidadUsuario();
+
+            clProducto = new clsProducto();
+            clUsuarios = new clsUsuario();
+
+            this.tipo = tipo;
 
             InitializeComponent();
         }
 
         private void frmListaProducto_Load(object sender, EventArgs e)
         {
-            if (frmUsuario.señal == 1)
+            if (this.tipo == "usuarios")
             {
+                this.Text = "Lista Usuarios";
                 strSentencia = clUsuarios.mConsultarUsuarioGeneral(conexion);
                 while (strSentencia.Read())
-
                 {
                     ListViewItem lista;
-                    lista = lvListaProductos.Items.Add(Convert.ToString(strSentencia.GetInt32(0)));
-                    lista.SubItems.Add(strSentencia.GetString(2));
+                    lista = lvGeneral.Items.Add(Convert.ToString(strSentencia.GetInt32(0)));
+                    lista.SubItems.Add(strSentencia.GetString(1));
                 }//fin del while
             }
-            else {
+            if (this.tipo == "producto")
+            {
                 strSentencia = clProducto.mConsultarProductoGeneral(conexion);
                 while (strSentencia.Read())
-
                 {
                     ListViewItem lista;
-                    lista = lvListaProductos.Items.Add(Convert.ToString(strSentencia.GetInt32(0)));
-                    lista.SubItems.Add(strSentencia.GetString(2));
-
+                    lista = lvGeneral.Items.Add(Convert.ToString(strSentencia.GetInt32(0)));
+                    lista.SubItems.Add(strSentencia.GetString(1));
                 }//fin del while
-
             }
-
         }//fin del metodo
 
-
-        public int  getidProducto()
-        {
-            return (idProducto);
-        }//fin del metodo getid
-
-        public int getidUsuario()
-        {
-            return (idUsuario);
-        }//fin del metodo getid
-
-
+        #region Eventos
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void lvLista_DoubleClick(object sender, EventArgs e)
         {
-           this.Close();
+            this.Close();
         }
 
         private void lvLista_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            for (int i =0; i < lvListaProductos.Items.Count; i++)
+            for (int i = 0; i < lvGeneral.Items.Count; i++)
             {
-                if (lvListaProductos.Items[i].Selected)
+                if (lvGeneral.Items[i].Selected)
                 {
-                    idProducto = Convert.ToInt32(lvListaProductos.Items[i].Text);
+                    idSelecto = Convert.ToInt32(lvGeneral.Items[i].Text);
                 }
             }//fin del for
-       }//fin del metodo
-
+        }//fin del metodo
+        #endregion       
     }//fin de la clase
 }
