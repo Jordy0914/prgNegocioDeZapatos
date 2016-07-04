@@ -58,11 +58,11 @@
     <Compile Include="frmAcceso.Designer.cs">
       <DependentUpon>frmAcceso.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAgregarZapatos.cs">
+    <Compile Include="frmAgregarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAgregarZapatos.Designer.cs">
-      <DependentUpon>frmAgregarZapatos.cs</DependentUpon>
+    <Compile Include="frmAgregarProductos.Designer.cs">
+      <DependentUpon>frmAgregarProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAsignarRol.cs">
       <SubType>Form</SubType>
@@ -112,8 +112,8 @@
     <EmbeddedResource Include="frmAcceso.resx">
       <DependentUpon>frmAcceso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAgregarZapatos.resx">
-      <DependentUpon>frmAgregarZapatos.cs</DependentUpon>
+    <EmbeddedResource Include="frmAgregarProductos.resx">
+      <DependentUpon>frmAgregarProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAsignarRol.resx">
       <DependentUpon>frmAsignarRol.cs</DependentUpon>
@@ -181,8 +181,12 @@
       <Name>Entidades</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\1466668214_find.ico" />
+    <None Include="Resources\magnifier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

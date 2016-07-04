@@ -42,8 +42,6 @@
             this.txtTotal = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnAgregar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnModificar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnInsertar = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -57,6 +55,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cboDescuento = new System.Windows.Forms.ComboBox();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
+            this.btnRemover = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -257,7 +256,7 @@
             // btnSalir
             // 
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(518, 19);
+            this.btnSalir.Location = new System.Drawing.Point(367, 19);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
@@ -267,33 +266,6 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Depth = 0;
-            this.btnModificar.Location = new System.Drawing.Point(187, 18);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Primary = true;
-            this.btnModificar.Size = new System.Drawing.Size(79, 37);
-            this.btnModificar.TabIndex = 14;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Depth = 0;
-            this.btnEliminar.Location = new System.Drawing.Point(347, 18);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Primary = true;
-            this.btnEliminar.Size = new System.Drawing.Size(79, 37);
-            this.btnEliminar.TabIndex = 15;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnBuscar
             // 
@@ -312,8 +284,6 @@
             // 
             this.groupBox1.Controls.Add(this.btnInsertar);
             this.groupBox1.Controls.Add(this.btnSalir);
-            this.groupBox1.Controls.Add(this.btnEliminar);
-            this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Location = new System.Drawing.Point(12, 580);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(635, 64);
@@ -323,7 +293,7 @@
             // btnInsertar
             // 
             this.btnInsertar.Depth = 0;
-            this.btnInsertar.Location = new System.Drawing.Point(10, 19);
+            this.btnInsertar.Location = new System.Drawing.Point(186, 19);
             this.btnInsertar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Primary = true;
@@ -365,6 +335,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnRemover);
             this.groupBox2.Controls.Add(this.txtCantidadProducto);
             this.groupBox2.Controls.Add(this.materialLabel8);
             this.groupBox2.Controls.Add(this.btnAgregar);
@@ -417,7 +388,7 @@
             this.lvProductos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.codigo});
             this.lvProductos.GridLines = true;
-            this.lvProductos.Location = new System.Drawing.Point(442, 372);
+            this.lvProductos.Location = new System.Drawing.Point(439, 387);
             this.lvProductos.Name = "lvProductos";
             this.lvProductos.Size = new System.Drawing.Size(132, 155);
             this.lvProductos.TabIndex = 21;
@@ -473,6 +444,19 @@
             this.materialLabel9.TabIndex = 12;
             this.materialLabel9.Text = "Descuento";
             // 
+            // btnRemover
+            // 
+            this.btnRemover.Depth = 0;
+            this.btnRemover.Location = new System.Drawing.Point(467, 184);
+            this.btnRemover.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Primary = true;
+            this.btnRemover.Size = new System.Drawing.Size(75, 37);
+            this.btnRemover.TabIndex = 23;
+            this.btnRemover.Text = "Quitar";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            // 
             // frmFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -515,8 +499,6 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTotal;
         private MaterialSkin.Controls.MaterialRaisedButton btnAgregar;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
-        private MaterialSkin.Controls.MaterialRaisedButton btnModificar;
-        private MaterialSkin.Controls.MaterialRaisedButton btnEliminar;
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscar;
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
@@ -530,5 +512,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private System.Windows.Forms.ComboBox cboDescuento;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
+        private MaterialSkin.Controls.MaterialRaisedButton btnRemover;
     }
 }

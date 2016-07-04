@@ -63,9 +63,19 @@ namespace prgNegocioDeZapatos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1466668214_find {
+        internal static System.Drawing.Bitmap magnifier {
             get {
-                object obj = ResourceManager.GetObject("1466668214_find", resourceCulture);
+                object obj = ResourceManager.GetObject("magnifier", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap magnifier1 {
+            get {
+                object obj = ResourceManager.GetObject("magnifier1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

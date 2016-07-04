@@ -26,29 +26,34 @@ namespace prgNegocioDeZapatos
         clsProducto clProducto;
         clsEntidadDetalleFactura facturaDetalle;
         clsConexion conexion;
-        private Boolean bolAgregarE, bolAgregarD, bolModificar, bolEliminar;
+        clsEntidadUsuario usuario;
+        private Boolean bolAgregarEncabezado, bolAgregarDetalle;
         public int codigoProductos;
+
         public int precios;
         private int total = 0;
         private int numeroFactura = 0;
         private Double descuento;
-
+        private Double totalDescuento;
+        
         public frmFactura() {
 
-
+            //clsConexion cone, clsEntidadUsuario pEntidadUsuario
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
 
+            //this.conexion = cone;
             this.conexion = new clsConexion();
             factura = new clsEntidadFactura();
             clFactura = new clsFactura();
             producto = new clsEntidadProducto();
             clProducto = new clsProducto();
             facturaDetalle = new clsEntidadDetalleFactura();
+            //usuario = pEntidadUsuario;
             InitializeComponent();
-        }
+        }//fin del constructor
 
 
 /////////////////////////////////// Metodo Principal de la clase ///////////////////////////////////////////////
@@ -59,36 +64,29 @@ namespace prgNegocioDeZapatos
             this.mConsultaIdFactura();
         }
 
-////////////////////////////// Metodos de Accion de los botones ////////////////////////////////////////////
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            factura.setIdFactura(Convert.ToInt32(txtCodProducto.Text));
-             bolEliminar=clFactura.mEliminarFactura(conexion, factura);
-
-        }//fin de la accion del boton eliminar
-
-            
+/////////////////////////////////////// Accion del boton Agregar //////////////////////////////////////////////////////////           
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            factura.setIdFactura(Convert.ToInt32(txtNumeroF.Text));
+
             factura.setTotal(Convert.ToDouble(txtTotal.Text));
-            factura.setIdUsuario(0);
+            factura.setIdUsuario(1);
 
             facturaDetalle.setIdFactura(Convert.ToInt32(txtNumeroF.Text));
             facturaDetalle.setIdProducto(Convert.ToInt32(Convert.ToInt32(this.lvProductos.Items[0].Text)));
-            facturaDetalle.setCantidad(Convert.ToInt32(txtCantidadProducto.Text));
+            facturaDetalle.setCantidad(Convert.ToInt32(txtCantidad.Text));
             facturaDetalle.setDescuento(descuento);
             facturaDetalle.setSubTotal(Convert.ToDouble(txtSubTotal.Text));
           
 
-            bolAgregarE = clFactura.mInsertarFacturaEncabezado(conexion, factura);
-            bolAgregarD = clFactura.mInsertarFacturaDetalle(conexion, facturaDetalle);
+            bolAgregarEncabezado = clFactura.mInsertarFacturaEncabezado(conexion, factura);
+            bolAgregarDetalle = clFactura.mInsertarFacturaDetalle(conexion, facturaDetalle);
 
-            if (bolAgregarE == true && bolAgregarD == true)
+            if (bolAgregarEncabezado == true && bolAgregarDetalle == true)
             {
                 MessageBox.Show("Ha sido agregado correctamente", "Registro correcto", MessageBoxButtons.OK);
                 this.Limpiar();
+               
 
             }//fin del if de agregar
 
@@ -102,6 +100,7 @@ namespace prgNegocioDeZapatos
 
         }//fin de la accion del boton realizar venta
 
+/////////////////////////////////////// Accion del boton Agregar //////////////////////////////////////////////////////////
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -109,15 +108,17 @@ namespace prgNegocioDeZapatos
             frmListaProducto consultarProducto = new frmListaProducto(conexion);
             consultarProducto.ShowDialog();
 
-            if (consultarProducto.getid() != 0)
+            if (consultarProducto.getidProducto() != 0 || consultarProducto.getidProducto() == 0)
             {
-                producto.setIdProducto(consultarProducto.getid());
-                txtCodProducto.Text = Convert.ToString(consultarProducto.getid());
+                producto.setIdProducto(consultarProducto.getidProducto());
+                txtCodProducto.Text = Convert.ToString(consultarProducto.getidProducto());
                 mConsultaProducto();
             }//fin del if que verifica que no sea igual a 0
 
       }//fin de la accion del boton buscar
 
+
+/////////////////////////////////////// Accion del boton salir //////////////////////////////////////////////////////////
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -140,7 +141,7 @@ namespace prgNegocioDeZapatos
                 if (dtrProducto.Read())
                 {
                     this.txtProducto.Text = dtrProducto.GetString(2);
-                    this.txtPrecio.Text = Convert.ToString(dtrProducto.GetInt32(5));                  
+                    this.txtPrecio.Text = Convert.ToString(dtrProducto.GetInt32(6));                  
                 }//FIN READ
 
             }//fin del if que verifica que no este null
@@ -158,11 +159,14 @@ namespace prgNegocioDeZapatos
                 if (lvProductos.Items[i].Selected)
                 {
                     codigoProductos = Convert.ToInt32(lvProductos.Items[i].Text);
+                    
                 }//fin del if 
 
             }//fin del for
         }//fin del metodo para agregar los items a la lista
 
+
+/////////////////////////////////Metodo para obtener el codigo de los producto/////////////////////////////////////
 
         public int getCodProductos()
         {
@@ -170,11 +174,14 @@ namespace prgNegocioDeZapatos
         }//fin del metodo
 
 
+///////////////////////////////////// Metodo para llenar la lista con los codigos del producto////////////////////////////////////
+
         public void llenarLista()
         {
-            if (getCodProductos() != 0)
+            if (getCodProductos() != 0 || getCodProductos() == 0)
             {
                 producto.setIdProducto(Convert.ToInt32(txtCodProducto.Text));
+
             }//fin del if que verifica que contenga datos
 
             ListViewItem lista;
@@ -182,16 +189,47 @@ namespace prgNegocioDeZapatos
         }//fin del metodo para llenar la lista con datos
 
 
-        private String mContarProductos()
-        {
-            double contar = 0;
+//////////////////////////////////////////////// Accion del boton de remover /////////////////////////////////////////////////
 
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+
+            foreach (ListViewItem listaProductos in lvProductos.SelectedItems)
+            {
+                listaProductos.Remove();
+                
+            }
+             this.txtCantidad.Text =""+ this.mdismunirProductos();
+            this.txtSubTotal.Text = "" + this.disminuirPrecio();
+           
+        }
+
+////////////////////////////// Metodo para contar los productos que estan en la lista///////////////////////////////////////
+
+        private int mContarProductos()
+        {
+            int contar = 0;
             foreach (ListViewItem item in lvProductos.Items)
             {
                 contar++;
             }//fin del foreach
 
-            return contar.ToString();
+            return contar;
+
+        }//fin del metodo que cuanta la cantidad de datos de la lista
+
+
+////////////////////////////////////// Metodo para disminuir /////////////////////////////////////////////////////////
+
+        private int mdismunirProductos()
+        {
+            int disminuir = 0;
+            foreach (ListViewItem item in lvProductos.Items)
+            {
+                disminuir-=-1;
+            }//fin del foreach
+
+            return disminuir;
 
         }//fin del metodo que cuanta la cantidad de datos de la lista
 
@@ -200,35 +238,75 @@ namespace prgNegocioDeZapatos
 
         private void cboDescuento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            descuento = total +( Convert.ToDouble(cboDescuento.SelectedItem) / 100 * total) ;
-            this.txtTotal.Text = "" + descuento;
+            totalDescuento = total - ( Convert.ToDouble(cboDescuento.SelectedItem) / 100 * total) ;
+            descuento = Convert.ToDouble(cboDescuento.SelectedItem) / 100 * total;
+            this.txtTotal.Text = "" + totalDescuento;
 
         }//fin de la accion del combobox de descuento
+
 
 /////////////////////// Metodo para agregar los codigos del producto a la lista de produtos de la venta //////////////////////////
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            int cantidad = 0;
+            dtrProducto = clProducto.mConsultarProductoGeneral(conexion);
+
+            if (dtrProducto != null)
+            {
+
+                if (dtrProducto.Read())
+                {
+                    cantidad = dtrProducto.GetInt32(9);
+
+                }//Fin del del read
+
+            }//fin del if 
+
+            if (this.mVerificarExistencia()) { 
+
+            producto.setCantidad(cantidad - (Convert.ToInt32(txtCantidadProducto.Text)));
+            clProducto.mModificarCantidad(conexion, producto);
 
             this.llenarLista();//llena la lista con el codigo del producto
-            this.txtCantidad.Text = (mContarProductos());
+            this.txtCantidad.Text =""+ mContarProductos();
             this.txtSubTotal.Text = ""+ this.calcularPrecio();
 
-           // this.Limpiar();
+                //this.txtCodProducto.Text = "";
+                //this.txtProducto.Text = "";
+                //this.txtPrecio.Text = "";
+                //this.txtCantidadProducto.Text = "";
+            }
+
+            else
+            {
+                MessageBox.Show("No hay disponible en el inventario");
+            }
 
         }//fin de la accion del boton agregar
 
-
-
+  
 /////////////////////////////// Metodo para calcular el subtotal ///////////////////////////////////////////////// 
-    
+
         public int calcularPrecio()
         {
           return total = total + (Convert.ToInt32(this.txtPrecio.Text) * Convert.ToInt32(this.txtCantidadProducto.Text));
 
         }//fin del metodo para calcular el subtotal
 
-       
+/// //////////////////////////////// Metodo para disminuir el subtotal/////////////////////////////////////////////
+
+        public int disminuirPrecio()
+        {
+
+            return total = total - (Convert.ToInt32(this.txtPrecio.Text) * Convert.ToInt32(this.txtCantidadProducto.Text));
+
+            if (Convert.ToInt32(this.txtCantidadProducto.Text)==0) {
+                total = 0;
+                return total;
+            }
+
+        }//fin del metodo para calcular el subtotal
 
 ////////////////// Metodo para obtener el ultimo numero de la factura ////////////////////////////////////////////////////
 
@@ -241,10 +319,9 @@ namespace prgNegocioDeZapatos
             {
 
                 if (dtrFacturaE.Read())
-                {//si exise
+                {
 
                   numeroFactura=((dtrFacturaE.GetInt32(0)));
-                  numeroFactura++;
                   this.txtNumeroF.Text = Convert.ToString(numeroFactura);
 
                 }//fin del if del read
@@ -267,8 +344,21 @@ namespace prgNegocioDeZapatos
             this.txtTotal.Text = "";
             this.txtCantidadProducto.Text = "";
             this.cboDescuento.Text = "";
-            this.lvProductos.Clear();
+            this.lvProductos.Items.Clear();
         }//fin del metodo limpiar
+
+
+        private Boolean mVerificarExistencia()
+        {
+            dtrProducto = clProducto.mConsultarProducto(conexion, producto);
+
+            if (dtrProducto.Read())
+            {
+                if (dtrProducto.GetInt32(9) > 0)
+                    return true;
+            }
+            return false;
+        }
 
     }//fin de la clase
 }

@@ -16,7 +16,8 @@ using AccesoDatos;
 
 namespace prgNegocioDeZapatos
 {
-    public partial class frmAgregarZapatos : MaterialForm
+    
+    public partial class frmAgregarProductos : MaterialForm 
     {
         private readonly MaterialSkinManager materialSkinManager;
         clsConexion conexion;
@@ -25,24 +26,29 @@ namespace prgNegocioDeZapatos
         private Boolean bolAgregar,bolModificar;
 
 
-        public frmAgregarZapatos(clsConexion cone)
+        public frmAgregarProductos()//clsConexion cone)
         {
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
-
             this.inventario = new clsEntidadProducto();
             this.clInventario = new clsProducto();
-            this.conexion = cone;
-
+            //this.conexion = cone;
             InitializeComponent();
         }
 
 
-        private void frmAgregarZapatos_Load(object sender, EventArgs e)
+        private void frmAgregarZapatos_Load(object sender, EventArgs e, GroupBox gro)
         {
+            btnAgregar.Visible = true;
+            btnAgregar.Enabled = true;
+            btnModificar.Visible = true;
+            btnModificar.Enabled = true;
+            groupBox3.AutoSize=true;
 
+            
+ 
         }
 
 
@@ -101,6 +107,28 @@ namespace prgNegocioDeZapatos
             }//fin del if
             this.limpiar();
         }
+
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtConsultar_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         public void limpiar()
         {
