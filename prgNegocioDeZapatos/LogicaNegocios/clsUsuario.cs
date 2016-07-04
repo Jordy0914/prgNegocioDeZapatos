@@ -21,9 +21,16 @@ namespace LogicaNegocios
         //Metodo para accesar al sistema, trae codigo y clave de ventana de acceso
         public SqlDataReader mConsultarUsuario(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Select idUsuario, login, password from tbUsuario where login='" + pEntidadUsuario.getLogin()+ "' and password='" + pEntidadUsuario.getPassword() + "'";
+            strSentencia = "Select login, password from tbUsuario where login='" + pEntidadUsuario.getLogin()+ "' and password='" + pEntidadUsuario.getPassword() + "'";
             return cone.mSeleccionar(strSentencia, cone);
         }
+
+        public SqlDataReader mConsultarUsuario2(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
+        {
+            strSentencia = "Select * from tbUsuario where idUsuario='" + pEntidadUsuario.getIdUsuario() + "'";
+            return cone.mSeleccionar(strSentencia, cone);
+        }
+
 
         public SqlDataReader mConsultarVistasRol(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
@@ -66,20 +73,28 @@ namespace LogicaNegocios
             cone.mEjecutar(strSentencia, cone);
         }
 
-        public Boolean mAgregarUsuario(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
+        public Boolean mInsertar(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Insert into tbUsuario(login,password,nombre,apellido1,apellido2,direccion,tipoIdentificacion,fechaNacimiento,puesto,cedula) Values ('" + pEntidadUsuario.getLogin() + "','" + pEntidadUsuario.getPassword()
-           + "','" + pEntidadUsuario.getNombre() + "','" + pEntidadUsuario.getApellido1()
-            + ",'" + pEntidadUsuario.getApellido2() + "','" + pEntidadUsuario.getDireccion() + "','" + pEntidadUsuario.getTipoIdentificacion()
-            + "','" + pEntidadUsuario.getFechaN() + "','" + pEntidadUsuario.getPuesto() + "','" + pEntidadUsuario.getCedula() + "'')";
+            strSentencia = "Insert into tbUsuario(login,password,nombre,apellido1,apellido2,direccion,tipoIdentificacion,fechaNacimiento,puesto,cedula,creadoPor, fechaCreacion) Values ('" + pEntidadUsuario.getLogin() + "','" + pEntidadUsuario.getPassword()
+           + "','" + pEntidadUsuario.getNombre() + "','" + pEntidadUsuario.getApellido1() + "','" + pEntidadUsuario.getApellido2() + "','" + pEntidadUsuario.getDireccion() + "','" + pEntidadUsuario.getTipoIdentificacion()
+            + "','" + pEntidadUsuario.getFechaN() + "','" + pEntidadUsuario.getPuesto() + "'," + pEntidadUsuario.getCedula() + ", "+pEntidadUsuario.getIdUsuario()+",getDate())";
             return cone.mEjecutar(strSentencia, cone);
         }//fin del metodo agregar empleado
+
+        public Boolean mModificar(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
+        {
+            strSentencia = "update tbUsuario set password='"+pEntidadUsuario.getPassword()+ "', nombre='"+pEntidadUsuario.getNombre()+"', apellido1='"+pEntidadUsuario.getApellido1()+"', apellido2='"+pEntidadUsuario.getApellido2()+
+                "', direccion='"+pEntidadUsuario.getDireccion()+"', tipoIdentificacion='"+pEntidadUsuario.getTipoIdentificacion()+"', fechaNacimiento='"+pEntidadUsuario.getFechaN()+"', puesto= '"+pEntidadUsuario.getPuesto()+
+                "', cedula= "+pEntidadUsuario.getCedula()+ ", modificadoPor="+pEntidadUsuario.getIdUsuario()+ ", fechaModificacion= getDate() where idUsuario = " + pEntidadUsuario.getIdUsuario() + "";
+            return cone.mEjecutar(strSentencia, cone);
+        }
 
         public SqlDataReader mConsultarUsuarioGeneral(clsConexion cone)
         {
             strSentencia = "Select * from tbUsuario";
             return cone.mSeleccionar(strSentencia, cone);
         }
+
         #endregion
     }
 }

@@ -27,6 +27,7 @@ namespace prgNegocioDeZapatos
 
         SqlDataReader dtrUsuarios;
 
+        private Boolean bolAgregar, bolModificar, bolEliminar;
         public static int señal;
 
         public frmUsuario()
@@ -54,26 +55,79 @@ namespace prgNegocioDeZapatos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             señal = 1;
+            txtUsuario.Enabled = false;
             frmLista consultarUsuario = new frmLista(conexion);
             consultarUsuario.ShowDialog();
 
             if (consultarUsuario.getidUsuario() != 0 || consultarUsuario.getidUsuario() == 0)
             {
-                this.pEntidadUsuario.IdUsuario=(consultarUsuario.getidUsuario());
+                this.pEntidadUsuario.setIdUsuario(consultarUsuario.getidUsuario());
                 txtCodigo.Text = Convert.ToString(consultarUsuario.getidUsuario());
                 mConsultaUsuario();
             }//fin del if que verifica que no sea igual a 0
         }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            pEntidadUsuario.setLogin(txtUsuario.Text);
+            pEntidadUsuario.setPassword(txtPassword.Text);
+            pEntidadUsuario.setNombre(txtNombre.Text);
+            pEntidadUsuario.setApellido1(txtApellido1.Text);
+            pEntidadUsuario.setApellido2(txtApellido2.Text);
+            pEntidadUsuario.setDireccion(txtDireccion.Text);
+            pEntidadUsuario.setTipoIdentificacion(cboTipoI.Text);
+            pEntidadUsuario.setFechaN(Convert.ToDateTime(txtFechaN.Text));
+            pEntidadUsuario.setPuesto(txtPuesto.Text);
+            pEntidadUsuario.setCedula(Convert.ToInt32(txtCedula.Text));
+            bolAgregar = clUsuario.mInsertar(conexion, pEntidadUsuario);
+
+            if (bolAgregar == true)
+            {
+                MessageBox.Show("El usuario ha sido agregado correctamente", "Registro correcto", MessageBoxButtons.OK);
+
+
+            }//fin del if
+            this.Limpiar();
+
+
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            pEntidadUsuario.setPassword(txtPassword.Text);
+            pEntidadUsuario.setNombre(txtNombre.Text);
+            pEntidadUsuario.setApellido1(txtApellido1.Text);
+            pEntidadUsuario.setApellido2(txtApellido2.Text);
+            pEntidadUsuario.setDireccion(txtDireccion.Text);
+            pEntidadUsuario.setTipoIdentificacion(cboTipoI.Text);
+            pEntidadUsuario.setFechaN(Convert.ToDateTime(txtFechaN.Text));
+            pEntidadUsuario.setPuesto(txtPuesto.Text);
+            pEntidadUsuario.setCedula(Convert.ToInt32(txtCedula.Text));
+            bolModificar = clUsuario.mModificar(conexion, pEntidadUsuario);
+
+            if (bolModificar == true)
+            {
+                MessageBox.Show("El usuario ha sido modificado correctamente", "Registro correcto", MessageBoxButtons.OK);
+
+
+            }//fin del if
+            this.Limpiar();
+        }
+
+
+
+
+
+
         #endregion
-
-
 
         #region Metodos Propios
         public void mConsultaUsuario()
         {
             pEntidadUsuario.setIdUsuario(Convert.ToInt32(txtCodigo.Text.Trim()));
 
-            dtrUsuarios = clUsuario.mConsultarUsuario(conexion, pEntidadUsuario);
+            dtrUsuarios = clUsuario.mConsultarUsuario2(conexion, pEntidadUsuario);
             if (dtrUsuarios != null)
             {
                 if (dtrUsuarios.Read())
@@ -85,10 +139,9 @@ namespace prgNegocioDeZapatos
                     this.txtApellido2.Text = dtrUsuarios.GetString(5);
                     this.txtDireccion.Text = dtrUsuarios.GetString(6);
                     this.cboTipoI.Text = dtrUsuarios.GetString(7);
-                    this.txtFechaN.Text = dtrUsuarios.GetString(8);
+                    this.txtFechaN.Text = Convert.ToString(dtrUsuarios.GetDateTime(8));
                     this.txtPuesto.Text = dtrUsuarios.GetString(9);
-                    this.txtCedula.Text = dtrUsuarios.GetString(10);
-                    
+                    this.txtCedula.Text = Convert.ToString(dtrUsuarios.GetInt32(10));
                    
                 }//FIN READ
             }//fin del if que verifica que no este null
@@ -105,7 +158,9 @@ namespace prgNegocioDeZapatos
             this.txtDireccion.Text = "";
             this.txtUsuario.Text = "";
             this.txtPassword.Text = "";
+            this.txtUsuario.Enabled = true;
         }
+
         #endregion
     }
 }

@@ -138,7 +138,7 @@ namespace prgNegocioDeZapatos
 
             if (consultarProducto.getidProducto() != 0 || consultarProducto.getidProducto() == 0)
             {
-                productos.setIdProducto(consultarProducto.getidProducto());
+                this.productos.setIdProducto(consultarProducto.getidProducto());
                 txtCodigo.Text = Convert.ToString(consultarProducto.getidProducto());
                 mConsultaProducto();
             }//fin del if que verifica que no sea igual a 0
