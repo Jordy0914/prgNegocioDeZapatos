@@ -67,7 +67,7 @@ namespace LogicaNegocios
 
         public SqlDataReader mConsultarIdFactura(clsConexion cone)
         {
-            strSentencia = " Select count(*) from tbFacturaEncabezado";
+            strSentencia = " Select count(idFactura) from tbFacturaEncabezado";
             return cone.mSeleccionar(strSentencia, cone);
         }
 
