@@ -31,7 +31,6 @@
             this.lvFacturas = new System.Windows.Forms.ListView();
             this.codigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.idProducto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.idUsuario = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cantidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.subtotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -47,14 +46,13 @@
             this.lvFacturas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.codigo,
             this.idProducto,
-            this.idUsuario,
             this.cantidad,
             this.subtotal,
             this.total});
             this.lvFacturas.GridLines = true;
-            this.lvFacturas.Location = new System.Drawing.Point(30, 141);
+            this.lvFacturas.Location = new System.Drawing.Point(67, 141);
             this.lvFacturas.Name = "lvFacturas";
-            this.lvFacturas.Size = new System.Drawing.Size(508, 223);
+            this.lvFacturas.Size = new System.Drawing.Size(462, 223);
             this.lvFacturas.TabIndex = 0;
             this.lvFacturas.UseCompatibleStateImageBehavior = false;
             this.lvFacturas.View = System.Windows.Forms.View.Details;
@@ -70,11 +68,6 @@
             this.idProducto.Text = "Codigo Producto";
             this.idProducto.Width = 94;
             // 
-            // idUsuario
-            // 
-            this.idUsuario.Text = "Usuario";
-            this.idUsuario.Width = 64;
-            // 
             // cantidad
             // 
             this.cantidad.Text = "Cantidad";
@@ -88,7 +81,7 @@
             // total
             // 
             this.total.Text = "total";
-            this.total.Width = 85;
+            this.total.Width = 107;
             // 
             // btnSalir
             // 
@@ -188,7 +181,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscar;
         private System.Windows.Forms.ColumnHeader codigo;
         private System.Windows.Forms.ColumnHeader idProducto;
-        private System.Windows.Forms.ColumnHeader idUsuario;
         private System.Windows.Forms.ColumnHeader total;
         private System.Windows.Forms.ColumnHeader subtotal;
         private System.Windows.Forms.ColumnHeader cantidad;

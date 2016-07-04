@@ -21,10 +21,10 @@ namespace LogicaNegocios
 
 
 
-        public Boolean mInsertarFacturaEncabezado(clsConexion cone, clsEntidadFacturaEncabezado pEntidadFactura)
+        public Boolean mInsertarFacturaEncabezado(clsConexion cone, clsEntidadFacturaEncabezado pEntidadFactura, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Insert into tbFacturaEncabezado(idUsuario,total,creadoPor,fechaCreacion,modificadoPor,fechaModificacion) values ("+ pEntidadFactura.getIdUsuario()
-                + "," + pEntidadFactura.getTotal() +"," + pEntidadFactura.getFechaCreacion() +")";
+            strSentencia = "Insert into tbFacturaEncabezado(total,creadoPor,fechaCreacion) values (" + pEntidadFactura.getTotal()
+                + "," + pEntidadUsuario.IdUsuario + " , getDate())";
             return cone.mEjecutar(strSentencia, cone);
         }//fin del metodo mInsertar
 
@@ -52,15 +52,13 @@ namespace LogicaNegocios
 
         public SqlDataReader mConsultarFacturasGenerales(clsConexion cone, clsEntidadFacturaEncabezado pEntidadFactura)
         {
-            strSentencia = "select fE.idFactura,fD.idProducto,fE.idUsuario,fD.cantidad,fD.subtotal,fE.total from tbFacturaEncabezado fE, tbFacturaDetalle fD where fE.idFactura= fD.idFactura and fE.idFactura="+pEntidadFactura.getIdFactura()+"";
+            strSentencia = "select fD.idFactura,fD.idProducto,fD.cantidad,fD.subtotal,fE.total from tbFacturaEncabezado fE, tbFacturaDetalle fD where fE.idFactura= fD.idFactura and fD.idFactura="+pEntidadFactura.getIdFactura()+"";
             return cone.mSeleccionar(strSentencia, cone);
         }
 
-        // select fE.idFactura,fD.idProducto,fE.idUsuario,fD.cantidad,fD.subtotal,fE.total from tbFacturaEncabezado fE,tbFacturaDetalle fD where fD.idFactura=fE.idFactura;
-
         public Boolean mEliminarFactura(clsConexion cone, clsEntidadFacturaEncabezado pEntidadFactura)
         {
-            strSentencia = "Delete from tbFacturaDetalle fE ,tbFacturaD fD where fE.idFactura= fD.idFactura and fE.idFactura="+pEntidadFactura.getIdFactura()+"";
+            strSentencia = "Delete from tbFacturaDetalle where idFactura="+pEntidadFactura.getIdFactura()+"";
             return cone.mEjecutar(strSentencia, cone);
 
         }//fin del metodo mEliminarFactura
@@ -74,17 +72,13 @@ namespace LogicaNegocios
 
         public SqlDataReader mConsultarIdFactura(clsConexion cone)
         {
-            strSentencia = " Select count(idFactura) from tbFacturaEncabezado";
+            strSentencia = " Select max(idFactura) from tbFacturaEncabezado";
             return cone.mSeleccionar(strSentencia, cone);
         }
 
-
-
         #endregion
 
-
-
-    }//fin del metodo  
+    }//fin de la clase 
 
 
 

@@ -13,7 +13,6 @@ namespace Entidades
         #region Atributos
 
         private int idFactura;
-        private int idUsuario;
         private Double total;
         private int creadoPor;
         private DateTime fechaCreacion;
@@ -30,7 +29,6 @@ namespace Entidades
         {
 
             this.idFactura = 0;
-            this.idUsuario = 0;
             this.total = 0.0;
             this.creadoPor = 0;
             this.fechaCreacion = DateTime.MaxValue;
@@ -57,30 +55,29 @@ namespace Entidades
             return idFactura;
         }
 
-
-        public void setIdUsuario(int idUsuario)
-        {
-            this.idUsuario = idUsuario;
-
-        }
-
-
-        public int getIdUsuario()
-        {
-
-            return idUsuario;
-        }
+       
 
         public void setTotal(Double total)
         {
             this.total = total;
-
         }
 
         public Double getTotal()
         {
 
             return total;
+        }
+
+        public void setCreadoPor(int creadoPor)
+        {
+            this.creadoPor = creadoPor;
+
+        }
+
+        public int getCreadoPor()
+        {
+
+            return creadoPor;
         }
 
         public void setFechaCreacion(DateTime fechaCreacion)
