@@ -52,13 +52,13 @@ namespace LogicaNegocios
 
         public SqlDataReader mConsultarFacturasGenerales(clsConexion cone, clsEntidadFacturaEncabezado pEntidadFactura)
         {
-            strSentencia = "select fD.idFactura,fD.idProducto,fD.cantidad,fD.subtotal,fE.total from tbFacturaEncabezado fE, tbFacturaDetalle fD where fE.idFactura= fD.idFactura and fD.idFactura="+pEntidadFactura.getIdFactura()+"";
+            strSentencia = "Select fD.idFactura,fD.idProducto,fD.cantidad,fD.subtotal,fE.total from tbFacturaEncabezado fE, tbFacturaDetalle fD where fE.idFactura= fD.idFactura and fD.idFactura="+pEntidadFactura.getIdFactura()+"";
             return cone.mSeleccionar(strSentencia, cone);
         }
 
-        public Boolean mEliminarFactura(clsConexion cone, clsEntidadFacturaEncabezado pEntidadFactura)
+        public Boolean mEliminarFactura(clsConexion cone, clsEntidadDetalleFactura pEntidadFactura)
         {
-            strSentencia = "Delete from tbFacturaDetalle where idFactura="+pEntidadFactura.getIdFactura()+"";
+            strSentencia = "Delete from tbFacturaDetalle  where idFactura="+pEntidadFactura.getIdFactura()+"";
             return cone.mEjecutar(strSentencia, cone);
 
         }//fin del metodo mEliminarFactura

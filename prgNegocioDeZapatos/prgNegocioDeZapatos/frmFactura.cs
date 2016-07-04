@@ -96,19 +96,21 @@ namespace prgNegocioDeZapatos
 
                 }//fin del for
                 bolAgregarDetalle = true;
+
+                if (bolAgregarEncabezado == true && bolAgregarDetalle == true)
+                {
+                    MessageBox.Show("La venta ha sido satisfactoria", "Registro correcto", MessageBoxButtons.OK);
+                    this.Limpiar();
+                }//fin del if de agregar
+                else
+                {
+                    MessageBox.Show("Problemas al realizar la venta", "Error", MessageBoxButtons.OK);
+
+                    this.Limpiar();
+                }
             }//fin del else
-            if (bolAgregarEncabezado == true && bolAgregarDetalle == true)
-            {
-                MessageBox.Show("Ha sido agregado correctamente", "Registro correcto", MessageBoxButtons.OK);
-                this.Limpiar();
-            }//fin del if de agregar
-            else
-            {
-                MessageBox.Show("Problemas al agregar", "Error", MessageBoxButtons.OK);
-
-                this.Limpiar();
-            }
-
+           
+            this.mConsultaIdFactura();
         }//fin de la accion del boton realizar venta
 
 /////////////////////////////////////// Accion del boton Buscar //////////////////////////////////////////////////////////
