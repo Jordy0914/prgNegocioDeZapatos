@@ -82,6 +82,12 @@
     <Compile Include="frmFactura.Designer.cs">
       <DependentUpon>frmFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListadoFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadoFacturas.Designer.cs">
+      <DependentUpon>frmListadoFacturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFactura.resx">
       <DependentUpon>frmFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoFacturas.resx">
+      <DependentUpon>frmListadoFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListaProducto.resx">
       <DependentUpon>frmListaProducto.cs</DependentUpon>

@@ -129,6 +129,10 @@ namespace prgNegocioDeZapatos
 
         }
 
+        private void frmAgregarProductos_Load(object sender, EventArgs e)
+        {
+
+        }
 
         public void limpiar()
         {

@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsEntidadDetalleFactura.cs" />
-    <Compile Include="clsEntidadFactura.cs" />
+    <Compile Include="clsEntidadFacturaEncabezado.cs" />
     <Compile Include="clsEntidadProducto.cs" />
     <Compile Include="clsEntidadProveedor.cs" />
     <Compile Include="clsEntidadRol.cs" />

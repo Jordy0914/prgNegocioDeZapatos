@@ -19,8 +19,9 @@ namespace prgNegocioDeZapatos
     public partial class frmFactura : MaterialForm, IPermisos
     {
         private readonly MaterialSkinManager materialSkinManager;
+
         SqlDataReader dtrFactura,dtrFacturaE,dtrProducto;
-        clsEntidadFactura factura;
+        clsEntidadFacturaEncabezado factura;
         clsFactura clFactura;
         clsEntidadProducto producto;
         clsProducto clProducto;
@@ -35,7 +36,9 @@ namespace prgNegocioDeZapatos
         private int numeroFactura = 0;
         private Double descuento;
         private Double totalDescuento;
-        
+        String fecha_actual;
+        DateTime Hoy;
+
         public frmFactura(clsConexion cone, clsEntidadUsuario pEntidadUsuario) {
 
             //clsConexion cone, clsEntidadUsuario pEntidadUsuario,
@@ -46,12 +49,16 @@ namespace prgNegocioDeZapatos
 
             this.conexion = cone;
             //this.conexion = new clsConexion();
-            factura = new clsEntidadFactura();
+            factura = new clsEntidadFacturaEncabezado();
             clFactura = new clsFactura();
             producto = new clsEntidadProducto();
             clProducto = new clsProducto();
             facturaDetalle = new clsEntidadDetalleFactura();
-            //usuario = pEntidadUsuario;
+            usuario = pEntidadUsuario;
+
+            Hoy = DateTime.Today;
+            fecha_actual = Hoy.ToString("dd-MM-yyyy");
+
             InitializeComponent();
         }//fin del constructor
 
@@ -69,14 +76,22 @@ namespace prgNegocioDeZapatos
         private void btnInsertar_Click(object sender, EventArgs e)
         {
 
+            if (txtCodProducto.Text==""||txtProducto.Text==""||txtPrecio.Text==""||txtCantidadProducto.Text==""|| cboDescuento.Text=="") {
+
+                MessageBox.Show("Debe de llenar todos los campos");
+            }
+
+            else { 
             factura.setTotal(Convert.ToDouble(txtTotal.Text));
-            factura.setIdUsuario(1);
+           // factura.setIdUsuario(usuario.getIdUsuario());
+            //factura.setFechaCreacion(Convert.ToDateTime(fecha_actual));
 
             facturaDetalle.setIdFactura(Convert.ToInt32(txtNumeroF.Text));
-            facturaDetalle.setIdProducto(Convert.ToInt32(Convert.ToInt32(this.lvProductos.Items[0].Text)));
+            facturaDetalle.setIdProducto(Convert.ToInt32(this.lvProductos.Items[0].Text));
             facturaDetalle.setCantidad(Convert.ToInt32(txtCantidad.Text));
             facturaDetalle.setDescuento(descuento);
             facturaDetalle.setSubTotal(Convert.ToDouble(txtSubTotal.Text));
+            
           
 
             bolAgregarEncabezado = clFactura.mInsertarFacturaEncabezado(conexion, factura);
@@ -97,10 +112,11 @@ namespace prgNegocioDeZapatos
                 this.Limpiar();
 
                }//fin del else
+            }//fin del else
 
         }//fin de la accion del boton realizar venta
 
-/////////////////////////////////////// Accion del boton Agregar //////////////////////////////////////////////////////////
+/////////////////////////////////////// Accion del boton Buscar //////////////////////////////////////////////////////////
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -126,7 +142,7 @@ namespace prgNegocioDeZapatos
         }//fin del la accion del boton salir
 
 
-////////////////////////////////// Metodos para obtener datos para la ventana frmListaProducto/////////////////////////////
+////////////////////////////////// Metodos para obtener datos para la ventana frmListaProducto /////////////////////////////
 
         public void mConsultaProducto()
         {
@@ -249,6 +265,14 @@ namespace prgNegocioDeZapatos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+
+            if (txtCodProducto.Text == "" || txtProducto.Text == "" || txtPrecio.Text == "" || txtCantidadProducto.Text == "")
+            {
+
+                MessageBox.Show("Debe de llenar todos los campos");
+            }
+
+            else { 
             int cantidad = 0;
             dtrProducto = clProducto.mConsultarProductoGeneral(conexion);
 
@@ -283,6 +307,7 @@ namespace prgNegocioDeZapatos
                 MessageBox.Show("No hay disponible en el inventario");
             }
 
+         }//fin del else
         }//fin de la accion del boton agregar
 
 /////////////////////////////////////// Metodo que verifica que la cantidad del producto sea mayor que 0 /////////////////////////////////
@@ -336,7 +361,6 @@ namespace prgNegocioDeZapatos
 
                 if (dtrFacturaE.Read())
                 {
-
                   numeroFactura=((dtrFacturaE.GetInt32(0)));
                   this.txtNumeroF.Text = Convert.ToString(numeroFactura);
 
