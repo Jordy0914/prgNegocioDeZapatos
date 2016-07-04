@@ -30,7 +30,6 @@ namespace prgNegocioDeZapatos
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
-
             productos = new clsEntidadProducto();
             clProducto = new clsProducto();
             this.conexion = conexion;
@@ -63,18 +62,19 @@ namespace prgNegocioDeZapatos
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Dispose();
+
         }
 
         private void lvLista_DoubleClick(object sender, EventArgs e)
         {
-            Close();
+           this.Close();
         }
 
         private void lvLista_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            for (int i = 0; i < lvListaProductos.Items.Count; i++)
+            for (int i =0; i < lvListaProductos.Items.Count; i++)
             {
                 if (lvListaProductos.Items[i].Selected)
                 {
