@@ -40,19 +40,18 @@ namespace prgNegocioDeZapatos
         #endregion
 
         #region Constructor
-        public frmAgregarProductos()//clsConexion cone, clsEntidadUsuario pEntidadUsuario, clsEntidadVista vista)
+        public frmAgregarProductos(clsConexion cone, clsEntidadUsuario pEntidadUsuario, clsEntidadVista vista)
         {
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
-            this.conexion = new clsConexion();
+            this.conexion = cone;
+            this.pEntidadVista = vista;
+            this.usuarios = pEntidadUsuario;
             this.productos = new clsEntidadProducto();
             this.clProductos = new clsProducto();
-            this.usuarios = new clsEntidadUsuario();
-            //this.clVistas = new clsVistas();
-            //this.pEntidadVista = vista;
-            //this.conexion = cone;
+            this.clVistas = new clsVistas();
             InitializeComponent();
         }
         #endregion
@@ -133,13 +132,13 @@ namespace prgNegocioDeZapatos
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            frmLista consultarProducto = new frmLista(conexion);
+            frmLista consultarProducto = new frmLista(conexion,"producto");
             consultarProducto.ShowDialog();
 
-            if (consultarProducto.getidProducto() != 0 || consultarProducto.getidProducto() == 0)
+            if (consultarProducto.idSelecto != 0 || consultarProducto.idSelecto == 0)
             {
-                productos.setIdProducto(consultarProducto.getidProducto());
-                txtCodigo.Text = Convert.ToString(consultarProducto.getidProducto());
+                productos.setIdProducto(consultarProducto.idSelecto);
+                txtCodigo.Text = Convert.ToString(consultarProducto.idSelecto);
                 mConsultaProducto();
             }//fin del if que verifica que no sea igual a 0
         }
