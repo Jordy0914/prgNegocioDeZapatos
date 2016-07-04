@@ -77,7 +77,7 @@ namespace LogicaNegocios
 
         public SqlDataReader mConsultarUsuarioGeneral(clsConexion cone)
         {
-            strSentencia = "Select * from tbUsuario";
+            strSentencia = "Select U.idUsuario, U.login from tbUsuario U";
             return cone.mSeleccionar(strSentencia, cone);
         }
         #endregion
