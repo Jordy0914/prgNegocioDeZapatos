@@ -18,38 +18,69 @@ using System.Globalization;
 namespace prgNegocioDeZapatos
 {
     
-    public partial class frmAgregarProductos : MaterialForm 
+    public partial class frmAgregarProductos : MaterialForm, IPermisos 
     {
+        #region Atributos
         private readonly MaterialSkinManager materialSkinManager;
         clsConexion conexion;
+
         clsEntidadProducto productos;
         clsEntidadUsuario usuarios;
+
         clsProducto clProductos;
         SqlDataReader dtrProducto;
 
 
+        private clsVistas clVistas;
+        private clsEntidadVista pEntidadVista;
+        private SqlDataReader dtrVista;
+
         private Boolean bolAgregar,bolModificar, bolEliminar;
 
+        #endregion
 
-        public frmAgregarProductos()//clsConexion cone)
+        #region Constructor
+        public frmAgregarProductos()//clsConexion cone, clsEntidadUsuario pEntidadUsuario, clsEntidadVista vista)
         {
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
+            this.conexion = new clsConexion();
             this.productos = new clsEntidadProducto();
             this.clProductos = new clsProducto();
-            this.conexion = new clsConexion();
             this.usuarios = new clsEntidadUsuario();
+            //this.clVistas = new clsVistas();
+            //this.pEntidadVista = vista;
             //this.conexion = cone;
             InitializeComponent();
         }
+        #endregion
 
-
-        private void btnSalir_Click(object sender, EventArgs e)
+        #region Metodos del IPermisos
+        public void activarInsertar(Boolean condicion)
         {
-            Close();
+            this.btnAgregar.Enabled = condicion;
         }
+
+        public void activarModificar(Boolean condicion)
+        {
+            this.btnModificar.Enabled = condicion;
+        }
+
+        public void activarEliminar(Boolean condicion)
+        {
+            this.btnEliminar.Enabled = condicion;
+        }
+
+        public void activarConsultar(Boolean condicion)
+        {
+           
+        }
+        #endregion
+    
+        #region Eventos
+
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -102,7 +133,7 @@ namespace prgNegocioDeZapatos
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            frmListaProducto consultarProducto = new frmListaProducto(conexion);
+            frmLista consultarProducto = new frmLista(conexion);
             consultarProducto.ShowDialog();
 
             if (consultarProducto.getidProducto() != 0 || consultarProducto.getidProducto() == 0)
@@ -113,6 +144,26 @@ namespace prgNegocioDeZapatos
             }//fin del if que verifica que no sea igual a 0
         }
 
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            //this.Close();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            bolEliminar = clProductos.mEliminarProducto(conexion, productos);
+            if (bolEliminar == true)
+            {
+                MessageBox.Show("El producto ha sido eliminado correctamente", "Registro correcto", MessageBoxButtons.OK);
+
+
+            }//fin del if
+            this.limpiar();
+        }
+
+        #endregion
+
+        #region Metodos Propios
         public void mConsultaProducto()
         {
 
@@ -141,22 +192,7 @@ namespace prgNegocioDeZapatos
 
         }//fin del metodo que consulta el producto segun su id
 
-        private void btnSalir_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-          bolEliminar=  clProductos.mEliminarProducto(conexion, productos);
-            if (bolEliminar == true)
-            {
-                MessageBox.Show("El producto ha sido eliminado correctamente", "Registro correcto", MessageBoxButtons.OK);
-
-
-            }//fin del if
-            this.limpiar();
-        }
+       
 
 
         public void limpiar()
@@ -174,6 +210,21 @@ namespace prgNegocioDeZapatos
             this.txtCantidad.Text = "";
 
         }//fin del metodo limpiar
+
+        private void activarPermisos()
+        {
+            this.dtrVista = clVistas.mConsultarPermisosVista(this.conexion, this.pEntidadVista);
+
+            if (dtrVista.Read())
+            {
+                this.activarInsertar(dtrVista.GetBoolean(0));
+                this.activarModificar(dtrVista.GetBoolean(1));
+                this.activarEliminar(dtrVista.GetBoolean(2));
+                this.activarConsultar(dtrVista.GetBoolean(3));
+            }
+        }
+
+        #endregion
 
     }//fin de la clase
 }

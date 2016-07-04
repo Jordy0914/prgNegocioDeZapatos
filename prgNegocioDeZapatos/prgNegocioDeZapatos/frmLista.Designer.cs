@@ -1,6 +1,6 @@
 ﻿namespace prgNegocioDeZapatos
 {
-    partial class frmListaProducto
+    partial class frmLista
     {
         /// <summary>
         /// Required designer variable.
@@ -52,12 +52,12 @@
             // 
             // codigo
             // 
-            this.codigo.Text = "Codigo Producto";
+            this.codigo.Text = "Codigo";
             this.codigo.Width = 106;
             // 
             // producto
             // 
-            this.producto.Text = "Producto";
+            this.producto.Text = "Nombre";
             this.producto.Width = 172;
             // 
             // btnSalir

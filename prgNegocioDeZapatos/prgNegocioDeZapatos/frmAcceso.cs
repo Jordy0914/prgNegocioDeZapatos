@@ -87,8 +87,8 @@ namespace prgNegocioDeZapatos
             if (intContador <= 2)
             {
                 //Llenado de lo atributos de la clase EntidadUsuario
-                pEntidadUsuario.Login = (this.txtLogin.Text.Trim());
-                pEntidadUsuario.Password = (this.txtPassword.Text.Trim());
+                pEntidadUsuario.setLogin(this.txtLogin.Text.Trim());
+                pEntidadUsuario.setPassword(this.txtPassword.Text.Trim());
 
                 //Consltar si el usuario existe
                 dtrUsuario = usuario.mConsultarUsuario(conexion, pEntidadUsuario);
