@@ -21,13 +21,13 @@ namespace LogicaNegocios
             this.strSentencia = "Select count(*) from tbRoles";
             return cone.mSeleccionar(strSentencia, cone);
         }
-         /////////////////////////////////////////////////////////////////
-
-        public SqlDataReader mConsultarRolNombre(clsConexion cone)
+        
+        public SqlDataReader mConsultarNombreRol(clsConexion cone, clsEntidadRol pEntidadRol)
         {
-            strSentencia = "Select * from tbRoles";
+            strSentencia = "Select R.nombre from tbRoles R where R.nombre = '"+pEntidadRol.getNombre()+"'";
             return cone.mSeleccionar(strSentencia, cone);
         }
+
 
 
         public SqlDataReader mConsultarRolGeneral(clsConexion cone, clsEntidadRol pEntidadRol)

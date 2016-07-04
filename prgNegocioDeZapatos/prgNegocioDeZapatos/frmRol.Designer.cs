@@ -34,20 +34,20 @@
             this.chConsultar = new MaterialSkin.Controls.MaterialCheckBox();
             this.chInsertar = new MaterialSkin.Controls.MaterialCheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnConsultar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtNombreRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtCodRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblAdvertencia = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBoxBotones = new System.Windows.Forms.GroupBox();
+            this.btnEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnModificar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAgregar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnModificar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnConsultar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupBoxBotones.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -147,6 +147,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion del Rol";
             // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Depth = 0;
+            this.btnConsultar.Location = new System.Drawing.Point(278, 37);
+            this.btnConsultar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Primary = true;
+            this.btnConsultar.Size = new System.Drawing.Size(75, 30);
+            this.btnConsultar.TabIndex = 28;
+            this.btnConsultar.Text = "Agregar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            // 
             // txtNombreRol
             // 
             this.txtNombreRol.Depth = 0;
@@ -175,7 +187,7 @@
             this.txtCodRol.SelectedText = "";
             this.txtCodRol.SelectionLength = 0;
             this.txtCodRol.SelectionStart = 0;
-            this.txtCodRol.Size = new System.Drawing.Size(139, 23);
+            this.txtCodRol.Size = new System.Drawing.Size(55, 23);
             this.txtCodRol.TabIndex = 28;
             this.txtCodRol.TabStop = false;
             this.txtCodRol.UseSystemPasswordChar = false;
@@ -222,22 +234,56 @@
             this.materialLabel1.TabIndex = 25;
             this.materialLabel1.Text = "Codigo del Rol";
             // 
-            // groupBox3
+            // groupBoxBotones
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.btnEliminar);
-            this.groupBox3.Controls.Add(this.btnModificar);
-            this.groupBox3.Controls.Add(this.btnSalir);
-            this.groupBox3.Controls.Add(this.btnAgregar);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(113, 300);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(413, 65);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
+            this.groupBoxBotones.AutoSize = true;
+            this.groupBoxBotones.BackColor = System.Drawing.Color.White;
+            this.groupBoxBotones.Controls.Add(this.btnEliminar);
+            this.groupBoxBotones.Controls.Add(this.btnModificar);
+            this.groupBoxBotones.Controls.Add(this.btnSalir);
+            this.groupBoxBotones.Controls.Add(this.btnAgregar);
+            this.groupBoxBotones.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxBotones.Location = new System.Drawing.Point(113, 300);
+            this.groupBoxBotones.Name = "groupBoxBotones";
+            this.groupBoxBotones.Size = new System.Drawing.Size(413, 65);
+            this.groupBoxBotones.TabIndex = 8;
+            this.groupBoxBotones.TabStop = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.Depth = 0;
+            this.btnEliminar.Location = new System.Drawing.Point(231, 19);
+            this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Primary = true;
+            this.btnEliminar.Size = new System.Drawing.Size(75, 30);
+            this.btnEliminar.TabIndex = 29;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnModificar.Depth = 0;
+            this.btnModificar.Location = new System.Drawing.Point(119, 19);
+            this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Primary = true;
+            this.btnModificar.Size = new System.Drawing.Size(89, 30);
+            this.btnModificar.TabIndex = 28;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // btnSalir
             // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.Depth = 0;
             this.btnSalir.Location = new System.Drawing.Point(328, 19);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
@@ -251,6 +297,9 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregar.Depth = 0;
             this.btnAgregar.Location = new System.Drawing.Point(20, 19);
             this.btnAgregar.MouseState = MaterialSkin.MouseState.HOVER;
@@ -261,42 +310,6 @@
             this.btnAgregar.Text = "Insertar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // btnModificar
-            // 
-            this.btnModificar.Depth = 0;
-            this.btnModificar.Location = new System.Drawing.Point(119, 19);
-            this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Primary = true;
-            this.btnModificar.Size = new System.Drawing.Size(89, 30);
-            this.btnModificar.TabIndex = 28;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Depth = 0;
-            this.btnEliminar.Location = new System.Drawing.Point(231, 19);
-            this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Primary = true;
-            this.btnEliminar.Size = new System.Drawing.Size(75, 30);
-            this.btnEliminar.TabIndex = 29;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Depth = 0;
-            this.btnConsultar.Location = new System.Drawing.Point(278, 37);
-            this.btnConsultar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Primary = true;
-            this.btnConsultar.Size = new System.Drawing.Size(75, 30);
-            this.btnConsultar.TabIndex = 28;
-            this.btnConsultar.Text = "Agregar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            // 
             // frmRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,7 +317,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(646, 402);
             this.ControlBox = false;
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBoxBotones);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmRol";
@@ -315,15 +328,16 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
+            this.groupBoxBotones.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBoxBotones;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialCheckBox chEliminar;

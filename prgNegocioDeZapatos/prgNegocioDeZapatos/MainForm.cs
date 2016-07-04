@@ -52,7 +52,6 @@ namespace prgNegocioDeZapatos
             this.mAlmacenarVistasRolTemp();
             this.mAlmacenarVistasDirectasTemp();
             this.mCrearMenu();
-            this.clUsuario.mEliminarVistasTemp(this.conexion);
         }
 
         #region Metodos Almacenar VistasTemp y Creacion del menu
@@ -161,13 +160,7 @@ namespace prgNegocioDeZapatos
                 if (dtrSubMenu.HasRows)
                     mCrearSubMenusRecursivo(dtrSubMenu, subMenu);
                 else
-                {
-                    pEntidadVista.Insertar = (Convert.ToInt32((dtr.GetBoolean(6))));
-                    pEntidadVista.Modificar = (Convert.ToInt32((dtr.GetBoolean(7))));
-                    pEntidadVista.Eliminar = (Convert.ToInt32((dtr.GetBoolean(8))));
-                    pEntidadVista.Consultar = (Convert.ToInt32((dtr.GetBoolean(9))));
-                    subMenu.Click += new EventHandler(MenuItemClicked);
-                }         
+                    subMenu.Click += new EventHandler(MenuItemClicked);      
             }
         }
         #endregion
@@ -181,7 +174,7 @@ namespace prgNegocioDeZapatos
             {
                 string NombreFormulario = ((ToolStripItem)sender).Tag.ToString();
                 Type tipo = Ensamblado.GetType(Ensamblado.GetName().Name + "." + NombreFormulario);
-                Object[] parametros = { this.conexion, this.pEntidadUsuario, this.pEntidadVista }; 
+                Object[] parametros = { this.conexion, this.pEntidadUsuario, NombreFormulario }; 
 
                 if (tipo == null)
                 {
@@ -219,9 +212,9 @@ namespace prgNegocioDeZapatos
 
         private void SalirClicked(object sender, EventArgs e)
         {
+            this.clUsuario.mEliminarVistasTemp(this.conexion);
             Application.Restart(); 
         }
-
         #endregion
     }
 }

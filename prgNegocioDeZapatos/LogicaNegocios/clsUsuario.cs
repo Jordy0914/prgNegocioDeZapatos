@@ -45,7 +45,7 @@ namespace LogicaNegocios
 
         public SqlDataReader mCrearMenusSecundarios (clsConexion cone, int menuPadre)
         {
-            strSentencia = "Select distinct VT.idVista, VT.idPadre, VT.descripcion, VT.posicion, VT.habilitadoMenu, VT.url, VT.insertar, VT.modificar, VT.eliminar, VT.consultar from tbVistasTemp VT where VT.idPadre = " + menuPadre+" order by VT.posicion";
+            strSentencia = "Select distinct VT.idVista, VT.idPadre, VT.descripcion, VT.posicion, VT.habilitadoMenu, VT.url from tbVistasTemp VT where VT.idPadre = " + menuPadre+" order by VT.posicion";
             return cone.mSeleccionar(strSentencia, cone);
         }
 

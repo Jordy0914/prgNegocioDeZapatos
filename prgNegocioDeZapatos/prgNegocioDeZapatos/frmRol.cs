@@ -19,15 +19,20 @@ namespace prgNegocioDeZapatos
 {
     public partial class frmRol : MaterialForm , IPermisos
     {
+        #region Atributos
         private readonly MaterialSkinManager materialSkinManager;
         private clsConexion conexion;
         private clsEntidadRol pEntidadRol;
         private clsEntidadUsuario pEntidadUsuario;
         private clsEntidadVista pEntidadVista;
         private clsRol clRol;
-        private SqlDataReader dtrRol;       
+        private clsVistas clVistas;
+        private SqlDataReader dtrVista;
+        private SqlDataReader dtrRol;
+        private string nombreForm;
+        #endregion
 
-        public frmRol(clsConexion cone,clsEntidadUsuario pEntidadUsuario,clsEntidadVista vista)
+        public frmRol(clsConexion cone,clsEntidadUsuario pEntidadUsuario, string nombreForm)
         {
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -35,20 +40,36 @@ namespace prgNegocioDeZapatos
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
 
             this.conexion = cone;
-            this.pEntidadRol = new clsEntidadRol();
             this.pEntidadUsuario = pEntidadUsuario;
-            this.pEntidadVista = vista;
+            this.pEntidadRol = new clsEntidadRol();
+            this.pEntidadVista = new clsEntidadVista();
+            
             this.clRol = new clsRol();
+            this.clVistas = new clsVistas();
+            this.nombreForm = nombreForm;
 
             InitializeComponent();
         }
 
         private void frmRol_Load(object sender, EventArgs e)
         {
+            pEntidadVista.Url = nombreForm;
+            this.dtrVista = clVistas.mConsultarPermisosVista(this.conexion, this.pEntidadVista);
+
+            if(dtrVista.Read())
+            {
+                this.pEntidadVista.Insertar = Convert.ToInt32(dtrVista.GetBoolean(0));
+                this.pEntidadVista.Modificar = Convert.ToInt32(dtrVista.GetBoolean(1));
+                this.pEntidadVista.Eliminar = Convert.ToInt32(dtrVista.GetBoolean(2));
+                this.pEntidadVista.Consultar = Convert.ToInt32(dtrVista.GetBoolean(3));
+            }
+
             this.activarInsertar(Convert.ToBoolean(this.pEntidadVista.Insertar));
             this.activarModificar(Convert.ToBoolean(this.pEntidadVista.Modificar));
             this.activarEliminar(Convert.ToBoolean(this.pEntidadVista.Eliminar));
             this.activarConsultar(Convert.ToBoolean(this.pEntidadVista.Consultar));
+      
+            this.txtNombreRol.LostFocus += new EventHandler(Validar_Textbox);
         }
         
         private void btnSalir_Click(object sender, EventArgs e)
@@ -56,16 +77,20 @@ namespace prgNegocioDeZapatos
             Close();
         }
 
-        #region Metodos Propios
-        public void actualizarIdRol()
+        private void Validar_Textbox(object Sender, EventArgs e)
         {
-            dtrRol = clRol.mConsutarNumeroRol(this.conexion);
-            if (dtrRol.Read())
-                this.txtCodRol.Text = Convert.ToString(dtrRol.GetInt32(0));
-            else
-                this.txtCodRol.Text = "1";
+            pEntidadRol.setNombre(this.txtNombreRol.Text);
+            dtrRol = clRol.mConsultarNombreRol(conexion,pEntidadRol);
+
+            if(dtrRol.HasRows)
+            {
+                this.lblAdvertencia.Visible = true;
+                this.lblAdvertencia.Text = "Este nombre ya existe";
+                this.txtNombreRol.Focus();
+            }
         }
 
+        #region Metodos del IPermisos
         public void activarInsertar(Boolean condicion)
         {
             this.btnAgregar.Enabled = condicion;
@@ -88,6 +113,17 @@ namespace prgNegocioDeZapatos
         {
             this.btnConsultar.Enabled = condicion;
             this.btnConsultar.Visible = condicion;
+        }
+        #endregion
+
+        #region Metodos Propios
+        public void actualizarIdRol()
+        {
+            dtrRol = clRol.mConsutarNumeroRol(this.conexion);
+            if (dtrRol.Read())
+                this.txtCodRol.Text = Convert.ToString(dtrRol.GetInt32(0));
+            else
+                this.txtCodRol.Text = "1";
         }
         #endregion
     }
