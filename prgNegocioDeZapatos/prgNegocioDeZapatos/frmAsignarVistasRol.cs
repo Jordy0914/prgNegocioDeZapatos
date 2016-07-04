@@ -127,8 +127,9 @@ namespace prgNegocioDeZapatos
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            frmModificarRolesVistas modificar = new frmModificarRolesVistas();
+            frmModificarRolesVistas modificar = new frmModificarRolesVistas(this.conexion);
             modificar.ShowDialog();
+            MessageBox.Show(modificar.IdVista + modificar.VistaName);
         }
         #endregion
 

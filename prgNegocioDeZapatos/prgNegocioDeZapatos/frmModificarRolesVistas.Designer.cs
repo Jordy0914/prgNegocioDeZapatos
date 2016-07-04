@@ -67,6 +67,8 @@
             this.lvGeneral.TabIndex = 3;
             this.lvGeneral.UseCompatibleStateImageBehavior = false;
             this.lvGeneral.View = System.Windows.Forms.View.Details;
+            this.lvGeneral.SelectedIndexChanged += new System.EventHandler(this.lvLista_SelectedIndexChanged);
+            this.lvGeneral.DoubleClick += new System.EventHandler(this.lvLista_DoubleClick);
             // 
             // CodigoRol
             // 

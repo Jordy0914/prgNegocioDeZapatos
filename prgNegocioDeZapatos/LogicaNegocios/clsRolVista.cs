@@ -19,6 +19,16 @@ namespace LogicaNegocios
         #endregion
 
         #region Metodos
+        public SqlDataReader mConsultarRolesVistasGeneral(clsConexion cone)
+        {
+            strSentencia = "Select RV.idRol, R.nombre, RV.idVista, V.descripcion " +
+                "from tbRolesVistas RV, tbRoles R, tbVistas V " +
+                "where RV.idRol = R.idRol " +
+                "and RV.idVista = V.idVista ";
+
+            return cone.mSeleccionar(strSentencia, cone);
+        }
+
         public Boolean insertarRolVista(clsConexion cone, clsEntidadRolesVistas pEntidadRolVista, clsEntidadUsuario pEntidadUsuario)
         {
             strSentencia = "Insert into tbRolesVistas (idRol, idVista, insertar, modificar, eliminar, consultar, creadoPor, fechaCreacion) " +

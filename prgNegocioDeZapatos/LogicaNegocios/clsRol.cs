@@ -21,7 +21,13 @@ namespace LogicaNegocios
             this.strSentencia = "Select R.idRol, R.nombre from tbRoles R";
             return cone.mSeleccionar(strSentencia, cone);
         }
-        
+
+        public SqlDataReader mConsutarRol(clsConexion cone, clsEntidadRol pEntidadRol)
+        {
+            this.strSentencia = "Select * from tbRoles";
+            return cone.mSeleccionar(strSentencia, cone);
+        }
+
         public SqlDataReader mConsultarNombreRol(clsConexion cone, clsEntidadRol pEntidadRol)
         {
             strSentencia = "Select R.idRol, R.nombre from tbRoles R where R.nombre = '"+ pEntidadRol.Nombre +"' ";
