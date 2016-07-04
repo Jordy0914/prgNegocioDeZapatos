@@ -1,6 +1,6 @@
 ﻿namespace prgNegocioDeZapatos
 {
-    partial class frmAgregarZapatos
+    partial class frmAgregarProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,6 @@
             this.txtNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtModelo = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtCodigo = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,9 +51,9 @@
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnModificar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtConsultar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAgregar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtMarca = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
@@ -170,19 +169,6 @@
             this.txtCodigo.TabIndex = 13;
             this.txtCodigo.TabStop = false;
             this.txtCodigo.UseSystemPasswordChar = false;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Depth = 0;
-            this.btnBuscar.Location = new System.Drawing.Point(243, 46);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Primary = true;
-            this.btnBuscar.Size = new System.Drawing.Size(64, 28);
-            this.btnBuscar.TabIndex = 12;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -347,92 +333,95 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.AutoSize = true;
             this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.Controls.Add(this.btnSalir);
             this.groupBox3.Controls.Add(this.btnEliminar);
             this.groupBox3.Controls.Add(this.btnModificar);
-            this.groupBox3.Controls.Add(this.txtConsultar);
             this.groupBox3.Controls.Add(this.btnAgregar);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox3.Location = new System.Drawing.Point(16, 412);
+            this.groupBox3.ForeColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Location = new System.Drawing.Point(0, 391);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(621, 62);
+            this.groupBox3.Size = new System.Drawing.Size(662, 66);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
             // btnSalir
             // 
+            this.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(513, 23);
+            this.btnSalir.Enabled = false;
+            this.btnSalir.Location = new System.Drawing.Point(433, 25);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
-            this.btnSalir.Size = new System.Drawing.Size(67, 24);
+            this.btnSalir.Size = new System.Drawing.Size(89, 23);
             this.btnSalir.TabIndex = 17;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Visible = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEliminar.Depth = 0;
-            this.btnEliminar.Location = new System.Drawing.Point(372, 23);
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.Location = new System.Drawing.Point(247, 25);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Primary = true;
-            this.btnEliminar.Size = new System.Drawing.Size(80, 24);
+            this.btnEliminar.Size = new System.Drawing.Size(89, 23);
             this.btnEliminar.TabIndex = 16;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
+            this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnModificar.Depth = 0;
-            this.btnModificar.Location = new System.Drawing.Point(254, 23);
+            this.btnModificar.Enabled = false;
+            this.btnModificar.Location = new System.Drawing.Point(154, 26);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Primary = true;
-            this.btnModificar.Size = new System.Drawing.Size(83, 24);
+            this.btnModificar.Size = new System.Drawing.Size(89, 23);
             this.btnModificar.TabIndex = 15;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Visible = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // txtConsultar
-            // 
-            this.txtConsultar.Depth = 0;
-            this.txtConsultar.Location = new System.Drawing.Point(11, 23);
-            this.txtConsultar.Margin = new System.Windows.Forms.Padding(2);
-            this.txtConsultar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtConsultar.Name = "txtConsultar";
-            this.txtConsultar.Primary = true;
-            this.txtConsultar.Size = new System.Drawing.Size(88, 24);
-            this.txtConsultar.TabIndex = 14;
-            this.txtConsultar.Text = "Consultar";
-            this.txtConsultar.UseVisualStyleBackColor = true;
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAgregar.Depth = 0;
-            this.btnAgregar.Location = new System.Drawing.Point(135, 23);
+            this.btnAgregar.Enabled = false;
+            this.btnAgregar.Location = new System.Drawing.Point(340, 25);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Primary = true;
-            this.btnAgregar.Size = new System.Drawing.Size(79, 24);
+            this.btnAgregar.Size = new System.Drawing.Size(89, 24);
             this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Visible = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.txtMarca);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.cboColor);
@@ -441,7 +430,6 @@
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.txtModelo);
             this.groupBox1.Controls.Add(this.txtCodigo);
-            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -453,10 +441,25 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(337, 294);
+            this.groupBox1.Size = new System.Drawing.Size(320, 296);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion General";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Image = global::prgNegocioDeZapatos.Properties.Resources.magnifier1;
+            this.btnBuscar.Location = new System.Drawing.Point(242, 11);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(48, 51);
+            this.btnBuscar.TabIndex = 3;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtMarca
             // 
@@ -485,12 +488,12 @@
             this.label10.TabIndex = 19;
             this.label10.Text = "Marca";
             // 
-            // frmAgregarZapatos
+            // frmAgregarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(662, 503);
+            this.ClientSize = new System.Drawing.Size(662, 457);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -498,15 +501,15 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "frmAgregarZapatos";
+            this.Name = "frmAgregarProductos";
             this.Text = "Agregar Zapatos";
-            this.Load += new System.EventHandler(this.frmAgregarZapatos_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -526,7 +529,6 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombre;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtModelo;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCodigo;
-        private MaterialSkin.Controls.MaterialRaisedButton btnBuscar;
         private System.Windows.Forms.ComboBox cboColor;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCategoria;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCantidad;
@@ -535,10 +537,10 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
         private MaterialSkin.Controls.MaterialRaisedButton btnEliminar;
         private MaterialSkin.Controls.MaterialRaisedButton btnModificar;
-        private MaterialSkin.Controls.MaterialRaisedButton txtConsultar;
         private MaterialSkin.Controls.MaterialRaisedButton btnAgregar;
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtMarca;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
