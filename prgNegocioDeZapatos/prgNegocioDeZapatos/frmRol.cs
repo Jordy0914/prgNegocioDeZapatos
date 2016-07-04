@@ -159,7 +159,7 @@ namespace prgNegocioDeZapatos
         }
         #endregion
 
-        #region Metodos del IPermisos
+        #region Metodos de la Interface IPermisos
         public void activarInsertar(Boolean condicion)
         {
             this.btnAgregar.Enabled = condicion;

@@ -34,8 +34,8 @@
             this.btnEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBuscarVista = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnBuscarRol = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnConsultarVista = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnConsultarRol = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtCodVista = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtNombreRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtCodRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -120,8 +120,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.btnBuscarVista);
-            this.groupBox1.Controls.Add(this.btnBuscarRol);
+            this.groupBox1.Controls.Add(this.btnConsultarVista);
+            this.groupBox1.Controls.Add(this.btnConsultarRol);
             this.groupBox1.Controls.Add(this.txtCodVista);
             this.groupBox1.Controls.Add(this.txtNombreRol);
             this.groupBox1.Controls.Add(this.txtCodRol);
@@ -140,29 +140,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion General";
             // 
-            // btnBuscarVista
+            // btnConsultarVista
             // 
-            this.btnBuscarVista.Depth = 0;
-            this.btnBuscarVista.Location = new System.Drawing.Point(311, 139);
-            this.btnBuscarVista.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnBuscarVista.Name = "btnBuscarVista";
-            this.btnBuscarVista.Primary = true;
-            this.btnBuscarVista.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarVista.TabIndex = 8;
-            this.btnBuscarVista.Text = "buscar";
-            this.btnBuscarVista.UseVisualStyleBackColor = true;
+            this.btnConsultarVista.Depth = 0;
+            this.btnConsultarVista.Location = new System.Drawing.Point(313, 138);
+            this.btnConsultarVista.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnConsultarVista.Name = "btnConsultarVista";
+            this.btnConsultarVista.Primary = true;
+            this.btnConsultarVista.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultarVista.TabIndex = 8;
+            this.btnConsultarVista.Text = "buscar";
+            this.btnConsultarVista.UseVisualStyleBackColor = true;
             // 
-            // btnBuscarRol
+            // btnConsultarRol
             // 
-            this.btnBuscarRol.Depth = 0;
-            this.btnBuscarRol.Location = new System.Drawing.Point(311, 38);
-            this.btnBuscarRol.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnBuscarRol.Name = "btnBuscarRol";
-            this.btnBuscarRol.Primary = true;
-            this.btnBuscarRol.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarRol.TabIndex = 7;
-            this.btnBuscarRol.Text = "buscar";
-            this.btnBuscarRol.UseVisualStyleBackColor = true;
+            this.btnConsultarRol.Depth = 0;
+            this.btnConsultarRol.Location = new System.Drawing.Point(313, 39);
+            this.btnConsultarRol.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnConsultarRol.Name = "btnConsultarRol";
+            this.btnConsultarRol.Primary = true;
+            this.btnConsultarRol.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultarRol.TabIndex = 7;
+            this.btnConsultarRol.Text = "buscar";
+            this.btnConsultarRol.UseVisualStyleBackColor = true;
             // 
             // txtCodVista
             // 
@@ -312,8 +312,8 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnEliminar;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
         private System.Windows.Forms.GroupBox groupBox1;
-        private MaterialSkin.Controls.MaterialRaisedButton btnBuscarVista;
-        private MaterialSkin.Controls.MaterialRaisedButton btnBuscarRol;
+        private MaterialSkin.Controls.MaterialRaisedButton btnConsultarVista;
+        private MaterialSkin.Controls.MaterialRaisedButton btnConsultarRol;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCodVista;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreRol;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCodRol;

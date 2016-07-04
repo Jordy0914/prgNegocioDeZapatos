@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using System.Data.SqlClient;
 using Entidades;
 using AccesoDatos;
-
+using System.Data.SqlClient;
 
 namespace LogicaNegocios
 {
-    public class clsVistas
+    public class clsRolVista
     {
         #region Atributos
         //Permite las sentencias del SQL Transac
@@ -20,11 +19,6 @@ namespace LogicaNegocios
         #endregion
 
         #region Metodos
-        public SqlDataReader mConsultarPermisosVista(clsConexion cone, clsEntidadVista pEntidadVista)
-        {
-            strSentencia = "Select VT.insertar, VT.modificar, VT.eliminar, VT.consultar from tbVistasTemp VT where VT.url ='" + pEntidadVista.Url + "'";
-            return cone.mSeleccionar(strSentencia, cone);
-        }//fin del metodo mConsultarIdVista
         #endregion
     }
 }
