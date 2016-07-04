@@ -21,7 +21,7 @@ namespace LogicaNegocios
         //Metodo para accesar al sistema, trae codigo y clave de ventana de acceso
         public SqlDataReader mConsultarUsuario(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Select login, password from tbUsuario where login='" + pEntidadUsuario.getLogin()+ "' and password='" + pEntidadUsuario.getPassword() + "'";
+            strSentencia = "Select idUsuario, login, password from tbUsuario where login='" + pEntidadUsuario.getLogin()+ "' and password='" + pEntidadUsuario.getPassword() + "'";
             return cone.mSeleccionar(strSentencia, cone);
         }
 
@@ -94,6 +94,14 @@ namespace LogicaNegocios
             strSentencia = "Select U.idUsuario, U.login from tbUsuario U";
             return cone.mSeleccionar(strSentencia, cone);
         }
+
+        public Boolean mEliminarUsuario(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
+        {
+
+            strSentencia = "Delete from tbUsuario where idUsuario=" + pEntidadUsuario.getIdUsuario() + "";
+            return cone.mEjecutar(strSentencia, cone);
+
+        }//fin del metodo
 
         #endregion
     }
