@@ -495,6 +495,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAgregarProductos";
             this.Text = "Agregar Zapatos";
+            this.Load += new System.EventHandler(this.frmAgregarProductos_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
