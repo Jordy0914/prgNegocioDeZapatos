@@ -16,7 +16,7 @@ using System.Data.SqlClient;
 
 namespace prgNegocioDeZapatos
 {
-    public partial class frmFactura : MaterialForm
+    public partial class frmFactura : MaterialForm, IPermisos
     {
         private readonly MaterialSkinManager materialSkinManager;
         SqlDataReader dtrFactura,dtrFacturaE,dtrProducto;
@@ -36,16 +36,16 @@ namespace prgNegocioDeZapatos
         private Double descuento;
         private Double totalDescuento;
         
-        public frmFactura() {
+        public frmFactura(clsConexion cone, clsEntidadUsuario pEntidadUsuario) {
 
-            //clsConexion cone, clsEntidadUsuario pEntidadUsuario
+            //clsConexion cone, clsEntidadUsuario pEntidadUsuario,
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
 
-            //this.conexion = cone;
-            this.conexion = new clsConexion();
+            this.conexion = cone;
+            //this.conexion = new clsConexion();
             factura = new clsEntidadFactura();
             clFactura = new clsFactura();
             producto = new clsEntidadProducto();
@@ -285,7 +285,23 @@ namespace prgNegocioDeZapatos
 
         }//fin de la accion del boton agregar
 
-  
+/////////////////////////////////////// Metodo que verifica que la cantidad del producto sea mayor que 0 /////////////////////////////////
+
+        private Boolean mVerificarExistencia()
+        {
+            dtrProducto = clProducto.mConsultarProducto(conexion, producto);
+
+            if (dtrProducto.Read())
+            {
+                if (dtrProducto.GetInt32(9) > 0)
+                    return true;
+            }
+            return false;
+        }//fin del metodo mverificarExistencia
+
+
+
+
 /////////////////////////////// Metodo para calcular el subtotal ///////////////////////////////////////////////// 
 
         public int calcularPrecio()
@@ -294,7 +310,7 @@ namespace prgNegocioDeZapatos
 
         }//fin del metodo para calcular el subtotal
 
-/// //////////////////////////////// Metodo para disminuir el subtotal/////////////////////////////////////////////
+/////////////////////////////////// Metodo para disminuir el subtotal /////////////////////////////////////////////
 
         public int disminuirPrecio()
         {
@@ -348,17 +364,17 @@ namespace prgNegocioDeZapatos
         }//fin del metodo limpiar
 
 
-        private Boolean mVerificarExistencia()
-        {
-            dtrProducto = clProducto.mConsultarProducto(conexion, producto);
 
-            if (dtrProducto.Read())
-            {
-                if (dtrProducto.GetInt32(9) > 0)
-                    return true;
-            }
-            return false;
-        }
+
+///////////////////////////////////// Permisos heredados de la clase iPermisos ///////////////////////////////////////////
+
+        public void activarInsertar(Boolean condicion) { }
+
+       public void activarModificar(Boolean condicion) { }
+
+       public void activarEliminar(Boolean condicion) { }
+
+       public void activarConsultar(Boolean condicion) { }
 
     }//fin de la clase
 }
