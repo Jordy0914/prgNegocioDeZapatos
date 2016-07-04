@@ -25,8 +25,11 @@ namespace prgNegocioDeZapatos
         SqlDataReader dtrFacturas;
         public int codigoFacturas;
         public Boolean bolEliminar;
+        clsVistas clVistas;
+        clsEntidadUsuario usuario;
+        
 
-        public frmListadoFacturas()
+        public frmListadoFacturas(clsConexion cone, clsEntidadUsuario pEntidadUsuario, clsEntidadVista vista)
         {
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -35,7 +38,9 @@ namespace prgNegocioDeZapatos
 
             this.clFactura = new clsFactura();
             this.factura = new clsEntidadFacturaEncabezado();
-            this.conexion = new clsConexion();
+            this.conexion = cone;
+            usuario = pEntidadUsuario;
+            this.clVistas = new clsVistas();
 
             InitializeComponent();
            
@@ -46,7 +51,7 @@ namespace prgNegocioDeZapatos
           
         }
 
-        public int getCodProductos()
+        public int getCodigosFacturas()
         {
             return (codigoFacturas);
         }//fin del metodo
@@ -59,7 +64,7 @@ namespace prgNegocioDeZapatos
                 if (lvFacturas.Items[i].Selected)
                 {
                     codigoFacturas = Convert.ToInt32(lvFacturas.Items[i].Text);
-                    MessageBox.Show("" + codigoFacturas);
+                    //MessageBox.Show("" + codigoFacturas);
 
                 }//fin del if 
 
@@ -73,10 +78,14 @@ namespace prgNegocioDeZapatos
            
         }//fin del metodo para llenar la lista con datos
 
+
+
+////////////////////////////////////////////// Accion del boton Buscar ////////////////////////////////////////////////////////
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+           
             factura.setIdFactura(Convert.ToInt32(txtIdFactura.Text.Trim()));
-
             dtrFacturas = clFactura.mConsultarFacturasGenerales(conexion, factura);
 
             if (txtIdFactura.Text=="") {
@@ -84,27 +93,26 @@ namespace prgNegocioDeZapatos
                 MessageBox.Show("Debe de digitar el codigo de la factura que desear buscar");
             }//fin del if que verifica que se digite el numero de factua
 
-            else {
-
-              while (dtrFacturas.Read())
+            else {              
+                    while (dtrFacturas.Read())
                      {
                         ListViewItem lista;
                         lista = lvFacturas.Items.Add(Convert.ToString(dtrFacturas.GetInt32(0)));
                         lista.SubItems.Add(Convert.ToString(dtrFacturas.GetInt32(1)));
                         lista.SubItems.Add(Convert.ToString(dtrFacturas.GetInt32(2)));
-                        lista.SubItems.Add(Convert.ToString(dtrFacturas.GetInt32(3)));
+                        lista.SubItems.Add(Convert.ToString(dtrFacturas.GetDecimal(3)));
                         lista.SubItems.Add(Convert.ToString(dtrFacturas.GetDecimal(4)));
-                        lista.SubItems.Add(Convert.ToString(dtrFacturas.GetDecimal(5)));
 
                    }//fin del while para llenar la lista con los datos del select
-                
             }//fin del else que se realiza si se digita el numero de factura
         }//fin de la accion del boton buscar
 
+
+
         private void lvFacturas_DoubleClick(object sender, EventArgs e)
         {
-            //factura.setIdFactura(codigoFacturas);
-            //bolEliminar = clFactura.mEliminarFactura(conexion, factura);
+            factura.setIdFactura(codigoFacturas);
+            bolEliminar = clFactura.mEliminarFactura(conexion, factura);
 
         }//fin de la accion del double click de la lista
 
@@ -121,8 +129,8 @@ namespace prgNegocioDeZapatos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            factura.setIdFactura(codigoFacturas);
-            bolEliminar = clFactura.mEliminarFactura(conexion, factura);
+            //factura.setIdFactura(codigoFacturas);
+            //bolEliminar = clFactura.mEliminarFactura(conexion, factura);
         }
     }
 }

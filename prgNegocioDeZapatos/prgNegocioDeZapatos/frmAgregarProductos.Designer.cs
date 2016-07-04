@@ -82,7 +82,7 @@
             this.cboColor.Location = new System.Drawing.Point(88, 178);
             this.cboColor.Margin = new System.Windows.Forms.Padding(2);
             this.cboColor.Name = "cboColor";
-            this.cboColor.Size = new System.Drawing.Size(126, 23);
+            this.cboColor.Size = new System.Drawing.Size(126, 26);
             this.cboColor.TabIndex = 18;
             // 
             // txtCategoria
@@ -97,7 +97,7 @@
             this.txtCategoria.SelectedText = "";
             this.txtCategoria.SelectionLength = 0;
             this.txtCategoria.SelectionStart = 0;
-            this.txtCategoria.Size = new System.Drawing.Size(126, 23);
+            this.txtCategoria.Size = new System.Drawing.Size(126, 28);
             this.txtCategoria.TabIndex = 17;
             this.txtCategoria.TabStop = false;
             this.txtCategoria.UseSystemPasswordChar = false;
@@ -114,7 +114,7 @@
             this.txtTalla.SelectedText = "";
             this.txtTalla.SelectionLength = 0;
             this.txtTalla.SelectionStart = 0;
-            this.txtTalla.Size = new System.Drawing.Size(126, 23);
+            this.txtTalla.Size = new System.Drawing.Size(126, 28);
             this.txtTalla.TabIndex = 16;
             this.txtTalla.TabStop = false;
             this.txtTalla.UseSystemPasswordChar = false;
@@ -131,7 +131,7 @@
             this.txtNombre.SelectedText = "";
             this.txtNombre.SelectionLength = 0;
             this.txtNombre.SelectionStart = 0;
-            this.txtNombre.Size = new System.Drawing.Size(126, 23);
+            this.txtNombre.Size = new System.Drawing.Size(126, 28);
             this.txtNombre.TabIndex = 15;
             this.txtNombre.TabStop = false;
             this.txtNombre.UseSystemPasswordChar = false;
@@ -148,7 +148,7 @@
             this.txtModelo.SelectedText = "";
             this.txtModelo.SelectionLength = 0;
             this.txtModelo.SelectionStart = 0;
-            this.txtModelo.Size = new System.Drawing.Size(126, 23);
+            this.txtModelo.Size = new System.Drawing.Size(126, 28);
             this.txtModelo.TabIndex = 14;
             this.txtModelo.TabStop = false;
             this.txtModelo.UseSystemPasswordChar = false;
@@ -166,7 +166,7 @@
             this.txtCodigo.SelectedText = "";
             this.txtCodigo.SelectionLength = 0;
             this.txtCodigo.SelectionStart = 0;
-            this.txtCodigo.Size = new System.Drawing.Size(126, 23);
+            this.txtCodigo.Size = new System.Drawing.Size(126, 28);
             this.txtCodigo.TabIndex = 13;
             this.txtCodigo.TabStop = false;
             this.txtCodigo.UseSystemPasswordChar = false;
@@ -177,7 +177,7 @@
             this.label6.Location = new System.Drawing.Point(8, 258);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 16);
+            this.label6.Size = new System.Drawing.Size(90, 20);
             this.label6.TabIndex = 5;
             this.label6.Text = "Categoria";
             // 
@@ -187,7 +187,7 @@
             this.label5.Location = new System.Drawing.Point(10, 178);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 16);
+            this.label5.Size = new System.Drawing.Size(54, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "Color";
             // 
@@ -197,7 +197,7 @@
             this.label4.Location = new System.Drawing.Point(10, 139);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.Size = new System.Drawing.Size(50, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Talla";
             // 
@@ -207,7 +207,7 @@
             this.label3.Location = new System.Drawing.Point(4, 106);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 16);
+            this.label3.Size = new System.Drawing.Size(74, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nombre";
             // 
@@ -217,7 +217,7 @@
             this.label2.Location = new System.Drawing.Point(8, 65);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 16);
+            this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Modelo";
             // 
@@ -227,7 +227,7 @@
             this.label1.Location = new System.Drawing.Point(8, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 16);
+            this.label1.Size = new System.Drawing.Size(67, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo";
             // 
@@ -260,7 +260,7 @@
             this.txtCantidad.SelectedText = "";
             this.txtCantidad.SelectionLength = 0;
             this.txtCantidad.SelectionStart = 0;
-            this.txtCantidad.Size = new System.Drawing.Size(142, 23);
+            this.txtCantidad.Size = new System.Drawing.Size(142, 28);
             this.txtCantidad.TabIndex = 18;
             this.txtCantidad.TabStop = false;
             this.txtCantidad.UseSystemPasswordChar = false;
@@ -277,7 +277,7 @@
             this.txtPrecio.SelectedText = "";
             this.txtPrecio.SelectionLength = 0;
             this.txtPrecio.SelectionStart = 0;
-            this.txtPrecio.Size = new System.Drawing.Size(142, 23);
+            this.txtPrecio.Size = new System.Drawing.Size(142, 28);
             this.txtPrecio.TabIndex = 17;
             this.txtPrecio.TabStop = false;
             this.txtPrecio.UseSystemPasswordChar = false;
@@ -294,7 +294,7 @@
             this.txtCosto.SelectedText = "";
             this.txtCosto.SelectionLength = 0;
             this.txtCosto.SelectionStart = 0;
-            this.txtCosto.Size = new System.Drawing.Size(145, 23);
+            this.txtCosto.Size = new System.Drawing.Size(145, 28);
             this.txtCosto.TabIndex = 16;
             this.txtCosto.TabStop = false;
             this.txtCosto.UseSystemPasswordChar = false;
@@ -306,7 +306,7 @@
             this.label9.Location = new System.Drawing.Point(4, 102);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 16);
+            this.label9.Size = new System.Drawing.Size(83, 20);
             this.label9.TabIndex = 13;
             this.label9.Text = "Cantidad";
             // 
@@ -317,7 +317,7 @@
             this.label8.Location = new System.Drawing.Point(9, 60);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 16);
+            this.label8.Size = new System.Drawing.Size(63, 20);
             this.label8.TabIndex = 12;
             this.label8.Text = "Precio";
             // 
@@ -328,7 +328,7 @@
             this.label7.Location = new System.Drawing.Point(9, 19);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 16);
+            this.label7.Size = new System.Drawing.Size(58, 20);
             this.label7.TabIndex = 6;
             this.label7.Text = "Costo";
             // 
@@ -346,7 +346,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(662, 66);
+            this.groupBox3.Size = new System.Drawing.Size(662, 71);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
@@ -354,7 +354,7 @@
             // 
             this.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(433, 25);
+            this.btnSalir.Location = new System.Drawing.Point(433, 27);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
@@ -369,7 +369,7 @@
             // 
             this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEliminar.Depth = 0;
-            this.btnEliminar.Location = new System.Drawing.Point(340, 25);
+            this.btnEliminar.Location = new System.Drawing.Point(340, 27);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminar.Name = "btnEliminar";
@@ -384,7 +384,7 @@
             // 
             this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnModificar.Depth = 0;
-            this.btnModificar.Location = new System.Drawing.Point(247, 25);
+            this.btnModificar.Location = new System.Drawing.Point(247, 27);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnModificar.Name = "btnModificar";
@@ -399,7 +399,7 @@
             // 
             this.btnAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAgregar.Depth = 0;
-            this.btnAgregar.Location = new System.Drawing.Point(154, 25);
+            this.btnAgregar.Location = new System.Drawing.Point(154, 27);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregar.Name = "btnAgregar";
@@ -465,7 +465,7 @@
             this.txtMarca.SelectedText = "";
             this.txtMarca.SelectionLength = 0;
             this.txtMarca.SelectionStart = 0;
-            this.txtMarca.Size = new System.Drawing.Size(126, 23);
+            this.txtMarca.Size = new System.Drawing.Size(126, 28);
             this.txtMarca.TabIndex = 20;
             this.txtMarca.TabStop = false;
             this.txtMarca.UseSystemPasswordChar = false;
@@ -476,13 +476,13 @@
             this.label10.Location = new System.Drawing.Point(10, 219);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 16);
+            this.label10.Size = new System.Drawing.Size(61, 20);
             this.label10.TabIndex = 19;
             this.label10.Text = "Marca";
             // 
             // frmAgregarProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(662, 461);

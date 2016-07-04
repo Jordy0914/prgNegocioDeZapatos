@@ -36,10 +36,9 @@ namespace prgNegocioDeZapatos
         private int numeroFactura = 0;
         private Double descuento;
         private Double totalDescuento;
-        String fecha_actual;
-        DateTime Hoy;
+        clsVistas clVistas;
 
-        public frmFactura(clsConexion cone, clsEntidadUsuario pEntidadUsuario) {
+        public frmFactura(clsConexion cone, clsEntidadUsuario pEntidadUsuario, clsEntidadVista vista) {
 
             //clsConexion cone, clsEntidadUsuario pEntidadUsuario,
             materialSkinManager = MaterialSkinManager.Instance;
@@ -54,10 +53,8 @@ namespace prgNegocioDeZapatos
             producto = new clsEntidadProducto();
             clProducto = new clsProducto();
             facturaDetalle = new clsEntidadDetalleFactura();
+            this.clVistas = new clsVistas();
             usuario = pEntidadUsuario;
-
-            Hoy = DateTime.Today;
-            fecha_actual = Hoy.ToString("dd-MM-yyyy");
 
             InitializeComponent();
         }//fin del constructor
@@ -76,43 +73,41 @@ namespace prgNegocioDeZapatos
         private void btnInsertar_Click(object sender, EventArgs e)
         {
 
-            if (txtCodProducto.Text==""||txtProducto.Text==""||txtPrecio.Text==""||txtCantidadProducto.Text==""|| cboDescuento.Text=="") {
+            if (txtCodProducto.Text == "" || txtProducto.Text == "" || txtPrecio.Text == "" || txtCantidadProducto.Text == "" || cboDescuento.Text == "")
+            {
 
                 MessageBox.Show("Debe de llenar todos los campos");
             }
+            else
+            {
+                factura.setTotal(Convert.ToDouble(txtTotal.Text));
 
-            else { 
-            factura.setTotal(Convert.ToDouble(txtTotal.Text));
-           // factura.setIdUsuario(usuario.getIdUsuario());
-            //factura.setFechaCreacion(Convert.ToDateTime(fecha_actual));
+                bolAgregarEncabezado = clFactura.mInsertarFacturaEncabezado(conexion, factura, usuario);
 
-            facturaDetalle.setIdFactura(Convert.ToInt32(txtNumeroF.Text));
-            facturaDetalle.setIdProducto(Convert.ToInt32(this.lvProductos.Items[0].Text));
-            facturaDetalle.setCantidad(Convert.ToInt32(txtCantidad.Text));
-            facturaDetalle.setDescuento(descuento);
-            facturaDetalle.setSubTotal(Convert.ToDouble(txtSubTotal.Text));
-            
-          
 
-            bolAgregarEncabezado = clFactura.mInsertarFacturaEncabezado(conexion, factura);
-            bolAgregarDetalle = clFactura.mInsertarFacturaDetalle(conexion, facturaDetalle);
+                for (int i = 0; i < lvProductos.Items.Count; i++)
+                {
+                    facturaDetalle.setIdFactura(Convert.ToInt32(txtNumeroF.Text));
+                    facturaDetalle.setIdProducto(Convert.ToInt32(this.lvProductos.Items[i].Text));
+                    facturaDetalle.setCantidad(Convert.ToInt32(txtCantidad.Text));
+                    facturaDetalle.setDescuento(descuento);
+                    facturaDetalle.setSubTotal(Convert.ToDouble(txtSubTotal.Text));
+                    clFactura.mInsertarFacturaDetalle(conexion, facturaDetalle);
 
+                }//fin del for
+                bolAgregarDetalle = true;
+            }//fin del else
             if (bolAgregarEncabezado == true && bolAgregarDetalle == true)
             {
                 MessageBox.Show("Ha sido agregado correctamente", "Registro correcto", MessageBoxButtons.OK);
                 this.Limpiar();
-               
-
             }//fin del if de agregar
-
-            else {
-
+            else
+            {
                 MessageBox.Show("Problemas al agregar", "Error", MessageBoxButtons.OK);
 
                 this.Limpiar();
-
-               }//fin del else
-            }//fin del else
+            }
 
         }//fin de la accion del boton realizar venta
 
@@ -120,7 +115,7 @@ namespace prgNegocioDeZapatos
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-           
+            this.txtCantidadProducto.Text = "";
             frmLista consultarProducto = new frmLista(conexion,"producto");
             consultarProducto.ShowDialog();
 
@@ -254,8 +249,8 @@ namespace prgNegocioDeZapatos
 
         private void cboDescuento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            totalDescuento = total - ( Convert.ToDouble(cboDescuento.SelectedItem) / 100 * total) ;
-            descuento = Convert.ToDouble(cboDescuento.SelectedItem) / 100 * total;
+            totalDescuento = Math.Ceiling(total - (Convert.ToDouble(cboDescuento.SelectedItem) / 100 * total));
+            descuento = Convert.ToInt32(cboDescuento.SelectedItem) / 100 * total;
             this.txtTotal.Text = "" + totalDescuento;
 
         }//fin de la accion del combobox de descuento
@@ -362,6 +357,7 @@ namespace prgNegocioDeZapatos
                 if (dtrFacturaE.Read())
                 {
                   numeroFactura=((dtrFacturaE.GetInt32(0)));
+                    numeroFactura++;
                   this.txtNumeroF.Text = Convert.ToString(numeroFactura);
 
                 }//fin del if del read

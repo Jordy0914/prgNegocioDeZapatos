@@ -10,7 +10,6 @@ namespace Entidades
     {
 
 
-
         #region Atributos
 
         private int idFactura;
@@ -19,8 +18,6 @@ namespace Entidades
         private Double subtotal;
         private Double descuento;
      
-
-
         #endregion
 
 
@@ -96,8 +93,6 @@ namespace Entidades
             return subtotal;
         }
 
-
-
         public void setDescuento(Double descuento)
         {
             this.descuento = descuento;
@@ -112,10 +107,6 @@ namespace Entidades
         }
 
         #endregion
-
-
-
-
 
     }
 }

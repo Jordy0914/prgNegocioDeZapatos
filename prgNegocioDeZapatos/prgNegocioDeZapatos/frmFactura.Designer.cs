@@ -48,6 +48,7 @@
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.txtNumeroF = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnRemover = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtCantidadProducto = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.lvProductos = new System.Windows.Forms.ListView();
@@ -55,7 +56,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cboDescuento = new System.Windows.Forms.ComboBox();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
-            this.btnRemover = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -107,6 +107,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Depth = 0;
+            this.txtPrecio.Enabled = false;
             this.txtPrecio.Hint = "";
             this.txtPrecio.Location = new System.Drawing.Point(145, 132);
             this.txtPrecio.MouseState = MaterialSkin.MouseState.HOVER;
@@ -136,6 +137,7 @@
             // txtProducto
             // 
             this.txtProducto.Depth = 0;
+            this.txtProducto.Enabled = false;
             this.txtProducto.Hint = "";
             this.txtProducto.Location = new System.Drawing.Point(145, 74);
             this.txtProducto.MouseState = MaterialSkin.MouseState.HOVER;
@@ -354,6 +356,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion Producto";
             // 
+            // btnRemover
+            // 
+            this.btnRemover.Depth = 0;
+            this.btnRemover.Location = new System.Drawing.Point(467, 184);
+            this.btnRemover.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Primary = true;
+            this.btnRemover.Size = new System.Drawing.Size(75, 37);
+            this.btnRemover.TabIndex = 23;
+            this.btnRemover.Text = "Quitar";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            // 
             // txtCantidadProducto
             // 
             this.txtCantidadProducto.Depth = 0;
@@ -443,19 +458,6 @@
             this.materialLabel9.Size = new System.Drawing.Size(81, 19);
             this.materialLabel9.TabIndex = 12;
             this.materialLabel9.Text = "Descuento";
-            // 
-            // btnRemover
-            // 
-            this.btnRemover.Depth = 0;
-            this.btnRemover.Location = new System.Drawing.Point(467, 184);
-            this.btnRemover.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Primary = true;
-            this.btnRemover.Size = new System.Drawing.Size(75, 37);
-            this.btnRemover.TabIndex = 23;
-            this.btnRemover.Text = "Quitar";
-            this.btnRemover.UseVisualStyleBackColor = true;
-            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // frmFactura
             // 
