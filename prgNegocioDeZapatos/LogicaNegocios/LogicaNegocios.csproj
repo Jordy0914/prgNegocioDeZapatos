@@ -46,6 +46,7 @@
     <Compile Include="clsRolesUsuarios.cs" />
     <Compile Include="clsRolVista.cs" />
     <Compile Include="clsUsuario.cs" />
+    <Compile Include="clsUsuarioVista.cs" />
     <Compile Include="clsVistas.cs" />
     <Compile Include="clsProducto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

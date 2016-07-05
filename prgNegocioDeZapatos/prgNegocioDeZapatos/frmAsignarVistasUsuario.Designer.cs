@@ -35,7 +35,7 @@
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscarVista = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnBuscarRol = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnBuscarUsuario = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtCodVista = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtNombreUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtCodUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -44,8 +44,14 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.txtNombreVista = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chbConsultar = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chbEliminar = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chbModificar = new MaterialSkin.Controls.MaterialCheckBox();
+            this.chbInsertar = new MaterialSkin.Controls.MaterialCheckBox();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -56,7 +62,7 @@
             this.groupBox3.Controls.Add(this.btnEliminar);
             this.groupBox3.Controls.Add(this.btnSalir);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(23, 344);
+            this.groupBox3.Location = new System.Drawing.Point(78, 342);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -76,6 +82,7 @@
             this.btnAgregar.TabIndex = 20;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -89,6 +96,7 @@
             this.btnModificar.TabIndex = 22;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -102,6 +110,7 @@
             this.btnEliminar.TabIndex = 23;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 
@@ -115,12 +124,13 @@
             this.btnSalir.TabIndex = 21;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.btnBuscarVista);
-            this.groupBox1.Controls.Add(this.btnBuscarRol);
+            this.groupBox1.Controls.Add(this.btnBuscarUsuario);
             this.groupBox1.Controls.Add(this.txtCodVista);
             this.groupBox1.Controls.Add(this.txtNombreUsuario);
             this.groupBox1.Controls.Add(this.txtCodUsuario);
@@ -130,7 +140,7 @@
             this.groupBox1.Controls.Add(this.txtNombreVista);
             this.groupBox1.Controls.Add(this.materialLabel4);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(45, 91);
+            this.groupBox1.Location = new System.Drawing.Point(23, 82);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -142,7 +152,7 @@
             // btnBuscarVista
             // 
             this.btnBuscarVista.Depth = 0;
-            this.btnBuscarVista.Location = new System.Drawing.Point(311, 139);
+            this.btnBuscarVista.Location = new System.Drawing.Point(266, 142);
             this.btnBuscarVista.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscarVista.Name = "btnBuscarVista";
             this.btnBuscarVista.Primary = true;
@@ -150,18 +160,20 @@
             this.btnBuscarVista.TabIndex = 8;
             this.btnBuscarVista.Text = "buscar";
             this.btnBuscarVista.UseVisualStyleBackColor = true;
+            this.btnBuscarVista.Click += new System.EventHandler(this.btnConsultarVista_Click);
             // 
-            // btnBuscarRol
+            // btnBuscarUsuario
             // 
-            this.btnBuscarRol.Depth = 0;
-            this.btnBuscarRol.Location = new System.Drawing.Point(311, 38);
-            this.btnBuscarRol.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnBuscarRol.Name = "btnBuscarRol";
-            this.btnBuscarRol.Primary = true;
-            this.btnBuscarRol.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarRol.TabIndex = 7;
-            this.btnBuscarRol.Text = "buscar";
-            this.btnBuscarRol.UseVisualStyleBackColor = true;
+            this.btnBuscarUsuario.Depth = 0;
+            this.btnBuscarUsuario.Location = new System.Drawing.Point(266, 39);
+            this.btnBuscarUsuario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBuscarUsuario.Name = "btnBuscarUsuario";
+            this.btnBuscarUsuario.Primary = true;
+            this.btnBuscarUsuario.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarUsuario.TabIndex = 7;
+            this.btnBuscarUsuario.Text = "buscar";
+            this.btnBuscarUsuario.UseVisualStyleBackColor = true;
+            this.btnBuscarUsuario.Click += new System.EventHandler(this.btnConsultarUsuario_Click);
             // 
             // txtCodVista
             // 
@@ -175,7 +187,7 @@
             this.txtCodVista.SelectedText = "";
             this.txtCodVista.SelectionLength = 0;
             this.txtCodVista.SelectionStart = 0;
-            this.txtCodVista.Size = new System.Drawing.Size(121, 23);
+            this.txtCodVista.Size = new System.Drawing.Size(55, 23);
             this.txtCodVista.TabIndex = 6;
             this.txtCodVista.TabStop = false;
             this.txtCodVista.UseSystemPasswordChar = false;
@@ -192,7 +204,7 @@
             this.txtNombreUsuario.SelectedText = "";
             this.txtNombreUsuario.SelectionLength = 0;
             this.txtNombreUsuario.SelectionStart = 0;
-            this.txtNombreUsuario.Size = new System.Drawing.Size(128, 23);
+            this.txtNombreUsuario.Size = new System.Drawing.Size(190, 23);
             this.txtNombreUsuario.TabIndex = 5;
             this.txtNombreUsuario.TabStop = false;
             this.txtNombreUsuario.UseSystemPasswordChar = false;
@@ -209,7 +221,7 @@
             this.txtCodUsuario.SelectedText = "";
             this.txtCodUsuario.SelectionLength = 0;
             this.txtCodUsuario.SelectionStart = 0;
-            this.txtCodUsuario.Size = new System.Drawing.Size(128, 23);
+            this.txtCodUsuario.Size = new System.Drawing.Size(55, 23);
             this.txtCodUsuario.TabIndex = 3;
             this.txtCodUsuario.TabStop = false;
             this.txtCodUsuario.UseSystemPasswordChar = false;
@@ -265,7 +277,7 @@
             this.txtNombreVista.SelectedText = "";
             this.txtNombreVista.SelectionLength = 0;
             this.txtNombreVista.SelectionStart = 0;
-            this.txtNombreVista.Size = new System.Drawing.Size(121, 23);
+            this.txtNombreVista.Size = new System.Drawing.Size(190, 23);
             this.txtNombreVista.TabIndex = 3;
             this.txtNombreVista.TabStop = false;
             this.txtNombreVista.UseSystemPasswordChar = false;
@@ -283,12 +295,94 @@
             this.materialLabel4.TabIndex = 5;
             this.materialLabel4.Text = "Nombre de la vista";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.chbConsultar);
+            this.groupBox2.Controls.Add(this.chbEliminar);
+            this.groupBox2.Controls.Add(this.chbModificar);
+            this.groupBox2.Controls.Add(this.chbInsertar);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(460, 96);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(121, 213);
+            this.groupBox2.TabIndex = 32;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Permisos";
+            // 
+            // chbConsultar
+            // 
+            this.chbConsultar.AutoSize = true;
+            this.chbConsultar.Depth = 0;
+            this.chbConsultar.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chbConsultar.Location = new System.Drawing.Point(14, 171);
+            this.chbConsultar.Margin = new System.Windows.Forms.Padding(0);
+            this.chbConsultar.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chbConsultar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chbConsultar.Name = "chbConsultar";
+            this.chbConsultar.Ripple = true;
+            this.chbConsultar.Size = new System.Drawing.Size(89, 30);
+            this.chbConsultar.TabIndex = 3;
+            this.chbConsultar.Text = "Consultar";
+            this.chbConsultar.UseVisualStyleBackColor = true;
+            // 
+            // chbEliminar
+            // 
+            this.chbEliminar.AutoSize = true;
+            this.chbEliminar.Depth = 0;
+            this.chbEliminar.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chbEliminar.Location = new System.Drawing.Point(14, 121);
+            this.chbEliminar.Margin = new System.Windows.Forms.Padding(0);
+            this.chbEliminar.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chbEliminar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chbEliminar.Name = "chbEliminar";
+            this.chbEliminar.Ripple = true;
+            this.chbEliminar.Size = new System.Drawing.Size(80, 30);
+            this.chbEliminar.TabIndex = 2;
+            this.chbEliminar.Text = "Eliminar";
+            this.chbEliminar.UseVisualStyleBackColor = true;
+            // 
+            // chbModificar
+            // 
+            this.chbModificar.AutoSize = true;
+            this.chbModificar.Depth = 0;
+            this.chbModificar.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chbModificar.Location = new System.Drawing.Point(14, 72);
+            this.chbModificar.Margin = new System.Windows.Forms.Padding(0);
+            this.chbModificar.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chbModificar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chbModificar.Name = "chbModificar";
+            this.chbModificar.Ripple = true;
+            this.chbModificar.Size = new System.Drawing.Size(89, 30);
+            this.chbModificar.TabIndex = 1;
+            this.chbModificar.Text = "Modificar";
+            this.chbModificar.UseVisualStyleBackColor = true;
+            // 
+            // chbInsertar
+            // 
+            this.chbInsertar.AutoSize = true;
+            this.chbInsertar.Depth = 0;
+            this.chbInsertar.Font = new System.Drawing.Font("Roboto", 10F);
+            this.chbInsertar.Location = new System.Drawing.Point(14, 28);
+            this.chbInsertar.Margin = new System.Windows.Forms.Padding(0);
+            this.chbInsertar.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chbInsertar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chbInsertar.Name = "chbInsertar";
+            this.chbInsertar.Ripple = true;
+            this.chbInsertar.Size = new System.Drawing.Size(78, 30);
+            this.chbInsertar.TabIndex = 0;
+            this.chbInsertar.Text = "Insertar";
+            this.chbInsertar.UseVisualStyleBackColor = true;
+            // 
             // frmAsignarVistasUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 434);
+            this.ClientSize = new System.Drawing.Size(603, 434);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmAsignarVistasUsuario";
@@ -299,6 +393,8 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -312,7 +408,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscarVista;
-        private MaterialSkin.Controls.MaterialRaisedButton btnBuscarRol;
+        private MaterialSkin.Controls.MaterialRaisedButton btnBuscarUsuario;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCodVista;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreUsuario;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCodUsuario;
@@ -321,5 +417,10 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreVista;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private MaterialSkin.Controls.MaterialCheckBox chbConsultar;
+        private MaterialSkin.Controls.MaterialCheckBox chbEliminar;
+        private MaterialSkin.Controls.MaterialCheckBox chbModificar;
+        private MaterialSkin.Controls.MaterialCheckBox chbInsertar;
     }
 }

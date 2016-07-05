@@ -158,7 +158,7 @@ namespace prgNegocioDeZapatos
             }
             else
             {
-                frmModificarRolesVistas modificar = new frmModificarRolesVistas(this.conexion);
+                frmModificarRolesVistas modificar = new frmModificarRolesVistas(this.conexion, "rolVistas");
                 modificar.ShowDialog();
 
                 this.isSeleccionoDatos = modificar.isSeleciono;
@@ -199,7 +199,7 @@ namespace prgNegocioDeZapatos
             }
             else
             {
-                frmModificarRolesVistas modificar = new frmModificarRolesVistas(this.conexion);
+                frmModificarRolesVistas modificar = new frmModificarRolesVistas(this.conexion , "rolVistas");
                 modificar.ShowDialog();
 
                 this.isSeleccionoDatos = modificar.isSeleciono;

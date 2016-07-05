@@ -85,7 +85,7 @@
             // 
             // NombreRol
             // 
-            this.NombreRol.Text = "Nombre Rol";
+            this.NombreRol.Text = "Nombre ";
             this.NombreRol.Width = 204;
             // 
             // CodigoVista
@@ -95,7 +95,7 @@
             // 
             // NombreVista
             // 
-            this.NombreVista.Text = "Nombre Vista";
+            this.NombreVista.Text = "Nombre ";
             this.NombreVista.Width = 295;
             // 
             // Insertar

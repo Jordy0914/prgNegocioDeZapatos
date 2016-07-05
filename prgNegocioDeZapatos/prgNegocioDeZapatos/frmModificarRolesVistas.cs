@@ -26,6 +26,7 @@ namespace prgNegocioDeZapatos
         private clsConexion conexion;
 
         private clsRolVista clRolVista;
+        private clsUsuarioVista clUsuarioVista;
 
         private SqlDataReader dtr;
 
@@ -38,9 +39,10 @@ namespace prgNegocioDeZapatos
         public Boolean boolEliminar { get; set; }
         public Boolean boolConsultar { get; set; }
         public Boolean isSeleciono { get; set; }
+        public String Tipo { get; set; }
         #endregion
 
-        public frmModificarRolesVistas(clsConexion cone)
+        public frmModificarRolesVistas(clsConexion cone,string tipo)
         {
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -50,6 +52,9 @@ namespace prgNegocioDeZapatos
             this.conexion = cone;
 
             this.clRolVista = new clsRolVista();
+            this.clUsuarioVista = new clsUsuarioVista();
+
+            Tipo = tipo;
 
             InitializeComponent();
         }
@@ -96,19 +101,38 @@ namespace prgNegocioDeZapatos
         #region Metodos Propios
         public void llenarLV()
         {
-            dtr = clRolVista.mConsultarRolesVistasGeneral(conexion);
-            while (dtr.Read())
+            if (Tipo == "rolVistas")
             {
-                ListViewItem lista;
-                lista = lvGeneral.Items.Add(Convert.ToString(dtr.GetInt32(0)));
-                lista.SubItems.Add(dtr.GetString(1));
-                lista.SubItems.Add(Convert.ToString(dtr.GetInt32(2)));
-                lista.SubItems.Add(dtr.GetString(3));
-                lista.SubItems.Add(Convert.ToString(dtr.GetBoolean(4)));
-                lista.SubItems.Add(Convert.ToString(dtr.GetBoolean(5)));
-                lista.SubItems.Add(Convert.ToString(dtr.GetBoolean(6)));
-                lista.SubItems.Add(Convert.ToString(dtr.GetBoolean(7)));
-            }//fin del while
+                dtr = clRolVista.mConsultarRolesVistasGeneral(conexion);
+                while (dtr.Read())
+                {
+                    ListViewItem lista;
+                    lista = lvGeneral.Items.Add(Convert.ToString(dtr.GetInt32(0)));
+                    lista.SubItems.Add(dtr.GetString(1));
+                    lista.SubItems.Add(Convert.ToString(dtr.GetInt32(2)));
+                    lista.SubItems.Add(dtr.GetString(3));
+                    lista.SubItems.Add(Convert.ToString(dtr.GetBoolean(4)));
+                    lista.SubItems.Add(Convert.ToString(dtr.GetBoolean(5)));
+                    lista.SubItems.Add(Convert.ToString(dtr.GetBoolean(6)));
+                    lista.SubItems.Add(Convert.ToString(dtr.GetBoolean(7)));
+                }//fin del while
+            }
+            if (Tipo == "usuarioVistas")
+            {
+                dtr = clUsuarioVista.mConsultarUsuarioVistaGeneral(conexion);
+                while (dtr.Read())
+                {
+                    ListViewItem lista;
+                    lista = lvGeneral.Items.Add(Convert.ToString(dtr.GetInt32(0)));
+                    lista.SubItems.Add(dtr.GetString(1));
+                    lista.SubItems.Add(Convert.ToString(dtr.GetInt32(2)));
+                    lista.SubItems.Add(dtr.GetString(3));
+                    lista.SubItems.Add(Convert.ToString(dtr.GetBoolean(4)));
+                    lista.SubItems.Add(Convert.ToString(dtr.GetBoolean(5)));
+                    lista.SubItems.Add(Convert.ToString(dtr.GetBoolean(6)));
+                    lista.SubItems.Add(Convert.ToString(dtr.GetBoolean(7)));
+                }
+            }
         }
         #endregion
     }

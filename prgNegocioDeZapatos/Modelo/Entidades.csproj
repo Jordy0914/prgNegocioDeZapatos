@@ -49,6 +49,7 @@
     <Compile Include="clsEntidadUsuario.cs" />
     <Compile Include="clsEntidadVista.cs" />
     <Compile Include="clsEntidadRolesVistas.cs" />
+    <Compile Include="clsEntidadUsuarioVistas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
