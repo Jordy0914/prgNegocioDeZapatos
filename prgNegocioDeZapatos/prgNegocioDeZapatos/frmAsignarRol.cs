@@ -16,14 +16,14 @@ using System.Data.SqlClient;
 
 namespace prgNegocioDeZapatos
 {
-    public partial class frmAsignarRol : MaterialForm
+    public partial class frmAsignarRol : MaterialForm, IPermisos
     {
         private readonly MaterialSkinManager materialSkinManager;
 
 
         #region Atributos
 
-        SqlDataReader dtrSentencia, dtrUsuarios, dtrRoles;
+        SqlDataReader dtrSentencia, dtrUsuarios, dtrRoles, dtrVista;
         clsEntidadUsuario usuario;
         clsUsuario clUsuario;
         clsRol clRol;
@@ -32,6 +32,7 @@ namespace prgNegocioDeZapatos
         clsEntidadRolesUsuarios pEntidadRolesUsurios;
         clsEntidadRol pEntidadRol;
         clsRolesUsuarios clRolesUsuarios;
+        private clsVistas clVistas;
 
         private Boolean bolAgregar, bolModificar, bolEliminar;
         #endregion
@@ -52,6 +53,7 @@ namespace prgNegocioDeZapatos
             this.pEntidadRol = new clsEntidadRol();
             this.pEntidadRolesUsurios = new clsEntidadRolesUsuarios();
             this.clRolesUsuarios = new clsRolesUsuarios();
+            this.clVistas = new clsVistas();
 
             InitializeComponent();
         }
@@ -108,7 +110,7 @@ namespace prgNegocioDeZapatos
 
         private void frmAsignarRol_Load(object sender, EventArgs e)
         {
-
+            this.activarPermisos();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -142,7 +144,42 @@ namespace prgNegocioDeZapatos
 
         #endregion
 
+        #region Metodos del IPermisos
+        public void activarInsertar(Boolean condicion)
+        {
+            this.btnAsignar.Enabled = condicion;
+        }
+
+        public void activarModificar(Boolean condicion)
+        {
+            this.btnModificar.Enabled = condicion;
+        }
+
+        public void activarEliminar(Boolean condicion)
+        {
+            this.btnEliminar.Enabled = condicion;
+        }
+
+        public void activarConsultar(Boolean condicion)
+        {
+
+        }
+        #endregion
+
         #region metodosPropios
+
+        private void activarPermisos()
+        {
+            this.dtrVista = clVistas.mConsultarPermisosVista(this.conexion, this.pEntidadVista);
+
+            if (dtrVista.Read())
+            {
+                this.activarInsertar(dtrVista.GetBoolean(0));
+                this.activarModificar(dtrVista.GetBoolean(1));
+                this.activarEliminar(dtrVista.GetBoolean(2));
+                this.activarConsultar(dtrVista.GetBoolean(3));
+            }
+        }
 
         public void limpiar()
         {

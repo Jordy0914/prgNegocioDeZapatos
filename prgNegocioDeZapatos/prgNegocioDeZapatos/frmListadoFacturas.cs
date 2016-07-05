@@ -16,7 +16,7 @@ using System.Data.SqlClient;
 
 namespace prgNegocioDeZapatos
 {
-    public partial class frmListadoFacturas : MaterialForm
+    public partial class frmListadoFacturas : MaterialForm, IPermisos
     {
         private readonly MaterialSkinManager materialSkinManager;
         clsEntidadDetalleFactura factura;
@@ -47,11 +47,37 @@ namespace prgNegocioDeZapatos
             InitializeComponent();
            
         }
-////////////////////////////////////// Metodo principal de la clase ////////////////////////////////////
+
+
+        #region Metodos del IPermisos
+        public void activarInsertar(Boolean condicion)
+        {
+
+        }
+
+        public void activarModificar(Boolean condicion)
+        {
+
+        }
+
+        public void activarEliminar(Boolean condicion)
+        {
+
+        }
+
+        public void activarConsultar(Boolean condicion)
+        {
+            this.btnBuscar.Enabled = condicion;
+        }
+        #endregion
+
+
+
+        ////////////////////////////////////// Metodo principal de la clase ////////////////////////////////////
 
         private void frmListadoFacturas_Load(object sender, EventArgs e)
         {
-          
+            this.activarPermisos();
         }
 
        
@@ -132,7 +158,18 @@ namespace prgNegocioDeZapatos
         {
             this.txtIdFactura.Text = "";
         }//fin del metodo para limpiar los campos
+        private void activarPermisos()
+        {
+            this.dtrVista = clVistas.mConsultarPermisosVista(this.conexion, this.pEntidadVista);
 
- 
+            if (dtrVista.Read())
+            {
+                this.activarInsertar(dtrVista.GetBoolean(0));
+                this.activarModificar(dtrVista.GetBoolean(1));
+                this.activarEliminar(dtrVista.GetBoolean(2));
+                this.activarConsultar(dtrVista.GetBoolean(3));
+            }
+        }
+
     }//fin de la clase
 }

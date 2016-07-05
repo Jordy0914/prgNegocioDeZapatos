@@ -194,7 +194,7 @@ namespace prgNegocioDeZapatos
 
         private void frmAgregarProductos_Load(object sender, EventArgs e)
         {
-
+            this.activarPermisos();
         }
 
         public void limpiar()

@@ -20,7 +20,7 @@ namespace prgNegocioDeZapatos
     {
         private readonly MaterialSkinManager materialSkinManager;
 
-        SqlDataReader dtrFacturaE,dtrProducto;
+        SqlDataReader dtrFacturaE,dtrProducto, dtrVista;
         clsEntidadFacturaEncabezado factura;
         clsFactura clFactura;
         clsEntidadProducto producto;
@@ -30,13 +30,13 @@ namespace prgNegocioDeZapatos
         clsEntidadUsuario usuario;
         private Boolean bolAgregarEncabezado, bolAgregarDetalle;
         public int codigoProductos;
-
+        private clsVistas clVistas;
         public int precios;
         private int total = 0;
         private int numeroFactura = 0;
         private Double descuento;
         private Double totalDescuento;
-        clsVistas clVistas;
+
 
         public frmFactura(clsConexion cone, clsEntidadUsuario pEntidadUsuario, clsEntidadVista vista) {
 
@@ -64,6 +64,7 @@ namespace prgNegocioDeZapatos
         private void frmFactura_Load(object sender, EventArgs e)
         {
             this.mConsultaIdFactura();
+            this.activarPermisos();
         }
 
 
@@ -382,17 +383,42 @@ namespace prgNegocioDeZapatos
         }//fin del metodo limpiar
 
 
+        private void activarPermisos()
+        {
+            this.dtrVista = clVistas.mConsultarPermisosVista(this.conexion, this.pEntidadVista);
 
+            if (dtrVista.Read())
+            {
+                this.activarInsertar(dtrVista.GetBoolean(0));
+                this.activarModificar(dtrVista.GetBoolean(1));
+                this.activarEliminar(dtrVista.GetBoolean(2));
+                this.activarConsultar(dtrVista.GetBoolean(3));
+            }
+        }
 
-///////////////////////////////////// Permisos heredados de la clase iPermisos ///////////////////////////////////////////
+        ///////////////////////////////////// Permisos heredados de la clase iPermisos ///////////////////////////////////////////
 
-        public void activarInsertar(Boolean condicion) { }
+        #region Metodos del IPermisos
+        public void activarInsertar(Boolean condicion)
+        {
+            this.btnAgregar.Enabled = condicion;
+        }
 
-       public void activarModificar(Boolean condicion) { }
+        public void activarModificar(Boolean condicion)
+        {
 
-       public void activarEliminar(Boolean condicion) { }
+        }
 
-       public void activarConsultar(Boolean condicion) { }
+        public void activarEliminar(Boolean condicion)
+        {
+
+        }
+
+        public void activarConsultar(Boolean condicion)
+        {
+            this.btnBuscar.Enabled = condicion;
+        }
+        #endregion
 
     }//fin de la clase
 }

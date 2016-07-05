@@ -219,7 +219,8 @@ namespace prgNegocioDeZapatos
 
         private void frmUsuario_Load(object sender, EventArgs e)
         {
-
+            this.activarPermisos();
         }
+
     }
 }
