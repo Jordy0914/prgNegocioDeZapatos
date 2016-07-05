@@ -94,7 +94,7 @@ namespace AccesoDatos
                 else
                     return false;
             }//fin del try
-            catch(Exception e)
+            catch(Exception  e)
             {
                 return false;
             }//fin del catch

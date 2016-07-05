@@ -32,8 +32,9 @@ namespace prgNegocioDeZapatos
         private clsVistas clVistas;
         
         private SqlDataReader dtrVista;
-        private SqlDataReader dtrRolVista;
-        private Boolean boolModificar, boolEliminar;
+   
+        private Boolean boolCondicionModificar = false;
+        private string idVista;
         #endregion
 
         public frmAsignarVistasRol(clsConexion cone, clsEntidadUsuario pEntidadUsuario, clsEntidadVista vista)
@@ -59,6 +60,138 @@ namespace prgNegocioDeZapatos
             this.activarPermisos();
         }
 
+        #region Eventos
+        private void btnConsultarRol_Click(object sender, EventArgs e)
+        {
+            frmLista lista = new frmLista(this.conexion, "rol");
+            lista.ShowDialog();
+
+            if (lista.idSelecto == -1) { }
+
+            else
+            {
+                this.txtCodRol.Text = Convert.ToString(lista.idSelecto);
+                this.txtNombreRol.Text = lista.nombre;
+            }
+        }
+
+        private void btnConsultarVista_Click(object sender, EventArgs e)
+        {
+            frmLista lista = new frmLista(this.conexion, "vistas");
+            lista.ShowDialog();
+
+            if (lista.idSelecto == -1) { }
+
+            else
+            {
+                this.txtCodVista.Text = Convert.ToString(lista.idSelecto);
+                this.txtNombreVista.Text = lista.nombre;
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            this.pEntidadRolVista.IdRol = Convert.ToInt32(this.txtCodRol.Text);
+            this.pEntidadRolVista.IdVista = Convert.ToInt32(this.txtCodVista.Text);
+            this.pEntidadRolVista.Insertar = this.chbInsertar.Checked;
+            this.pEntidadRolVista.Modificar = this.chbModificar.Checked;
+            this.pEntidadRolVista.Eliminar = this.chbEliminar.Checked;
+            this.pEntidadRolVista.Consultar = this.chbConsultar.Checked;
+
+            if (this.clRolVista.insertarRolVista(this.conexion, this.pEntidadRolVista, this.pEntidadUsuario))
+            {
+                MessageBox.Show("Insertado Correctamente");
+                this.mLimpiar();
+            }
+                
+            else
+                MessageBox.Show("Problemas al insertar");
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if(boolCondicionModificar)
+            {
+                this.pEntidadRolVista = new clsEntidadRolesVistas();
+                this.pEntidadRolVista.IdRol = Convert.ToInt32(this.txtCodRol.Text);
+                this.pEntidadRolVista.IdVista = Convert.ToInt32(this.txtCodVista.Text);
+                this.pEntidadRolVista.Insertar = this.chbInsertar.Checked;
+                this.pEntidadRolVista.Modificar = this.chbModificar.Checked;
+                this.pEntidadRolVista.Eliminar = this.chbEliminar.Checked;
+                this.pEntidadRolVista.Consultar = this.chbConsultar.Checked;
+                
+                if(this.idVista.Equals(this.txtCodVista.Text))
+                {
+                    if (clRolVista.mModificarSinVista(this.conexion, this.pEntidadRolVista, this.pEntidadUsuario))
+                    {
+                        MessageBox.Show("Modificacion Exitosa");
+                        this.mLimpiar();
+                    }    
+                    else
+                    {
+                        MessageBox.Show("Error en la modificacion");
+                        this.mLimpiar();
+                    }
+                }
+                else
+                {
+                    if (clRolVista.mModificaConVista(this.conexion, this.pEntidadRolVista, this.pEntidadUsuario, Convert.ToInt32(this.idVista)))
+                    {
+                        MessageBox.Show("Modificacion Exitosa con vista");
+                        this.mLimpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error en la modificacion");
+                        this.mLimpiar();
+                    }
+                }
+             
+            }
+            else
+            {
+                frmModificarRolesVistas modificar = new frmModificarRolesVistas(this.conexion);
+                modificar.ShowDialog();
+
+                this.txtCodRol.Text = Convert.ToString(modificar.IdRol);
+                this.txtNombreRol.Text = Convert.ToString(modificar.RolName);
+                this.txtCodVista.Text = Convert.ToString(modificar.IdVista);
+                this.idVista = Convert.ToString(modificar.IdVista);
+                this.txtNombreVista.Text = Convert.ToString(modificar.VistaName);
+                this.chbInsertar.Checked = modificar.boolInsertar;
+                this.chbModificar.Checked = modificar.boolModificar;
+                this.chbEliminar.Checked = modificar.boolEliminar;
+                this.chbConsultar.Checked = modificar.boolConsultar;
+
+                this.btnConsultarRol.Enabled = false;
+                this.btnEliminar.Enabled = true;
+                this.boolCondicionModificar = true;
+                this.btnModificar.Text = "Aceptar";
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            this.pEntidadRolVista = new clsEntidadRolesVistas();
+            this.pEntidadRolVista.IdRol = Convert.ToInt32(this.txtCodRol.Text);
+            this.pEntidadRolVista.IdVista = Convert.ToInt32(this.txtCodVista.Text);
+
+            if (clRolVista.mEliminarRolVista(this.conexion, this.pEntidadRolVista))
+            {
+                MessageBox.Show("Si elimino");
+                this.mLimpiar();
+            }
+                
+            else
+                MessageBox.Show("No elimino");
+        }
+        #endregion
+
         #region Metodos de la Interface IPermisos
         public void activarInsertar(Boolean condicion)
         {
@@ -82,57 +215,6 @@ namespace prgNegocioDeZapatos
         }
         #endregion
 
-        #region Eventos
-        private void btnConsultarRol_Click(object sender, EventArgs e)
-        {
-            frmLista lista = new frmLista(this.conexion, "rol");
-            lista.ShowDialog();
-
-            this.txtCodRol.Text = Convert.ToString(lista.idSelecto);
-            this.txtNombreRol.Text = lista.nombre;
-        }
-
-        private void btnConsultarVista_Click(object sender, EventArgs e)
-        {
-            frmLista lista = new frmLista(this.conexion, "vistas");
-            lista.ShowDialog();
-
-            this.txtCodVista.Text = Convert.ToString(lista.idSelecto);
-            this.txtNombreVista.Text = lista.nombre;
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            this.pEntidadRolVista.IdRol = Convert.ToInt32(this.txtCodRol.Text);
-            this.pEntidadRolVista.IdVista = Convert.ToInt32(this.txtCodVista.Text);
-            this.pEntidadRolVista.Insertar = this.chbInsertar.Checked;
-            this.pEntidadRolVista.Modificar = this.chbModificar.Checked;
-            this.pEntidadRolVista.Eliminar = this.chbEliminar.Checked;
-            this.pEntidadRolVista.Consultar = this.chbConsultar.Checked;
-
-            if (this.clRolVista.insertarRolVista(this.conexion, this.pEntidadRolVista, this.pEntidadUsuario))
-            {
-                MessageBox.Show("Insertado Correctamente");
-                this.mLimpiar();
-            }
-                
-            else
-                MessageBox.Show("Problemas al insertar");
-
-        }
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            frmModificarRolesVistas modificar = new frmModificarRolesVistas(this.conexion);
-            modificar.ShowDialog();
-            MessageBox.Show(modificar.IdVista + modificar.VistaName);
-        }
-        #endregion
-
         #region Metodos Propios
         private void activarPermisos()
         {
@@ -141,8 +223,8 @@ namespace prgNegocioDeZapatos
             if (dtrVista.Read())
             {
                 this.activarInsertar(dtrVista.GetBoolean(0));
-                this.boolModificar = (dtrVista.GetBoolean(1));
-                this.boolEliminar = (dtrVista.GetBoolean(2));
+                this.activarModificar(dtrVista.GetBoolean(1));
+                this.activarEliminar(dtrVista.GetBoolean(2));
                 this.activarConsultar(dtrVista.GetBoolean(3));
             }
         }
@@ -157,8 +239,11 @@ namespace prgNegocioDeZapatos
             this.chbModificar.Checked = false;
             this.chbEliminar.Checked = false;
             this.chbConsultar.Checked = false;
+            this.boolCondicionModificar = false;
+            this.btnModificar.Text = "Modificar";
+            this.idVista = "";
+            this.btnEliminar.Enabled = false;
         }
         #endregion
-
     }
 }

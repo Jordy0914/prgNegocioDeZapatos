@@ -62,6 +62,7 @@ namespace prgNegocioDeZapatos
         #region Eventos
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            idSelecto = -1;
             this.Close();
         }
 
