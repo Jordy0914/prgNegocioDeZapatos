@@ -30,6 +30,7 @@ namespace prgNegocioDeZapatos
         private string tipo;
         public int idSelecto { get; set; }
         public String nombre { get; set; }
+        public Boolean isSelecciono { get; set; }
         #endregion
 
         public frmLista(clsConexion conexion, string tipo)
@@ -62,7 +63,7 @@ namespace prgNegocioDeZapatos
         #region Eventos
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            idSelecto = -1;
+            isSelecciono = false;
             this.Close();
         }
 
@@ -73,6 +74,8 @@ namespace prgNegocioDeZapatos
 
         private void lvLista_SelectedIndexChanged(object sender, EventArgs e)
         {
+            isSelecciono = true;
+
             for (int i = 0; i < lvGeneral.Items.Count; i++)
             {
                 if (lvGeneral.Items[i].Selected)

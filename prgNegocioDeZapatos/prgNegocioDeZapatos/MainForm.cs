@@ -12,7 +12,6 @@ using LogicaNegocios;
 
 using System.Data.SqlClient;
 
-// using System.Reflection;
 
 namespace prgNegocioDeZapatos
 {
