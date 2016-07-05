@@ -70,9 +70,8 @@ namespace prgNegocioDeZapatos
             frmLista consultarUsuario = new frmLista(conexion, "usuarios");
             consultarUsuario.ShowDialog();
 
-            if (consultarUsuario.idSelecto == -1)
-            { }
-            else { 
+            if (consultarUsuario.isSelecciono==true)
+            { 
                 this.usuario.IdUsuario = (consultarUsuario.idSelecto);
                 txtIdUsuario.Text = Convert.ToString(consultarUsuario.idSelecto);
                 mConsultaUsuario();
@@ -83,10 +82,7 @@ namespace prgNegocioDeZapatos
         {
             frmLista consultarRol = new frmLista(conexion, "rol");
             consultarRol.ShowDialog();
-            if (consultarRol.idSelecto == -1)
-            {
-            }
-            else
+            if (consultarRol.isSelecciono == true)
             {
                 this.pEntidadRol.IdRol = (consultarRol.idSelecto);
                 txtIdRol.Text = Convert.ToString(consultarRol.idSelecto);

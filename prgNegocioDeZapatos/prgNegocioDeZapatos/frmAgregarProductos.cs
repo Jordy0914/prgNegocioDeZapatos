@@ -134,9 +134,7 @@ namespace prgNegocioDeZapatos
         {
             frmLista consultarProducto = new frmLista(conexion,"producto");
             consultarProducto.ShowDialog();
-            if (consultarProducto.idSelecto == -1) { }
-
-            else
+            if (consultarProducto.isSelecciono == true)
             {
                 productos.setIdProducto(consultarProducto.idSelecto);
                 txtCodigo.Text = Convert.ToString(consultarProducto.idSelecto);
@@ -146,7 +144,7 @@ namespace prgNegocioDeZapatos
 
         private void btnSalir_Click_1(object sender, EventArgs e)
         {
-            //this.Close();
+            this.Close();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
