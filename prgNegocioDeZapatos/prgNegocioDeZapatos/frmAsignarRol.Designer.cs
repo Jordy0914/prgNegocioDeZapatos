@@ -255,6 +255,7 @@
             this.btnModificar.TabIndex = 43;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // frmAsignarRol
             // 
@@ -281,7 +282,6 @@
             this.Name = "frmAsignarRol";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Asignacion de Roles";
-            this.Load += new System.EventHandler(this.frmAsignarRol_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
