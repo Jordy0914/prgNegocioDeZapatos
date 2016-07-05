@@ -334,14 +334,12 @@ namespace prgNegocioDeZapatos
 
         public int disminuirPrecio()
         {
-
-            return total = total - (Convert.ToInt32(this.txtPrecio.Text) * Convert.ToInt32(this.txtCantidadProducto.Text));
-
-            if (Convert.ToInt32(this.txtCantidadProducto.Text)==0) {
+            if ((Convert.ToInt32(this.txtCantidadProducto.Text)) == 0)
+            {
                 total = 0;
                 return total;
             }
-
+            return total = total - (Convert.ToInt32(this.txtPrecio.Text) * Convert.ToInt32(this.txtCantidadProducto.Text));
         }//fin del metodo para calcular el subtotal
 
 ////////////////// Metodo para obtener el ultimo numero de la factura ////////////////////////////////////////////////////

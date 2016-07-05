@@ -102,7 +102,6 @@
             // btnEliminar
             // 
             this.btnEliminar.Depth = 0;
-            this.btnEliminar.Enabled = false;
             this.btnEliminar.Location = new System.Drawing.Point(233, 19);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;

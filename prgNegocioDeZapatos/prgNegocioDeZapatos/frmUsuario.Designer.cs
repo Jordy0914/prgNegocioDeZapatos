@@ -225,9 +225,9 @@
             this.materialLabel10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel10.Name = "materialLabel10";
-            this.materialLabel10.Size = new System.Drawing.Size(165, 24);
+            this.materialLabel10.Size = new System.Drawing.Size(76, 24);
             this.materialLabel10.TabIndex = 39;
-            this.materialLabel10.Text = "Codigo Estudiante";
+            this.materialLabel10.Text = "Codigo ";
             // 
             // txtCodigo
             // 

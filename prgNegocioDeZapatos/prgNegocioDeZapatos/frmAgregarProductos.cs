@@ -134,18 +134,17 @@ namespace prgNegocioDeZapatos
         {
             frmLista consultarProducto = new frmLista(conexion,"producto");
             consultarProducto.ShowDialog();
-
-            if (consultarProducto.idSelecto != 0 || consultarProducto.idSelecto == 0)
+            if (consultarProducto.isSelecciono == true)
             {
                 productos.setIdProducto(consultarProducto.idSelecto);
                 txtCodigo.Text = Convert.ToString(consultarProducto.idSelecto);
                 mConsultaProducto();
-            }//fin del if que verifica que no sea igual a 0
+            }
         }
 
         private void btnSalir_Click_1(object sender, EventArgs e)
         {
-            //this.Close();
+            this.Close();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

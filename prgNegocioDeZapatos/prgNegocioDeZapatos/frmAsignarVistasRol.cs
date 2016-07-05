@@ -34,6 +34,8 @@ namespace prgNegocioDeZapatos
         private SqlDataReader dtrVista;
    
         private Boolean boolCondicionModificar = false;
+        private Boolean boolCondicionEliminar = false;
+        private Boolean isSeleccionoDatos; 
         private string idVista;
         #endregion
 
@@ -66,13 +68,14 @@ namespace prgNegocioDeZapatos
             frmLista lista = new frmLista(this.conexion, "rol");
             lista.ShowDialog();
 
-            if (lista.idSelecto == -1) { }
+            this.isSeleccionoDatos = lista.isSelecciono;
 
-            else
+            if (isSeleccionoDatos)
             {
                 this.txtCodRol.Text = Convert.ToString(lista.idSelecto);
                 this.txtNombreRol.Text = lista.nombre;
             }
+            
         }
 
         private void btnConsultarVista_Click(object sender, EventArgs e)
@@ -80,9 +83,9 @@ namespace prgNegocioDeZapatos
             frmLista lista = new frmLista(this.conexion, "vistas");
             lista.ShowDialog();
 
-            if (lista.idSelecto == -1) { }
+            this.isSeleccionoDatos = lista.isSelecciono;
 
-            else
+            if (isSeleccionoDatos)
             {
                 this.txtCodVista.Text = Convert.ToString(lista.idSelecto);
                 this.txtNombreVista.Text = lista.nombre;
@@ -158,37 +161,75 @@ namespace prgNegocioDeZapatos
                 frmModificarRolesVistas modificar = new frmModificarRolesVistas(this.conexion);
                 modificar.ShowDialog();
 
-                this.txtCodRol.Text = Convert.ToString(modificar.IdRol);
-                this.txtNombreRol.Text = Convert.ToString(modificar.RolName);
-                this.txtCodVista.Text = Convert.ToString(modificar.IdVista);
-                this.idVista = Convert.ToString(modificar.IdVista);
-                this.txtNombreVista.Text = Convert.ToString(modificar.VistaName);
-                this.chbInsertar.Checked = modificar.boolInsertar;
-                this.chbModificar.Checked = modificar.boolModificar;
-                this.chbEliminar.Checked = modificar.boolEliminar;
-                this.chbConsultar.Checked = modificar.boolConsultar;
+                this.isSeleccionoDatos = modificar.isSeleciono;
 
-                this.btnConsultarRol.Enabled = false;
-                this.btnEliminar.Enabled = true;
-                this.boolCondicionModificar = true;
-                this.btnModificar.Text = "Aceptar";
+                if (isSeleccionoDatos)
+                {
+                    this.txtCodRol.Text = Convert.ToString(modificar.IdRol);
+                    this.txtNombreRol.Text = Convert.ToString(modificar.RolName);
+                    this.txtCodVista.Text = Convert.ToString(modificar.IdVista);
+                    this.idVista = Convert.ToString(modificar.IdVista);
+                    this.txtNombreVista.Text = Convert.ToString(modificar.VistaName);
+                    this.chbInsertar.Checked = modificar.boolInsertar;
+                    this.chbModificar.Checked = modificar.boolModificar;
+                    this.chbEliminar.Checked = modificar.boolEliminar;
+                    this.chbConsultar.Checked = modificar.boolConsultar;
+
+                    this.btnConsultarRol.Enabled = false;
+                    this.btnEliminar.Enabled = false;
+                    this.btnAgregar.Enabled = false;
+
+                    this.boolCondicionModificar = true;
+                    this.btnModificar.Text = "Aceptar";
+                }            
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            this.pEntidadRolVista = new clsEntidadRolesVistas();
-            this.pEntidadRolVista.IdRol = Convert.ToInt32(this.txtCodRol.Text);
-            this.pEntidadRolVista.IdVista = Convert.ToInt32(this.txtCodVista.Text);
-
-            if (clRolVista.mEliminarRolVista(this.conexion, this.pEntidadRolVista))
+            if (boolCondicionEliminar)
             {
-                MessageBox.Show("Si elimino");
-                this.mLimpiar();
+                if (clRolVista.mEliminarRolVista(this.conexion, this.pEntidadRolVista))
+                {
+                    MessageBox.Show("Eliminado Correctamente");
+                    this.mLimpiar();
+                }
+                else
+                    MessageBox.Show("Problemas al elimnar");
             }
-                
             else
-                MessageBox.Show("No elimino");
+            {
+                frmModificarRolesVistas modificar = new frmModificarRolesVistas(this.conexion);
+                modificar.ShowDialog();
+
+                this.isSeleccionoDatos = modificar.isSeleciono;
+
+                if (isSeleccionoDatos)
+                {
+                    this.pEntidadRolVista = new clsEntidadRolesVistas();
+                    this.pEntidadRolVista.IdRol = modificar.IdRol;
+                    this.pEntidadRolVista.IdVista = modificar.IdVista;
+
+                    this.txtCodRol.Text = Convert.ToString(modificar.IdRol);
+                    this.txtNombreRol.Text = Convert.ToString(modificar.RolName);
+                    this.txtCodVista.Text = Convert.ToString(modificar.IdVista);
+                    this.txtNombreVista.Text = Convert.ToString(modificar.VistaName);
+                    this.boolCondicionEliminar = true;
+                    this.btnEliminar.Text = "Aceptar";
+
+                    this.btnAgregar.Enabled = false;
+                    this.btnModificar.Enabled = false;
+                    this.btnConsultarRol.Enabled = false;
+                    this.btnConsultarVista.Enabled = false;
+
+                    this.txtNombreRol.Enabled = false;           
+                    this.txtNombreVista.Enabled = false;
+                    this.chbInsertar.Enabled = false;
+                    this.chbModificar.Enabled = false;
+                    this.chbEliminar.Enabled = false;
+                    this.chbConsultar.Enabled = false;
+                }
+            }
         }
         #endregion
 
@@ -240,9 +281,25 @@ namespace prgNegocioDeZapatos
             this.chbEliminar.Checked = false;
             this.chbConsultar.Checked = false;
             this.boolCondicionModificar = false;
-            this.btnModificar.Text = "Modificar";
+            this.boolCondicionEliminar = false;
             this.idVista = "";
-            this.btnEliminar.Enabled = false;
+
+            this.btnModificar.Text = "Modificar";
+            this.btnEliminar.Text = "Eliminar";
+
+            this.btnConsultarRol.Enabled = true;
+            this.btnEliminar.Enabled = true;
+            this.btnAgregar.Enabled = true;
+            this.btnModificar.Enabled = true;
+            this.btnConsultarRol.Enabled = true;
+            this.btnConsultarVista.Enabled = true;
+
+            this.txtNombreRol.Enabled = true;         
+            this.txtNombreVista.Enabled = true;
+            this.chbInsertar.Enabled = true;
+            this.chbModificar.Enabled = true;
+            this.chbEliminar.Enabled = true;
+            this.chbConsultar.Enabled = true;
         }
         #endregion
     }

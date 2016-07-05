@@ -12,7 +12,6 @@ using LogicaNegocios;
 
 using System.Data.SqlClient;
 
-using System.Reflection;
 
 namespace prgNegocioDeZapatos
 {
@@ -84,7 +83,7 @@ namespace prgNegocioDeZapatos
                 {
                     pEntidadVista.Url = (dtrMenu.GetString(5));
                 }
-                catch (Exception e) { }
+                catch (Exception) { }
 
                 clUsuario.mInsertarVistasTemp(this.conexion, pEntidadVista);     
             }
@@ -118,7 +117,7 @@ namespace prgNegocioDeZapatos
                 {
                     pEntidadVista.Url = (dtrMenu.GetString(5));
                 }
-                catch (Exception e) { }
+                catch (Exception) { }
 
                 clUsuario.mInsertarVistasTemp(this.conexion,pEntidadVista);
             }

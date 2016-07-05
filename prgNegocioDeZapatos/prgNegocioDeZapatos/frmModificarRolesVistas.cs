@@ -37,6 +37,7 @@ namespace prgNegocioDeZapatos
         public Boolean boolModificar { get; set; }
         public Boolean boolEliminar { get; set; }
         public Boolean boolConsultar { get; set; }
+        public Boolean isSeleciono { get; set; }
         #endregion
 
         public frmModificarRolesVistas(clsConexion cone)
@@ -62,6 +63,7 @@ namespace prgNegocioDeZapatos
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.isSeleciono = false;
         }
 
         private void lvLista_DoubleClick(object sender, EventArgs e)
@@ -71,6 +73,8 @@ namespace prgNegocioDeZapatos
 
         private void lvLista_SelectedIndexChanged(object sender, EventArgs e)
         {
+            isSeleciono = true; 
+
             for (int i = 0; i < lvGeneral.Items.Count; i++)
             {
                 if (lvGeneral.Items[i].Selected)
