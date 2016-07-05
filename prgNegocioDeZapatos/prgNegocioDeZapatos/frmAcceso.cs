@@ -53,7 +53,8 @@ namespace prgNegocioDeZapatos
         {
             this.Hide();
             MainForm menu = new MainForm(this.conexion, this.pEntidadUsuario);
-            menu.Show();
+            if(usuario.mInsertarBitacora(this.conexion,this.pEntidadUsuario))
+                menu.Show();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
