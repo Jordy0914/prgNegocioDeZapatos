@@ -16,14 +16,27 @@ namespace LogicaNegocios
         #endregion
 
         #region Metodos
-        public Boolean insertarRolUsuario(clsConexion cone, clsEntidadRolesUsuarios pEntidadRolesUsuarios, clsEntidadUsuario pEntidadUsuario)
+        public Boolean insertarRolUsuario(clsConexion cone, clsEntidadRol pEntidadRol, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Insert into tbRolesVistas (idRol, idVista, insertar, modificar, eliminar, consultar, creadoPor, fechaCreacion) " +
-                "values(" + pEntidadRolesUsuarios.IdRol + "," + pEntidadRolesUsuarios.IdUsuario + ",'" + pEntidadRolesUsuarios.Insertar + "','" + pEntidadRolesUsuarios.Modificar + "','" + pEntidadRolesUsuarios.Eliminar + "','" + pEntidadRolesUsuarios.Consultar + "','" + pEntidadUsuario.IdUsuario + "', getDate())";
+            strSentencia = "Insert into tbUsuariosRoles (idUsuario, idRol, creadoPor, fechaCreacion) " +
+                "values(" + pEntidadUsuario.getIdUsuario() + "," + pEntidadRol.IdRol + "," + pEntidadUsuario.getIdUsuario() + ", getDate())";
             return cone.mEjecutar(strSentencia, cone);
         }
 
+        public Boolean modificarRolUsuario(clsConexion cone, clsEntidadRol pEntidadRol, clsEntidadUsuario pEntidadUsuario)
+        {
+            strSentencia = "Update tbUsuariosRoles set idRol="+pEntidadRol.IdRol+", modificadoPor="+pEntidadUsuario.getIdUsuario()+",getDate() where idRol="+pEntidadRol.IdRol+"";
+            return cone.mEjecutar(strSentencia, cone);
+        }
+
+        public Boolean eliminarRolUsuario(clsConexion cone,clsEntidadRol pEntidadRol,clsEntidadUsuario pEntidadUsuario)
+        {
+            strSentencia = "Delete from tbUsuarioRol where idRol="+pEntidadRol.IdRol+"";
+            return cone.mEjecutar(strSentencia,cone);
+        }
+
+
         #endregion
 
-    }
+    } 
 }
