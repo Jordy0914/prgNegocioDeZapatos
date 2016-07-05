@@ -20,7 +20,7 @@ namespace prgNegocioDeZapatos
     {
         private readonly MaterialSkinManager materialSkinManager;
 
-        SqlDataReader dtrFactura,dtrFacturaE,dtrProducto;
+        SqlDataReader dtrFacturaE,dtrProducto;
         clsEntidadFacturaEncabezado factura;
         clsFactura clFactura;
         clsEntidadProducto producto;
@@ -40,14 +40,12 @@ namespace prgNegocioDeZapatos
 
         public frmFactura(clsConexion cone, clsEntidadUsuario pEntidadUsuario, clsEntidadVista vista) {
 
-            //clsConexion cone, clsEntidadUsuario pEntidadUsuario,
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
 
             this.conexion = cone;
-            //this.conexion = new clsConexion();
             factura = new clsEntidadFacturaEncabezado();
             clFactura = new clsFactura();
             producto = new clsEntidadProducto();
@@ -96,19 +94,21 @@ namespace prgNegocioDeZapatos
 
                 }//fin del for
                 bolAgregarDetalle = true;
+
+                if (bolAgregarEncabezado == true && bolAgregarDetalle == true)
+                {
+                    MessageBox.Show("La venta ha sido satisfactoria", "Registro correcto", MessageBoxButtons.OK);
+                    this.Limpiar();
+                }//fin del if de agregar
+                else
+                {
+                    MessageBox.Show("Problemas al realizar la venta", "Error", MessageBoxButtons.OK);
+
+                    this.Limpiar();
+                }
             }//fin del else
-            if (bolAgregarEncabezado == true && bolAgregarDetalle == true)
-            {
-                MessageBox.Show("Ha sido agregado correctamente", "Registro correcto", MessageBoxButtons.OK);
-                this.Limpiar();
-            }//fin del if de agregar
-            else
-            {
-                MessageBox.Show("Problemas al agregar", "Error", MessageBoxButtons.OK);
-
-                this.Limpiar();
-            }
-
+           
+            this.mConsultaIdFactura();
         }//fin de la accion del boton realizar venta
 
 /////////////////////////////////////// Accion del boton Buscar //////////////////////////////////////////////////////////
@@ -137,7 +137,7 @@ namespace prgNegocioDeZapatos
         }//fin del la accion del boton salir
 
 
-////////////////////////////////// Metodos para obtener datos para la ventana frmListaProducto /////////////////////////////
+////////////////////////////////// Metodos para obtener datos para la ventana frmLista /////////////////////////////
 
         public void mConsultaProducto()
         {

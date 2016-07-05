@@ -19,7 +19,8 @@ namespace prgNegocioDeZapatos
     public partial class frmListadoFacturas : MaterialForm
     {
         private readonly MaterialSkinManager materialSkinManager;
-        clsEntidadFacturaEncabezado factura;
+        clsEntidadDetalleFactura factura;
+        clsEntidadFacturaEncabezado facturaE;
         clsConexion conexion;
         clsFactura clFactura;
         SqlDataReader dtrFacturas;
@@ -37,7 +38,8 @@ namespace prgNegocioDeZapatos
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
 
             this.clFactura = new clsFactura();
-            this.factura = new clsEntidadFacturaEncabezado();
+            this.factura = new clsEntidadDetalleFactura();
+            facturaE = new clsEntidadFacturaEncabezado();
             this.conexion = cone;
             usuario = pEntidadUsuario;
             this.clVistas = new clsVistas();
@@ -45,17 +47,23 @@ namespace prgNegocioDeZapatos
             InitializeComponent();
            
         }
+////////////////////////////////////// Metodo principal de la clase ////////////////////////////////////
 
         private void frmListadoFacturas_Load(object sender, EventArgs e)
         {
           
         }
 
+       
+////////////////////////////////////// Metodo para obtener el codigo de la factura////////////////////////////////////
+        
         public int getCodigosFacturas()
         {
             return (codigoFacturas);
         }//fin del metodo
 
+
+/////////////////////////////////////////// Accion para obtener los datos seleccionados ////////////////////////////////////
 
         private void lvFacturas_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -64,29 +72,21 @@ namespace prgNegocioDeZapatos
                 if (lvFacturas.Items[i].Selected)
                 {
                     codigoFacturas = Convert.ToInt32(lvFacturas.Items[i].Text);
-                    //MessageBox.Show("" + codigoFacturas);
-
                 }//fin del if 
 
             }//fin del for
            
-        }
+        }//fin de la accion de la lista facturas
 
-
-        public void llenarLista()
-        {
-           
-        }//fin del metodo para llenar la lista con datos
-
-
+        
 
 ////////////////////////////////////////////// Accion del boton Buscar ////////////////////////////////////////////////////////
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
            
-            factura.setIdFactura(Convert.ToInt32(txtIdFactura.Text.Trim()));
-            dtrFacturas = clFactura.mConsultarFacturasGenerales(conexion, factura);
+            facturaE.setIdFactura(Convert.ToInt32(txtIdFactura.Text.Trim()));
+            dtrFacturas = clFactura.mConsultarFacturasGenerales(conexion, facturaE);
 
             if (txtIdFactura.Text=="") {
 
@@ -108,11 +108,16 @@ namespace prgNegocioDeZapatos
         }//fin de la accion del boton buscar
 
 
+/////////////////////////////////// Accion del boton eliminar ///////////////////////////////////////////////////////////////////
+
+       
+
+/////////////////////////////////// Accion del doble click de la lista /////////////////////////////////////////////////////////
 
         private void lvFacturas_DoubleClick(object sender, EventArgs e)
         {
-            factura.setIdFactura(codigoFacturas);
-            bolEliminar = clFactura.mEliminarFactura(conexion, factura);
+            //factura.setIdFactura(getCodigosFacturas());
+            //bolEliminar = clFactura.mEliminarFactura(conexion, factura);
 
         }//fin de la accion del double click de la lista
 
@@ -122,15 +127,12 @@ namespace prgNegocioDeZapatos
         }//fin de la accion del boton salir
 
 
+////////////////////////////////////// Metodo para limpiar ////////////////////////////////////
         public void limpiar()
         {
             this.txtIdFactura.Text = "";
         }//fin del metodo para limpiar los campos
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            //factura.setIdFactura(codigoFacturas);
-            //bolEliminar = clFactura.mEliminarFactura(conexion, factura);
-        }
-    }
+ 
+    }//fin de la clase
 }

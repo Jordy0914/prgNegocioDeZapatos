@@ -41,6 +41,7 @@
             this.txtIdRol = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnBuscarUsuario = new System.Windows.Forms.Button();
             this.btnBuscarRol = new System.Windows.Forms.Button();
+            this.btnModificar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -74,21 +75,22 @@
             // btnAsignar
             // 
             this.btnAsignar.Depth = 0;
-            this.btnAsignar.Location = new System.Drawing.Point(77, 362);
-            this.btnAsignar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAsignar.Location = new System.Drawing.Point(52, 362);
+            this.btnAsignar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAsignar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAsignar.Name = "btnAsignar";
             this.btnAsignar.Primary = true;
             this.btnAsignar.Size = new System.Drawing.Size(100, 39);
             this.btnAsignar.TabIndex = 25;
-            this.btnAsignar.Text = "Asignar";
+            this.btnAsignar.Text = "Agregar";
             this.btnAsignar.UseVisualStyleBackColor = true;
+            this.btnAsignar.Click += new System.EventHandler(this.btnAsignar_Click);
             // 
             // btnSalir
             // 
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(372, 362);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Location = new System.Drawing.Point(430, 362);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
@@ -101,8 +103,8 @@
             // btnEliminar
             // 
             this.btnEliminar.Depth = 0;
-            this.btnEliminar.Location = new System.Drawing.Point(219, 362);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Location = new System.Drawing.Point(302, 362);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Primary = true;
@@ -131,7 +133,7 @@
             this.txtNombreUsuario.Enabled = false;
             this.txtNombreUsuario.Hint = "";
             this.txtNombreUsuario.Location = new System.Drawing.Point(181, 149);
-            this.txtNombreUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreUsuario.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.PasswordChar = '\0';
@@ -149,7 +151,7 @@
             this.txtNombreRol.Enabled = false;
             this.txtNombreRol.Hint = "";
             this.txtNombreRol.Location = new System.Drawing.Point(181, 270);
-            this.txtNombreRol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreRol.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreRol.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombreRol.Name = "txtNombreRol";
             this.txtNombreRol.PasswordChar = '\0';
@@ -181,7 +183,7 @@
             this.txtIdUsuario.Enabled = false;
             this.txtIdUsuario.Hint = "";
             this.txtIdUsuario.Location = new System.Drawing.Point(181, 101);
-            this.txtIdUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdUsuario.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtIdUsuario.Name = "txtIdUsuario";
             this.txtIdUsuario.PasswordChar = '\0';
@@ -199,7 +201,7 @@
             this.txtIdRol.Enabled = false;
             this.txtIdRol.Hint = "";
             this.txtIdRol.Location = new System.Drawing.Point(181, 218);
-            this.txtIdRol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdRol.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdRol.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtIdRol.Name = "txtIdRol";
             this.txtIdRol.PasswordChar = '\0';
@@ -241,6 +243,20 @@
             this.btnBuscarRol.UseVisualStyleBackColor = false;
             this.btnBuscarRol.Click += new System.EventHandler(this.btnBuscarRol_Click);
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Depth = 0;
+            this.btnModificar.Location = new System.Drawing.Point(170, 362);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Primary = true;
+            this.btnModificar.Size = new System.Drawing.Size(111, 39);
+            this.btnModificar.TabIndex = 43;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // frmAsignarRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -248,6 +264,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(607, 449);
             this.ControlBox = false;
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnBuscarRol);
             this.Controls.Add(this.btnBuscarUsuario);
             this.Controls.Add(this.txtIdRol);
@@ -261,11 +278,10 @@
             this.Controls.Add(this.btnAsignar);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAsignarRol";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Asignacion de Roles";
-            this.Load += new System.EventHandler(this.frmAsignarRol_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,5 +301,6 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtIdRol;
         private System.Windows.Forms.Button btnBuscarUsuario;
         private System.Windows.Forms.Button btnBuscarRol;
+        private MaterialSkin.Controls.MaterialRaisedButton btnModificar;
     }
 }
