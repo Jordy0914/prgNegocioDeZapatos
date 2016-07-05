@@ -110,7 +110,7 @@ namespace prgNegocioDeZapatos
                 {
                     ListViewItem lista;
                     lista = lvGeneral.Items.Add(Convert.ToString(strSentencia.GetInt32(0)));
-                    lista.SubItems.Add(strSentencia.GetString(1));
+                    lista.SubItems.Add(strSentencia.GetString(2));
                 }//fin del while
             }
             if (this.tipo == "rol")

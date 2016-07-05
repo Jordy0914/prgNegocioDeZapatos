@@ -25,16 +25,17 @@ namespace LogicaNegocios
 
         public Boolean modificarRolUsuario(clsConexion cone, clsEntidadRol pEntidadRol, clsEntidadUsuario pEntidadUsuario)
         {
-            strSentencia = "Update tbUsuariosRoles set idRol="+pEntidadRol.IdRol+", modificadoPor="+pEntidadUsuario.getIdUsuario()+",getDate() where idRol="+pEntidadRol.IdRol+"";
+            strSentencia = "Update tbUsuariosRoles set idRol= "+pEntidadRol.IdRol+" , modificadoPor="+pEntidadUsuario.getIdUsuario()+",fechaModificacion= getDate() where idUsuario="+pEntidadUsuario.IdUsuario+"";
             return cone.mEjecutar(strSentencia, cone);
         }
 
-        public Boolean eliminarRolUsuario(clsConexion cone,clsEntidadRol pEntidadRol,clsEntidadUsuario pEntidadUsuario)
+        public Boolean eliminarRolUsuario(clsConexion cone,clsEntidadRol pEntidadRolUsuario, clsEntidadUsuario pEntidadUsuario)
+        
         {
-            strSentencia = "Delete from tbUsuarioRol where idRol="+pEntidadRol.IdRol+"";
+            strSentencia = "Delete from tbUsuariosRoles where idUsuario="+pEntidadUsuario.IdUsuario+" and idRol="+pEntidadRolUsuario.IdRol+"";
             return cone.mEjecutar(strSentencia,cone);
         }
-
+        
 
         #endregion
 

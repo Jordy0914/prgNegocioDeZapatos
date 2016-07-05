@@ -70,9 +70,8 @@ namespace prgNegocioDeZapatos
             frmLista consultarUsuario = new frmLista(conexion, "usuarios");
             consultarUsuario.ShowDialog();
 
-            if (consultarUsuario.idSelecto == -1)
-            { }
-            else { 
+            if (consultarUsuario.isSelecciono==true)
+            { 
                 this.usuario.IdUsuario = (consultarUsuario.idSelecto);
                 txtIdUsuario.Text = Convert.ToString(consultarUsuario.idSelecto);
                 mConsultaUsuario();
@@ -83,10 +82,7 @@ namespace prgNegocioDeZapatos
         {
             frmLista consultarRol = new frmLista(conexion, "rol");
             consultarRol.ShowDialog();
-            if (consultarRol.idSelecto == -1)
-            {
-            }
-            else
+            if (consultarRol.isSelecciono == true)
             {
                 this.pEntidadRol.IdRol = (consultarRol.idSelecto);
                 txtIdRol.Text = Convert.ToString(consultarRol.idSelecto);
@@ -96,9 +92,37 @@ namespace prgNegocioDeZapatos
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+
+            usuario.IdUsuario = Convert.ToInt32(txtIdUsuario.Text);
             pEntidadRol.IdRol = Convert.ToInt32(txtIdRol.Text);
             bolModificar = clRolesUsuarios.modificarRolUsuario(conexion, pEntidadRol, usuario);
 
+            if (bolModificar == true)
+            {
+                MessageBox.Show("El rol ha sido Modificado correctamente", "Registro correcto", MessageBoxButtons.OK);
+            }//fin del if
+
+            this.limpiar();
+
+        }
+
+        private void frmAsignarRol_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            usuario.IdUsuario = Convert.ToInt32(txtIdUsuario.Text);
+            pEntidadRol.IdRol = Convert.ToInt32(txtIdRol.Text);
+
+            bolEliminar = clRolesUsuarios.eliminarRolUsuario(conexion,pEntidadRol,usuario);
+
+            if (bolEliminar == true)
+            {
+                MessageBox.Show("El rol ha sido eliminado correctamente", "Registro correcto", MessageBoxButtons.OK);
+            }//fin del if
+            this.limpiar();
         }
 
         private void btnAsignar_Click(object sender, EventArgs e)

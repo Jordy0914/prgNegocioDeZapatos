@@ -79,17 +79,17 @@
             "Celeste",
             "Turquesa",
             "Fucsia"});
-            this.cboColor.Location = new System.Drawing.Point(88, 178);
+            this.cboColor.Location = new System.Drawing.Point(66, 136);
             this.cboColor.Margin = new System.Windows.Forms.Padding(2);
             this.cboColor.Name = "cboColor";
-            this.cboColor.Size = new System.Drawing.Size(126, 26);
+            this.cboColor.Size = new System.Drawing.Size(96, 23);
             this.cboColor.TabIndex = 18;
             // 
             // txtCategoria
             // 
             this.txtCategoria.Depth = 0;
             this.txtCategoria.Hint = "";
-            this.txtCategoria.Location = new System.Drawing.Point(88, 251);
+            this.txtCategoria.Location = new System.Drawing.Point(86, 190);
             this.txtCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategoria.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCategoria.Name = "txtCategoria";
@@ -97,7 +97,7 @@
             this.txtCategoria.SelectedText = "";
             this.txtCategoria.SelectionLength = 0;
             this.txtCategoria.SelectionStart = 0;
-            this.txtCategoria.Size = new System.Drawing.Size(126, 28);
+            this.txtCategoria.Size = new System.Drawing.Size(94, 23);
             this.txtCategoria.TabIndex = 17;
             this.txtCategoria.TabStop = false;
             this.txtCategoria.UseSystemPasswordChar = false;
@@ -106,7 +106,7 @@
             // 
             this.txtTalla.Depth = 0;
             this.txtTalla.Hint = "";
-            this.txtTalla.Location = new System.Drawing.Point(88, 132);
+            this.txtTalla.Location = new System.Drawing.Point(66, 101);
             this.txtTalla.Margin = new System.Windows.Forms.Padding(2);
             this.txtTalla.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTalla.Name = "txtTalla";
@@ -114,7 +114,7 @@
             this.txtTalla.SelectedText = "";
             this.txtTalla.SelectionLength = 0;
             this.txtTalla.SelectionStart = 0;
-            this.txtTalla.Size = new System.Drawing.Size(126, 28);
+            this.txtTalla.Size = new System.Drawing.Size(94, 23);
             this.txtTalla.TabIndex = 16;
             this.txtTalla.TabStop = false;
             this.txtTalla.UseSystemPasswordChar = false;
@@ -123,7 +123,7 @@
             // 
             this.txtNombre.Depth = 0;
             this.txtNombre.Hint = "";
-            this.txtNombre.Location = new System.Drawing.Point(88, 99);
+            this.txtNombre.Location = new System.Drawing.Point(66, 76);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombre.Name = "txtNombre";
@@ -131,7 +131,7 @@
             this.txtNombre.SelectedText = "";
             this.txtNombre.SelectionLength = 0;
             this.txtNombre.SelectionStart = 0;
-            this.txtNombre.Size = new System.Drawing.Size(126, 28);
+            this.txtNombre.Size = new System.Drawing.Size(94, 23);
             this.txtNombre.TabIndex = 15;
             this.txtNombre.TabStop = false;
             this.txtNombre.UseSystemPasswordChar = false;
@@ -140,7 +140,7 @@
             // 
             this.txtModelo.Depth = 0;
             this.txtModelo.Hint = "";
-            this.txtModelo.Location = new System.Drawing.Point(88, 58);
+            this.txtModelo.Location = new System.Drawing.Point(66, 44);
             this.txtModelo.Margin = new System.Windows.Forms.Padding(2);
             this.txtModelo.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtModelo.Name = "txtModelo";
@@ -148,7 +148,7 @@
             this.txtModelo.SelectedText = "";
             this.txtModelo.SelectionLength = 0;
             this.txtModelo.SelectionStart = 0;
-            this.txtModelo.Size = new System.Drawing.Size(126, 28);
+            this.txtModelo.Size = new System.Drawing.Size(94, 23);
             this.txtModelo.TabIndex = 14;
             this.txtModelo.TabStop = false;
             this.txtModelo.UseSystemPasswordChar = false;
@@ -158,7 +158,7 @@
             this.txtCodigo.Depth = 0;
             this.txtCodigo.Enabled = false;
             this.txtCodigo.Hint = "";
-            this.txtCodigo.Location = new System.Drawing.Point(88, 28);
+            this.txtCodigo.Location = new System.Drawing.Point(66, 21);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigo.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCodigo.Name = "txtCodigo";
@@ -166,7 +166,7 @@
             this.txtCodigo.SelectedText = "";
             this.txtCodigo.SelectionLength = 0;
             this.txtCodigo.SelectionStart = 0;
-            this.txtCodigo.Size = new System.Drawing.Size(126, 28);
+            this.txtCodigo.Size = new System.Drawing.Size(94, 23);
             this.txtCodigo.TabIndex = 13;
             this.txtCodigo.TabStop = false;
             this.txtCodigo.UseSystemPasswordChar = false;
@@ -174,60 +174,60 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 258);
+            this.label6.Location = new System.Drawing.Point(6, 197);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 20);
+            this.label6.Size = new System.Drawing.Size(76, 16);
             this.label6.TabIndex = 5;
             this.label6.Text = "Categoria";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 178);
+            this.label5.Location = new System.Drawing.Point(8, 136);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 20);
+            this.label5.Size = new System.Drawing.Size(45, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Color";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 139);
+            this.label4.Location = new System.Drawing.Point(8, 106);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 20);
+            this.label4.Size = new System.Drawing.Size(44, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Talla";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 106);
+            this.label3.Location = new System.Drawing.Point(3, 81);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 20);
+            this.label3.Size = new System.Drawing.Size(63, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nombre";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 65);
+            this.label2.Location = new System.Drawing.Point(6, 50);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 20);
+            this.label2.Size = new System.Drawing.Size(60, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Modelo";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 28);
+            this.label1.Location = new System.Drawing.Point(6, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 20);
+            this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo";
             // 
@@ -240,11 +240,11 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(388, 137);
+            this.groupBox2.Location = new System.Drawing.Point(291, 105);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(249, 135);
+            this.groupBox2.Size = new System.Drawing.Size(187, 103);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -252,7 +252,7 @@
             // 
             this.txtCantidad.Depth = 0;
             this.txtCantidad.Hint = "";
-            this.txtCantidad.Location = new System.Drawing.Point(78, 95);
+            this.txtCantidad.Location = new System.Drawing.Point(58, 73);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidad.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCantidad.Name = "txtCantidad";
@@ -260,7 +260,7 @@
             this.txtCantidad.SelectedText = "";
             this.txtCantidad.SelectionLength = 0;
             this.txtCantidad.SelectionStart = 0;
-            this.txtCantidad.Size = new System.Drawing.Size(142, 28);
+            this.txtCantidad.Size = new System.Drawing.Size(106, 23);
             this.txtCantidad.TabIndex = 18;
             this.txtCantidad.TabStop = false;
             this.txtCantidad.UseSystemPasswordChar = false;
@@ -269,7 +269,7 @@
             // 
             this.txtPrecio.Depth = 0;
             this.txtPrecio.Hint = "";
-            this.txtPrecio.Location = new System.Drawing.Point(78, 53);
+            this.txtPrecio.Location = new System.Drawing.Point(58, 41);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPrecio.Name = "txtPrecio";
@@ -277,7 +277,7 @@
             this.txtPrecio.SelectedText = "";
             this.txtPrecio.SelectionLength = 0;
             this.txtPrecio.SelectionStart = 0;
-            this.txtPrecio.Size = new System.Drawing.Size(142, 28);
+            this.txtPrecio.Size = new System.Drawing.Size(106, 23);
             this.txtPrecio.TabIndex = 17;
             this.txtPrecio.TabStop = false;
             this.txtPrecio.UseSystemPasswordChar = false;
@@ -286,7 +286,7 @@
             // 
             this.txtCosto.Depth = 0;
             this.txtCosto.Hint = "";
-            this.txtCosto.Location = new System.Drawing.Point(75, 12);
+            this.txtCosto.Location = new System.Drawing.Point(56, 9);
             this.txtCosto.Margin = new System.Windows.Forms.Padding(2);
             this.txtCosto.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCosto.Name = "txtCosto";
@@ -294,7 +294,7 @@
             this.txtCosto.SelectedText = "";
             this.txtCosto.SelectionLength = 0;
             this.txtCosto.SelectionStart = 0;
-            this.txtCosto.Size = new System.Drawing.Size(145, 28);
+            this.txtCosto.Size = new System.Drawing.Size(109, 23);
             this.txtCosto.TabIndex = 16;
             this.txtCosto.TabStop = false;
             this.txtCosto.UseSystemPasswordChar = false;
@@ -303,10 +303,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(4, 102);
+            this.label9.Location = new System.Drawing.Point(3, 78);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 20);
+            this.label9.Size = new System.Drawing.Size(70, 16);
             this.label9.TabIndex = 13;
             this.label9.Text = "Cantidad";
             // 
@@ -314,10 +314,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(9, 60);
+            this.label8.Location = new System.Drawing.Point(7, 46);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 20);
+            this.label8.Size = new System.Drawing.Size(53, 16);
             this.label8.TabIndex = 12;
             this.label8.Text = "Precio";
             // 
@@ -325,10 +325,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(9, 19);
+            this.label7.Location = new System.Drawing.Point(7, 15);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 20);
+            this.label7.Size = new System.Drawing.Size(48, 16);
             this.label7.TabIndex = 6;
             this.label7.Text = "Costo";
             // 
@@ -342,11 +342,11 @@
             this.groupBox3.Controls.Add(this.btnAgregar);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.ForeColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Location = new System.Drawing.Point(0, 391);
+            this.groupBox3.Location = new System.Drawing.Point(0, 299);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(662, 71);
+            this.groupBox3.Size = new System.Drawing.Size(496, 58);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
@@ -354,12 +354,12 @@
             // 
             this.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(433, 27);
+            this.btnSalir.Location = new System.Drawing.Point(325, 23);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
-            this.btnSalir.Size = new System.Drawing.Size(89, 23);
+            this.btnSalir.Size = new System.Drawing.Size(67, 18);
             this.btnSalir.TabIndex = 17;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -369,12 +369,12 @@
             // 
             this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEliminar.Depth = 0;
-            this.btnEliminar.Location = new System.Drawing.Point(340, 27);
+            this.btnEliminar.Location = new System.Drawing.Point(255, 23);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Primary = true;
-            this.btnEliminar.Size = new System.Drawing.Size(89, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(67, 18);
             this.btnEliminar.TabIndex = 16;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -384,12 +384,12 @@
             // 
             this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnModificar.Depth = 0;
-            this.btnModificar.Location = new System.Drawing.Point(247, 27);
+            this.btnModificar.Location = new System.Drawing.Point(185, 23);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Primary = true;
-            this.btnModificar.Size = new System.Drawing.Size(89, 23);
+            this.btnModificar.Size = new System.Drawing.Size(67, 18);
             this.btnModificar.TabIndex = 15;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -399,12 +399,12 @@
             // 
             this.btnAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAgregar.Depth = 0;
-            this.btnAgregar.Location = new System.Drawing.Point(154, 27);
+            this.btnAgregar.Location = new System.Drawing.Point(116, 23);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Primary = true;
-            this.btnAgregar.Size = new System.Drawing.Size(89, 24);
+            this.btnAgregar.Size = new System.Drawing.Size(67, 18);
             this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -429,11 +429,11 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(16, 91);
+            this.groupBox1.Location = new System.Drawing.Point(12, 70);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(320, 296);
+            this.groupBox1.Size = new System.Drawing.Size(240, 226);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion General";
@@ -445,10 +445,10 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
             this.btnBuscar.Image = global::prgNegocioDeZapatos.Properties.Resources.magnifier1;
-            this.btnBuscar.Location = new System.Drawing.Point(242, 11);
+            this.btnBuscar.Location = new System.Drawing.Point(182, 8);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(48, 51);
+            this.btnBuscar.Size = new System.Drawing.Size(36, 39);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -457,7 +457,7 @@
             // 
             this.txtMarca.Depth = 0;
             this.txtMarca.Hint = "";
-            this.txtMarca.Location = new System.Drawing.Point(88, 212);
+            this.txtMarca.Location = new System.Drawing.Point(66, 162);
             this.txtMarca.Margin = new System.Windows.Forms.Padding(2);
             this.txtMarca.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtMarca.Name = "txtMarca";
@@ -465,7 +465,7 @@
             this.txtMarca.SelectedText = "";
             this.txtMarca.SelectionLength = 0;
             this.txtMarca.SelectionStart = 0;
-            this.txtMarca.Size = new System.Drawing.Size(126, 28);
+            this.txtMarca.Size = new System.Drawing.Size(94, 23);
             this.txtMarca.TabIndex = 20;
             this.txtMarca.TabStop = false;
             this.txtMarca.UseSystemPasswordChar = false;
@@ -473,19 +473,19 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(10, 219);
+            this.label10.Location = new System.Drawing.Point(8, 167);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 20);
+            this.label10.Size = new System.Drawing.Size(51, 16);
             this.label10.TabIndex = 19;
             this.label10.Text = "Marca";
             // 
             // frmAgregarProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(662, 461);
+            this.ClientSize = new System.Drawing.Size(496, 353);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
