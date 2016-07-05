@@ -70,25 +70,28 @@ namespace prgNegocioDeZapatos
             frmLista consultarUsuario = new frmLista(conexion, "usuarios");
             consultarUsuario.ShowDialog();
 
-            if (consultarUsuario.idSelecto != 0 || consultarUsuario.idSelecto == 0)
-            {
+            if (consultarUsuario.idSelecto == -1)
+            { }
+            else { 
                 this.usuario.IdUsuario = (consultarUsuario.idSelecto);
                 txtIdUsuario.Text = Convert.ToString(consultarUsuario.idSelecto);
                 mConsultaUsuario();
-            }//fin del if que verifica que no sea igual a 0
+            }//fin del if que verifica que no sea igual a -1
         }
 
         private void btnBuscarRol_Click(object sender, EventArgs e)
         {
             frmLista consultarRol = new frmLista(conexion, "rol");
             consultarRol.ShowDialog();
-
-            if (consultarRol.idSelecto != 0 || consultarRol.idSelecto == 0)
+            if (consultarRol.idSelecto == -1)
+            {
+            }
+            else
             {
                 this.pEntidadRol.IdRol = (consultarRol.idSelecto);
                 txtIdRol.Text = Convert.ToString(consultarRol.idSelecto);
                 mConsultaRol();
-            }//fin del if que verifica que no sea igual a 0
+            }//fin del if que verifica que no sea igual a -1
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

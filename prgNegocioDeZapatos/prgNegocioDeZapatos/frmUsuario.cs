@@ -77,12 +77,14 @@ namespace prgNegocioDeZapatos
             frmLista consultarUsuario = new frmLista(conexion,"usuarios");
             consultarUsuario.ShowDialog();
 
-            if (consultarUsuario.idSelecto != 0 || consultarUsuario.idSelecto == 0)
+            if (consultarUsuario.idSelecto == -1) { }
+
+            else
             {
-                this.pEntidadUsuario.IdUsuario=(consultarUsuario.idSelecto);
+                this.pEntidadUsuario.IdUsuario = (consultarUsuario.idSelecto);
                 txtCodigo.Text = Convert.ToString(consultarUsuario.idSelecto);
                 mConsultaUsuario();
-            }//fin del if que verifica que no sea igual a 0
+            }
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
