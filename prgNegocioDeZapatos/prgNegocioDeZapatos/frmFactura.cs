@@ -20,7 +20,7 @@ namespace prgNegocioDeZapatos
     {
         private readonly MaterialSkinManager materialSkinManager;
 
-        SqlDataReader dtrFactura,dtrFacturaE,dtrProducto;
+        SqlDataReader dtrFacturaE,dtrProducto;
         clsEntidadFacturaEncabezado factura;
         clsFactura clFactura;
         clsEntidadProducto producto;
@@ -40,14 +40,12 @@ namespace prgNegocioDeZapatos
 
         public frmFactura(clsConexion cone, clsEntidadUsuario pEntidadUsuario, clsEntidadVista vista) {
 
-            //clsConexion cone, clsEntidadUsuario pEntidadUsuario,
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.DeepOrange700, Primary.DeepOrange900, Primary.DeepOrange500, Accent.DeepOrange200, TextShade.WHITE);
 
             this.conexion = cone;
-            //this.conexion = new clsConexion();
             factura = new clsEntidadFacturaEncabezado();
             clFactura = new clsFactura();
             producto = new clsEntidadProducto();
@@ -139,7 +137,7 @@ namespace prgNegocioDeZapatos
         }//fin del la accion del boton salir
 
 
-////////////////////////////////// Metodos para obtener datos para la ventana frmListaProducto /////////////////////////////
+////////////////////////////////// Metodos para obtener datos para la ventana frmLista /////////////////////////////
 
         public void mConsultaProducto()
         {

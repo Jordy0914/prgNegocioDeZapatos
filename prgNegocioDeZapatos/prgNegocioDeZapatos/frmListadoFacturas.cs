@@ -110,14 +110,7 @@ namespace prgNegocioDeZapatos
 
 /////////////////////////////////// Accion del boton eliminar ///////////////////////////////////////////////////////////////////
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            
-                factura.setIdFactura(codigoFacturas);
-                bolEliminar = clFactura.mEliminarFactura(conexion, factura);
-            
-           
-        }//fin de la accion del boton eliminar
+       
 
 /////////////////////////////////// Accion del doble click de la lista /////////////////////////////////////////////////////////
 

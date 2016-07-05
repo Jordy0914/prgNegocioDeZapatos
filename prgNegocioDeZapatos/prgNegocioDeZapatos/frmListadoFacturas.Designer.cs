@@ -38,8 +38,6 @@
             this.txtIdFactura = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.btnEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtPrueba = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SuspendLayout();
             // 
             // lvFacturas
@@ -50,6 +48,7 @@
             this.cantidad,
             this.subtotal,
             this.total});
+            this.lvFacturas.Enabled = false;
             this.lvFacturas.GridLines = true;
             this.lvFacturas.Location = new System.Drawing.Point(67, 141);
             this.lvFacturas.Name = "lvFacturas";
@@ -87,7 +86,7 @@
             // btnSalir
             // 
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(361, 391);
+            this.btnSalir.Location = new System.Drawing.Point(235, 389);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
@@ -141,44 +140,12 @@
             this.materialLabel1.TabIndex = 4;
             this.materialLabel1.Text = "Digite el Numero de Factura";
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Depth = 0;
-            this.btnEliminar.Location = new System.Drawing.Point(111, 391);
-            this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Primary = true;
-            this.btnEliminar.Size = new System.Drawing.Size(75, 33);
-            this.btnEliminar.TabIndex = 5;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // txtPrueba
-            // 
-            this.txtPrueba.BackColor = System.Drawing.Color.White;
-            this.txtPrueba.Depth = 0;
-            this.txtPrueba.Hint = "";
-            this.txtPrueba.Location = new System.Drawing.Point(245, 391);
-            this.txtPrueba.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtPrueba.Name = "txtPrueba";
-            this.txtPrueba.PasswordChar = '\0';
-            this.txtPrueba.SelectedText = "";
-            this.txtPrueba.SelectionLength = 0;
-            this.txtPrueba.SelectionStart = 0;
-            this.txtPrueba.Size = new System.Drawing.Size(75, 23);
-            this.txtPrueba.TabIndex = 6;
-            this.txtPrueba.TabStop = false;
-            this.txtPrueba.UseSystemPasswordChar = false;
-            // 
             // frmListadoFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(605, 453);
             this.ControlBox = false;
-            this.Controls.Add(this.txtPrueba);
-            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtIdFactura);
@@ -205,7 +172,5 @@
         private System.Windows.Forms.ColumnHeader subtotal;
         private System.Windows.Forms.ColumnHeader cantidad;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialRaisedButton btnEliminar;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtPrueba;
     }
 }
