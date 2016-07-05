@@ -25,6 +25,12 @@ namespace LogicaNegocios
             return cone.mSeleccionar(strSentencia, cone);
         }
 
+        public Boolean mInsertarBitacora(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
+        {
+            strSentencia = "Insert into tbBitacoraConexion(idUsuario, fechaHora) values ("+pEntidadUsuario.IdUsuario+", getDate())";
+            return cone.mEjecutar(strSentencia, cone);
+        }
+
         public SqlDataReader mConsultarUsuario2(clsConexion cone, clsEntidadUsuario pEntidadUsuario)
         {
             strSentencia = "Select * from tbUsuario where idUsuario='" + pEntidadUsuario.getIdUsuario() + "'";
